@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Policies — Murnan Auto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="util-bar">
+  <span>MURNANAUTO.STORE</span>
+  <span>Support: <a href="mailto:support@murnanauto.store">support@murnanauto.store</a></span>
+</div>
+
+<nav>
+  <div class="logo"><a href="index.html" style="text-decoration:none;">MURNAN <span>AUTO</span></a></div>
+  <ul class="cat-nav" style="display:flex;">
+    <li><a href="index.html#shop">Shop</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section style="padding-top:6vh; border-top:none;">
+  <div class="section-head">
+    <h2>Policies</h2>
+    <span class="sub">SHIPPING · PRIVACY · TERMS</span>
+  </div>
+  <div class="policy-nav">
+    <a href="#shipping">Shipping &amp; Returns</a>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#terms">Terms of Service</a>
+  </div>
+
+  <div class="policy-block" id="shipping">
+    <span class="policy-updated">Last updated: July 2026</span>
+    <h2>Shipping &amp; Returns</h2>
+
+    <h3>Shipping</h3>
+    <p>Orders are typically processed within 1–3 business days. Shipping times vary depending on the item and carrier, and estimated delivery windows will be shown at checkout when available.</p>
+    <p>Once your order ships, you'll receive a confirmation with tracking information where applicable. Murnan Auto is not responsible for carrier delays once a package has shipped.</p>
+
+    <h3>Returns &amp; Exchanges</h3>
+    <p>We want you to be happy with what you order. If something isn't right, contact us within 30 days of delivery at <a href="mailto:support@murnanauto.store">support@murnanauto.store</a> and we'll work with you on a return, exchange, or refund.</p>
+    <ul>
+      <li>Items must be unused and in original condition/packaging unless defective.</li>
+      <li>Custom, made-to-order, or print-on-demand merch (such as embroidered apparel) may not be eligible for return unless defective or damaged in transit.</li>
+      <li>Return shipping costs are the responsibility of the customer unless the item arrived defective or incorrect.</li>
+    </ul>
+
+    <h3>Damaged or Incorrect Items</h3>
+    <p>If your order arrives damaged or you received the wrong item, email us with your order number and a photo of the item — we'll get it corrected as quickly as possible.</p>
+  </div>
+
+  <div class="policy-block" id="privacy">
+    <span class="policy-updated">Last updated: July 2026</span>
+    <h2>Privacy Policy</h2>
+
+    <h3>Information We Collect</h3>
+    <p>When you place an order or submit an inquiry, we collect information such as your name, email address, shipping address, and payment details necessary to fulfill your order or respond to your request.</p>
+
+    <h3>How Payments Are Handled</h3>
+    <p>All payments are processed securely through Stripe. Murnan Auto does not directly store or have access to your full credit card information.</p>
+
+    <h3>How We Use Your Information</h3>
+    <ul>
+      <li>To process and fulfill orders</li>
+      <li>To communicate with you about your order or inquiry</li>
+      <li>To respond to wholesale or distributor inquiries submitted through our site</li>
+    </ul>
+    <p>We do not sell or rent your personal information to third parties.</p>
+
+    <h3>Contact</h3>
+    <p>Questions about this policy can be sent to <a href="mailto:support@murnanauto.store">support@murnanauto.store</a>.</p>
+  </div>
+
+  <div class="policy-block" id="terms">
+    <span class="policy-updated">Last updated: July 2026</span>
+    <h2>Terms of Service</h2>
+
+    <h3>Acceptance of Terms</h3>
+    <p>By using this website and placing an order, you agree to these terms. If you do not agree, please do not use this site.</p>
+
+    <h3>Products &amp; Pricing</h3>
+    <p>We make every effort to display accurate product information and pricing. Prices and availability are subject to change without notice. In the event of a pricing or listing error, we reserve the right to cancel affected orders.</p>
+
+    <h3>Payment</h3>
+    <p>Payments are processed through Stripe. By placing an order, you authorize the charge to your selected payment method.</p>
+
+    <h3>Limitation of Liability</h3>
+    <p>Murnan Auto is not liable for indirect, incidental, or consequential damages arising from the use of products purchased through this site. Products should be installed and used in accordance with manufacturer guidelines.</p>
+
+    <h3>Changes to These Terms</h3>
+    <p>We may update these terms from time to time. Continued use of the site after changes are posted constitutes acceptance of the updated terms.</p>
+
+    <h3>Contact</h3>
+    <p>Questions about these terms can be sent to <a href="mailto:support@murnanauto.store">support@murnanauto.store</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Murnan Auto</div>
+  <div><a href="mailto:support@murnanauto.store">support@murnanauto.store</a> · murnanauto.store</div>
+</footer>
+
+</body>
+</html>
