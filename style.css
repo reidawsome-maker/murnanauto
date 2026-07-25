@@ -189,3 +189,37 @@
 .policy-block p, .policy-block li{ color:var(--paper-dim); font-size:0.96rem; margin-bottom:12px; }
 .policy-block ul{ padding-left:20px; list-style:disc; }
 .policy-updated{ font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--blue-bright); margin-bottom:8px; display:block; }
+
+/* CATEGORY GRID (large, top-level) */
+.cat-grid-lg{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:18px; margin-bottom:8px;
+}
+.cat-card-lg{
+  background:var(--panel); border:1px solid var(--steel); border-radius:8px; padding:24px 20px;
+  cursor:pointer; transition:all .15s ease; text-align:left;
+}
+.cat-card-lg:hover{ border-color:var(--blue-dim); transform:translateY(-3px); }
+.cat-card-lg.active{ border-color:var(--blue); background:var(--panel-2); }
+.cat-card-lg .cat-idx{ font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--blue-bright); }
+.cat-card-lg h3{ margin-top:8px; font-size:1rem; }
+.cat-card-lg .cat-count{ margin-top:6px; font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--paper-dim); }
+
+/* SUBCATEGORY PANEL */
+.subcat-panel{
+  display:none; background:var(--panel); border:1px solid var(--blue-dim); border-radius:8px;
+  padding:28px 5vw; margin-top:22px;
+}
+.subcat-panel.open{ display:block; }
+.subcat-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+.subcat-head h3{ font-size:1.2rem; text-transform:uppercase; }
+.subcat-close{
+  background:none; border:1px solid var(--steel); color:var(--paper-dim); border-radius:100px;
+  padding:6px 16px; font-family:'JetBrains Mono',monospace; font-size:0.75rem; cursor:pointer; transition:all .15s ease;
+}
+.subcat-close:hover{ color:var(--paper); border-color:var(--paper-dim); }
+.subcat-pills{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px; }
+.subcat-pill{
+  background:var(--panel-2); border:1px solid var(--steel); color:var(--paper);
+  padding:9px 18px; border-radius:100px; font-size:0.85rem;
+}
+.subcat-note{ font-size:0.85rem; color:var(--paper-dim); }
