@@ -35,23 +35,45 @@
     <p>Murnan Auto is a premier supplier of automotive parts, shop supplies, and branded gear — built by people who work on cars, for people who work on cars.</p>
   </div>
   
-  <!-- HERO AUTHORIZED DEALER BADGE (Replaces Pre-launch Box) -->
-  <div class="stock-panel dealer-hero-card" onclick="openDealerModal()" style="cursor: pointer;">
-    <div class="dealer-badge-tag">OFFICIAL DEALER</div>
-    <div class="row" style="border-bottom: none; padding-bottom: 4px;">
-      <span style="font-family:'Oswald',sans-serif; font-size: 1.1rem; color: var(--paper); text-transform: uppercase;">FLF RACING SUPPLY</span>
+  <!-- HERO AUTHORIZED DEALER CAROUSEL -->
+  <div class="stock-panel dealer-hero-card" onclick="openActiveDealerModal()" style="cursor: pointer;">
+    
+    <!-- Slide 1: FLF -->
+    <div class="dealer-slide active" id="slide-flf">
+      <div class="dealer-badge-tag">OFFICIAL DEALER</div>
+      <div class="row" style="border-bottom: none; padding-bottom: 4px;">
+        <span style="font-family:'Oswald',sans-serif; font-size: 1.1rem; color: var(--paper); text-transform: uppercase;">FLF RACING SUPPLY</span>
+      </div>
+      <div class="row" style="padding-top: 0;">
+        <span style="font-size: 0.75rem; color: var(--paper-dim);">Authorized Retail Partner</span>
+      </div>
     </div>
-    <div class="row" style="padding-top: 0;">
-      <span style="font-size: 0.75rem; color: var(--paper-dim);">Authorized Retail Partner</span>
+
+    <!-- Slide 2: MPR -->
+    <div class="dealer-slide" id="slide-mpr">
+      <div class="dealer-badge-tag">OFFICIAL DEALER</div>
+      <div class="row" style="border-bottom: none; padding-bottom: 4px;">
+        <span style="font-family:'Oswald',sans-serif; font-size: 1.1rem; color: var(--paper); text-transform: uppercase;">MPR PERFORMANCE</span>
+      </div>
+      <div class="row" style="padding-top: 0;">
+        <span style="font-size: 0.75rem; color: var(--paper-dim);">Authorized Product Partner</span>
+      </div>
     </div>
-    <span class="verify-link" style="margin-top: 10px; display: block; font-size: 0.75rem;">View Verification Cert &rarr;</span>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+      <span class="verify-link" style="font-size: 0.75rem;">View Verification Cert &rarr;</span>
+      <div class="slide-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- AUTHORIZED DEALER MODAL -->
-<div id="dealerModal" class="dealer-modal" onclick="closeDealerModal(event)">
+<!-- AUTHORIZED DEALER MODAL (FLF) -->
+<div id="modal-flf" class="dealer-modal" onclick="closeDealerModal(event, 'modal-flf')">
   <div class="dealer-modal-content">
-    <button class="modal-close" onclick="closeDealerModal(event)">&times;</button>
+    <button class="modal-close" onclick="closeDealerModal(event, 'modal-flf')">&times;</button>
     <div class="cert-border">
       <div class="cert-header">
         <span class="cert-status">✓ VERIFIED ACTIVE DEALER</span>
@@ -61,6 +83,28 @@
       <hr style="border-color: var(--steel); margin: 20px 0;">
       <p style="color: var(--paper-dim); font-size: 0.9rem;">
         Murnan Auto is an officially recognized Dealer for <strong>FLF Racing Supply</strong> components. All AN fittings, hoses, and high-performance plumbing hardware sold through Murnan Auto are sourced directly from FLF Racing Supply with full factory quality backing and direct warehouse fulfillment.
+      </p>
+      <div class="cert-footer">
+        <span>AUTHENTICITY GUARANTEED</span>
+        <span>MURNANAUTO.STORE</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AUTHORIZED DEALER MODAL (MPR) -->
+<div id="modal-mpr" class="dealer-modal" onclick="closeDealerModal(event, 'modal-mpr')">
+  <div class="dealer-modal-content">
+    <button class="modal-close" onclick="closeDealerModal(event, 'modal-mpr')">&times;</button>
+    <div class="cert-border">
+      <div class="cert-header">
+        <span class="cert-status">✓ VERIFIED ACTIVE DEALER</span>
+        <h2>MPR PERFORMANCE</h2>
+        <p class="mono">PARTNER ID: MPR-MN-2026</p>
+      </div>
+      <hr style="border-color: var(--steel); margin: 20px 0;">
+      <p style="color: var(--paper-dim); font-size: 0.9rem;">
+        Murnan Auto is an officially recognized partner for <strong>MPR Performance</strong> products. Components sourced through Murnan Auto carry direct manufacturer backing and factory-direct support.
       </p>
       <div class="cert-footer">
         <span>AUTHENTICITY GUARANTEED</span>
@@ -240,7 +284,6 @@
     document.getElementById('fitNote').classList.add('show');
   }
 
-  // Categories updated with actual product photo filenames
   const categories = [
     { name: "Engine", img: "engine.jpg", subs: ["Pistons & Rings", "Connecting Rods", "Camshafts & Valvetrain", "Gaskets & Seals", "Engine Rebuild Kits", "Oil Pumps & Pans"] },
     { name: "Exhaust", img: "Exhaust.jpg", subs: ["Headers & Manifolds", "Cat-Back Systems", "Downpipes & Midpipes", "Mufflers & Resonators", "Exhaust Tips", "Gaskets & Hardware"] },
@@ -281,14 +324,34 @@
     document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
   });
 
-  // Dealer Verification Modal JS
-  function openDealerModal() {
-    document.getElementById('dealerModal').classList.add('show');
+  // Carousel & Modal Logic
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.dealer-slide');
+  const dots = document.querySelectorAll('.slide-dots .dot');
+
+  function rotateDealerSlides() {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    
+    currentSlide = (currentSlide + 1) % slides.length;
+    
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
   }
 
-  function closeDealerModal(e) {
-    if (e.target.id === 'dealerModal' || e.target.classList.contains('modal-close')) {
-      document.getElementById('dealerModal').classList.remove('show');
+  setInterval(rotateDealerSlides, 5000);
+
+  function openActiveDealerModal() {
+    if (currentSlide === 0) {
+      document.getElementById('modal-flf').classList.add('show');
+    } else {
+      document.getElementById('modal-mpr').classList.add('show');
+    }
+  }
+
+  function closeDealerModal(e, modalId) {
+    if (e.target.id === modalId || e.target.classList.contains('modal-close')) {
+      document.getElementById(modalId).classList.remove('show');
     }
   }
 </script>
