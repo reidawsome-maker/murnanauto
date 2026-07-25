@@ -34,11 +34,41 @@
     <h1>Auto parts, <em>shop supplies</em> &amp; merch.</h1>
     <p>Murnan Auto is a premier supplier of automotive parts, shop supplies, and branded gear — built by people who work on cars, for people who work on cars.</p>
   </div>
-  <div class="stock-panel">
-    <div class="row"><span>Status</span><span class="status-open">Pre-launch</span></div>
-    <div class="row"><span>Support</span><span>support@murnanauto.store</span></div>
+  
+  <!-- HERO AUTHORIZED DEALER BADGE (Replaces Pre-launch Box) -->
+  <div class="stock-panel dealer-hero-card" onclick="openDealerModal()" style="cursor: pointer;">
+    <div class="dealer-badge-tag">OFFICIAL DEALER</div>
+    <div class="row" style="border-bottom: none; padding-bottom: 4px;">
+      <span style="font-family:'Oswald',sans-serif; font-size: 1.1rem; color: var(--paper); text-transform: uppercase;">FLF RACING SUPPLY</span>
+    </div>
+    <div class="row" style="padding-top: 0;">
+      <span style="font-size: 0.75rem; color: var(--paper-dim);">Authorized Retail Partner</span>
+    </div>
+    <span class="verify-link" style="margin-top: 10px; display: block; font-size: 0.75rem;">View Verification Cert &rarr;</span>
   </div>
 </section>
+
+<!-- AUTHORIZED DEALER MODAL -->
+<div id="dealerModal" class="dealer-modal" onclick="closeDealerModal(event)">
+  <div class="dealer-modal-content">
+    <button class="modal-close" onclick="closeDealerModal(event)">&times;</button>
+    <div class="cert-border">
+      <div class="cert-header">
+        <span class="cert-status">✓ VERIFIED ACTIVE DEALER</span>
+        <h2>FLF RACING SUPPLY</h2>
+        <p class="mono">PARTNER ID: FLF-MN-2026</p>
+      </div>
+      <hr style="border-color: var(--steel); margin: 20px 0;">
+      <p style="color: var(--paper-dim); font-size: 0.9rem;">
+        Murnan Auto is an officially recognized Dealer for <strong>FLF Racing Supply</strong> components. All AN fittings, hoses, and high-performance plumbing hardware sold through Murnan Auto are sourced directly from FLF Racing Supply with full factory quality backing and direct warehouse fulfillment.
+      </p>
+      <div class="cert-footer">
+        <span>AUTHENTICITY GUARANTEED</span>
+        <span>MURNANAUTO.STORE</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <section id="fitment">
   <div class="section-head">
@@ -102,45 +132,6 @@
     </div>
   </div>
 </section>
-
-<!-- AUTHORIZED DEALER SECTION -->
-<section id="dealer-verify" style="background: var(--panel-2);">
-  <div class="section-head">
-    <h2>Authorized Partner Network</h2>
-    <span class="sub">VERIFIED DISTRIBUTOR</span>
-  </div>
-
-  <div class="dealer-card-wrap">
-    <div class="dealer-card" onclick="openDealerModal()">
-      <div class="dealer-badge-tag">OFFICIAL DEALER</div>
-      <h3>FLF RACING SUPPLY</h3>
-      <p>Authorized Retailer &amp; Direct Warehouse Partner</p>
-      <span class="verify-link">Click to View Verification Certificate &rarr;</span>
-    </div>
-  </div>
-</section>
-
-<!-- AUTHORIZED DEALER MODAL -->
-<div id="dealerModal" class="dealer-modal" onclick="closeDealerModal(event)">
-  <div class="dealer-modal-content">
-    <button class="modal-close" onclick="closeDealerModal(event)">&times;</button>
-    <div class="cert-border">
-      <div class="cert-header">
-        <span class="cert-status">✓ VERIFIED ACTIVE DEALER</span>
-        <h2>FLF RACING SUPPLY</h2>
-        <p class="mono">PARTNER ID: FLF-MN-2026</p>
-      </div>
-      <hr style="border-color: var(--steel); margin: 20px 0;">
-      <p style="color: var(--paper-dim); font-size: 0.9rem;">
-        Murnan Auto is an officially recognized Tier Dealer for <strong>FLF Racing Supply</strong> components. All AN fittings, hoses, and high-performance plumbing hardware sold through Murnan Auto are sourced directly from FLF Racing Supply with full factory quality backing and direct warehouse fulfillment.
-      </p>
-      <div class="cert-footer">
-        <span>AUTHENTICITY GUARANTEED</span>
-        <span>MURNANAUTO.STORE</span>
-      </div>
-    </div>
-  </div>
-</div>
 
 <section id="about">
   <div class="about-grid">
@@ -290,7 +281,7 @@
     document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
   });
 
-  // Modal controls
+  // Dealer Verification Modal JS
   function openDealerModal() {
     document.getElementById('dealerModal').classList.add('show');
   }
