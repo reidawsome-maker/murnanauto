@@ -212,16 +212,16 @@
   }
 
   const categories = [
-    { name: "Engine", subs: ["Pistons & Rings", "Connecting Rods", "Camshafts & Valvetrain", "Gaskets & Seals", "Engine Rebuild Kits", "Oil Pumps & Pans"] },
-    { name: "Exhaust", subs: ["Headers & Manifolds", "Cat-Back Systems", "Downpipes & Midpipes", "Mufflers & Resonators", "Exhaust Tips", "Gaskets & Hardware"] },
-    { name: "Forced Induction & Nitrous", subs: ["Turbochargers", "Superchargers", "Intercoolers & Piping", "Nitrous Kits & Bottles", "Boost Controllers", "Wastegates & BOVs"] },
-    { name: "Fuel System", subs: ["Fuel Pumps", "Fuel Filters", "Fuel Injectors", "Fuel Lines & Fittings", "Fuel Rails", "Fuel System Kits"] },
-    { name: "Ignition & Electrical", subs: ["Ignition Coils", "Spark Plugs & Wires", "Wiring Harnesses", "Batteries & Charging", "ECUs & Tuners", "Sensors"] },
-    { name: "Suspension & Steering", subs: ["Coilovers & Shocks", "Control Arms", "Sway Bars & End Links", "Bushings & Mounts", "Steering Racks", "Tie Rods & Ball Joints"] },
-    { name: "Drivetrain", subs: ["Clutches & Flywheels", "Driveshafts", "Axles & CV Joints", "Differentials", "Transmission Mounts"] },
-    { name: "Brakes", subs: ["Brake Pads", "Rotors", "Calipers", "Brake Lines & Hardware", "Big Brake Kits"] },
-    { name: "Cooling", subs: ["Radiators", "Cooling Fans", "Oil Coolers", "Water Pumps", "Thermostats & Housings"] },
-    { name: "Shop Supplies & Merch", subs: ["Fluids & Chemicals", "Tools & Equipment", "Apparel", "Accessories"] }
+    { name: "Engine", img: "cat-icons/icon-engine.png", subs: ["Pistons & Rings", "Connecting Rods", "Camshafts & Valvetrain", "Gaskets & Seals", "Engine Rebuild Kits", "Oil Pumps & Pans"] },
+    { name: "Exhaust", img: "cat-icons/icon-exhaust.png", subs: ["Headers & Manifolds", "Cat-Back Systems", "Downpipes & Midpipes", "Mufflers & Resonators", "Exhaust Tips", "Gaskets & Hardware"] },
+    { name: "Forced Induction & Nitrous", img: "cat-icons/icon-turbo.png", subs: ["Turbochargers", "Superchargers", "Intercoolers & Piping", "Nitrous Kits & Bottles", "Boost Controllers", "Wastegates & BOVs"] },
+    { name: "Fuel System", img: "cat-icons/icon-fuel.png", subs: ["Fuel Pumps", "Fuel Filters", "Fuel Injectors", "Fuel Lines & Fittings", "Fuel Rails", "Fuel System Kits"] },
+    { name: "Ignition & Electrical", img: "cat-icons/icon-ignition.png", subs: ["Ignition Coils", "Spark Plugs & Wires", "Wiring Harnesses", "Batteries & Charging", "ECUs & Tuners", "Sensors"] },
+    { name: "Suspension & Steering", img: "cat-icons/icon-suspension.png", subs: ["Coilovers & Shocks", "Control Arms", "Sway Bars & End Links", "Bushings & Mounts", "Steering Racks", "Tie Rods & Ball Joints"] },
+    { name: "Drivetrain", img: "cat-icons/icon-drivetrain.png", subs: ["Clutches & Flywheels", "Driveshafts", "Axles & CV Joints", "Differentials", "Transmission Mounts"] },
+    { name: "Brakes", img: "cat-icons/icon-brakes.png", subs: ["Brake Pads", "Rotors", "Calipers", "Brake Lines & Hardware", "Big Brake Kits"] },
+    { name: "Cooling", img: "cat-icons/icon-cooling.png", subs: ["Radiators", "Cooling Fans", "Oil Coolers", "Water Pumps", "Thermostats & Housings"] },
+    { name: "Shop Supplies & Merch", img: "cat-icons/icon-supplies.png", subs: ["Fluids & Chemicals", "Tools & Equipment", "Apparel", "Accessories"] }
   ];
 
   const catGridLg = document.getElementById('catGridLg');
@@ -230,10 +230,11 @@
   const subcatPills = document.getElementById('subcatPills');
   document.getElementById('catCount').textContent = categories.length + " CATEGORIES";
 
-  categories.forEach((cat, i) => {
+  categories.forEach((cat) => {
     const card = document.createElement('button');
     card.className = 'cat-card-lg';
-    card.innerHTML = `<div class="cat-idx">DEPT. ${String(i+1).padStart(2,'0')}</div><h3>${cat.name}</h3><div class="cat-count">${cat.subs.length} subcategories</div>`;
+    card.style.backgroundImage = `url('${cat.img}')`;
+    card.innerHTML = `<h3>${cat.name}</h3>`;
     card.addEventListener('click', () => {
       document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
       card.classList.add('active');
