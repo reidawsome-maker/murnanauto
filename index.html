@@ -1,4 +1,128 @@
-<div class="section-head" style="margin-top:56px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Murnan Auto — Parts, Supplies &amp; Merch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="favicon-180.png">
+</head>
+<body>
+
+<div class="util-bar">
+  <span>MURNANAUTO.STORE — DEALER &amp; DISTRIBUTOR INQUIRIES WELCOME</span>
+  <span>Support: <a href="mailto:support@murnanauto.store">support@murnanauto.store</a></span>
+</div>
+
+<nav>
+  <div class="logo">MURNAN <span>AUTO</span></div>
+  <ul class="cat-nav" style="display:flex; align-items:center;">
+    <li><a href="#fitment">Vehicle Fit</a></li>
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#partners">Brands &amp; Partners</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" style="padding-top:6vh; border-top:none;">
+  <div class="hero-left">
+    <div class="hero-badge">CATALOG LOADING</div>
+    <h1>Auto parts, <em>shop supplies</em> &amp; merch.</h1>
+    <p>Murnan Auto is a premier supplier of automotive parts, shop supplies, and branded gear — built by people who work on cars, for people who work on cars.</p>
+  </div>
+
+  <!-- HERO AUTHORIZED DEALER CARD (FLF only) -->
+  <div class="stock-panel dealer-hero-card" onclick="openActiveDealerModal()" style="cursor: pointer;">
+    <div class="dealer-slide active" id="slide-flf">
+      <div class="dealer-badge-tag">OFFICIAL DEALER</div>
+      <div class="row" style="border-bottom: none; padding-bottom: 4px;">
+        <span style="font-family:'Oswald',sans-serif; font-size: 1.1rem; color: var(--paper); text-transform: uppercase;">FINISH LINE FACTORY</span>
+      </div>
+      <div class="row" style="padding-top: 0;">
+        <span style="font-size: 0.75rem; color: var(--paper-dim);">Authorized Retail Partner</span>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+      <span class="verify-link" style="font-size: 0.75rem;">View Verification Cert &rarr;</span>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHORIZED DEALER MODAL (FLF) -->
+<div id="modal-flf" class="dealer-modal" onclick="closeDealerModal(event, 'modal-flf')">
+  <div class="dealer-modal-content">
+    <button class="modal-close" onclick="closeDealerModal(event, 'modal-flf')">&times;</button>
+    <div class="cert-border">
+      <div class="cert-header">
+        <span class="cert-status">✓ VERIFIED ACTIVE DEALER</span>
+        <h2>FINISH LINE FACTORY</h2>
+        <p class="mono">PARTNER ID: FLF-MN-2026</p>
+      </div>
+      <hr style="border-color: var(--steel); margin: 20px 0;">
+      <p style="color: var(--paper-dim); font-size: 0.9rem;">
+        Murnan Auto is an officially recognized Dealer for <strong>Finish Line Factory (FLF)</strong> components. All AN fittings, hoses, and high-performance plumbing hardware sold through Murnan Auto are sourced directly from Finish Line Factory with full factory quality backing and direct warehouse fulfillment.
+      </p>
+      <div class="cert-footer">
+        <span>AUTHENTICITY GUARANTEED</span>
+        <span>MURNANAUTO.STORE</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="fitment">
+  <div class="section-head">
+    <h2>Find parts for your vehicle</h2>
+    <span class="sub">FITMENT SEARCH</span>
+  </div>
+  <div class="fit-search">
+    <div class="fit-field">
+      <label for="yr">Year</label>
+      <select id="yr"><option>Select year</option><option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option><option>Older</option></select>
+    </div>
+    <div class="fit-field">
+      <label for="mk">Make</label>
+      <select id="mk" onchange="updateModels()">
+        <option value="">Select make</option>
+        <option value="Jeep">Jeep</option>
+        <option value="Ford">Ford</option>
+        <option value="Chevrolet">Chevrolet</option>
+        <option value="Dodge / Ram">Dodge / Ram</option>
+        <option value="Toyota">Toyota</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="fit-field">
+      <label for="md">Model</label>
+      <select id="md"><option>Select make first</option></select>
+    </div>
+    <button class="fit-btn" onclick="showFitNote()">Search</button>
+  </div>
+  <p class="fit-note" id="fitNote">Full year/make/model fitment search is launching alongside the complete catalog. Browse parts by category below in the meantime, or email <a href="mailto:support@murnanauto.store" style="color:var(--blue-bright);">support@murnanauto.store</a> and we'll confirm fitment directly.</p>
+</section>
+
+<section id="shop">
+  <div class="section-head">
+    <h2>Shop by category</h2>
+    <span class="sub" id="catCount">10 CATEGORIES</span>
+  </div>
+  <div class="cat-grid-lg" id="catGridLg"></div>
+
+  <div class="subcat-panel" id="subcatPanel">
+    <div class="subcat-head">
+      <h3 id="subcatTitle"></h3>
+      <button class="subcat-close" id="subcatClose">Close &times;</button>
+    </div>
+    <div class="subcat-pills" id="subcatPills"></div>
+    <p class="subcat-note">Full product listings for this category are launching soon. Looking for something specific? <a href="mailto:support@murnanauto.store" style="color:var(--blue-bright);">Email us</a> and we'll help track it down.</p>
+  </div>
+
+  <div class="section-head" style="margin-top:56px;">
     <h2>Featured Products</h2>
     <span class="sub">SYSTEM TESTING</span>
   </div>
@@ -14,11 +138,227 @@
         <p style="color:var(--paper-dim); font-size: 0.85rem; margin-bottom: 12px;">$1.00</p>
         
         <div style="display: flex; gap: 8px;">
-          <!-- Direct Stripe Link for Test Product -->
-          <a href="#" target="_blank" class="fit-btn" style="flex: 1; padding: 10px; font-size: 0.8rem; background: var(--paper); color: var(--bg); text-align: center; text-decoration: none; display: inline-block;">
+          <!-- Direct Stripe Payment Link -->
+          <a href="https://buy.stripe.com/4gMeVcasc40uggm2uU6Vq01" class="fit-btn" style="flex: 1; padding: 10px; font-size: 0.8rem; background: var(--paper); color: var(--bg); text-align: center; text-decoration: none; display: inline-block;">
             Buy It Now ($1.00)
           </a>
         </div>
       </div>
     </div>
   </div>
+</section>
+
+<!-- BRANDS & PARTNERS SECTION -->
+<section id="partners">
+  <div class="section-head">
+    <h2>Authorized Supply Partners</h2>
+    <span class="sub">100% GENUINE FACTORY PRODUCTS</span>
+  </div>
+  <p style="color:var(--paper-dim); max-width:65ch; margin-bottom:32px;">
+    Murnan Auto holds direct authorized dealer relationships with leading performance manufacturers, offering full factory warranties and direct warehouse fulfillment.
+  </p>
+
+  <div class="brand-display-grid">
+    <!-- Finish Line Factory -->
+    <div class="brand-display-card" onclick="document.getElementById('modal-flf').classList.add('show')">
+      <div class="brand-img-wrap">
+        <img src="FLF-Authorized-Dealer-Banner-2022.png" alt="Finish Line Factory Authorized Dealer">
+      </div>
+      <div class="brand-card-info">
+        <span class="dealer-badge-tag">OFFICIAL DEALER</span>
+        <h3>Finish Line Factory</h3>
+        <p>High-performance AN plumbing, race fittings, hoses, and fluid containment systems.</p>
+        <span class="verify-link">Verify Credentials &rarr;</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-grid">
+    <div>
+      <h2>About Murnan Auto</h2>
+      <p>Murnan Auto is built around real shop experience — automotive repair, performance tuning, and wiring — not just parts we've never touched ourselves. Every category we carry is chosen against that same standard: parts and supplies worth putting on our own vehicles first.</p>
+      <p>We're building out a full catalog of parts, shop supplies, and branded gear for daily drivers, project builds, and everyone in between. We're actively growing our supplier and distributor relationships as we scale — if that's you, we'd like to talk.</p>
+    </div>
+    <div class="values">
+      <div class="row"><span class="num">01</span><div><h4>Hands-on standard</h4><p>Sourced and vetted by people who actually work on cars.</p></div></div>
+      <div class="row"><span class="num">02</span><div><h4>U.S. based</h4><p>Direct and easy to reach — no runaround.</p></div></div>
+      <div class="row"><span class="num">03</span><div><h4>Built to grow</h4><p>Expanding catalog and actively pursuing distributor partnerships.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-head">
+    <h2>Distributor &amp; supplier inquiries</h2>
+    <span class="sub">WHOLESALE INQUIRY</span>
+  </div>
+  <p style="color:var(--paper-dim); max-width:60ch; margin-bottom:28px;">Interested in partnering with Murnan Auto — as a supplier, distributor, or wholesale buyer? Fill out the form below and we'll follow up directly.</p>
+  <form class="wholesale-form" action="https://formspree.io/f/xkodvker" method="POST">
+    <div class="form-field">
+      <label for="company">Company name</label>
+      <input type="text" id="company" name="Company name" required>
+    </div>
+    <div class="form-field">
+      <label for="contactname">Contact name</label>
+      <input type="text" id="contactname" name="Contact name" required>
+    </div>
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="Email" required>
+    </div>
+    <div class="form-field">
+      <label for="phone">Phone (optional)</label>
+      <input type="tel" id="phone" name="Phone">
+    </div>
+    <div class="form-field full">
+      <label for="whatsell">What do you sell / carry?</label>
+      <input type="text" id="whatsell" name="What they sell" placeholder="e.g. aftermarket suspension parts, shop tools">
+    </div>
+    <div class="form-field">
+      <label for="volume">Estimated monthly volume</label>
+      <select id="volume" name="Estimated volume">
+        <option>Select a range</option>
+        <option>Under $1,000</option>
+        <option>$1,000 – $5,000</option>
+        <option>$5,000 – $20,000</option>
+        <option>$20,000+</option>
+        <option>Not sure yet</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <label for="inquirytype">Inquiry type</label>
+      <select id="inquirytype" name="Inquiry type">
+        <option>Supplier / vendor</option>
+        <option>Distributor / reseller</option>
+        <option>Wholesale buyer</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-field full">
+      <label for="message">Message</label>
+      <textarea id="message" name="Message" placeholder="Tell us a bit about your business and what you're looking for."></textarea>
+    </div>
+    <div class="full">
+      <button type="submit" class="form-submit">Submit inquiry</button>
+      <p class="form-note" style="margin-top:12px;">Or email us directly at <a href="mailto:support@murnanauto.store" style="color:var(--blue-bright);">support@murnanauto.store</a></p>
+    </div>
+  </form>
+</section>
+
+<!-- FULFILLMENT & OPERATING HOURS -->
+<section style="background: var(--panel-2); border-top: 1px solid var(--steel); border-bottom: 1px solid var(--steel); padding: 40px 5vw;">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <div class="section-head" style="margin-bottom: 16px;">
+      <h2>Fulfillment & Operating Hours</h2>
+      <span class="sub">SCHEDULE & SCHEDULED CLOSURES</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; color: var(--paper-dim); font-size: 0.9rem; line-height: 1.6;">
+      <div>
+        <h4 style="color: var(--paper); font-family: 'Oswald', sans-serif; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 8px;">Business Hours</h4>
+        <p><strong>Monday – Friday:</strong> 8:00 AM – 5:00 PM CST</p>
+        <p style="margin-top: 8px;">Orders placed after 5:00 PM CST or over the weekend will be processed and fulfilled on the next business day.</p>
+      </div>
+      <div>
+        <h4 style="color: var(--paper); font-family: 'Oswald', sans-serif; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 8px;">Observed Holidays</h4>
+        <p>Fulfillment &amp; support are paused on major U.S. holidays, including New Year's Day, Labor Day, Halloween, Thanksgiving Day, Christmas Eve, and Christmas Day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Murnan Auto</div>
+  <div><a href="mailto:support@murnanauto.store">support@murnanauto.store</a> · murnanauto.store</div>
+  <div><a href="policies.html#shipping">Shipping &amp; Returns</a> · <a href="policies.html#privacy">Privacy Policy</a> · <a href="policies.html#terms">Terms of Service</a></div>
+</footer>
+
+<script>
+  const modelsByMake = {
+    "Jeep": ["Grand Cherokee", "Wrangler", "Cherokee", "Gladiator", "Compass"],
+    "Ford": ["F-150", "Mustang", "Explorer", "Bronco", "Escape"],
+    "Chevrolet": ["Silverado", "Camaro", "Tahoe", "Equinox", "Malibu"],
+    "Dodge / Ram": ["Ram 1500", "Charger", "Challenger", "Durango"],
+    "Toyota": ["Tacoma", "Camry", "4Runner", "Tundra", "RAV4"],
+    "Other": ["Other"]
+  };
+  function updateModels(){
+    const make = document.getElementById('mk').value;
+    const modelSelect = document.getElementById('md');
+    modelSelect.innerHTML = "";
+    if(!make){
+      modelSelect.innerHTML = "<option>Select make first</option>";
+      return;
+    }
+    const opts = ["Select model"].concat(modelsByMake[make] || ["Other"]);
+    opts.forEach(m => {
+      const o = document.createElement('option');
+      o.textContent = m;
+      modelSelect.appendChild(o);
+    });
+  }
+  function showFitNote(){
+    document.getElementById('fitNote').classList.add('show');
+  }
+
+  const categories = [
+    { name: "Engine", img: "engine.jpg", subs: ["Pistons & Rings", "Connecting Rods", "Camshafts & Valvetrain", "Gaskets & Seals", "Engine Rebuild Kits", "Oil Pumps & Pans"] },
+    { name: "Exhaust", img: "Exhaust.jpg", subs: ["Headers & Manifolds", "Cat-Back Systems", "Downpipes & Midpipes", "Mufflers & Resonators", "Exhaust Tips", "Gaskets & Hardware"] },
+    { name: "Forced Induction & Nitrous", img: "Forced.jpg", subs: ["Turbochargers", "Superchargers", "Intercoolers & Piping", "Nitrous Kits & Bottles", "Boost Controllers", "Wastegates & BOVs"] },
+    { name: "Fuel System", img: "fuel.jpg", subs: ["Fuel Pumps", "Fuel Filters", "Fuel Injectors", "Fuel Lines & Fittings", "Fuel Rails", "Fuel System Kits"] },
+    { name: "Ignition & Electrical", img: "ignition.jpg", subs: ["Ignition Coils", "Spark Plugs & Wires", "Wiring Harnesses", "Batteries & Charging", "ECUs & Tuners", "Sensors"] },
+    { name: "Suspension & Steering", img: "suspension.jpg", subs: ["Coilovers & Shocks", "Control Arms", "Sway Bars & End Links", "Bushings & Mounts", "Steering Racks", "Tie Rods & Ball Joints"] },
+    { name: "Drivetrain", img: "drivetrain.jpg", subs: ["Clutches & Flywheels", "Driveshafts", "Axles & CV Joints", "Differentials", "Transmission Mounts"] },
+    { name: "Brakes", img: "brakes.jpg", subs: ["Brake Pads", "Rotors", "Calipers", "Brake Lines & Hardware", "Big Brake Kits"] },
+    { name: "Cooling", img: "cooling.jpg", subs: ["Radiators", "Cooling Fans", "Oil Coolers", "Water Pumps", "Thermostats & Housings"] },
+    { name: "Shop Supplies & Merch", img: "supplies.jpg", subs: ["Fluids & Chemicals", "Tools & Equipment", "Apparel", "Accessories"] }
+  ];
+
+  const catGridLg = document.getElementById('catGridLg');
+  const subcatPanel = document.getElementById('subcatPanel');
+  const subcatTitle = document.getElementById('subcatTitle');
+  const subcatPills = document.getElementById('subcatPills');
+  document.getElementById('catCount').textContent = categories.length + " CATEGORIES";
+
+  categories.forEach((cat) => {
+    const card = document.createElement('button');
+    card.className = 'cat-card-lg';
+    card.style.backgroundImage = `url('${cat.img}')`;
+    card.innerHTML = `<h3>${cat.name}</h3>`;
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      subcatTitle.textContent = cat.name;
+      subcatPills.innerHTML = cat.subs.map(s => `<span class="subcat-pill">${s}</span>`).join('');
+      subcatPanel.classList.add('open');
+      subcatPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+    catGridLg.appendChild(card);
+  });
+
+  document.getElementById('subcatClose').addEventListener('click', () => {
+    subcatPanel.classList.remove('open');
+    document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
+  });
+
+  // Modal logic
+  function openActiveDealerModal() {
+    document.getElementById('modal-flf').classList.add('show');
+  }
+
+  function closeDealerModal(e, modalId) {
+    if (e.target.id === modalId || e.target.classList.contains('modal-close')) {
+      document.getElementById(modalId).classList.remove('show');
+    }
+  }
+</script>
+
+<!-- KLAVIYO ONSITE TRACKING SCRIPT -->
+<script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/VcGnuL/klaviyo.js?company_id=VcGnuL'></script>
+<script type="text/javascript"> 
+  !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}(); 
+</script>
+
+</body>
+</html>
