@@ -418,7 +418,7 @@ footer a{ color:var(--blue-bright); text-decoration:none; }
   background: var(--blue-bright);
 }
 
-/* BRAND DISPLAY GRID & LOGO RESIZING FIX */
+/* BRAND DISPLAY GRID */
 .brand-display-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -449,30 +449,29 @@ footer a{ color:var(--blue-bright); text-decoration:none; }
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
+/* STRICT LOGO ASPECT RATIO & SCALING FIX */
 .brand-img-wrap {
   width: 100%;
   height: 140px;
   background: #000000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 24px;
   border-bottom: 1px solid var(--steel);
+  display: block; /* Disables flexbox layout stretching for this container */
 }
 
 .brand-img-wrap.white-bg {
   background: #ffffff;
 }
 
-/* LOGO ASPECT RATIO & SCALING FIX */
 .brand-img-wrap img {
-  display: block;
-  max-width: 85%;
-  max-height: 70px;
-  width: auto !important;
-  height: auto !important;
-  object-fit: contain;
-  margin: 0 auto;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+  margin: 0 auto !important;
 }
 
 .brand-card-info {
@@ -496,41 +495,4 @@ footer a{ color:var(--blue-bright); text-decoration:none; }
   font-size: 0.85rem;
   line-height: 1.4;
   margin: 0;
-}
-/* --- BRAND LOGO ASPECT RATIO OVERRIDE --- */
-.brand-img-wrap {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  height: 160px !important;
-  padding: 24px !important;
-  box-sizing: border-box !important;
-}
-
-.brand-img-wrap img {
-  width: auto !important;
-  height: auto !important;
-  max-width: 75% !important;
-  max-height: 80px !important;
-  object-fit: contain !important;
-  flex-shrink: 0 !important;
-  display: block !important;
-  margin: 0 auto !important;
-}
-/* STOP CONTAINER & LOGO FROM STRETCHING */
-.brand-display-card {
-  align-self: start !important; /* Prevents card from stretching to match row height */
-}
-
-.brand-img-wrap {
-  flex: 0 0 auto !important;   /* Prevents the header block from expanding vertically */
-  height: 120px !important;
-}
-
-.brand-img-wrap img {
-  height: auto !important;     /* Locks original natural aspect ratio */
-  max-height: 60px !important; /* Cap height so horizontal logos don't distort */
-  width: auto !important;
-  max-width: 80% !important;
-  align-self: center !important;
 }
