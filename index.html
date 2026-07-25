@@ -10,6 +10,20 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="favicon-180.png">
+<style>
+  /* Local Cart Drawer Styles */
+  #cart-overlay {
+    position: fixed; top: 0; right: -400px; width: 380px; height: 100vh;
+    background: var(--panel-2, #181b20); border-left: 1px solid var(--steel, #333);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5); z-index: 9999; transition: right 0.3s ease;
+    padding: 24px; box-sizing: border-box; display: flex; flex-direction: column;
+  }
+  #cart-overlay.open { right: 0; }
+  .cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--steel, #333); padding-bottom: 12px; }
+  .cart-items { flex: 1; overflow-y: auto; margin: 20px 0; }
+  .cart-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px dashed var(--steel, #333); padding-bottom: 12px; }
+  .cart-footer { border-top: 1px solid var(--steel, #333); padding-top: 16px; }
+</style>
 </head>
 <body>
 
@@ -26,14 +40,34 @@
     <li><a href="#partners">Brands &amp; Partners</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
-    <!-- FREE NATIVE CART LINK -->
+    <!-- FREE LOCAL CART TOP NAV -->
     <li>
-      <a href="https://buy.stripe.com/4gMeVcasc40uggm2uU6Vq01" style="background:var(--steel); border:1px solid var(--paper-dim); color:var(--paper); padding:6px 14px; font-family:'JetBrains Mono',monospace; font-size:0.8rem; text-decoration:none; text-transform:uppercase;">
-        Checkout
-      </a>
+      <button onclick="toggleCart()" style="background:var(--steel,#333); border:1px solid var(--paper-dim,#888); color:var(--paper,#fff); padding:6px 14px; font-family:'JetBrains Mono',monospace; font-size:0.8rem; text-transform:uppercase; cursor:pointer;">
+        Cart (<span id="cart-count">0</span>)
+      </button>
     </li>
   </ul>
 </nav>
+
+<!-- FREE SLIDE-OUT CART DRAWER -->
+<div id="cart-overlay">
+  <div class="cart-header">
+    <h3 style="margin:0; font-family:'Oswald',sans-serif; text-transform:uppercase;">Your Cart</h3>
+    <button onclick="toggleCart()" style="background:none; border:none; color:var(--paper,#fff); font-size:1.5rem; cursor:pointer;">&times;</button>
+  </div>
+  <div class="cart-items" id="cart-items-list">
+    <p style="color:var(--paper-dim,#888); text-align:center; margin-top:40px;">Your cart is empty.</p>
+  </div>
+  <div class="cart-footer">
+    <div style="display:flex; justify-content:space-between; font-weight:700; margin-bottom:16px;">
+      <span>Total:</span>
+      <span id="cart-total">$0.00</span>
+    </div>
+    <a id="cart-checkout-btn" href="https://buy.stripe.com/4gMeVcasc40uggm2uU6Vq01" class="fit-btn" style="display:block; width:100%; padding:12px; background:var(--blue-bright,#00e5ff); color:#000; text-align:center; font-weight:700; text-decoration:none; text-transform:uppercase; box-sizing:border-box;">
+      Proceed to Checkout
+    </a>
+  </div>
+</div>
 
 <section class="hero" style="padding-top:6vh; border-top:none;">
   <div class="hero-left">
@@ -134,7 +168,7 @@
   </div>
   
   <div class="prod-grid">
-    <div class="prod-card" style="border: 1px solid var(--steel); padding: 20px; background: var(--panel-2);">
+    <div class="prod-card" style="border: 1px solid var(--steel); padding: 20px; background: var(--panel-2); max-width: 380px;">
       <div class="prod-thumb" style="background: var(--bg); height: 180px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--paper-dim);">
         [ TEST-SKU-001 ]
       </div>
@@ -144,9 +178,13 @@
         <p style="color:var(--paper-dim); font-size: 0.85rem; margin-bottom: 12px;">$1.00</p>
         
         <div style="display: flex; gap: 8px;">
-          <!-- FIXED STRIPE BUTTON WITH VISIBLE CONTRAST -->
-          <a href="https://buy.stripe.com/4gMeVcasc40uggm2uU6Vq01" class="fit-btn" style="flex: 1; padding: 12px; font-size: 0.85rem; font-weight: 700; background: var(--blue-bright); color: #000; text-align: center; text-decoration: none; display: block; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.5px;">
-            Buy It Now ($1.00)
+          <!-- ADD TO CART BUTTON (FREE LOCAL JS) -->
+          <button type="button" onclick="addToCart('TEST-SKU-001', 'Test Product - $1 Order Verification', 1.00)" class="fit-btn" style="flex: 1; padding: 10px; font-size: 0.75rem; background: var(--steel,#333); color: var(--paper,#fff); border: 1px solid var(--paper-dim,#888); cursor: pointer; text-transform: uppercase;">
+            Add to Cart
+          </button>
+          <!-- BUY IT NOW BUTTON (DIRECT STRIPE LINK) -->
+          <a href="https://buy.stripe.com/4gMeVcasc40uggm2uU6Vq01" class="fit-btn" style="flex: 1; padding: 10px; font-size: 0.75rem; background: var(--blue-bright,#00e5ff); color: #000; text-align: center; text-decoration: none; font-weight: 700; text-transform: uppercase; display: flex; align-items: center; justify-content: center;">
+            Buy It Now
           </a>
         </div>
       </div>
@@ -281,6 +319,63 @@
 </footer>
 
 <script>
+  // 100% FREE LOCAL JAVASCRIPT CART LOGIC
+  let cart = JSON.parse(localStorage.getItem('murnan_cart')) || [];
+
+  function saveCart() {
+    localStorage.setItem('murnan_cart', JSON.stringify(cart));
+    updateCartUI();
+  }
+
+  function addToCart(id, name, price) {
+    const existing = cart.find(item => item.id === id);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ id, name, price, qty: 1 });
+    }
+    saveCart();
+    document.getElementById('cart-overlay').classList.add('open');
+  }
+
+  function removeFromCart(id) {
+    cart = cart.filter(item => item.id !== id);
+    saveCart();
+  }
+
+  function toggleCart() {
+    document.getElementById('cart-overlay').classList.toggle('open');
+  }
+
+  function updateCartUI() {
+    const countEl = document.getElementById('cart-count');
+    const totalEl = document.getElementById('cart-total');
+    const listEl = document.getElementById('cart-items-list');
+
+    const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+    const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+    countEl.textContent = totalQty;
+    totalEl.textContent = `$${totalPrice.toFixed(2)}`;
+
+    if (cart.length === 0) {
+      listEl.innerHTML = '<p style="color:var(--paper-dim,#888); text-align:center; margin-top:40px;">Your cart is empty.</p>';
+    } else {
+      listEl.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <div>
+            <div style="font-weight:600; font-size:0.9rem;">${item.name}</div>
+            <div style="color:var(--paper-dim,#888); font-size:0.8rem;">Qty: ${item.qty} × $${item.price.toFixed(2)}</div>
+          </div>
+          <button onclick="removeFromCart('${item.id}')" style="background:none; border:none; color:#ff4444; cursor:pointer; font-size:0.8rem;">Remove</button>
+        </div>
+      `).join('');
+    }
+  }
+
+  // Initialize UI on page load
+  updateCartUI();
+
   const modelsByMake = {
     "Jeep": ["Grand Cherokee", "Wrangler", "Cherokee", "Gladiator", "Compass"],
     "Ford": ["F-150", "Mustang", "Explorer", "Bronco", "Escape"],
@@ -363,7 +458,7 @@
 <!-- KLAVIYO ONSITE TRACKING SCRIPT -->
 <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/VcGnuL/klaviyo.js?company_id=VcGnuL'></script>
 <script type="text/javascript"> 
-  !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}(); 
+  !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w:]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}(); 
 </script>
 
 </body>
