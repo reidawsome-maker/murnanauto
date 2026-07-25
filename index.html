@@ -211,17 +211,18 @@
     document.getElementById('fitNote').classList.add('show');
   }
 
+  // File paths updated to reference the root directory
   const categories = [
-    { name: "Engine", img: "cat-icons/icon-engine.png", subs: ["Pistons & Rings", "Connecting Rods", "Camshafts & Valvetrain", "Gaskets & Seals", "Engine Rebuild Kits", "Oil Pumps & Pans"] },
-    { name: "Exhaust", img: "cat-icons/icon-exhaust.png", subs: ["Headers & Manifolds", "Cat-Back Systems", "Downpipes & Midpipes", "Mufflers & Resonators", "Exhaust Tips", "Gaskets & Hardware"] },
-    { name: "Forced Induction & Nitrous", img: "cat-icons/icon-turbo.png", subs: ["Turbochargers", "Superchargers", "Intercoolers & Piping", "Nitrous Kits & Bottles", "Boost Controllers", "Wastegates & BOVs"] },
-    { name: "Fuel System", img: "cat-icons/icon-fuel.png", subs: ["Fuel Pumps", "Fuel Filters", "Fuel Injectors", "Fuel Lines & Fittings", "Fuel Rails", "Fuel System Kits"] },
-    { name: "Ignition & Electrical", img: "cat-icons/icon-ignition.png", subs: ["Ignition Coils", "Spark Plugs & Wires", "Wiring Harnesses", "Batteries & Charging", "ECUs & Tuners", "Sensors"] },
-    { name: "Suspension & Steering", img: "cat-icons/icon-suspension.png", subs: ["Coilovers & Shocks", "Control Arms", "Sway Bars & End Links", "Bushings & Mounts", "Steering Racks", "Tie Rods & Ball Joints"] },
-    { name: "Drivetrain", img: "cat-icons/icon-drivetrain.png", subs: ["Clutches & Flywheels", "Driveshafts", "Axles & CV Joints", "Differentials", "Transmission Mounts"] },
-    { name: "Brakes", img: "cat-icons/icon-brakes.png", subs: ["Brake Pads", "Rotors", "Calipers", "Brake Lines & Hardware", "Big Brake Kits"] },
-    { name: "Cooling", img: "cat-icons/icon-cooling.png", subs: ["Radiators", "Cooling Fans", "Oil Coolers", "Water Pumps", "Thermostats & Housings"] },
-    { name: "Shop Supplies & Merch", img: "cat-icons/icon-supplies.png", subs: ["Fluids & Chemicals", "Tools & Equipment", "Apparel", "Accessories"] }
+    { name: "Engine", img: "icon-engine.png", subs: ["Pistons & Rings", "Connecting Rods", "Camshafts & Valvetrain", "Gaskets & Seals", "Engine Rebuild Kits", "Oil Pumps & Pans"] },
+    { name: "Exhaust", img: "icon-exhaust.png", subs: ["Headers & Manifolds", "Cat-Back Systems", "Downpipes & Midpipes", "Mufflers & Resonators", "Exhaust Tips", "Gaskets & Hardware"] },
+    { name: "Forced Induction & Nitrous", img: "icon-turbo.png", subs: ["Turbochargers", "Superchargers", "Intercoolers & Piping", "Nitrous Kits & Bottles", "Boost Controllers", "Wastegates & BOVs"] },
+    { name: "Fuel System", img: "icon-fuel.png", subs: ["Fuel Pumps", "Fuel Filters", "Fuel Injectors", "Fuel Lines & Fittings", "Fuel Rails", "Fuel System Kits"] },
+    { name: "Ignition & Electrical", img: "icon-ignition.png", subs: ["Ignition Coils", "Spark Plugs & Wires", "Wiring Harnesses", "Batteries & Charging", "ECUs & Tuners", "Sensors"] },
+    { name: "Suspension & Steering", img: "icon-suspension.png", subs: ["Coilovers & Shocks", "Control Arms", "Sway Bars & End Links", "Bushings & Mounts", "Steering Racks", "Tie Rods & Ball Joints"] },
+    { name: "Drivetrain", img: "icon-drivetrain.png", subs: ["Clutches & Flywheels", "Driveshafts", "Axles & CV Joints", "Differentials", "Transmission Mounts"] },
+    { name: "Brakes", img: "icon-brakes.png", subs: ["Brake Pads", "Rotors", "Calipers", "Brake Lines & Hardware", "Big Brake Kits"] },
+    { name: "Cooling", img: "icon-cooling.png", subs: ["Radiators", "Cooling Fans", "Oil Coolers", "Water Pumps", "Thermostats & Housings"] },
+    { name: "Shop Supplies & Merch", img: "icon-supplies.png", subs: ["Fluids & Chemicals", "Tools & Equipment", "Apparel", "Accessories"] }
   ];
 
   const catGridLg = document.getElementById('catGridLg');
