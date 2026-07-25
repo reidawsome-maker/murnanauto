@@ -40,30 +40,6 @@
   </div>
 </section>
 
-<!-- BRAND TICKER BAR -->
-<div class="brand-ticker-bar">
-  <div class="brand-ticker-track">
-    <span class="brand-item">Performance Parts <span class="dot">•</span></span>
-    <span class="brand-item">Shop Supplies <span class="dot">•</span></span>
-    <span class="brand-item">Engine Rebuild Kits <span class="dot">•</span></span>
-    <span class="brand-item">Forced Induction <span class="dot">•</span></span>
-    <span class="brand-item">Suspension &amp; Steering <span class="dot">•</span></span>
-    <span class="brand-item">Ignition &amp; Tuning <span class="dot">•</span></span>
-    <span class="brand-item">Braking Systems <span class="dot">•</span></span>
-    <span class="brand-item">Branded Apparel &amp; Gear <span class="dot">•</span></span>
-    
-    <!-- Duplicated track for continuous seamless looping -->
-    <span class="brand-item">Performance Parts <span class="dot">•</span></span>
-    <span class="brand-item">Shop Supplies <span class="dot">•</span></span>
-    <span class="brand-item">Engine Rebuild Kits <span class="dot">•</span></span>
-    <span class="brand-item">Forced Induction <span class="dot">•</span></span>
-    <span class="brand-item">Suspension &amp; Steering <span class="dot">•</span></span>
-    <span class="brand-item">Ignition &amp; Tuning <span class="dot">•</span></span>
-    <span class="brand-item">Braking Systems <span class="dot">•</span></span>
-    <span class="brand-item">Branded Apparel &amp; Gear <span class="dot">•</span></span>
-  </div>
-</div>
-
 <section id="fitment">
   <div class="section-head">
     <h2>Find parts for your vehicle</h2>
@@ -126,6 +102,45 @@
     </div>
   </div>
 </section>
+
+<!-- AUTHORIZED DEALER SECTION -->
+<section id="dealer-verify" style="background: var(--panel-2);">
+  <div class="section-head">
+    <h2>Authorized Partner Network</h2>
+    <span class="sub">VERIFIED DISTRIBUTOR</span>
+  </div>
+
+  <div class="dealer-card-wrap">
+    <div class="dealer-card" onclick="openDealerModal()">
+      <div class="dealer-badge-tag">OFFICIAL DEALER</div>
+      <h3>FLF RACING SUPPLY</h3>
+      <p>Authorized Retailer &amp; Direct Warehouse Partner</p>
+      <span class="verify-link">Click to View Verification Certificate &rarr;</span>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHORIZED DEALER MODAL -->
+<div id="dealerModal" class="dealer-modal" onclick="closeDealerModal(event)">
+  <div class="dealer-modal-content">
+    <button class="modal-close" onclick="closeDealerModal(event)">&times;</button>
+    <div class="cert-border">
+      <div class="cert-header">
+        <span class="cert-status">✓ VERIFIED ACTIVE DEALER</span>
+        <h2>FLF RACING SUPPLY</h2>
+        <p class="mono">PARTNER ID: FLF-MN-2026</p>
+      </div>
+      <hr style="border-color: var(--steel); margin: 20px 0;">
+      <p style="color: var(--paper-dim); font-size: 0.9rem;">
+        Murnan Auto is an officially recognized Tier Dealer for <strong>FLF Racing Supply</strong> components. All AN fittings, hoses, and high-performance plumbing hardware sold through Murnan Auto are sourced directly from FLF Racing Supply with full factory quality backing and direct warehouse fulfillment.
+      </p>
+      <div class="cert-footer">
+        <span>AUTHENTICITY GUARANTEED</span>
+        <span>MURNANAUTO.STORE</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <section id="about">
   <div class="about-grid">
@@ -274,6 +289,17 @@
     subcatPanel.classList.remove('open');
     document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
   });
+
+  // Modal controls
+  function openDealerModal() {
+    document.getElementById('dealerModal').classList.add('show');
+  }
+
+  function closeDealerModal(e) {
+    if (e.target.id === 'dealerModal' || e.target.classList.contains('modal-close')) {
+      document.getElementById('dealerModal').classList.remove('show');
+    }
+  }
 </script>
 
 </body>
