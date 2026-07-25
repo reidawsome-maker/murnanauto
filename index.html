@@ -35,11 +35,9 @@
     <h1>Auto parts, <em>shop supplies</em> &amp; merch.</h1>
     <p>Murnan Auto is a premier supplier of automotive parts, shop supplies, and branded gear — built by people who work on cars, for people who work on cars.</p>
   </div>
-  
-  <!-- HERO AUTHORIZED DEALER CAROUSEL -->
+
+  <!-- HERO AUTHORIZED DEALER CARD (FLF only) -->
   <div class="stock-panel dealer-hero-card" onclick="openActiveDealerModal()" style="cursor: pointer;">
-    
-    <!-- Slide 1: FLF -->
     <div class="dealer-slide active" id="slide-flf">
       <div class="dealer-badge-tag">OFFICIAL DEALER</div>
       <div class="row" style="border-bottom: none; padding-bottom: 4px;">
@@ -49,24 +47,8 @@
         <span style="font-size: 0.75rem; color: var(--paper-dim);">Authorized Retail Partner</span>
       </div>
     </div>
-
-    <!-- Slide 2: MPR -->
-    <div class="dealer-slide" id="slide-mpr">
-      <div class="dealer-badge-tag">OFFICIAL DEALER</div>
-      <div class="row" style="border-bottom: none; padding-bottom: 4px;">
-        <span style="font-family:'Oswald',sans-serif; font-size: 1.1rem; color: var(--paper); text-transform: uppercase;">MAXPEEDINGRODS</span>
-      </div>
-      <div class="row" style="padding-top: 0;">
-        <span style="font-size: 0.75rem; color: var(--paper-dim);">Turbo &amp; Intercooler Partner</span>
-      </div>
-    </div>
-
     <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
       <span class="verify-link" style="font-size: 0.75rem;">View Verification Cert &rarr;</span>
-      <div class="slide-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-      </div>
     </div>
   </div>
 </section>
@@ -84,28 +66,6 @@
       <hr style="border-color: var(--steel); margin: 20px 0;">
       <p style="color: var(--paper-dim); font-size: 0.9rem;">
         Murnan Auto is an officially recognized Dealer for <strong>Finish Line Factory (FLF)</strong> components. All AN fittings, hoses, and high-performance plumbing hardware sold through Murnan Auto are sourced directly from Finish Line Factory with full factory quality backing and direct warehouse fulfillment.
-      </p>
-      <div class="cert-footer">
-        <span>AUTHENTICITY GUARANTEED</span>
-        <span>MURNANAUTO.STORE</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- AUTHORIZED DEALER MODAL (MPR) -->
-<div id="modal-mpr" class="dealer-modal" onclick="closeDealerModal(event, 'modal-mpr')">
-  <div class="dealer-modal-content">
-    <button class="modal-close" onclick="closeDealerModal(event, 'modal-mpr')">&times;</button>
-    <div class="cert-border">
-      <div class="cert-header">
-        <span class="cert-status">✓ VERIFIED ACTIVE DEALER</span>
-        <h2>MAXPEEDINGRODS</h2>
-        <p class="mono">PARTNER ID: MPR-MN-2026</p>
-      </div>
-      <hr style="border-color: var(--steel); margin: 20px 0;">
-      <p style="color: var(--paper-dim); font-size: 0.9rem;">
-        Murnan Auto is an officially recognized partner for <strong>Maxpeedingrods</strong> forced induction components. Maxpeedingrods exclusively supplies our line of turbochargers and intercoolers, carrying direct manufacturer backing and factory-direct support.
       </p>
       <div class="cert-footer">
         <span>AUTHENTICITY GUARANTEED</span>
@@ -188,9 +148,7 @@
     Murnan Auto holds direct authorized dealer relationships with leading performance manufacturers, offering full factory warranties and direct warehouse fulfillment.
   </p>
 
-  <!-- OFFICIAL BRAND CARDS -->
   <div class="brand-display-grid">
-    
     <!-- Finish Line Factory -->
     <div class="brand-display-card" onclick="document.getElementById('modal-flf').classList.add('show')">
       <div class="brand-img-wrap">
@@ -203,20 +161,6 @@
         <span class="verify-link">Verify Credentials &rarr;</span>
       </div>
     </div>
-
-    <!-- Maxpeedingrods -->
-    <div class="brand-display-card" onclick="document.getElementById('modal-mpr').classList.add('show')">
-      <div class="brand-img-wrap white-bg">
-        <img src="maxpeeding.png" alt="Maxpeedingrods Authorized Partner">
-      </div>
-      <div class="brand-card-info">
-        <span class="dealer-badge-tag">OFFICIAL DEALER</span>
-        <h3>Maxpeedingrods</h3>
-        <p>Exclusive supply partner for our turbochargers, intercoolers, and forced induction components.</p>
-        <span class="verify-link">Verify Credentials &rarr;</span>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -367,29 +311,9 @@
     document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
   });
 
-  // Carousel & Modal Logic
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.dealer-slide');
-  const dots = document.querySelectorAll('.slide-dots .dot');
-
-  function rotateDealerSlides() {
-    slides[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
-    
-    currentSlide = (currentSlide + 1) % slides.length;
-    
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
-  }
-
-  setInterval(rotateDealerSlides, 5000);
-
+  // Modal logic (single dealer, no carousel rotation needed)
   function openActiveDealerModal() {
-    if (currentSlide === 0) {
-      document.getElementById('modal-flf').classList.add('show');
-    } else {
-      document.getElementById('modal-mpr').classList.add('show');
-    }
+    document.getElementById('modal-flf').classList.add('show');
   }
 
   function closeDealerModal(e, modalId) {
