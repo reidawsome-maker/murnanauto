@@ -10,12 +10,6 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="favicon-180.png">
-
-<!-- SNIPCART INTEGRATION -->
-<link rel="preconnect" href="https://app.snipcart.com">
-<link rel="preconnect" href="https://cdn.snipcart.com">
-<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
-<script async src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
 </head>
 <body>
 
@@ -32,12 +26,6 @@
     <li><a href="#partners">Brands &amp; Partners</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
-    <!-- LIVE SNIPCART TRIGGER -->
-    <li>
-      <button class="snipcart-checkout" style="background:var(--steel); border:1px solid var(--paper-dim); color:var(--paper); padding:4px 12px; font-family:'JetBrains Mono',monospace; font-size:0.8rem; cursor:pointer; text-transform:uppercase;">
-        Cart (<span class="snipcart-items-count">0</span>)
-      </button>
-    </li>
   </ul>
 </nav>
 
@@ -139,7 +127,6 @@
     <span class="sub">IN STOCK & READY TO SHIP</span>
   </div>
   
-  <!-- PRODUCT GRID WITH ADD TO CART & BUY IT NOW -->
   <div class="prod-grid">
     <div class="prod-card" style="border: 1px solid var(--steel); padding: 20px; background: var(--panel-2);">
       <div class="prod-thumb" style="background: var(--bg); height: 180px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--paper-dim);">
@@ -151,26 +138,7 @@
         <p style="color:var(--paper-dim); font-size: 0.85rem; margin-bottom: 12px;">$14.99</p>
         
         <div style="display: flex; gap: 8px;">
-          <!-- ADD TO CART BUTTON -->
-          <button class="snipcart-add-item fit-btn"
-            style="flex: 1; padding: 10px; font-size: 0.8rem;"
-            data-item-id="FLF-AN10-BLK"
-            data-item-name="10AN Straight Hose End Fitting - Black"
-            data-item-price="14.99"
-            data-item-url="https://murnanauto.store"
-            data-item-description="Finish Line Factory High Performance 10AN Hose End Fitting">
-            Add to Cart
-          </button>
-          
-          <!-- BUY IT NOW BUTTON -->
-          <button class="snipcart-add-item fit-btn"
-            style="flex: 1; padding: 10px; font-size: 0.8rem; background: var(--paper); color: var(--bg);"
-            data-item-id="FLF-AN10-BLK"
-            data-item-name="10AN Straight Hose End Fitting - Black"
-            data-item-price="14.99"
-            data-item-url="https://murnanauto.store"
-            data-item-description="Finish Line Factory High Performance 10AN Hose End Fitting"
-            data-item-buy-now="true">
+          <button class="fit-btn" style="flex: 1; padding: 10px; font-size: 0.8rem; background: var(--paper); color: var(--bg);">
             Buy It Now
           </button>
         </div>
@@ -390,10 +358,6 @@
 <script type="text/javascript"> 
   !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}(); 
 </script>
-
-<!-- SNIPCART INITIALIZATION WRAPPER -->
-<div hidden id="snipcart" data-api-key="OGFlZGJmZjYtYmJlMy00N2MzLTg0ZDQtNDczM2Q5MGJlMWQ4NjM5MjA2MTgwNTM4NzQzNDAw
-"></div>
 
 </body>
 </html>
