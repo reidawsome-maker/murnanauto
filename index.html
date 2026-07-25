@@ -10,6 +10,12 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="favicon-180.png">
+
+<!-- SNIPCART INTEGRATION -->
+<link rel="preconnect" href="https://app.snipcart.com">
+<link rel="preconnect" href="https://cdn.snipcart.com">
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
+<script async src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
 </head>
 <body>
 
@@ -20,12 +26,18 @@
 
 <nav>
   <div class="logo">MURNAN <span>AUTO</span></div>
-  <ul class="cat-nav" style="display:flex;">
+  <ul class="cat-nav" style="display:flex; align-items:center;">
     <li><a href="#fitment">Vehicle Fit</a></li>
     <li><a href="#shop">Shop</a></li>
     <li><a href="#partners">Brands &amp; Partners</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
+    <!-- LIVE SNIPCART TRIGGER -->
+    <li>
+      <button class="snipcart-checkout" style="background:var(--steel); border:1px solid var(--paper-dim); color:var(--paper); padding:4px 12px; font-family:'JetBrains Mono',monospace; font-size:0.8rem; cursor:pointer; text-transform:uppercase;">
+        Cart (<span class="snipcart-items-count">0</span>)
+      </button>
+    </li>
   </ul>
 </nav>
 
@@ -123,16 +135,45 @@
   </div>
 
   <div class="section-head" style="margin-top:56px;">
-    <h2>Featured</h2>
-    <span class="sub">COMING SOON</span>
+    <h2>Featured Products</h2>
+    <span class="sub">IN STOCK & READY TO SHIP</span>
   </div>
+  
+  <!-- PRODUCT GRID WITH ADD TO CART & BUY IT NOW -->
   <div class="prod-grid">
-    <div class="prod-card">
-      <div class="prod-thumb">CATALOG INCOMING</div>
-      <div class="prod-info">
-        <div class="sku">STATUS — PRE-LAUNCH</div>
-        <h3>Featured Inventory Launching Soon</h3>
-        <p style="color:var(--paper-dim); font-size: 0.85rem; margin-top: 6px;">We are currently setting up live catalog listings. Check back shortly!</p>
+    <div class="prod-card" style="border: 1px solid var(--steel); padding: 20px; background: var(--panel-2);">
+      <div class="prod-thumb" style="background: var(--bg); height: 180px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--paper-dim);">
+        [ FLF-AN10-BLK ]
+      </div>
+      <div class="prod-info" style="margin-top: 16px;">
+        <div class="sku" style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--blue-bright);">FINISH LINE FACTORY</div>
+        <h3 style="font-size: 1.1rem; margin: 6px 0;">10AN Straight Hose End Fitting - Black</h3>
+        <p style="color:var(--paper-dim); font-size: 0.85rem; margin-bottom: 12px;">$14.99</p>
+        
+        <div style="display: flex; gap: 8px;">
+          <!-- ADD TO CART BUTTON -->
+          <button class="snipcart-add-item fit-btn"
+            style="flex: 1; padding: 10px; font-size: 0.8rem;"
+            data-item-id="FLF-AN10-BLK"
+            data-item-name="10AN Straight Hose End Fitting - Black"
+            data-item-price="14.99"
+            data-item-url="https://murnanauto.store"
+            data-item-description="Finish Line Factory High Performance 10AN Hose End Fitting">
+            Add to Cart
+          </button>
+          
+          <!-- BUY IT NOW BUTTON -->
+          <button class="snipcart-add-item fit-btn"
+            style="flex: 1; padding: 10px; font-size: 0.8rem; background: var(--paper); color: var(--bg);"
+            data-item-id="FLF-AN10-BLK"
+            data-item-name="10AN Straight Hose End Fitting - Black"
+            data-item-price="14.99"
+            data-item-url="https://murnanauto.store"
+            data-item-description="Finish Line Factory High Performance 10AN Hose End Fitting"
+            data-item-buy-now="true">
+            Buy It Now
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -247,8 +288,8 @@
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; color: var(--paper-dim); font-size: 0.9rem; line-height: 1.6;">
       <div>
         <h4 style="color: var(--paper); font-family: 'Oswald', sans-serif; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 8px;">Business Hours</h4>
-        <p><strong>Monday – Friday:</strong> 8:00 AM – 5:00 PM</p>
-        <p style="margin-top: 8px;">Orders placed after 5:00 PM or over the weekend will be processed and fulfilled on the next business day.</p>
+        <p><strong>Monday – Friday:</strong> 8:00 AM – 5:00 PM CST</p>
+        <p style="margin-top: 8px;">Orders placed after 5:00 PM CST or over the weekend will be processed and fulfilled on the next business day.</p>
       </div>
       <div>
         <h4 style="color: var(--paper); font-family: 'Oswald', sans-serif; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 8px;">Observed Holidays</h4>
@@ -332,7 +373,7 @@
     document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
   });
 
-  // Modal logic (single dealer, no carousel rotation needed)
+  // Modal logic
   function openActiveDealerModal() {
     document.getElementById('modal-flf').classList.add('show');
   }
@@ -347,9 +388,11 @@
 <!-- KLAVIYO ONSITE TRACKING SCRIPT -->
 <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/VcGnuL/klaviyo.js?company_id=VcGnuL'></script>
 <script type="text/javascript"> 
-  //Initialize Klaviyo object on page load
-  !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w:]o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}(); 
+  !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}(); 
 </script>
+
+<!-- SNIPCART INITIALIZATION WRAPPER -->
+<div hidden id="snipcart" data-api-key="YOUR_SNIPCART_PUBLIC_KEY"></div>
 
 </body>
 </html>
