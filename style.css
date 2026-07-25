@@ -517,3 +517,20 @@ footer a{ color:var(--blue-bright); text-decoration:none; }
   display: block !important;
   margin: 0 auto !important;
 }
+/* STOP CONTAINER & LOGO FROM STRETCHING */
+.brand-display-card {
+  align-self: start !important; /* Prevents card from stretching to match row height */
+}
+
+.brand-img-wrap {
+  flex: 0 0 auto !important;   /* Prevents the header block from expanding vertically */
+  height: 120px !important;
+}
+
+.brand-img-wrap img {
+  height: auto !important;     /* Locks original natural aspect ratio */
+  max-height: 60px !important; /* Cap height so horizontal logos don't distort */
+  width: auto !important;
+  max-width: 80% !important;
+  align-self: center !important;
+}
