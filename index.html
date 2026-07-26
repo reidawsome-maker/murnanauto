@@ -95,9 +95,9 @@
       <span>Total:</span>
       <span id="cart-total">$0.00</span>
     </div>
-    <a id="cart-checkout-btn" href="https://buy.stripe.com/4gMeVcasc40uggm2uU6Vq01" class="fit-btn" style="display:block; width:100%; padding:12px; background:var(--blue-bright,#00e5ff); color:#000; text-align:center; font-weight:700; text-decoration:none; text-transform:uppercase; box-sizing:border-box;">
+    <button id="cart-checkout-btn" onclick="processCheckout()" class="fit-btn" style="display:block; width:100%; padding:12px; background:var(--blue-bright,#00e5ff); color:#000; text-align:center; font-weight:700; text-decoration:none; text-transform:uppercase; box-sizing:border-box; border:none; cursor:pointer;">
       Proceed to Checkout
-    </a>
+    </button>
   </div>
 </div>
 
@@ -228,12 +228,12 @@
 
   <div class="section-head" style="margin-top:56px;">
     <h2>Featured Products</h2>
-    <span class="sub">CATALOG INCOMING</span>
+    <span class="sub">LIVE BACKEND CATALOG</span>
   </div>
   
-  <div style="border: 1px dashed var(--steel); padding: 40px 20px; background: var(--panel-2); text-align: center; border-radius: 4px;">
-    <p style="color: var(--paper-dim); margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">
-      Featured catalog items are being updated. Check back soon or contact support for direct orders.
+  <div id="featured-products-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+    <p style="color: var(--paper-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">
+      Loading live inventory from server...
     </p>
   </div>
 </section>
@@ -365,20 +365,86 @@
 </footer>
 
 <script>
-  // 100% FREE LOCAL JAVASCRIPT CART LOGIC
+  // 🔗 PASTE YOUR LIVE RENDER SERVER URL HERE:
+  const API_URL = 'https://murnan-auto-api.onrender.com';
+
+  let inventory = [];
   let cart = JSON.parse(localStorage.getItem('murnan_cart')) || [];
+
+  // 1. FETCH LIVE INVENTORY FROM BACKEND
+  async function fetchInventory() {
+    try {
+      const res = await fetch(`${API_URL}/api/products`);
+      if (res.ok) {
+        inventory = await res.json();
+        renderFeaturedProducts();
+      } else {
+        throw new Error("Failed to load inventory from backend");
+      }
+    } catch (err) {
+      console.error(err);
+      const container = document.getElementById('featured-products-container');
+      if (container) {
+        container.innerHTML = `
+          <div style="grid-column: 1/-1; border: 1px dashed var(--steel); padding: 40px 20px; background: var(--panel-2); text-align: center;">
+            <p style="color: var(--paper-dim); margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">
+              Featured catalog items are being updated. Check back soon or contact support for direct orders.
+            </p>
+          </div>`;
+      }
+    }
+  }
+
+  // 2. RENDER LIVE INVENTORY TO FRONTEND
+  function renderFeaturedProducts() {
+    const container = document.getElementById('featured-products-container');
+    if (!container) return;
+
+    if (inventory.length === 0) {
+      container.innerHTML = `<p style="color: var(--paper-dim); font-family: 'JetBrains Mono', monospace;">No products currently available.</p>`;
+      return;
+    }
+
+    container.innerHTML = inventory.map(item => `
+      <div style="background: var(--panel-2); border: 1px solid var(--steel); padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--blue-bright,#00e5ff);">${item.vendorSku || item.id}</span>
+          <h4 style="font-family:'Oswald',sans-serif; margin: 8px 0; color:var(--paper,#fff); font-size:1.1rem;">${item.name}</h4>
+          <div style="font-weight:700; color:var(--paper,#fff); font-size:1.2rem; margin-bottom: 8px;">$${Number(item.price).toFixed(2)}</div>
+          <div style="font-size:0.8rem; color:${item.stock > 0 ? '#00ff88' : '#ff4444'}; margin-bottom: 16px;">
+            ${item.stock > 0 ? `In Stock (${item.stock} left)` : 'Out of Stock'}
+          </div>
+        </div>
+        <button onclick="addToCart('${item.id}')" ${item.stock <= 0 ? 'disabled' : ''} style="width:100%; padding:10px; background:${item.stock > 0 ? 'var(--steel,#333)' : '#222'}; color:${item.stock > 0 ? '#fff' : '#666'}; border:1px solid var(--paper-dim,#888); font-family:'JetBrains Mono',monospace; font-size:0.85rem; text-transform:uppercase; cursor:${item.stock > 0 ? 'pointer' : 'not-allowed'};">
+          ${item.stock > 0 ? 'Add To Cart' : 'Out of Stock'}
+        </button>
+      </div>
+    `).join('');
+  }
 
   function saveCart() {
     localStorage.setItem('murnan_cart', JSON.stringify(cart));
     updateCartUI();
   }
 
-  function addToCart(id, name, price) {
+  function addToCart(id) {
+    const product = inventory.find(p => p.id === id);
+    if (!product) return;
+
+    if (product.stock <= 0) {
+      alert("This item is currently out of stock.");
+      return;
+    }
+
     const existing = cart.find(item => item.id === id);
     if (existing) {
+      if (existing.qty + 1 > product.stock) {
+        alert(`Only ${product.stock} units available in live inventory.`);
+        return;
+      }
       existing.qty += 1;
     } else {
-      cart.push({ id, name, price, qty: 1 });
+      cart.push({ id: product.id, name: product.name, price: product.price, qty: 1 });
     }
     saveCart();
     document.getElementById('cart-overlay').classList.add('open');
@@ -401,27 +467,59 @@
     const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
     const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
 
-    countEl.textContent = totalQty;
-    totalEl.textContent = `$${totalPrice.toFixed(2)}`;
+    if (countEl) countEl.textContent = totalQty;
+    if (totalEl) totalEl.textContent = `$${totalPrice.toFixed(2)}`;
 
-    if (cart.length === 0) {
-      listEl.innerHTML = '<p style="color:var(--paper-dim,#888); text-align:center; margin-top:40px;">Your cart is empty.</p>';
-    } else {
-      listEl.innerHTML = cart.map(item => `
-        <div class="cart-item">
-          <div>
-            <div style="font-weight:600; font-size:0.9rem;">${item.name}</div>
-            <div style="color:var(--paper-dim,#888); font-size:0.8rem;">Qty: ${item.qty} × $${item.price.toFixed(2)}</div>
+    if (listEl) {
+      if (cart.length === 0) {
+        listEl.innerHTML = '<p style="color:var(--paper-dim,#888); text-align:center; margin-top:40px;">Your cart is empty.</p>';
+      } else {
+        listEl.innerHTML = cart.map(item => `
+          <div class="cart-item">
+            <div>
+              <div style="font-weight:600; font-size:0.9rem;">${item.name}</div>
+              <div style="color:var(--paper-dim,#888); font-size:0.8rem;">Qty: ${item.qty} × $${Number(item.price).toFixed(2)}</div>
+            </div>
+            <button onclick="removeFromCart('${item.id}')" style="background:none; border:none; color:#ff4444; cursor:pointer; font-size:0.8rem;">Remove</button>
           </div>
-          <button onclick="removeFromCart('${item.id}')" style="background:none; border:none; color:#ff4444; cursor:pointer; font-size:0.8rem;">Remove</button>
-        </div>
-      `).join('');
+        `).join('');
+      }
     }
   }
 
-  // Initialize UI on page load
-  updateCartUI();
+  // 3. PROCESS CHECKOUT VIA RENDER BACKEND
+  async function processCheckout() {
+    if (cart.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
 
+    const checkoutBtn = document.getElementById('cart-checkout-btn');
+    if (checkoutBtn) checkoutBtn.textContent = "Loading Checkout...";
+
+    try {
+      const response = await fetch(`${API_URL}/api/create-checkout-session`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: cart })
+      });
+
+      const data = await response.json();
+
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        alert("Checkout error: " + (data.error || "Something went wrong"));
+        if (checkoutBtn) checkoutBtn.textContent = "Proceed to Checkout";
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Could not connect to checkout server.");
+      if (checkoutBtn) checkoutBtn.textContent = "Proceed to Checkout";
+    }
+  }
+
+  // Vehicle Fitment dropdown helper
   const modelsByMake = {
     "Jeep": ["Grand Cherokee", "Wrangler", "Cherokee", "Gladiator", "Compass"],
     "Ford": ["F-150", "Mustang", "Explorer", "Bronco", "Escape"],
@@ -430,6 +528,7 @@
     "Toyota": ["Tacoma", "Camry", "4Runner", "Tundra", "RAV4"],
     "Other": ["Other"]
   };
+
   function updateModels(){
     const make = document.getElementById('mk').value;
     const modelSelect = document.getElementById('md');
@@ -445,10 +544,12 @@
       modelSelect.appendChild(o);
     });
   }
+
   function showFitNote(){
     document.getElementById('fitNote').classList.add('show');
   }
 
+  // UI Categories Navigation
   const categories = [
     { name: "Engine", img: "engine.jpg", subs: ["Pistons & Rings", "Connecting Rods", "Camshafts & Valvetrain", "Gaskets & Seals", "Engine Rebuild Kits", "Oil Pumps & Pans"] },
     { name: "Exhaust", img: "Exhaust.jpg", subs: ["Headers & Manifolds", "Cat-Back Systems", "Downpipes & Midpipes", "Mufflers & Resonators", "Exhaust Tips", "Gaskets & Hardware"] },
@@ -499,6 +600,10 @@
       document.getElementById(modalId).classList.remove('show');
     }
   }
+
+  // Initialize UI & Fetch Inventory on Load
+  updateCartUI();
+  fetchInventory();
 </script>
 
 <!-- KLAVIYO ONSITE TRACKING SCRIPT -->
