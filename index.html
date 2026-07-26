@@ -23,6 +23,38 @@
   .cart-items { flex: 1; overflow-y: auto; margin: 20px 0; }
   .cart-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px dashed var(--steel, #333); padding-bottom: 12px; }
   .cart-footer { border-top: 1px solid var(--steel, #333); padding-top: 16px; }
+
+  /* Trust Bar Styles */
+  .trust-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    background: var(--panel-2, #181b20);
+    border-top: 1px solid var(--steel, #333);
+    border-bottom: 1px solid var(--steel, #333);
+    padding: 20px 5vw;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .trust-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  .trust-text h4 {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    color: var(--paper, #fff);
+  }
+  .trust-text p {
+    margin: 2px 0 0 0;
+    font-size: 0.78rem;
+    color: var(--paper-dim, #888);
+  }
 </style>
 </head>
 <body>
@@ -92,6 +124,38 @@
     </div>
   </div>
 </section>
+
+<!-- HOMEPAGE TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <span class="trust-icon">🛠️</span>
+    <div class="trust-text">
+      <h4>Hands-On Standard</h4>
+      <p>Tested &amp; vetted by actual wrench-turners.</p>
+    </div>
+  </div>
+  <div class="trust-item">
+    <span class="trust-icon">🇺🇸</span>
+    <div class="trust-text">
+      <h4>U.S. Based Support</h4>
+      <p>Direct communication — no corporate runaround.</p>
+    </div>
+  </div>
+  <div class="trust-item">
+    <span class="trust-icon">💬</span>
+    <div class="trust-text">
+      <h4>Direct Contact</h4>
+      <p>Email us anytime for fitment help before ordering.</p>
+    </div>
+  </div>
+  <div class="trust-item">
+    <span class="trust-icon">📦</span>
+    <div class="trust-text">
+      <h4>Direct Fulfillment</h4>
+      <p>Sourced straight from factory warehouse partners.</p>
+    </div>
+  </div>
+</div>
 
 <!-- AUTHORIZED DEALER MODAL (FLF) -->
 <div id="modal-flf" class="dealer-modal" onclick="closeDealerModal(event, 'modal-flf')">
@@ -227,8 +291,8 @@
     </div>
     <div class="values">
       <div class="row"><span class="num">01</span><div><h4>Hands-on standard</h4><p>Sourced and vetted by people who actually work on cars.</p></div></div>
-      <div class="row"><span class="num">02</span><div><h4>U.S. based</h4><p>Direct and easy to reach — no runaround.</p></div></div>
-      <div class="row"><span class="num">03</span><div><h4>Built to grow</h4><p>Expanding catalog and actively pursuing distributor partnerships.</p></div></div>
+      <div class="row"><span class="num">02</span><div><h4>U.S. based &amp; contactable</h4><p>Direct human support — get real fitment answers before you spend a dime.</p></div></div>
+      <div class="row"><span class="num">03</span><div><h4>Curated performance</h4><p>No endless sea of junk parts — only vetted components built to perform.</p></div></div>
     </div>
   </div>
 </section>
