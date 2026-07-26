@@ -141,7 +141,25 @@
         </button>
         <div class="product-desc">
           <p>Category: ${product.category || 'Uncategorized'}</p>
-          <p style="margin-top:10px;">Fitment and full spec details available soon. Questions about compatibility? <a href="mailto:support@murnanauto.store" style="color:var(--blue-bright);">Email us</a> before ordering.</p>
+          ${product.description ? `<p style="margin-top:14px; color:var(--paper);">${product.description}</p>` : ''}
+          ${product.specs ? `
+            <div style="margin-top:20px; background:var(--panel); border:1px solid var(--steel); border-radius:8px; padding:20px;">
+              <div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--blue-bright); text-transform:uppercase; margin-bottom:10px;">Specs</div>
+              <ul style="list-style:none; padding:0; margin:0; display:grid; gap:6px;">
+                ${product.specs.map(s => `<li style="font-size:0.88rem; color:var(--paper-dim);">${s}</li>`).join('')}
+              </ul>
+            </div>
+          ` : ''}
+          ${product.recommendation ? `
+            <div style="margin-top:16px; background:rgba(47,111,232,0.1); border:1px solid var(--blue-dim); border-radius:8px; padding:20px;">
+              <div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--blue-bright); text-transform:uppercase; margin-bottom:10px;">We Recommend This For</div>
+              <p style="font-size:0.9rem; color:var(--paper);">${product.recommendation}</p>
+            </div>
+          ` : ''}
+          ${product.math_note ? `
+            <p style="margin-top:14px; font-size:0.82rem; color:var(--paper-dim); font-style:italic;">${product.math_note}</p>
+          ` : ''}
+          <p style="margin-top:18px;">Questions about compatibility with your specific engine? <a href="mailto:support@murnanauto.store" style="color:var(--blue-bright);">Email us</a> before ordering — these are general sizing guidelines, not a guarantee of fitment for every build.</p>
         </div>
       </div>
     `;
