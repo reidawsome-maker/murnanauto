@@ -11,7 +11,6 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="favicon-180.png">
 <style>
-  /* Local Cart Drawer Styles */
   #cart-overlay {
     position: fixed; top: 0; right: -400px; width: 380px; height: 100vh;
     background: var(--panel-2, #181b20); border-left: 1px solid var(--steel, #333);
@@ -24,43 +23,27 @@
   .cart-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px dashed var(--steel, #333); padding-bottom: 12px; }
   .cart-footer { border-top: 1px solid var(--steel, #333); padding-top: 16px; }
 
-  /* Trust Bar Styles */
   .trust-bar {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-    background: var(--panel-2, #181b20);
-    border-top: 1px solid var(--steel, #333);
-    border-bottom: 1px solid var(--steel, #333);
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;
+    background: var(--panel-2, #181b20); border-top: 1px solid var(--steel, #333); border-bottom: 1px solid var(--steel, #333);
     padding: 20px 5vw;
   }
-  .trust-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .trust-icon {
-    font-size: 1.5rem;
-    line-height: 1;
-  }
-  .trust-text h4 {
-    margin: 0;
-    font-family: 'Oswald', sans-serif;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    color: var(--paper, #fff);
-  }
-  .trust-text p {
-    margin: 2px 0 0 0;
-    font-size: 0.78rem;
-    color: var(--paper-dim, #888);
-  }
+  .trust-item { display: flex; align-items: center; gap: 12px; }
+  .trust-icon { font-size: 1.5rem; line-height: 1; }
+  .trust-text h4 { margin: 0; font-family: 'Oswald', sans-serif; font-size: 0.95rem; text-transform: uppercase; color: var(--paper, #fff); }
+  .trust-text p { margin: 2px 0 0 0; font-size: 0.78rem; color: var(--paper-dim, #888); }
 
-  .subcat-pill.active-pill {
-    background: var(--blue-bright, #00e5ff) !important;
-    color: #000 !important;
-    font-weight: 700;
-  }
+  .subcat-pill.active-pill { background: var(--blue-bright) !important; color: #000 !important; font-weight: 700; }
+  .subcat-pill { cursor: pointer; }
+
+  #category-products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; width: 100%; }
+  .live-prod-card { background: var(--panel-2); border: 1px solid var(--steel); padding: 16px; display: flex; flex-direction: column; justify-content: space-between; border-radius: 6px; }
+  .live-prod-sku { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--blue-bright); }
+  .live-prod-name { font-family: 'Oswald', sans-serif; margin: 6px 0; color: var(--paper); font-size: 1rem; text-transform: none; letter-spacing: 0; }
+  .live-prod-price { font-weight: 700; color: var(--paper); font-size: 1.1rem; margin-bottom: 6px; }
+  .live-prod-stock { font-size: 0.75rem; margin-bottom: 12px; }
+  .live-prod-btn { width: 100%; padding: 10px; background: var(--blue); color: var(--asphalt); border: none; border-radius: 4px; font-family: 'Oswald', sans-serif; font-size: 0.8rem; text-transform: uppercase; font-weight:600; cursor: pointer; }
+  .live-prod-btn:disabled { background: #333; color: #666; cursor: not-allowed; }
 </style>
 </head>
 <body>
@@ -79,28 +62,27 @@
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
     <li>
-      <button onclick="toggleCart()" style="background:var(--steel,#333); border:1px solid var(--paper-dim,#888); color:var(--paper,#fff); padding:6px 14px; font-family:'JetBrains Mono',monospace; font-size:0.8rem; text-transform:uppercase; cursor:pointer;">
+      <button onclick="toggleCart()" style="background:var(--steel); border:1px solid var(--paper-dim); color:var(--paper); padding:6px 14px; font-family:'JetBrains Mono',monospace; font-size:0.8rem; text-transform:uppercase; cursor:pointer;">
         Cart (<span id="cart-count">0</span>)
       </button>
     </li>
   </ul>
 </nav>
 
-<!-- FREE SLIDE-OUT CART DRAWER -->
 <div id="cart-overlay">
   <div class="cart-header">
     <h3 style="margin:0; font-family:'Oswald',sans-serif; text-transform:uppercase;">Your Cart</h3>
-    <button onclick="toggleCart()" style="background:none; border:none; color:var(--paper,#fff); font-size:1.5rem; cursor:pointer;">&times;</button>
+    <button onclick="toggleCart()" style="background:none; border:none; color:var(--paper); font-size:1.5rem; cursor:pointer;">&times;</button>
   </div>
   <div class="cart-items" id="cart-items-list">
-    <p style="color:var(--paper-dim,#888); text-align:center; margin-top:40px;">Your cart is empty.</p>
+    <p style="color:var(--paper-dim); text-align:center; margin-top:40px;">Your cart is empty.</p>
   </div>
   <div class="cart-footer">
     <div style="display:flex; justify-content:space-between; font-weight:700; margin-bottom:16px;">
       <span>Total:</span>
       <span id="cart-total">$0.00</span>
     </div>
-    <button id="cart-checkout-btn" onclick="processCheckout()" class="fit-btn" style="display:block; width:100%; padding:12px; background:var(--blue-bright,#00e5ff); color:#000; text-align:center; font-weight:700; text-decoration:none; text-transform:uppercase; box-sizing:border-box; border:none; cursor:pointer;">
+    <button id="cart-checkout-btn" onclick="processCheckout()" style="display:block; width:100%; padding:12px; background:var(--blue); color:var(--asphalt); text-align:center; font-weight:700; text-transform:uppercase; box-sizing:border-box; border:none; border-radius:5px; cursor:pointer; font-family:'Oswald',sans-serif;">
       Proceed to Checkout
     </button>
   </div>
@@ -108,7 +90,7 @@
 
 <section class="hero" style="padding-top:6vh; border-top:none;">
   <div class="hero-left">
-    <div class="hero-badge">CATALOG LOADING</div>
+    <div class="hero-badge">CATALOG LIVE</div>
     <h1>Auto parts, <em>shop supplies</em> &amp; merch.</h1>
     <p>Murnan Auto is a premier supplier of automotive parts, shop supplies, and branded gear — built by people who work on cars, for people who work on cars.</p>
   </div>
@@ -129,39 +111,25 @@
   </div>
 </section>
 
-<!-- HOMEPAGE TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-item">
     <span class="trust-icon">🛠️</span>
-    <div class="trust-text">
-      <h4>Hands-On Standard</h4>
-      <p>Tested &amp; vetted by actual wrench-turners.</p>
-    </div>
+    <div class="trust-text"><h4>Hands-On Standard</h4><p>Tested &amp; vetted by actual wrench-turners.</p></div>
   </div>
   <div class="trust-item">
     <span class="trust-icon">🇺🇸</span>
-    <div class="trust-text">
-      <h4>U.S. Based Support</h4>
-      <p>Direct communication — no corporate runaround.</p>
-    </div>
+    <div class="trust-text"><h4>U.S. Based Support</h4><p>Direct communication — no corporate runaround.</p></div>
   </div>
   <div class="trust-item">
     <span class="trust-icon">💬</span>
-    <div class="trust-text">
-      <h4>Accessible Support</h4>
-      <p>Direct human assistance when you need a hand.</p>
-    </div>
+    <div class="trust-text"><h4>Accessible Support</h4><p>Direct human assistance when you need a hand.</p></div>
   </div>
   <div class="trust-item">
     <span class="trust-icon">📦</span>
-    <div class="trust-text">
-      <h4>Direct Fulfillment</h4>
-      <p>Sourced straight from factory warehouse partners.</p>
-    </div>
+    <div class="trust-text"><h4>Direct Fulfillment</h4><p>Sourced straight from factory warehouse partners.</p></div>
   </div>
 </div>
 
-<!-- AUTHORIZED DEALER MODAL (FLF) -->
 <div id="modal-flf" class="dealer-modal" onclick="closeDealerModal(event, 'modal-flf')">
   <div class="dealer-modal-content">
     <button class="modal-close" onclick="closeDealerModal(event, 'modal-flf')">&times;</button>
@@ -230,16 +198,14 @@
   </div>
 </section>
 
-<!-- BRANDS & PARTNERS SECTION -->
 <section id="partners">
   <div class="section-head">
     <h2>Authorized Supply Partners</h2>
-    <span class="sub">100% GENUINE FACTORY PRODUCTS</span>
+    <span class="sub">DIRECT FACTORY RELATIONSHIPS</span>
   </div>
   <p style="color:var(--paper-dim); max-width:65ch; margin-bottom:32px;">
-    Murnan Auto holds direct authorized dealer relationships with leading performance manufacturers, offering full factory warranties and direct warehouse fulfillment.
+    Murnan Auto holds direct authorized dealer relationships with performance manufacturers, offering direct warehouse fulfillment.
   </p>
-
   <div class="brand-display-grid">
     <div class="brand-display-card" onclick="document.getElementById('modal-flf').classList.add('show')">
       <div class="brand-img-wrap">
@@ -328,12 +294,11 @@
   </form>
 </section>
 
-<!-- FULFILLMENT & OPERATING HOURS -->
 <section style="background: var(--panel-2); border-top: 1px solid var(--steel); border-bottom: 1px solid var(--steel); padding: 40px 5vw;">
   <div style="max-width: 800px; margin: 0 auto;">
     <div class="section-head" style="margin-bottom: 16px;">
-      <h2>Fulfillment & Operating Hours</h2>
-      <span class="sub">SCHEDULE & SCHEDULED CLOSURES</span>
+      <h2>Fulfillment &amp; Operating Hours</h2>
+      <span class="sub">SCHEDULE &amp; SCHEDULED CLOSURES</span>
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; color: var(--paper-dim); font-size: 0.9rem; line-height: 1.6;">
       <div>
@@ -356,36 +321,19 @@
 </footer>
 
 <script>
-  // 🔗 REPLACE THIS WITH YOUR REAL RENDER SERVICE DOMAIN:
-  const API_URL = 'https://murnan-auto-api.onrender.com';
+  // ── CHECKOUT WORKER URL — you'll get this after deploying the Cloudflare Worker ──
+  const CHECKOUT_API = 'https://murnan-checkout.murnanauto.workers.dev';
 
-  // 🛡️ BUILT-IN FALLBACK CATALOG
-  let inventory = [
-    { id: "MXP-300200016898", vendorSku: "GGT3582-JD-Z3", name: "GT3582 Street Billet Turbocharger", price: 375.30, stock: 12, category: "Turbos" },
-    { id: "MXP-300200016899", vendorSku: "GGT3037GEN2-VL", name: "GT3076 / GT3037 T3 V-Band Turbocharger", price: 211.95, stock: 8, category: "Turbos" },
-    { id: "MXP-300200016900", vendorSku: "GGT177275", name: "S300SX3 / S366 Twin Scroll Turbocharger", price: 407.70, stock: 5, category: "Turbos" },
-    { id: "MXP-300200016901", vendorSku: "GGT3037-JD-Z3", name: "GT3076 / GT3037 Performance Turbocharger", price: 375.30, stock: 15, category: "Turbos" },
-    { id: "MXP-300200016902", vendorSku: "GGT04E57-VL-Z3", name: "TO4E T3/T4 Stage III Turbocharger", price: 184.95, stock: 10, category: "Turbos" },
-    { id: "MXP-300200016903", vendorSku: "ZLQ-27-7-25_PP-25-18", name: "Universal Front Mount Intercooler Kit", price: 209.25, stock: 6, category: "Intercoolers" },
-    { id: "MXP-300200016904", vendorSku: "ZLQ-60030076-TF-VL_PP-25-18", name: "Universal Performance Intercooler Kit", price: 284.85, stock: 4, category: "Intercoolers" },
-    { id: "MXP-300200016905", vendorSku: "GGT04E-KIT-N-VL-Z2", name: "Universal T3/T4 TO4E Complete Turbocharger Kit", price: 554.85, stock: 3, category: "Kits" },
-    { id: "MXP-300200016906", vendorSku: "GGTLS2-K1", name: "5-Piece T3 TO4E 420HP Turbo Upgrade Kit", price: 320.00, stock: 7, category: "Kits" }
-  ];
-
+  let inventory = [];
   let cart = JSON.parse(localStorage.getItem('murnan_cart')) || [];
 
-  // FETCH LIVE INVENTORY (FALLS BACK TO DEFAULT CATALOG IF SERVER IS NOT READY)
-  async function fetchInventory() {
+  async function loadInventory() {
     try {
-      const res = await fetch(`${API_URL}/api/products`);
-      if (res.ok) {
-        const liveData = await res.json();
-        if (Array.isArray(liveData) && liveData.length > 0) {
-          inventory = liveData;
-        }
-      }
+      const res = await fetch('products.json', { cache: 'no-store' });
+      inventory = await res.json();
     } catch (err) {
-      console.warn("Using local catalog fallback.");
+      console.error('Could not load products.json', err);
+      inventory = [];
     }
   }
 
@@ -397,27 +345,17 @@
   function addToCart(id) {
     const product = inventory.find(p => p.id === id);
     if (!product) return;
-
-    let stockQty = parseInt(product.stock, 10);
-    if (isNaN(stockQty)) stockQty = 0;
-
-    if (stockQty <= 0) {
-      alert("This item is currently out of stock.");
-      return;
-    }
-
-    let rawPrice = Number(product.price) || 0;
-    let actualPrice = rawPrice > 2000 ? (rawPrice / 100) : rawPrice;
+    if (product.stock <= 0) { alert("This item is currently out of stock."); return; }
 
     const existing = cart.find(item => item.id === id);
     if (existing) {
-      if (existing.qty + 1 > stockQty) {
-        alert(`Only ${stockQty} units available in live inventory.`);
+      if (existing.qty + 1 > product.stock) {
+        alert(`Only ${product.stock} units available.`);
         return;
       }
       existing.qty += 1;
     } else {
-      cart.push({ id: product.id, name: product.name, price: actualPrice, qty: 1 });
+      cart.push({ id: product.id, name: product.name, price: product.price, qty: 1 });
     }
     saveCart();
     document.getElementById('cart-overlay').classList.add('open');
@@ -436,24 +374,21 @@
     const countEl = document.getElementById('cart-count');
     const totalEl = document.getElementById('cart-total');
     const listEl = document.getElementById('cart-items-list');
-
     const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
     const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-
     if (countEl) countEl.textContent = totalQty;
     if (totalEl) totalEl.textContent = `$${totalPrice.toFixed(2)}`;
-
     if (listEl) {
       if (cart.length === 0) {
-        listEl.innerHTML = '<p style="color:var(--paper-dim,#888); text-align:center; margin-top:40px;">Your cart is empty.</p>';
+        listEl.innerHTML = '<p style="color:var(--paper-dim); text-align:center; margin-top:40px;">Your cart is empty.</p>';
       } else {
         listEl.innerHTML = cart.map(item => `
           <div class="cart-item">
             <div>
               <div style="font-weight:600; font-size:0.9rem;">${item.name}</div>
-              <div style="color:var(--paper-dim,#888); font-size:0.8rem;">Qty: ${item.qty} × $${Number(item.price).toFixed(2)}</div>
+              <div style="color:var(--paper-dim); font-size:0.8rem;">Qty: ${item.qty} × $${item.price.toFixed(2)}</div>
             </div>
-            <button onclick="removeFromCart('${item.id}')" style="background:none; border:none; color:#ff4444; cursor:pointer; font-size:0.8rem;">Remove</button>
+            <button onclick="removeFromCart('${item.id}')" style="background:none; border:none; color:#ff5c5c; cursor:pointer; font-size:0.8rem;">Remove</button>
           </div>
         `).join('');
       }
@@ -461,33 +396,26 @@
   }
 
   async function processCheckout() {
-    if (cart.length === 0) {
-      alert("Your cart is empty!");
-      return;
-    }
-
-    const checkoutBtn = document.getElementById('cart-checkout-btn');
-    if (checkoutBtn) checkoutBtn.textContent = "Loading Checkout...";
-
+    if (cart.length === 0) { alert("Your cart is empty!"); return; }
+    const btn = document.getElementById('cart-checkout-btn');
+    if (btn) btn.textContent = "Loading Checkout...";
     try {
-      const response = await fetch(`${API_URL}/api/create-checkout-session`, {
+      const response = await fetch(CHECKOUT_API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ items: cart })
       });
-
       const data = await response.json();
-
       if (data.url) {
+        localStorage.removeItem('murnan_cart');
         window.location.href = data.url;
       } else {
         alert("Checkout error: " + (data.error || "Something went wrong"));
-        if (checkoutBtn) checkoutBtn.textContent = "Proceed to Checkout";
+        if (btn) btn.textContent = "Proceed to Checkout";
       }
     } catch (err) {
-      console.error(err);
-      alert("Could not connect to checkout server.");
-      if (checkoutBtn) checkoutBtn.textContent = "Proceed to Checkout";
+      alert("Could not reach checkout. Please try again.");
+      if (btn) btn.textContent = "Proceed to Checkout";
     }
   }
 
@@ -499,64 +427,41 @@
     "Toyota": ["Tacoma", "Camry", "4Runner", "Tundra", "RAV4"],
     "Other": ["Other"]
   };
-
   function updateModels(){
     const make = document.getElementById('mk').value;
     const modelSelect = document.getElementById('md');
     modelSelect.innerHTML = "";
-    if(!make){
-      modelSelect.innerHTML = "<option>Select make first</option>";
-      return;
-    }
+    if(!make){ modelSelect.innerHTML = "<option>Select make first</option>"; return; }
     const opts = ["Select model"].concat(modelsByMake[make] || ["Other"]);
-    opts.forEach(m => {
-      const o = document.createElement('option');
-      o.textContent = m;
-      modelSelect.appendChild(o);
-    });
+    opts.forEach(m => { const o = document.createElement('option'); o.textContent = m; modelSelect.appendChild(o); });
   }
-
-  function showFitNote(){
-    document.getElementById('fitNote').classList.add('show');
-  }
+  function showFitNote(){ document.getElementById('fitNote').classList.add('show'); }
 
   const categories = [
-    { 
-      name: "Forced Induction & Nitrous", 
-      img: "Forced.jpg", 
-      subs: [
-        { label: "Turbochargers", match: "Turbos" },
-        { label: "Intercoolers & Piping", match: "Intercoolers" },
-        { label: "Complete Turbo Kits", match: "Kits" },
-        { label: "Superchargers", match: "Superchargers" },
-        { label: "Nitrous Kits & Bottles", match: "Nitrous" },
-        { label: "Boost Controllers", match: "Controllers" },
-        { label: "Wastegates & BOVs", match: "Valves" }
-      ] 
-    },
-    { 
-      name: "Engine", 
-      img: "engine.jpg", 
-      subs: [
-        { label: "Pistons & Rings", match: "Pistons" },
-        { label: "Connecting Rods", match: "Rods" },
-        { label: "Camshafts & Valvetrain", match: "Camshafts" },
-        { label: "Gaskets & Seals", match: "Gaskets" },
-        { label: "Engine Rebuild Kits", match: "Rebuild" },
-        { label: "Oil Pumps & Pans", match: "Oil" }
-      ] 
-    },
-    { 
-      name: "Exhaust", 
-      img: "Exhaust.jpg", 
-      subs: [
-        { label: "Headers & Manifolds", match: "Headers" },
-        { label: "Cat-Back Systems", match: "Exhaust" },
-        { label: "Downpipes & Midpipes", match: "Downpipes" },
-        { label: "Mufflers & Resonators", match: "Mufflers" },
-        { label: "Exhaust Tips", match: "Tips" }
-      ] 
-    },
+    { name: "Forced Induction & Nitrous", img: "Forced.jpg", subs: [
+      { label: "Turbochargers", match: "Turbos" },
+      { label: "Intercoolers & Piping", match: "Intercoolers" },
+      { label: "Complete Turbo Kits", match: "Kits" },
+      { label: "Superchargers", match: "Superchargers" },
+      { label: "Nitrous Kits & Bottles", match: "Nitrous" },
+      { label: "Boost Controllers", match: "Controllers" },
+      { label: "Wastegates & BOVs", match: "Valves" }
+    ]},
+    { name: "Engine", img: "engine.jpg", subs: [
+      { label: "Pistons & Rings", match: "Pistons" },
+      { label: "Connecting Rods", match: "Rods" },
+      { label: "Camshafts & Valvetrain", match: "Camshafts" },
+      { label: "Gaskets & Seals", match: "Gaskets" },
+      { label: "Engine Rebuild Kits", match: "Rebuild" },
+      { label: "Oil Pumps & Pans", match: "Oil" }
+    ]},
+    { name: "Exhaust", img: "Exhaust.jpg", subs: [
+      { label: "Headers & Manifolds", match: "Headers" },
+      { label: "Cat-Back Systems", match: "Exhaust" },
+      { label: "Downpipes & Midpipes", match: "Downpipes" },
+      { label: "Mufflers & Resonators", match: "Mufflers" },
+      { label: "Exhaust Tips", match: "Tips" }
+    ]},
     { name: "Fuel System", img: "fuel.jpg", subs: [{ label: "Fuel Pumps", match: "Pumps" }, { label: "Fuel Injectors", match: "Injectors" }] },
     { name: "Ignition & Electrical", img: "ignition.jpg", subs: [{ label: "Ignition Coils", match: "Coils" }, { label: "Spark Plugs", match: "Plugs" }] },
     { name: "Suspension & Steering", img: "suspension.jpg", subs: [{ label: "Coilovers & Shocks", match: "Coilovers" }] },
@@ -577,25 +482,20 @@
     card.className = 'cat-card-lg';
     card.style.backgroundImage = `url('${cat.img}')`;
     card.innerHTML = `<h3>${cat.name}</h3>`;
-    
     card.addEventListener('click', () => {
       document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
       card.classList.add('active');
       subcatTitle.textContent = cat.name;
-
-      subcatPills.innerHTML = cat.subs.map((s, index) => 
-        `<span class="subcat-pill ${index === 0 ? 'active-pill' : ''}" style="cursor:pointer;" onclick="filterCategoryProducts('${s.match}', '${s.label}', this)">${s.label}</span>`
+      subcatPills.innerHTML = cat.subs.map((s, index) =>
+        `<span class="subcat-pill ${index === 0 ? 'active-pill' : ''}" onclick="filterCategoryProducts('${s.match}', '${s.label}', this)">${s.label}</span>`
       ).join('');
-
       subcatPanel.classList.add('open');
       subcatPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
       if (cat.subs.length > 0) {
         const firstPill = subcatPills.querySelector('.subcat-pill');
         filterCategoryProducts(cat.subs[0].match, cat.subs[0].label, firstPill);
       }
     });
-
     catGridLg.appendChild(card);
   });
 
@@ -609,70 +509,45 @@
       document.querySelectorAll('.subcat-pill').forEach(p => p.classList.remove('active-pill'));
       pillElem.classList.add('active-pill');
     }
-
     let container = document.getElementById('category-products-grid');
-    
     if (!container) {
       container = document.createElement('div');
       container.id = 'category-products-grid';
-      container.style.cssText = 'display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; width: 100%;';
       subcatPanel.appendChild(container);
     }
-
     const filtered = inventory.filter(p => p.category && p.category.toLowerCase() === categoryKey.toLowerCase());
-
     if (filtered.length === 0) {
-      container.innerHTML = `
-        <div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">
-          No live inventory currently loaded for <strong>${subcatLabel}</strong>. Check back soon or contact support for direct orders.
-        </div>`;
+      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">No live inventory currently loaded for <strong>${subcatLabel}</strong>. Check back soon or contact support for direct orders.</div>`;
       return;
     }
-
     container.innerHTML = filtered.map(item => {
-      let rawPrice = Number(item.price) || 0;
-      let displayPrice = rawPrice > 2000 ? (rawPrice / 100) : rawPrice;
-
-      let stockQty = parseInt(item.stock, 10);
-      if (isNaN(stockQty)) stockQty = 0;
-      const inStock = stockQty > 0;
-
+      const inStock = item.stock > 0;
       return `
-        <div style="background: var(--panel-2); border: 1px solid var(--steel); padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="live-prod-card">
           <div>
-            <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--blue-bright,#00e5ff);">${item.vendorSku || item.id}</span>
-            <h4 style="font-family:'Oswald',sans-serif; margin: 6px 0; color:var(--paper,#fff); font-size:1rem;">${item.name}</h4>
-            <div style="font-weight:700; color:var(--paper,#fff); font-size:1.1rem; margin-bottom: 6px;">$${displayPrice.toFixed(2)}</div>
-            <div style="font-size:0.75rem; color:${inStock ? '#00ff88' : '#ff4444'}; margin-bottom: 12px;">
-              ${inStock ? `In Stock (${stockQty} available)` : 'Out of Stock'}
-            </div>
+            <span class="live-prod-sku">${item.sku || item.id}</span>
+            <h4 class="live-prod-name">${item.name}</h4>
+            <div class="live-prod-price">$${item.price.toFixed(2)}</div>
+            <div class="live-prod-stock" style="color:${inStock ? '#4ADE80' : '#ff5c5c'};">${inStock ? `In Stock (${item.stock} available)` : 'Out of Stock'}</div>
           </div>
-          <button onclick="addToCart('${item.id}')" ${!inStock ? 'disabled' : ''} style="width:100%; padding:8px; background:${inStock ? 'var(--steel,#333)' : '#222'}; color:${inStock ? '#fff' : '#666'}; border:1px solid var(--paper-dim,#888); font-family:'JetBrains Mono',monospace; font-size:0.8rem; text-transform:uppercase; cursor:${inStock ? 'pointer' : 'not-allowed'};">
-            ${inStock ? 'Add To Cart' : 'Out of Stock'}
-          </button>
-        </div>
-      `;
+          <button class="live-prod-btn" onclick="addToCart('${item.id}')" ${!inStock ? 'disabled' : ''}>${inStock ? 'Add To Cart' : 'Out of Stock'}</button>
+        </div>`;
     }).join('');
   }
 
-  function openActiveDealerModal() {
-    document.getElementById('modal-flf').classList.add('show');
-  }
-
+  function openActiveDealerModal() { document.getElementById('modal-flf').classList.add('show'); }
   function closeDealerModal(e, modalId) {
     if (e.target.id === modalId || e.target.classList.contains('modal-close')) {
       document.getElementById(modalId).classList.remove('show');
     }
   }
 
-  updateCartUI();
-  fetchInventory();
+  loadInventory().then(updateCartUI);
 </script>
 
-<!-- KLAVIYO ONSITE TRACKING SCRIPT -->
 <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/VcGnuL/klaviyo.js?company_id=VcGnuL'></script>
-<script type="text/javascript"> 
-  !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w:]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}(); 
+<script type="text/javascript">
+  !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();
 </script>
 
 </body>
