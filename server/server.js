@@ -3,62 +3,118 @@ const cors = require('cors');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
-app.use(express.json());
-app.use(cors());
 
-// 📦 INVENTORY DATABASE (In-memory store ready for vendor CSV updates)
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// 📦 LIVE INVENTORY BACKEND CATALOG
+// Map categories to: Turbos, Intercoolers, Kits, Headers, Mufflers, Coilovers, etc.
 let inventory = [
-  { id: "MXP-300200016898", vendorSku: "GGT3582-JD-Z3", name: "GT3582 Street Billet Turbocharger", price: 375.30, stock: 10, category: "Turbos" },
-  { id: "MXP-300200017093", vendorSku: "GGT3037GEN2-VL", name: "GT3076 / GT3037 T3 V-Band Turbocharger", price: 211.95, stock: 5, category: "Turbos" },
-  { id: "MXP-300200016944", vendorSku: "GGT177275", name: "S300SX3 / S366 Twin Scroll Turbocharger", price: 407.70, stock: 12, category: "Turbos" },
-  { id: "MXP-300200016896", vendorSku: "GGT3037-JD-Z3", name: "GT3076 / GT3037 Performance Turbocharger", price: 375.30, stock: 8, category: "Turbos" },
-  { id: "MXP-300200016919", vendorSku: "GGT04E57-VL-Z3", name: "T04E T3/T4 Stage III Turbocharger", price: 184.95, stock: 15, category: "Turbos" },
-  { id: "MXP-300200025602", vendorSku: "ZLQ-27-7-25_PP-25-18", name: "Universal Front Mount Intercooler Kit", price: 209.25, stock: 3, category: "Intercoolers" },
-  { id: "MXP-300200024889", vendorSku: "ZLQ-60030076-TF-VL_PP-25-18", name: "Universal Performance Intercooler Kit", price: 284.85, stock: 7, category: "Intercoolers" },
-  { id: "MXP-3002924451", vendorSku: "GGT04E-KIT-N-VL-Z2", name: "Universal T3/T4 T04E Complete Turbocharger Kit", price: 554.85, stock: 4, category: "Kits" },
-  { id: "MXP-3002914100", vendorSku: "GGTLS2-K1", name: "5-Piece T3 T04E 420HP Turbo Upgrade Kit", price: 685.80, stock: 2, category: "Kits" }
+  {
+    id: "MXP-300200016898",
+    vendorSku: "GGT3582-JD-Z3",
+    name: "GT3582 Street Billet Turbocharger",
+    price: 375.30,
+    stock: 12,
+    category: "Turbos"
+  },
+  {
+    id: "MXP-300200016899",
+    vendorSku: "GGT3037GEN2-VL",
+    name: "GT3076 / GT3037 T3 V-Band Turbocharger",
+    price: 211.95,
+    stock: 8,
+    category: "Turbos"
+  },
+  {
+    id: "MXP-300200016900",
+    vendorSku: "GGT177275",
+    name: "S300SX3 / S366 Twin Scroll Turbocharger",
+    price: 407.70,
+    stock: 5,
+    category: "Turbos"
+  },
+  {
+    id: "MXP-300200016901",
+    vendorSku: "GGT3037-JD-Z3",
+    name: "GT3076 / GT3037 Performance Turbocharger",
+    price: 375.30,
+    stock: 15,
+    category: "Turbos"
+  },
+  {
+    id: "MXP-300200016902",
+    vendorSku: "GGT04E57-VL-Z3",
+    name: "TO4E T3/T4 Stage III Turbocharger",
+    price: 184.95,
+    stock: 10,
+    category: "Turbos"
+  },
+  {
+    id: "MXP-300200016903",
+    vendorSku: "ZLQ-27-7-25_PP-25-18",
+    name: "Universal Front Mount Intercooler Kit",
+    price: 209.25,
+    stock: 6,
+    category: "Intercoolers"
+  },
+  {
+    id: "MXP-300200016904",
+    vendorSku: "ZLQ-60030076-TF-VL_PP-25-18",
+    name: "Universal Performance Intercooler Kit",
+    price: 284.85,
+    stock: 4,
+    category: "Intercoolers"
+  },
+  {
+    id: "MXP-300200016905",
+    vendorSku: "GGT04E-KIT-N-VL-Z2",
+    name: "Universal T3/T4 TO4E Complete Turbocharger Kit",
+    price: 554.85,
+    stock: 3,
+    category: "Kits"
+  },
+  {
+    id: "MXP-300200016906",
+    vendorSku: "GGTLS2-K1",
+    name: "5-Piece T3 TO4E 420HP Turbo Upgrade Kit",
+    price: 320.00,
+    stock: 7,
+    category: "Kits"
+  }
 ];
 
-// 1. GET ALL PRODUCTS / INVENTORY (Frontend pulls this to show live products & stock)
+// 1. GET ALL PRODUCTS ENDPOINT
 app.get('/api/products', (req, res) => {
   res.json(inventory);
 });
 
-// 2. BULK INVENTORY UPDATE (Endpoint to push vendor CSV inventory updates)
-app.post('/api/inventory/update', (req, res) => {
-  const newInventoryData = req.body; // Expects array of updated items/stock
-  if (Array.isArray(newInventoryData)) {
-    inventory = newInventoryData;
-    return res.json({ message: "Inventory updated successfully", count: inventory.length });
-  }
-  res.status(400).json({ error: "Invalid inventory payload" });
-});
-
-// 3. CREATE STRIPE CHECKOUT SESSION (Validates stock before checkout)
+// 2. CREATE STRIPE CHECKOUT SESSION ENDPOINT
 app.post('/api/create-checkout-session', async (req, res) => {
   try {
     const { items } = req.body;
 
-    const lineItems = items.map(cartItem => {
-      const product = inventory.find(p => p.id === cartItem.id);
-      
-      if (!product) {
-        throw new Error(`Product not found: ${cartItem.id}`);
-      }
-      if (product.stock < cartItem.qty) {
-        throw new Error(`Sorry, ${product.name} is out of stock.`);
-      }
+    if (!items || items.length === 0) {
+      return res.status(400).json({ error: "Cart is empty" });
+    }
+
+    // Convert items into Stripe line_items format
+    const lineItems = items.map(item => {
+      // Find matching item in backend inventory to prevent price tampering
+      const storeItem = inventory.find(p => p.id === item.id);
+      const unitPrice = storeItem ? storeItem.price : item.price;
 
       return {
         price_data: {
           currency: 'usd',
           product_data: {
-            name: product.name,
-            metadata: { vendorSku: product.vendorSku }
+            name: item.name,
           },
-          unit_amount: Math.round(product.price * 100), // Convert to cents for Stripe
+          // Stripe requires price in cents as an integer
+          unit_amount: Math.round(unitPrice * 100),
         },
-        quantity: cartItem.qty,
+        quantity: item.qty,
       };
     });
 
@@ -66,16 +122,24 @@ app.post('/api/create-checkout-session', async (req, res) => {
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-      shipping_address_collection: { allowed_countries: ['US'] },
-      success_url: `${req.headers.origin}/?success=true`,
-      cancel_url: `${req.headers.origin}/?canceled=true`,
+      // Automatic Kansas state and local sales tax collection
+      automatic_tax: { enabled: true },
+      shipping_address_collection: {
+        allowed_countries: ['US'],
+      },
+      success_url: 'https://murnanauto.store/?status=success',
+      cancel_url: 'https://murnanauto.store/?status=cancelled',
     });
 
     res.json({ url: session.url });
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    console.error("Stripe Error:", error.message);
+    res.status(500).json({ error: error.message });
   }
 });
 
+// Start Server
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`🚀 Murnan Auto backend running on port ${PORT}`);
+});
