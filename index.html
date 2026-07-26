@@ -55,6 +55,12 @@
     font-size: 0.78rem;
     color: var(--paper-dim, #888);
   }
+
+  .subcat-pill.active-pill {
+    background: var(--blue-bright, #00e5ff) !important;
+    color: #000 !important;
+    font-weight: 700;
+  }
 </style>
 </head>
 <body>
@@ -72,7 +78,6 @@
     <li><a href="#partners">Brands &amp; Partners</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
-    <!-- FREE LOCAL CART TOP NAV -->
     <li>
       <button onclick="toggleCart()" style="background:var(--steel,#333); border:1px solid var(--paper-dim,#888); color:var(--paper,#fff); padding:6px 14px; font-family:'JetBrains Mono',monospace; font-size:0.8rem; text-transform:uppercase; cursor:pointer;">
         Cart (<span id="cart-count">0</span>)
@@ -108,7 +113,6 @@
     <p>Murnan Auto is a premier supplier of automotive parts, shop supplies, and branded gear — built by people who work on cars, for people who work on cars.</p>
   </div>
 
-  <!-- HERO AUTHORIZED DEALER CARD (FLF only) -->
   <div class="stock-panel dealer-hero-card" onclick="openActiveDealerModal()" style="cursor: pointer;">
     <div class="dealer-slide active" id="slide-flf">
       <div class="dealer-badge-tag">OFFICIAL DEALER</div>
@@ -237,7 +241,6 @@
   </p>
 
   <div class="brand-display-grid">
-    <!-- Finish Line Factory -->
     <div class="brand-display-card" onclick="document.getElementById('modal-flf').classList.add('show')">
       <div class="brand-img-wrap">
         <img src="FLF-Authorized-Dealer-Banner-2022.png" alt="Finish Line Factory Authorized Dealer">
@@ -476,7 +479,6 @@
     }
   }
 
-  // Vehicle Fitment dropdown helper
   const modelsByMake = {
     "Jeep": ["Grand Cherokee", "Wrangler", "Cherokee", "Gladiator", "Compass"],
     "Ford": ["F-150", "Mustang", "Explorer", "Bronco", "Escape"],
@@ -506,7 +508,7 @@
     document.getElementById('fitNote').classList.add('show');
   }
 
-  // CATEGORIES MAP WITH INVENTORY FILTER KEYS
+  // CATEGORIES MAP WITH MATCH KEYS TO MATCH SERVER.JS EXACTLY
   const categories = [
     { 
       name: "Forced Induction & Nitrous", 
@@ -570,17 +572,19 @@
       card.classList.add('active');
       subcatTitle.textContent = cat.name;
 
-      // Render subcategory pills with click handlers
-      subcatPills.innerHTML = cat.subs.map(s => 
-        `<span class="subcat-pill" style="cursor:pointer;" onclick="filterCategoryProducts('${s.match}', '${s.label}')">${s.label}</span>`
+      // Render subcategory pills
+      subcatPills.innerHTML = cat.subs.map((s, index) => 
+        `<span class="subcat-pill ${index === 0 ? 'active-pill' : ''}" style="cursor:pointer;" onclick="filterCategoryProducts('${s.match}', '${s.label}', this)">${s.label}</span>`
       ).join('');
-
-      // Clear previous products grid
-      const oldGrid = document.getElementById('category-products-grid');
-      if (oldGrid) oldGrid.remove();
 
       subcatPanel.classList.add('open');
       subcatPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      // Automatically trigger the first subcategory pill when opening
+      if (cat.subs.length > 0) {
+        const firstPill = subcatPills.querySelector('.subcat-pill');
+        filterCategoryProducts(cat.subs[0].match, cat.subs[0].label, firstPill);
+      }
     });
 
     catGridLg.appendChild(card);
@@ -592,13 +596,19 @@
   });
 
   // FILTER & RENDER PRODUCTS UNDER SELECTED SUBCATEGORY
-  function filterCategoryProducts(categoryKey, subcatLabel) {
+  function filterCategoryProducts(categoryKey, subcatLabel, pillElem) {
+    // Highlight active pill
+    if (pillElem) {
+      document.querySelectorAll('.subcat-pill').forEach(p => p.classList.remove('active-pill'));
+      pillElem.classList.add('active-pill');
+    }
+
     let container = document.getElementById('category-products-grid');
     
     if (!container) {
       container = document.createElement('div');
       container.id = 'category-products-grid';
-      container.style.cssText = 'display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 24px;';
+      container.style.cssText = 'display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; width: 100%;';
       subcatPanel.appendChild(container);
     }
 
@@ -638,7 +648,6 @@
     }).join('');
   }
 
-  // Modal logic
   function openActiveDealerModal() {
     document.getElementById('modal-flf').classList.add('show');
   }
@@ -649,7 +658,6 @@
     }
   }
 
-  // Initialize UI & Fetch Inventory on Load
   updateCartUI();
   fetchInventory();
 </script>
