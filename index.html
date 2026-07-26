@@ -223,18 +223,6 @@
       <button class="subcat-close" id="subcatClose">Close &times;</button>
     </div>
     <div class="subcat-pills" id="subcatPills"></div>
-    <p class="subcat-note">Full product listings for this category are launching soon. Looking for something specific? <a href="mailto:support@murnanauto.store" style="color:var(--blue-bright);">Email us</a> and we'll help track it down.</p>
-  </div>
-
-  <div class="section-head" style="margin-top:56px;">
-    <h2>Featured Products</h2>
-    <span class="sub">LIVE BACKEND CATALOG</span>
-  </div>
-  
-  <div id="featured-products-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
-    <p style="color: var(--paper-dim); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">
-      Loading live inventory from server...
-    </p>
   </div>
 </section>
 
@@ -366,7 +354,7 @@
 
 <script>
   // 🔗 PASTE YOUR LIVE RENDER SERVER URL HERE:
-  const API_URL = 'https://murnan-auto-api.onrender.com';
+  const API_URL = 'https://YOUR-RENDER-URL.onrender.com';
 
   let inventory = [];
   let cart = JSON.parse(localStorage.getItem('murnan_cart')) || [];
@@ -377,49 +365,12 @@
       const res = await fetch(`${API_URL}/api/products`);
       if (res.ok) {
         inventory = await res.json();
-        renderFeaturedProducts();
       } else {
         throw new Error("Failed to load inventory from backend");
       }
     } catch (err) {
-      console.error(err);
-      const container = document.getElementById('featured-products-container');
-      if (container) {
-        container.innerHTML = `
-          <div style="grid-column: 1/-1; border: 1px dashed var(--steel); padding: 40px 20px; background: var(--panel-2); text-align: center;">
-            <p style="color: var(--paper-dim); margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">
-              Featured catalog items are being updated. Check back soon or contact support for direct orders.
-            </p>
-          </div>`;
-      }
+      console.error("Backend connection error:", err);
     }
-  }
-
-  // 2. RENDER LIVE INVENTORY TO FRONTEND
-  function renderFeaturedProducts() {
-    const container = document.getElementById('featured-products-container');
-    if (!container) return;
-
-    if (inventory.length === 0) {
-      container.innerHTML = `<p style="color: var(--paper-dim); font-family: 'JetBrains Mono', monospace;">No products currently available.</p>`;
-      return;
-    }
-
-    container.innerHTML = inventory.map(item => `
-      <div style="background: var(--panel-2); border: 1px solid var(--steel); padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--blue-bright,#00e5ff);">${item.vendorSku || item.id}</span>
-          <h4 style="font-family:'Oswald',sans-serif; margin: 8px 0; color:var(--paper,#fff); font-size:1.1rem;">${item.name}</h4>
-          <div style="font-weight:700; color:var(--paper,#fff); font-size:1.2rem; margin-bottom: 8px;">$${Number(item.price).toFixed(2)}</div>
-          <div style="font-size:0.8rem; color:${item.stock > 0 ? '#00ff88' : '#ff4444'}; margin-bottom: 16px;">
-            ${item.stock > 0 ? `In Stock (${item.stock} left)` : 'Out of Stock'}
-          </div>
-        </div>
-        <button onclick="addToCart('${item.id}')" ${item.stock <= 0 ? 'disabled' : ''} style="width:100%; padding:10px; background:${item.stock > 0 ? 'var(--steel,#333)' : '#222'}; color:${item.stock > 0 ? '#fff' : '#666'}; border:1px solid var(--paper-dim,#888); font-family:'JetBrains Mono',monospace; font-size:0.85rem; text-transform:uppercase; cursor:${item.stock > 0 ? 'pointer' : 'not-allowed'};">
-          ${item.stock > 0 ? 'Add To Cart' : 'Out of Stock'}
-        </button>
-      </div>
-    `).join('');
   }
 
   function saveCart() {
@@ -431,20 +382,26 @@
     const product = inventory.find(p => p.id === id);
     if (!product) return;
 
-    if (product.stock <= 0) {
+    let stockQty = parseInt(product.stock, 10);
+    if (isNaN(stockQty)) stockQty = 0;
+
+    if (stockQty <= 0) {
       alert("This item is currently out of stock.");
       return;
     }
 
+    let rawPrice = Number(product.price) || 0;
+    let actualPrice = rawPrice > 2000 ? (rawPrice / 100) : rawPrice;
+
     const existing = cart.find(item => item.id === id);
     if (existing) {
-      if (existing.qty + 1 > product.stock) {
-        alert(`Only ${product.stock} units available in live inventory.`);
+      if (existing.qty + 1 > stockQty) {
+        alert(`Only ${stockQty} units available in live inventory.`);
         return;
       }
       existing.qty += 1;
     } else {
-      cart.push({ id: product.id, name: product.name, price: product.price, qty: 1 });
+      cart.push({ id: product.id, name: product.name, price: actualPrice, qty: 1 });
     }
     saveCart();
     document.getElementById('cart-overlay').classList.add('open');
@@ -487,7 +444,7 @@
     }
   }
 
-  // 3. PROCESS CHECKOUT VIA RENDER BACKEND
+  // 2. PROCESS CHECKOUT VIA RENDER BACKEND
   async function processCheckout() {
     if (cart.length === 0) {
       alert("Your cart is empty!");
@@ -549,18 +506,51 @@
     document.getElementById('fitNote').classList.add('show');
   }
 
-  // UI Categories Navigation
+  // CATEGORIES MAP WITH INVENTORY FILTER KEYS
   const categories = [
-    { name: "Engine", img: "engine.jpg", subs: ["Pistons & Rings", "Connecting Rods", "Camshafts & Valvetrain", "Gaskets & Seals", "Engine Rebuild Kits", "Oil Pumps & Pans"] },
-    { name: "Exhaust", img: "Exhaust.jpg", subs: ["Headers & Manifolds", "Cat-Back Systems", "Downpipes & Midpipes", "Mufflers & Resonators", "Exhaust Tips", "Gaskets & Hardware"] },
-    { name: "Forced Induction & Nitrous", img: "Forced.jpg", subs: ["Turbochargers", "Superchargers", "Intercoolers & Piping", "Nitrous Kits & Bottles", "Boost Controllers", "Wastegates & BOVs"] },
-    { name: "Fuel System", img: "fuel.jpg", subs: ["Fuel Pumps", "Fuel Filters", "Fuel Injectors", "Fuel Lines & Fittings", "Fuel Rails", "Fuel System Kits"] },
-    { name: "Ignition & Electrical", img: "ignition.jpg", subs: ["Ignition Coils", "Spark Plugs & Wires", "Wiring Harnesses", "Batteries & Charging", "ECUs & Tuners", "Sensors"] },
-    { name: "Suspension & Steering", img: "suspension.jpg", subs: ["Coilovers & Shocks", "Control Arms", "Sway Bars & End Links", "Bushings & Mounts", "Steering Racks", "Tie Rods & Ball Joints"] },
-    { name: "Drivetrain", img: "drivetrain.jpg", subs: ["Clutches & Flywheels", "Driveshafts", "Axles & CV Joints", "Differentials", "Transmission Mounts"] },
-    { name: "Brakes", img: "brakes.jpg", subs: ["Brake Pads", "Rotors", "Calipers", "Brake Lines & Hardware", "Big Brake Kits"] },
-    { name: "Cooling", img: "cooling.jpg", subs: ["Radiators", "Cooling Fans", "Oil Coolers", "Water Pumps", "Thermostats & Housings"] },
-    { name: "Shop Supplies & Merch", img: "supplies.jpg", subs: ["Fluids & Chemicals", "Tools & Equipment", "Apparel", "Accessories"] }
+    { 
+      name: "Forced Induction & Nitrous", 
+      img: "Forced.jpg", 
+      subs: [
+        { label: "Turbochargers", match: "Turbos" },
+        { label: "Intercoolers & Piping", match: "Intercoolers" },
+        { label: "Complete Turbo Kits", match: "Kits" },
+        { label: "Superchargers", match: "Superchargers" },
+        { label: "Nitrous Kits & Bottles", match: "Nitrous" },
+        { label: "Boost Controllers", match: "Controllers" },
+        { label: "Wastegates & BOVs", match: "Valves" }
+      ] 
+    },
+    { 
+      name: "Engine", 
+      img: "engine.jpg", 
+      subs: [
+        { label: "Pistons & Rings", match: "Pistons" },
+        { label: "Connecting Rods", match: "Rods" },
+        { label: "Camshafts & Valvetrain", match: "Camshafts" },
+        { label: "Gaskets & Seals", match: "Gaskets" },
+        { label: "Engine Rebuild Kits", match: "Rebuild" },
+        { label: "Oil Pumps & Pans", match: "Oil" }
+      ] 
+    },
+    { 
+      name: "Exhaust", 
+      img: "Exhaust.jpg", 
+      subs: [
+        { label: "Headers & Manifolds", match: "Headers" },
+        { label: "Cat-Back Systems", match: "Exhaust" },
+        { label: "Downpipes & Midpipes", match: "Downpipes" },
+        { label: "Mufflers & Resonators", match: "Mufflers" },
+        { label: "Exhaust Tips", match: "Tips" }
+      ] 
+    },
+    { name: "Fuel System", img: "fuel.jpg", subs: [{ label: "Fuel Pumps", match: "Pumps" }, { label: "Fuel Injectors", match: "Injectors" }] },
+    { name: "Ignition & Electrical", img: "ignition.jpg", subs: [{ label: "Ignition Coils", match: "Coils" }, { label: "Spark Plugs", match: "Plugs" }] },
+    { name: "Suspension & Steering", img: "suspension.jpg", subs: [{ label: "Coilovers & Shocks", match: "Coilovers" }] },
+    { name: "Drivetrain", img: "drivetrain.jpg", subs: [{ label: "Clutches & Flywheels", match: "Clutches" }] },
+    { name: "Brakes", img: "brakes.jpg", subs: [{ label: "Brake Pads", match: "Pads" }, { label: "Rotors", match: "Rotors" }] },
+    { name: "Cooling", img: "cooling.jpg", subs: [{ label: "Radiators", match: "Radiators" }] },
+    { name: "Shop Supplies & Merch", img: "supplies.jpg", subs: [{ label: "Fluids & Chemicals", match: "Fluids" }] }
   ];
 
   const catGridLg = document.getElementById('catGridLg');
@@ -574,14 +564,25 @@
     card.className = 'cat-card-lg';
     card.style.backgroundImage = `url('${cat.img}')`;
     card.innerHTML = `<h3>${cat.name}</h3>`;
+    
     card.addEventListener('click', () => {
       document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
       card.classList.add('active');
       subcatTitle.textContent = cat.name;
-      subcatPills.innerHTML = cat.subs.map(s => `<span class="subcat-pill">${s}</span>`).join('');
+
+      // Render subcategory pills with click handlers
+      subcatPills.innerHTML = cat.subs.map(s => 
+        `<span class="subcat-pill" style="cursor:pointer;" onclick="filterCategoryProducts('${s.match}', '${s.label}')">${s.label}</span>`
+      ).join('');
+
+      // Clear previous products grid
+      const oldGrid = document.getElementById('category-products-grid');
+      if (oldGrid) oldGrid.remove();
+
       subcatPanel.classList.add('open');
       subcatPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
+
     catGridLg.appendChild(card);
   });
 
@@ -589,6 +590,53 @@
     subcatPanel.classList.remove('open');
     document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
   });
+
+  // FILTER & RENDER PRODUCTS UNDER SELECTED SUBCATEGORY
+  function filterCategoryProducts(categoryKey, subcatLabel) {
+    let container = document.getElementById('category-products-grid');
+    
+    if (!container) {
+      container = document.createElement('div');
+      container.id = 'category-products-grid';
+      container.style.cssText = 'display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 24px;';
+      subcatPanel.appendChild(container);
+    }
+
+    const filtered = inventory.filter(p => p.category && p.category.toLowerCase() === categoryKey.toLowerCase());
+
+    if (filtered.length === 0) {
+      container.innerHTML = `
+        <div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">
+          No live inventory currently loaded for <strong>${subcatLabel}</strong>. Check back soon or contact support for direct orders.
+        </div>`;
+      return;
+    }
+
+    container.innerHTML = filtered.map(item => {
+      let rawPrice = Number(item.price) || 0;
+      let displayPrice = rawPrice > 2000 ? (rawPrice / 100) : rawPrice;
+
+      let stockQty = parseInt(item.stock, 10);
+      if (isNaN(stockQty)) stockQty = 0;
+      const inStock = stockQty > 0;
+
+      return `
+        <div style="background: var(--panel-2); border: 1px solid var(--steel); padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--blue-bright,#00e5ff);">${item.vendorSku || item.id}</span>
+            <h4 style="font-family:'Oswald',sans-serif; margin: 6px 0; color:var(--paper,#fff); font-size:1rem;">${item.name}</h4>
+            <div style="font-weight:700; color:var(--paper,#fff); font-size:1.1rem; margin-bottom: 6px;">$${displayPrice.toFixed(2)}</div>
+            <div style="font-size:0.75rem; color:${inStock ? '#00ff88' : '#ff4444'}; margin-bottom: 12px;">
+              ${inStock ? `In Stock (${stockQty} available)` : 'Out of Stock'}
+            </div>
+          </div>
+          <button onclick="addToCart('${item.id}')" ${!inStock ? 'disabled' : ''} style="width:100%; padding:8px; background:${inStock ? 'var(--steel,#333)' : '#222'}; color:${inStock ? '#fff' : '#666'}; border:1px solid var(--paper-dim,#888); font-family:'JetBrains Mono',monospace; font-size:0.8rem; text-transform:uppercase; cursor:${inStock ? 'pointer' : 'not-allowed'};">
+            ${inStock ? 'Add To Cart' : 'Out of Stock'}
+          </button>
+        </div>
+      `;
+    }).join('');
+  }
 
   // Modal logic
   function openActiveDealerModal() {
