@@ -430,6 +430,7 @@
       return `
         <div class="live-prod-card">
           <div>
+            ${item.image ? `<img src="${item.image}" alt="${item.name}" style="width:100%; aspect-ratio:1/1; object-fit:contain; background:var(--panel); border-radius:4px; margin-bottom:10px;">` : ''}
             <span class="live-prod-sku">${item.sku || item.id}</span>
             <h4 class="live-prod-name"><a href="product.html?id=${item.id}" style="color:inherit; text-decoration:none;">${item.name}</a></h4>
             <div class="live-prod-price">$${item.price.toFixed(2)}</div>
