@@ -3,7 +3,7 @@
     "id": "MXP-016898",
     "sku": "GGT3582-JD-Z3",
     "name": "GT3582 Street Billet Turbocharger",
-    "price": 375.3,
+    "price": 319.99,
     "stock": 0,
     "category": "Turbos",
     "image": "https://webp.cqggedm.com/image/images-hd/default/turbo/ggt3582-njd/main/ggt3582-njd(1).jpg",
@@ -12,16 +12,16 @@
       "Frame: GT35 / GT3582",
       "Compressor wheel: Billet",
       "Turbine: Cast, T3 4-bolt flange",
-      "Typical A/R: .82 (compressor) / .96\u20131.06 (turbine)"
+      "Typical A/R: .82 (compressor) / .96–1.06 (turbine)"
     ],
-    "recommendation": "Best suited to 3.0L\u20135.0L V6/V8 engines targeting roughly 500\u2013650 HP at 12\u201318 psi. The compressor housing is larger than what a small 4-cylinder can spool quickly \u2014 on a small engine this turbo will feel laggy. On a V6/V8 with enough exhaust volume to spin it, it delivers strong mid-range and top-end power for street/strip builds.",
+    "recommendation": "Best suited to 3.0L–5.0L V6/V8 engines targeting roughly 500–650 HP at 12–18 psi. The compressor housing is larger than what a small 4-cylinder can spool quickly — on a small engine this turbo will feel laggy. On a V6/V8 with enough exhaust volume to spin it, it delivers strong mid-range and top-end power for street/strip builds.",
     "math_note": "Sizing logic: larger compressor + turbine wheels flow more air but need more exhaust volume to spin up. Bigger displacement (more exhaust gas per revolution) spools a large frame like this faster than a small engine can."
   },
   {
     "id": "MXP-016899",
     "sku": "GGT3037GEN2-VL",
     "name": "GT3076 / GT3037 T3 V-Band Turbocharger",
-    "price": 211.95,
+    "price": 199.99,
     "stock": 0,
     "category": "Turbos",
     "image": "https://webp.cqggedm.com/image/images-hd/ai-comfyui/\u5468\u65f7\u7fbd/ggt3037gen2-nvl/main/ggt3037gen2-nvl(1).jpg",
@@ -33,32 +33,32 @@
       "Turbine A/R: .60",
       "Commonly rated to ~500 BHP"
     ],
-    "recommendation": "A good match for 2.0L\u20133.5L four- or six-cylinder engines targeting 350\u2013500 whp. The .60 A/R turbine spools noticeably quicker than a larger-frame unit, making it a common choice for inline-4 and small V6 street/track builds that still want strong top-end.",
-    "math_note": "Sizing logic: a .60 A/R turbine trades some ultimate top-end flow for quicker spool \u2014 the right trade-off for smaller-displacement engines that don't produce huge exhaust volume at low RPM."
+    "recommendation": "A good match for 2.0L–3.5L four- or six-cylinder engines targeting 350–500 whp. The .60 A/R turbine spools noticeably quicker than a larger-frame unit, making it a common choice for inline-4 and small V6 street/track builds that still want strong top-end.",
+    "math_note": "Sizing logic: a .60 A/R turbine trades some ultimate top-end flow for quicker spool — the right trade-off for smaller-displacement engines that don't produce huge exhaust volume at low RPM."
   },
   {
     "id": "MXP-016900",
     "sku": "GGT177275",
     "name": "S300SX3 / S366 Twin Scroll Turbocharger",
-    "price": 407.7,
+    "price": 379.99,
     "stock": 0,
     "category": "Turbos",
     "image": "https://webp.cqggedm.com/image/images-hd/default/turbo/ggt177275-nvl/main/ggt177275-nvl(1).jpg",
-    "description": "S300SX3 / S366 twin-scroll turbocharger, .91 A/R T4 turbine housing. Manufacturer-listed range is broad (320\u2013800 HP) because output depends heavily on A/R, boost level, and supporting mods.",
+    "description": "S300SX3 / S366 twin-scroll turbocharger, .91 A/R T4 turbine housing. Manufacturer-listed range is broad (320–800 HP) because output depends heavily on A/R, boost level, and supporting mods.",
     "specs": [
       "Frame: S300SX3 / S366",
       "Housing: Twin-scroll, T4",
       "A/R: .91",
-      "Manufacturer range: 320\u2013800 HP"
+      "Manufacturer range: 320–800 HP"
     ],
-    "recommendation": "Best for larger 4-cylinder (2.0L+), V6, or V8 engines with a twin-scroll (divided) exhaust manifold, targeting high boost (20+ psi) race or drag applications. This is a large-frame turbo \u2014 on a small engine with a stock single-scroll manifold it won't see the spool benefit it's designed for, and will lag badly.",
+    "recommendation": "Best for larger 4-cylinder (2.0L+), V6, or V8 engines with a twin-scroll (divided) exhaust manifold, targeting high boost (20+ psi) race or drag applications. This is a large-frame turbo — on a small engine with a stock single-scroll manifold it won't see the spool benefit it's designed for, and will lag badly.",
     "math_note": "Sizing logic: twin-scroll design only pays off with a matching divided-manifold setup; without one, you lose the scavenging benefit that makes this turbo spool reasonably despite its size."
   },
   {
     "id": "MXP-016901",
     "sku": "GGT3037-JD-Z3",
     "name": "GT3076 / GT3037 Performance Turbocharger",
-    "price": 375.3,
+    "price": 349.99,
     "stock": 0,
     "category": "Turbos",
     "image": "https://webp.cqggedm.com/image/images-hd/default/chra/ggt3037-njd/main/ggt3037-njd(1).jpg",
@@ -70,32 +70,32 @@
       "Turbine A/R: .60",
       "Commonly rated to 600+ HP"
     ],
-    "recommendation": "Suited to 2.0L\u20133.5L turbo builds targeting a higher ceiling (up to ~600 HP) than the V-band version, while keeping reasonable spool. Good fit for aggressive standalone-tuned inline-4 or small V6 builds. Not recommended for larger V8 applications \u2014 the compressor will run out of efficient flow range before making use of a big engine's airflow needs.",
-    "math_note": "Sizing logic: same frame as the GEN2 above, so the spool/displacement relationship is the same \u2014 this is a flange-style choice (T3 4-bolt vs V-band), not a different power class."
+    "recommendation": "Suited to 2.0L–3.5L turbo builds targeting a higher ceiling (up to ~600 HP) than the V-band version, while keeping reasonable spool. Good fit for aggressive standalone-tuned inline-4 or small V6 builds. Not recommended for larger V8 applications — the compressor will run out of efficient flow range before making use of a big engine's airflow needs.",
+    "math_note": "Sizing logic: same frame as the GEN2 above, so the spool/displacement relationship is the same — this is a flange-style choice (T3 4-bolt vs V-band), not a different power class."
   },
   {
     "id": "MXP-016902",
     "sku": "GGT04E57-VL-Z3",
     "name": "TO4E T3/T4 Stage III Turbocharger",
-    "price": 184.95,
+    "price": 319.99,
     "stock": 0,
     "category": "Turbos",
     "image": "https://webp.cqggedm.com/image/images-hd/default/turbo/ggt04e57-vl-z3/main/ggt04e57-vl-z3(1).jpg",
-    "description": "T04E frame turbo on a T3/T4 hybrid flange, .57 A/R, oil-cooled only (no water cooling). Manufacturer-listed for 1.5L\u20132.5L engines, up to roughly 400 HP.",
+    "description": "T04E frame turbo on a T3/T4 hybrid flange, .57 A/R, oil-cooled only (no water cooling). Manufacturer-listed for 1.5L–2.5L engines, up to roughly 400 HP.",
     "specs": [
       "Frame: T04E (T3/T4 hybrid)",
       "A/R: .57",
       "Cooling: Oil-cooled only",
-      "Manufacturer application: 1.5L\u20132.5L, up to ~400 HP"
+      "Manufacturer application: 1.5L–2.5L, up to ~400 HP"
     ],
-    "recommendation": "Best fit for 1.5L\u20132.5L four-cylinder daily-driven or mild street builds at low-to-moderate boost (8\u201312 psi). Small compressor and tight .57 A/R mean quick spool on a small engine, but it will choke and become a restriction on anything V6 or larger.",
-    "math_note": "Sizing logic: a .57 A/R is a small housing \u2014 great for quick spool on low-displacement engines, but it physically can't flow the air a bigger engine needs at higher RPM."
+    "recommendation": "Best fit for 1.5L–2.5L four-cylinder daily-driven or mild street builds at low-to-moderate boost (8–12 psi). Small compressor and tight .57 A/R mean quick spool on a small engine, but it will choke and become a restriction on anything V6 or larger.",
+    "math_note": "Sizing logic: a .57 A/R is a small housing — great for quick spool on low-displacement engines, but it physically can't flow the air a bigger engine needs at higher RPM."
   },
   {
     "id": "MXP-016903",
     "sku": "ZLQ-27-7-25_PP-25-18",
     "name": "Universal Front Mount Intercooler Kit",
-    "price": 209.25,
+    "price": 199.99,
     "stock": 0,
     "category": "Intercoolers",
     "image": "https://webp.cqggedm.com/image/images-hd/HDRSLOTGtLIQK3luR0zc/ipk/zlq-27-7-25-vl_pp-25-18-vl/main/zlq-27-7-25-vl_pp-25-18-vl(1).jpg",
@@ -106,14 +106,14 @@
       "Piping: 2.5\" aluminum, included",
       "Mounting: Universal front-mount"
     ],
-    "recommendation": "A compact core sized for daily-driven or moderate street builds up to roughly 450\u2013500 HP. Good fit for most 4-cylinder and smaller V6 turbo setups running moderate boost, where engine bay space is limited.",
-    "math_note": "Sizing logic: core volume (L \u00d7 W \u00d7 thickness) roughly tracks heat-dissipation capacity \u2014 this core is on the smaller end, appropriate for lower sustained heat loads rather than repeated high-boost pulls."
+    "recommendation": "A compact core sized for daily-driven or moderate street builds up to roughly 450–500 HP. Good fit for most 4-cylinder and smaller V6 turbo setups running moderate boost, where engine bay space is limited.",
+    "math_note": "Sizing logic: core volume (L × W × thickness) roughly tracks heat-dissipation capacity — this core is on the smaller end, appropriate for lower sustained heat loads rather than repeated high-boost pulls."
   },
   {
     "id": "MXP-016904",
     "sku": "ZLQ-60030076-TF-VL_PP-25-18",
     "name": "Universal Performance Intercooler Kit",
-    "price": 284.85,
+    "price": 269.99,
     "stock": 0,
     "category": "Intercoolers",
     "image": "https://webp.cqggedm.com/image/images-hd/HDRSTJRcaKmFWs8DMx3J/intercoolerpipingkits/zlq-60030076-tf-vl_pp-25-18-vl/main/zlq-60030076-tf-vl_pp-25-18-vl(2).jpg",
@@ -125,42 +125,42 @@
       "Piping: 2.5\" aluminum, included",
       "Mounting: Universal front-mount"
     ],
-    "recommendation": "A large core built for high-HP builds up to roughly 700\u2013800 HP, or for engines seeing repeated high-boost pulls (drag or road course use) where sustained heat soak matters. Reasonable fit for larger displacement or heavily boosted 4-cylinder, V6, or V8 builds pairing with a bigger turbo like the S366 or GT3582 above.",
-    "math_note": "Sizing logic: roughly 2.5x the core volume of the smaller intercooler above, meaning meaningfully more surface area to shed heat \u2014 matched to a bigger turbo pushing more mass airflow."
+    "recommendation": "A large core built for high-HP builds up to roughly 700–800 HP, or for engines seeing repeated high-boost pulls (drag or road course use) where sustained heat soak matters. Reasonable fit for larger displacement or heavily boosted 4-cylinder, V6, or V8 builds pairing with a bigger turbo like the S366 or GT3582 above.",
+    "math_note": "Sizing logic: roughly 2.5x the core volume of the smaller intercooler above, meaning meaningfully more surface area to shed heat — matched to a bigger turbo pushing more mass airflow."
   },
   {
     "id": "MXP-016905",
     "sku": "GGT04E-KIT-N-VL-Z2",
     "name": "Universal T3/T4 TO4E Complete Turbocharger Kit",
-    "price": 554.85,
+    "price": 449.99,
     "stock": 0,
     "category": "Kits",
     "image": "https://webp.cqggedm.com/image/images-hd/HDRSinjQIvqwu7lM0xkT/turbochargerperformance/ggt04e-kit-n-vl-z2/main/ggt04e-kit-n-vl-z2(1).jpg",
-    "description": "Complete T3/T4 T04E turbo kit for 1.5L\u20133.0L engines \u2014 includes the T04E turbocharger plus supporting hardware as a bundle.",
+    "description": "Complete T3/T4 T04E turbo kit for 1.5L–3.0L engines — includes the T04E turbocharger plus supporting hardware as a bundle.",
     "specs": [
       "Frame: T04E (T3/T4 hybrid)",
-      "Application: 1.5L\u20133.0L",
+      "Application: 1.5L–3.0L",
       "Kit includes: Turbo + supporting hardware"
     ],
-    "recommendation": "Best for first-time turbo builds on 1.5L\u20133.0L four-cylinder engines wanting an all-in-one starting point. Same T04E sizing logic as the standalone unit above \u2014 quick spool on smaller engines, not a fit for V6/V8 applications.",
-    "math_note": "Sizing logic: identical frame/flow characteristics to the standalone T04E .57 A/R above \u2014 the kit just bundles the supporting parts."
+    "recommendation": "Best for first-time turbo builds on 1.5L–3.0L four-cylinder engines wanting an all-in-one starting point. Same T04E sizing logic as the standalone unit above — quick spool on smaller engines, not a fit for V6/V8 applications.",
+    "math_note": "Sizing logic: identical frame/flow characteristics to the standalone T04E .57 A/R above — the kit just bundles the supporting parts."
   },
   {
     "id": "MXP-016906",
     "sku": "GGTLS2-K1",
     "name": "5-Piece T3 TO4E 420HP Turbo Upgrade Kit",
-    "price": 320.0,
+    "price": 649.99,
     "stock": 0,
     "category": "Kits",
     "image": "https://webp.cqggedm.com/image/catalog/GGTLS2-K1/ggtls2-k1(11).jpg",
-    "description": "5-piece T3 T04E 420HP turbo upgrade kit for 3.0L\u20135.0L engines \u2014 bundles the turbo with oil feed/return lines and intercooler piping.",
+    "description": "5-piece T3 T04E 420HP turbo upgrade kit for 3.0L–5.0L engines — bundles the turbo with oil feed/return lines and intercooler piping.",
     "specs": [
       "Frame: T04E (T3/T4)",
-      "Application: 3.0L\u20135.0L",
+      "Application: 3.0L–5.0L",
       "Kit includes: Turbo, oil feed/return lines, intercooler piping",
       "Manufacturer rating: up to 420 HP"
     ],
-    "recommendation": "Suited to 3.0L\u20135.0L six- or eight-cylinder engines targeting a moderate, reliable power bump (up to ~420 HP) rather than a maximum-effort build. The included plumbing makes this a reasonable one-box option for a first turbo install on a larger engine.",
+    "recommendation": "Suited to 3.0L–5.0L six- or eight-cylinder engines targeting a moderate, reliable power bump (up to ~420 HP) rather than a maximum-effort build. The included plumbing makes this a reasonable one-box option for a first turbo install on a larger engine.",
     "math_note": "Sizing logic: same T04E frame as the smaller kit above, but the 420 HP ceiling reflects it being matched here to larger-displacement engines that can support that output at moderate boost."
   }
 ]
