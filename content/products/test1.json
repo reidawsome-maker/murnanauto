@@ -1,0 +1,9 @@
+{
+  "stock": 1,
+  "title": "test1",
+  "sku": "test1",
+  "price": 1000000,
+  "category": "Turbos",
+  "image": "/images/products/stripe-logo.png",
+  "description": "just testing"
+}
