@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: reidawsome-maker/murnanauto
-  branch: main # or master, depending on your primary branch name
+  branch: main
   base_url: https://decap-oauth.murnanauto.workers.dev
   auth_endpoint: auth
 
@@ -17,8 +17,76 @@ collections:
     format: "json"
     fields:
       - { label: "Product Title", name: "title", widget: "string" }
-      - { label: "SKU", name: "sku", widget: "string" }
+      - { label: "SKU / Part Number", name: "sku", widget: "string" }
       - { label: "Price ($)", name: "price", widget: "number", value_type: "float" }
-      - { label: "In Stock Count", name: "stock", widget: "number", default: 0 }
+      - { label: "In Stock Count", name: "stock", widget: "number", default: 1 }
+      
+      # Category selection dropdown
+      - label: "Category / Subcategory"
+        name: "category"
+        widget: "select"
+        options:
+          # Forced Induction & Nitrous
+          - { label: "Forced Induction — Turbochargers", value: "Turbos" }
+          - { label: "Forced Induction — Intercoolers & Piping", value: "Intercoolers" }
+          - { label: "Forced Induction — Turbo Kits", value: "Kits" }
+          - { label: "Forced Induction — Superchargers", value: "Superchargers" }
+          - { label: "Forced Induction — Nitrous Kits & Bottles", value: "Nitrous" }
+          - { label: "Forced Induction — Boost Controllers", value: "Controllers" }
+          - { label: "Forced Induction — Wastegates & BOVs", value: "Valves" }
+          
+          # Engine
+          - { label: "Engine — Pistons & Rings", value: "Pistons" }
+          - { label: "Engine — Connecting Rods", value: "Rods" }
+          - { label: "Engine — Camshafts & Valvetrain", value: "Camshafts" }
+          - { label: "Engine — Gaskets & Seals", value: "Gaskets" }
+          - { label: "Engine — Rebuild Kits", value: "Rebuild" }
+          - { label: "Engine — Oil Pumps & Pans", value: "Oil" }
+          
+          # Exhaust
+          - { label: "Exhaust — Headers & Manifolds", value: "Headers" }
+          - { label: "Exhaust — Cat-Back Systems", value: "Exhaust" }
+          - { label: "Exhaust — Downpipes & Midpipes", value: "Downpipes" }
+          - { label: "Exhaust — Mufflers & Resonators", value: "Mufflers" }
+          - { label: "Exhaust — Exhaust Tips", value: "Tips" }
+          
+          # Fuel System
+          - { label: "Fuel System — Fuel Pumps", value: "Pumps" }
+          - { label: "Fuel System — Fuel Injectors", value: "Injectors" }
+          - { label: "Fuel System — Fuel Lines & AN Fittings", value: "Lines" }
+          - { label: "Fuel System — Fuel Rails & Regulators", value: "Regulators" }
+          
+          # Ignition & Electrical
+          - { label: "Ignition & Electrical — Ignition Coils", value: "Coils" }
+          - { label: "Ignition & Electrical — Spark Plugs", value: "Plugs" }
+          - { label: "Ignition & Electrical — Wiring & Harnesses", value: "Wiring" }
+          
+          # Suspension & Steering
+          - { label: "Suspension — Coilovers & Shocks", value: "Coilovers" }
+          - { label: "Suspension — Control Arms & Links", value: "ControlArms" }
+          - { label: "Suspension — Sway Bars & Bushings", value: "SwayBars" }
+          
+          # Drivetrain
+          - { label: "Drivetrain — Clutches & Flywheels", value: "Clutches" }
+          - { label: "Drivetrain — Axles & Driveshafts", value: "Axles" }
+          - { label: "Drivetrain — Differentials & Gears", value: "Differentials" }
+          
+          # Brakes
+          - { label: "Brakes — Brake Pads", value: "Pads" }
+          - { label: "Brakes — Rotors", value: "Rotors" }
+          - { label: "Brakes — Big Brake Kits & Calipers", value: "Calipers" }
+          - { label: "Brakes — Brake Lines & Fluid", value: "BrakeLines" }
+          
+          # Cooling
+          - { label: "Cooling — Radiators", value: "Radiators" }
+          - { label: "Cooling — Oil Coolers", value: "OilCoolers" }
+          - { label: "Cooling — Fans & Shrouds", value: "Fans" }
+          - { label: "Cooling — Hoses & Thermostats", value: "Thermostats" }
+          
+          # Shop Supplies & Merch
+          - { label: "Shop Supplies — Fluids & Chemicals", value: "Fluids" }
+          - { label: "Shop Supplies — Hardware & Tools", value: "Tools" }
+          - { label: "Merch — Branded Apparel & Gear", value: "Merch" }
+
       - { label: "Product Image", name: "image", widget: "image" }
       - { label: "Description", name: "description", widget: "text" }
