@@ -1,0 +1,29 @@
+{
+  "stock": 100,
+  "variants": [
+    {
+      "stock": 10,
+      "option": "6AN",
+      "sku": "test3",
+      "price": 1.99
+    },
+    {
+      "stock": 10,
+      "option": "8AN",
+      "sku": "test2",
+      "price": 2.99
+    },
+    {
+      "stock": 10,
+      "option": "10AN",
+      "sku": "test1",
+      "price": 3.99
+    }
+  ],
+  "title": "AN fittings",
+  "sku": "AN-FITTING-TEST",
+  "price": 1.99,
+  "category": "Turbos",
+  "image": "/images/products/stripe-logo.png",
+  "description": "TEST"
+}
