@@ -428,13 +428,13 @@
       card.classList.add('active');
       subcatTitle.textContent = cat.name;
       subcatPills.innerHTML = cat.subs.map((s, index) =>
-        `<span class="subcat-pill ${index === 0 ? 'active-pill' : ''}" onclick="filterCategoryProducts('${s.match}', '${s.label}', this)">${s.label}</span>`
+        `<span class="subcat-pill ${index === 0 ? 'active-pill' : ''}" onclick="filterCategoryProducts('${s.match}', '${s.label}', this, '${cat.name}')">${s.label}</span>`
       ).join('');
       subcatPanel.classList.add('open');
       subcatPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       if (cat.subs.length > 0) {
         const firstPill = subcatPills.querySelector('.subcat-pill');
-        filterCategoryProducts(cat.subs[0].match, cat.subs[0].label, firstPill);
+        filterCategoryProducts(cat.subs[0].match, cat.subs[0].label, firstPill, cat.name);
       }
     });
     catGridLg.appendChild(card);
@@ -445,7 +445,7 @@
     document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
   });
 
-  function filterCategoryProducts(categoryKey, subcatLabel, pillElem) {
+  function filterCategoryProducts(categoryKey, subcatLabel, pillElem, parentCatName) {
     if (pillElem) {
       document.querySelectorAll('.subcat-pill').forEach(p => p.classList.remove('active-pill'));
       pillElem.classList.add('active-pill');
@@ -457,8 +457,8 @@
       subcatPanel.appendChild(container);
     }
 
-    // Flexible category matching: handles exact keys, labels, and legacy categories
-    const filtered = inventory.filter(p => {
+    // Flexible matching logic for sub-categories + fallback to broad category matches
+    let filtered = inventory.filter(p => {
       if (!p.category) return false;
       const cat = p.category.toLowerCase();
       const key = categoryKey.toLowerCase();
@@ -474,6 +474,15 @@
         (key === 'hoseclamps' && (cat.includes('clamp') || cat.includes('separator')))
       );
     });
+
+    // Fallback: If 0 products matched the specific subcat key, show any products belonging to the parent category
+    if (filtered.length === 0 && parentCatName) {
+      const parentLower = parentCatName.toLowerCase();
+      filtered = inventory.filter(p => p.category && (
+        p.category.toLowerCase().includes(parentLower) ||
+        parentLower.includes(p.category.toLowerCase())
+      ));
+    }
 
     if (filtered.length === 0) {
       container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">No live inventory currently loaded for <strong>${subcatLabel}</strong>. Check back soon or contact support for direct orders.</div>`;
