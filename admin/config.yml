@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: repo: reidawsome-maker/murnanauto
+  branch: main # or master, depending on your primary branch name
+
+media_folder: "images/products" # Where uploaded product images will be saved
+public_folder: "/images/products" # Path used in your site's code to render images
+
+collections:
+  - name: "products"
+    label: "Products"
+    folder: "content/products" # Folder where individual product JSON files will save
+    create: true # Allows employees to create new products
+    slug: "{{slug}}" # Uses the title/SKU to name the JSON file
+    format: "json" # Saves products in JSON format
+    fields:
+      - { label: "Product Title", name: "title", widget: "string" }
+      - { label: "SKU", name: "sku", widget: "string" }
+      - { label: "Price ($)", name: "price", widget: "number", value_type: "float" }
+      - { label: "In Stock Count", name: "stock", widget: "number", default: 0 }
+      - { label: "Product Image", name: "image", widget: "image" }
+      - { label: "Description", name: "description", widget: "text" }
