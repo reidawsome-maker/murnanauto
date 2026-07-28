@@ -41,7 +41,7 @@ async function loadInventory() {
             image: item.image || '',
             description: item.description || '',
             category: item.category || 'Fluids',
-            variants: item.variants || [] // <--- ADDED: Passes variants to frontend
+            variants: item.variants || [] // Passes variants to frontend
           };
         })
       );
@@ -56,6 +56,9 @@ async function loadInventory() {
   } catch (err) {
     console.error('Error fetching Decap CMS products:', err);
   }
+
+  // Always sort inventory alphabetically by product name to fix random grid pooling
+  inventory.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
 
   return inventory;
 }
