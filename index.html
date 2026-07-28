@@ -456,11 +456,30 @@
       container.id = 'category-products-grid';
       subcatPanel.appendChild(container);
     }
-    const filtered = inventory.filter(p => p.category && p.category.toLowerCase() === categoryKey.toLowerCase());
+
+    // Flexible category matching: handles exact keys, labels, and legacy categories
+    const filtered = inventory.filter(p => {
+      if (!p.category) return false;
+      const cat = p.category.toLowerCase();
+      const key = categoryKey.toLowerCase();
+      const label = subcatLabel.toLowerCase();
+
+      return (
+        cat === key ||
+        cat.includes(key) ||
+        cat.includes(label) ||
+        (key === 'anfittings' && (cat.includes('lines') || cat.includes('fittings') || cat.includes('an'))) ||
+        (key === 'nylonhose' && (cat.includes('lines') || cat.includes('nylon') || cat.includes('hose'))) ||
+        (key === 'ptfehose' && cat.includes('ptfe')) ||
+        (key === 'hoseclamps' && (cat.includes('clamp') || cat.includes('separator')))
+      );
+    });
+
     if (filtered.length === 0) {
       container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">No live inventory currently loaded for <strong>${subcatLabel}</strong>. Check back soon or contact support for direct orders.</div>`;
       return;
     }
+
     container.innerHTML = filtered.map(item => {
       const hasVariants = item.variants && item.variants.length > 0;
       const inStock = hasVariants ? item.variants.some(v => v.stock > 0) : item.stock > 0;
