@@ -1,0 +1,35 @@
+{
+  "stock": 100,
+  "variants": [
+    {
+      "stock": 100,
+      "option": "3/4-16 Thread",
+      "sku": "OFM-TOA-34",
+      "price": 99.99
+    },
+    {
+      "stock": 100,
+      "option": "13/16-16 Thread",
+      "sku": "OFM-TOA-1316",
+      "price": 99.99
+    },
+    {
+      "stock": 100,
+      "option": "M20 x 1.5 Thread",
+      "sku": "OFM-TOA-M20",
+      "price": 99.99
+    },
+    {
+      "stock": 100,
+      "option": "M22 x 1.5 Thread",
+      "sku": "OFM-TOA-M22",
+      "price": 99.99
+    }
+  ],
+  "title": "FLF Remote Oil Filter Take-Off Adapter",
+  "price": 99.99,
+  "sku": "OFM-TOA-",
+  "category": "OilCoolers",
+  "image": "https://finishlinefactory.com/product/remote-oil-filter-take-off-adapter/",
+  "description": "Designed to mount directly in place of your factory oil filter, this take-off adapter routes engine oil to and from a remote filter location or auxiliary oil cooler. Features precision CNC-machined billet aluminum construction with dual female ORB ports for high-flow plumbing setups."
+}
