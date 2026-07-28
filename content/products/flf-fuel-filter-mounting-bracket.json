@@ -1,0 +1,23 @@
+{
+  "stock": 100,
+  "variants": [
+    {
+      "stock": 100,
+      "option": "10 ORB",
+      "sku": "BRKT-HF-10ORB",
+      "price": 13.79
+    },
+    {
+      "stock": 100,
+      "sku": "BRKT-HF-12ORB",
+      "option": "12 ORB",
+      "price": 24.89
+    }
+  ],
+  "title": "FLF Fuel Filter Mounting Bracket",
+  "description": "Heavy-duty mounting bracket designed specifically for Finish Line Factory high-flow fuel filter housings.",
+  "price": 13.79,
+  "sku": "BRKT-HF-",
+  "category": "FuelFilters",
+  "image": "https://finishlinefactory.com/wp-content/uploads/2023/04/fuel-filter-bracket.png"
+}
