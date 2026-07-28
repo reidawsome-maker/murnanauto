@@ -30,7 +30,7 @@
   .product-sku { font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--blue-bright); }
   .product-title { font-size: clamp(1.6rem, 3vw, 2.4rem); margin: 12px 0 18px; }
   .product-price { font-family:'JetBrains Mono',monospace; font-size: 1.6rem; color: var(--paper); margin-bottom: 10px; }
-  .product-stock { font-size: 0.9rem; margin-bottom: 24px; }
+  .product-stock { font-size: 0.9rem; margin-bottom: 24px; font-weight: 600; }
   .product-qty { display:flex; align-items:center; gap:12px; margin-bottom:22px; }
   .product-qty select { background:var(--panel-2); border:1px solid var(--steel); color:var(--paper); padding:10px 14px; border-radius:5px; font-family:'Inter',sans-serif; }
   .product-buy-btn { padding:15px 32px; border-radius:5px; font-family:'Oswald',sans-serif; text-transform:uppercase;
@@ -115,7 +115,8 @@
     document.title = `${product.name} — Murnan Auto`;
 
     let qtyOptions = '';
-    for (let i = 1; i <= Math.min(product.stock, 10); i++) {
+    const maxQty = Math.min(product.stock, 10);
+    for (let i = 1; i <= maxQty; i++) {
       qtyOptions += `<option value="${i}">${i}</option>`;
     }
 
@@ -128,7 +129,7 @@
         <h1 class="product-title">${product.name}</h1>
         <div class="product-price">$${product.price.toFixed(2)}</div>
         <div class="product-stock" style="color:${inStock ? '#4ADE80' : '#ff5c5c'};">
-          ${inStock ? `In Stock — ${product.stock} available` : 'Out of Stock'}
+          ${inStock ? 'In Stock' : 'Out of Stock'}
         </div>
         ${inStock ? `
           <div class="product-qty">
