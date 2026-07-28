@@ -322,8 +322,6 @@
 
 <script src="cart.js"></script>
 <script>
-
-
   const modelsByMake = {
     "Jeep": ["Grand Cherokee", "Wrangler", "Cherokee", "Gladiator", "Compass"],
     "Ford": ["F-150", "Mustang", "Explorer", "Bronco", "Escape"],
@@ -367,13 +365,44 @@
       { label: "Mufflers & Resonators", match: "Mufflers" },
       { label: "Exhaust Tips", match: "Tips" }
     ]},
-    { name: "Fuel System", img: "fuel.jpg", subs: [{ label: "Fuel Pumps", match: "Pumps" }, { label: "Fuel Injectors", match: "Injectors" }] },
-    { name: "Ignition & Electrical", img: "ignition.jpg", subs: [{ label: "Ignition Coils", match: "Coils" }, { label: "Spark Plugs", match: "Plugs" }] },
-    { name: "Suspension & Steering", img: "suspension.jpg", subs: [{ label: "Coilovers & Shocks", match: "Coilovers" }] },
-    { name: "Drivetrain", img: "drivetrain.jpg", subs: [{ label: "Clutches & Flywheels", match: "Clutches" }] },
-    { name: "Brakes", img: "brakes.jpg", subs: [{ label: "Brake Pads", match: "Pads" }, { label: "Rotors", match: "Rotors" }] },
-    { name: "Cooling", img: "cooling.jpg", subs: [{ label: "Radiators", match: "Radiators" }] },
-    { name: "Shop Supplies & Merch", img: "supplies.jpg", subs: [{ label: "Fluids & Chemicals", match: "Fluids" }] }
+    { name: "Fuel System", img: "fuel.jpg", subs: [
+      { label: "Fuel Pumps", match: "Pumps" },
+      { label: "Fuel Injectors", match: "Injectors" },
+      { label: "Fuel Lines & AN Fittings", match: "Lines" },
+      { label: "Fuel Rails & Regulators", match: "Regulators" }
+    ]},
+    { name: "Ignition & Electrical", img: "ignition.jpg", subs: [
+      { label: "Ignition Coils", match: "Coils" },
+      { label: "Spark Plugs", match: "Plugs" },
+      { label: "Wiring & Harnesses", match: "Wiring" }
+    ]},
+    { name: "Suspension & Steering", img: "suspension.jpg", subs: [
+      { label: "Coilovers & Shocks", match: "Coilovers" },
+      { label: "Control Arms & Links", match: "ControlArms" },
+      { label: "Sway Bars & Bushings", match: "SwayBars" }
+    ]},
+    { name: "Drivetrain", img: "drivetrain.jpg", subs: [
+      { label: "Clutches & Flywheels", match: "Clutches" },
+      { label: "Axles & Driveshafts", match: "Axles" },
+      { label: "Differentials & Gears", match: "Differentials" }
+    ]},
+    { name: "Brakes", img: "brakes.jpg", subs: [
+      { label: "Brake Pads", match: "Pads" },
+      { label: "Rotors", match: "Rotors" },
+      { label: "Big Brake Kits & Calipers", match: "Calipers" },
+      { label: "Brake Lines & Fluid", match: "BrakeLines" }
+    ]},
+    { name: "Cooling", img: "cooling.jpg", subs: [
+      { label: "Radiators", match: "Radiators" },
+      { label: "Oil Coolers", match: "OilCoolers" },
+      { label: "Fans & Shrouds", match: "Fans" },
+      { label: "Thermostats & Hoses", match: "Thermostats" }
+    ]},
+    { name: "Shop Supplies & Merch", img: "supplies.jpg", subs: [
+      { label: "Fluids & Chemicals", match: "Fluids" },
+      { label: "Hardware & Tools", match: "Tools" },
+      { label: "Apparel & Gear", match: "Merch" }
+    ]}
   ];
 
   const catGridLg = document.getElementById('catGridLg');
