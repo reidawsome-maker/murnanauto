@@ -5,7 +5,7 @@ backend:
   base_url: https://decap-oauth.murnanauto.workers.dev
   auth_endpoint: auth
 
-media_folder: "images/products"
+media_folder: "public/images/products"
 public_folder: "/images/products"
 
 collections:
