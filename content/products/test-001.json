@@ -1,0 +1,8 @@
+{
+  "stock": 1,
+  "title": "Test-001",
+  "sku": "testing0002",
+  "price": 1.99,
+  "image": "/images/products/stripe-logo.png",
+  "description": "this product is a test product!"
+}
