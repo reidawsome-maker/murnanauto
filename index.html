@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Murnan Auto — Parts, Supplies &amp; Merch</title>
+<title>Murnan Auto — Parts, Tools, Merch &amp; Supplies</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -41,7 +41,7 @@
   .live-prod-sku { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--blue-bright); }
   .live-prod-name { font-family: 'Oswald', sans-serif; margin: 6px 0; color: var(--paper); font-size: 1rem; text-transform: none; letter-spacing: 0; }
   .live-prod-price { font-weight: 700; color: var(--paper); font-size: 1.1rem; margin-bottom: 6px; }
-  .live-prod-stock { font-size: 0.75rem; margin-bottom: 12px; }
+  .live-prod-stock { font-size: 0.75rem; margin-bottom: 12px; font-weight: 600; }
   .live-prod-btn { width: 100%; padding: 10px; background: var(--blue); color: var(--asphalt); border: none; border-radius: 4px; font-family: 'Oswald', sans-serif; font-size: 0.8rem; text-transform: uppercase; font-weight:600; cursor: pointer; }
   .live-prod-btn:disabled { background: #333; color: #666; cursor: not-allowed; }
 </style>
@@ -91,8 +91,8 @@
 <section class="hero" style="padding-top:6vh; border-top:none;">
   <div class="hero-left">
     <div class="hero-badge">CATALOG LIVE</div>
-    <h1>Auto parts, <em>shop supplies</em> &amp; merch.</h1>
-    <p>Murnan Auto is a premier supplier of automotive parts, shop supplies, and branded gear — built by people who work on cars, for people who work on cars.</p>
+    <h1>Auto parts, <em>tools &amp; merch</em>.</h1>
+    <p>Murnan Auto is a premier supplier of automotive parts, tools, and branded gear — built by people who work on cars, for people who work on cars.</p>
   </div>
 
   <div class="stock-panel dealer-hero-card" onclick="openActiveDealerModal()" style="cursor: pointer;">
@@ -185,7 +185,7 @@
 <section id="shop">
   <div class="section-head">
     <h2>Shop by category</h2>
-    <span class="sub" id="catCount">10 CATEGORIES</span>
+    <span class="sub" id="catCount">11 CATEGORIES</span>
   </div>
   <div class="cat-grid-lg" id="catGridLg"></div>
 
@@ -226,7 +226,7 @@
     <div>
       <h2>About Murnan Auto</h2>
       <p>Murnan Auto is built around real shop experience — automotive repair, performance tuning, and wiring — not just parts we've never touched ourselves. Every category we carry is chosen against that same standard: parts and supplies worth putting on our own vehicles first.</p>
-      <p>We're building out a full catalog of parts, shop supplies, and branded gear for daily drivers, project builds, and everyone in between. We're actively growing our supplier and distributor relationships as we scale — if that's you, we'd like to talk.</p>
+      <p>We're building out a full catalog of parts, tools, and branded gear for daily drivers, project builds, and everyone in between. We're actively growing our supplier and distributor relationships as we scale — if that's you, we'd like to talk.</p>
     </div>
     <div class="values">
       <div class="row"><span class="num">01</span><div><h4>Hands-on standard</h4><p>Sourced and vetted by people who actually work on cars.</p></div></div>
@@ -398,9 +398,11 @@
       { label: "Fans & Shrouds", match: "Fans" },
       { label: "Thermostats & Hoses", match: "Thermostats" }
     ]},
-    { name: "Shop Supplies & Merch", img: "supplies.jpg", subs: [
-      { label: "Fluids & Chemicals", match: "Fluids" },
-      { label: "Hardware & Tools", match: "Tools" },
+    { name: "Tools", img: "tools.jpg", subs: [
+      { label: "Hand Tools & Specialty", match: "Tools" },
+      { label: "Fluids & Chemicals", match: "Fluids" }
+    ]},
+    { name: "Merch", img: "merch.jpg", subs: [
       { label: "Apparel & Gear", match: "Merch" }
     ]}
   ];
@@ -463,7 +465,7 @@
             <span class="live-prod-sku">${item.sku || item.id}</span>
             <h4 class="live-prod-name"><a href="product.html?id=${item.id}" style="color:inherit; text-decoration:none;">${item.name}</a></h4>
             <div class="live-prod-price">$${item.price.toFixed(2)}</div>
-            <div class="live-prod-stock" style="color:${inStock ? '#4ADE80' : '#ff5c5c'};">${inStock ? `In Stock (${item.stock} available)` : 'Out of Stock'}</div>
+            <div class="live-prod-stock" style="color:${inStock ? '#4ADE80' : '#ff5c5c'};">${inStock ? 'In Stock' : 'Out of Stock'}</div>
           </div>
           <div style="display:flex; gap:8px;">
             <a href="product.html?id=${item.id}" class="live-prod-btn" style="text-decoration:none; text-align:center; background:var(--panel-2); border:1px solid var(--steel); color:var(--paper);">View</a>
