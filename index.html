@@ -428,13 +428,13 @@
       card.classList.add('active');
       subcatTitle.textContent = cat.name;
       subcatPills.innerHTML = cat.subs.map((s, index) =>
-        `<span class="subcat-pill ${index === 0 ? 'active-pill' : ''}" onclick="filterCategoryProducts('${s.match}', '${s.label}', this, '${cat.name}')">${s.label}</span>`
+        `<span class="subcat-pill ${index === 0 ? 'active-pill' : ''}" onclick="filterCategoryProducts('${s.match}', '${s.label}', this)">${s.label}</span>`
       ).join('');
       subcatPanel.classList.add('open');
       subcatPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       if (cat.subs.length > 0) {
         const firstPill = subcatPills.querySelector('.subcat-pill');
-        filterCategoryProducts(cat.subs[0].match, cat.subs[0].label, firstPill, cat.name);
+        filterCategoryProducts(cat.subs[0].match, cat.subs[0].label, firstPill);
       }
     });
     catGridLg.appendChild(card);
@@ -445,7 +445,7 @@
     document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
   });
 
-  function filterCategoryProducts(categoryKey, subcatLabel, pillElem, parentCatName) {
+  function filterCategoryProducts(categoryKey, subcatLabel, pillElem) {
     if (pillElem) {
       document.querySelectorAll('.subcat-pill').forEach(p => p.classList.remove('active-pill'));
       pillElem.classList.add('active-pill');
@@ -460,20 +460,19 @@
     const key = categoryKey.toLowerCase();
     const label = subcatLabel.toLowerCase();
 
-    // Strict & Precise Filtering Rules (Fixes dual-listing and forces exact category placement)
+    // Clean 1-to-1 matching across ALL store categories
     const filtered = inventory.filter(p => {
       if (!p.category) return false;
-      const cat = p.category.toLowerCase();
+      const cat = p.category.toLowerCase().trim();
 
-      // 1. Direct match on value key or Decap full label string
-      if (cat === key || cat === label || cat.endsWith(label) || cat.includes(`— ${label}`)) return true;
+      // Step 1: Match against the CMS value key (e.g., "nylonhose", "anfittings", "turbos", "coilovers")
+      if (cat === key) return true;
 
-      // 2. Exact legacy mappings to prevent cross-category bleed
-      if (key === 'fuelfilters' && (cat === 'filters' || cat.includes('fuel filter'))) return true;
-      if (key === 'anfittings' && (cat === 'lines' || cat.includes('an fittings') || cat.includes('hose ends'))) return true;
-      if (key === 'nylonhose' && (cat.includes('nylon braided') || cat.includes('stainless braided'))) return true;
-      if (key === 'ptfehose' && cat.includes('ptfe')) return true;
-      if (key === 'hoseclamps' && (cat.includes('clamp') || cat.includes('separator'))) return true;
+      // Step 2: Match against full Decap CMS label or sub-label string
+      if (cat === label || cat.endsWith(label)) return true;
+
+      // Step 3: Temporary fallback ONLY for legacy un-updated "Lines" items
+      if (key === 'anfittings' && cat === 'lines') return true;
 
       return false;
     });
