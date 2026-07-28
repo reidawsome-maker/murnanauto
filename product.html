@@ -32,7 +32,7 @@
   .product-price { font-family:'JetBrains Mono',monospace; font-size: 1.6rem; color: var(--paper); margin-bottom: 10px; }
   .product-stock { font-size: 0.9rem; margin-bottom: 24px; font-weight: 600; }
   .product-qty { display:flex; align-items:center; gap:12px; margin-bottom:22px; }
-  .product-qty select { background:var(--panel-2); border:1px solid var(--steel); color:var(--paper); padding:10px 14px; border-radius:5px; font-family:'Inter',sans-serif; }
+  .product-qty select, .variant-select { background:var(--panel-2); border:1px solid var(--steel); color:var(--paper); padding:10px 14px; border-radius:5px; font-family:'Inter',sans-serif; }
   .product-buy-btn { padding:15px 32px; border-radius:5px; font-family:'Oswald',sans-serif; text-transform:uppercase;
     letter-spacing:0.06em; font-weight:600; font-size:0.9rem; border:none; cursor:pointer; background:var(--blue); color:var(--asphalt); }
   .product-buy-btn:disabled { background:#333; color:#666; cursor:not-allowed; }
@@ -111,13 +111,50 @@
       </div>`;
       return;
     }
-    const inStock = product.stock > 0;
+
+    const hasVariants = product.variants && product.variants.length > 0;
+    let activeItem = hasVariants ? product.variants[0] : product;
+
     document.title = `${product.name} — Murnan Auto`;
 
-    let qtyOptions = '';
-    const maxQty = Math.min(product.stock, 10);
-    for (let i = 1; i <= maxQty; i++) {
-      qtyOptions += `<option value="${i}">${i}</option>`;
+    function buildVariantOptions() {
+      if (!hasVariants) return '';
+      return product.variants.map((v, idx) => 
+        `<option value="${idx}">${v.option} — $${parseFloat(v.price).toFixed(2)}</option>`
+      ).join('');
+    }
+
+    function updateDisplay() {
+      const currentPrice = parseFloat(activeItem.price) || 0;
+      const currentStock = parseInt(activeItem.stock, 10) || 0;
+      const inStock = currentStock > 0;
+
+      document.getElementById('displayPrice').textContent = `$${currentPrice.toFixed(2)}`;
+      document.getElementById('displaySku').textContent = activeItem.sku || product.sku || product.id;
+
+      const stockEl = document.getElementById('displayStock');
+      stockEl.textContent = inStock ? 'In Stock' : 'Out of Stock';
+      stockEl.style.color = inStock ? '#4ADE80' : '#ff5c5c';
+
+      const buyBtn = document.getElementById('buyBtn');
+      if (buyBtn) {
+        buyBtn.disabled = !inStock;
+        buyBtn.textContent = inStock ? 'Add to Cart' : 'Out of Stock';
+      }
+
+      const qtyWrapper = document.getElementById('qtyWrapper');
+      if (qtyWrapper) {
+        if (inStock) {
+          qtyWrapper.style.display = 'flex';
+          const qtySelect = document.getElementById('qtySelect');
+          let opts = '';
+          const maxQty = Math.min(currentStock, 10);
+          for (let i = 1; i <= maxQty; i++) opts += `<option value="${i}">${i}</option>`;
+          qtySelect.innerHTML = opts;
+        } else {
+          qtyWrapper.style.display = 'none';
+        }
+      }
     }
 
     wrap.innerHTML = `
@@ -125,21 +162,27 @@
         ${product.image ? `<img src="${product.image}" alt="${product.name}">` : 'IMAGE PENDING'}
       </div>
       <div>
-        <span class="product-sku">${product.sku || product.id}</span>
+        <span class="product-sku" id="displaySku">${activeItem.sku || product.sku || product.id}</span>
         <h1 class="product-title">${product.name}</h1>
-        <div class="product-price">$${product.price.toFixed(2)}</div>
-        <div class="product-stock" style="color:${inStock ? '#4ADE80' : '#ff5c5c'};">
-          ${inStock ? 'In Stock' : 'Out of Stock'}
-        </div>
-        ${inStock ? `
-          <div class="product-qty">
-            <label for="qtySelect" style="font-family:'JetBrains Mono',monospace; font-size:0.8rem; color:var(--paper-dim);">QTY</label>
-            <select id="qtySelect">${qtyOptions}</select>
+        <div class="product-price" id="displayPrice">$${parseFloat(activeItem.price).toFixed(2)}</div>
+        <div class="product-stock" id="displayStock"></div>
+
+        ${hasVariants ? `
+          <div style="margin-bottom: 20px;">
+            <label style="font-family:'JetBrains Mono',monospace; font-size:0.8rem; color:var(--paper-dim); display:block; margin-bottom:6px;">OPTION / SIZE</label>
+            <select id="variantSelect" class="variant-select" style="width:100%; max-width:320px; cursor:pointer;">
+              ${buildVariantOptions()}
+            </select>
           </div>
         ` : ''}
-        <button class="product-buy-btn" id="buyBtn" ${!inStock ? 'disabled' : ''}>
-          ${inStock ? 'Add to Cart' : 'Out of Stock'}
-        </button>
+
+        <div class="product-qty" id="qtyWrapper">
+          <label for="qtySelect" style="font-family:'JetBrains Mono',monospace; font-size:0.8rem; color:var(--paper-dim);">QTY</label>
+          <select id="qtySelect"><option value="1">1</option></select>
+        </div>
+
+        <button class="product-buy-btn" id="buyBtn">Add to Cart</button>
+
         <div class="product-desc">
           <p>Category: ${product.category || 'Uncategorized'}</p>
           ${product.description ? `<p style="margin-top:14px; color:var(--paper);">${product.description}</p>` : ''}
@@ -162,13 +205,31 @@
       </div>
     `;
 
-    const buyBtn = document.getElementById('buyBtn');
-    if (buyBtn && inStock) {
-      buyBtn.addEventListener('click', () => {
-        const qty = parseInt(document.getElementById('qtySelect').value, 10);
-        for (let i = 0; i < qty; i++) addToCart(product.id);
+    updateDisplay();
+
+    if (hasVariants) {
+      document.getElementById('variantSelect').addEventListener('change', (e) => {
+        activeItem = product.variants[e.target.value];
+        updateDisplay();
       });
     }
+
+    document.getElementById('buyBtn').addEventListener('click', () => {
+      const qtySelect = document.getElementById('qtySelect');
+      const qty = qtySelect ? parseInt(qtySelect.value, 10) : 1;
+      const selectedSku = activeItem.sku || product.id;
+      const selectedName = hasVariants ? `${product.name} (${activeItem.option})` : product.name;
+      const selectedPrice = parseFloat(activeItem.price);
+
+      const existing = cart.find(item => item.id === selectedSku);
+      if (existing) {
+        existing.qty += qty;
+      } else {
+        cart.push({ id: selectedSku, name: selectedName, price: selectedPrice, qty: qty });
+      }
+      saveCart();
+      toggleCart();
+    });
   }
 
   loadInventory().then((products) => {
