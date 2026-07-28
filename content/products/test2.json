@@ -1,0 +1,9 @@
+{
+  "stock": 1,
+  "title": "test2",
+  "sku": "test2",
+  "price": 3.99,
+  "category": "Pumps",
+  "description": "test",
+  "image": "/images/products/stripe-logo.png"
+}
