@@ -1,0 +1,29 @@
+{
+  "stock": 100,
+  "variants": [
+    {
+      "stock": 100,
+      "option": "-06 AN",
+      "sku": "PTNH-6AN-50FT",
+      "price": 298.99
+    },
+    {
+      "stock": 100,
+      "option": "-08 AN",
+      "sku": "PTNH-8AN-50FT",
+      "price": 349.89
+    },
+    {
+      "stock": 100,
+      "sku": "PTNH-10AN-50FT",
+      "option": "-10 AN",
+      "price": 445.99
+    }
+  ],
+  "title": "FLF PTFE Hose w/ Braided Nylon (50 Foot Roll)",
+  "image": "https://finishlinefactory.com/wp-content/uploads/2018/01/ptfe-hose-braided-nylon.jpg",
+  "description": "Finish Line Factory’s PTFE Hose with Braided Nylon features an inner PTFE (Teflon) liner wrapped in a high-strength braided nylon outer cover. Designed specifically to handle harsh aggressive fuels like E85, ethanol, methanol, race gas, power steering fluid, and high-pressure oil lines without vapor permeation or breakdown.",
+  "sku": "PTNH-",
+  "price": 298.99,
+  "category": "Lines"
+}
