@@ -6,6 +6,8 @@
 
   function renderProduct(product) {
     const wrap = document.getElementById('productWrap');
+    if (!wrap) return;
+
     if (!product) {
       wrap.innerHTML = `<div style="grid-column:1/-1; padding:40px 0; text-align:center; color:var(--paper-dim);">
         Product not found. <a href="index.html#shop" style="color:var(--blue-bright);">Return to shop</a>.
@@ -20,38 +22,47 @@
 
     function buildVariantOptions() {
       if (!hasVariants) return '';
-      return product.variants.map((v, idx) => 
-        `<option value="${idx}">${v.option} — $${parseFloat(v.price).toFixed(2)}</option>`
-      ).join('');
+      return product.variants.map((v, idx) => {
+        const optName = v.option || `Option ${idx + 1}`;
+        const optPrice = v.price !== undefined ? parseFloat(v.price) : (parseFloat(product.price) || 0);
+        return `<option value="${idx}">${optName} — $${optPrice.toFixed(2)}</option>`;
+      }).join('');
     }
 
     function updateDisplay() {
-      const currentPrice = parseFloat(activeItem.price) || 0;
-      const currentStock = parseInt(activeItem.stock, 10) || 0;
+      const currentPrice = parseFloat(activeItem.price !== undefined ? activeItem.price : product.price) || 0;
+      const currentStock = parseInt(activeItem.stock !== undefined ? activeItem.stock : product.stock, 10) || 0;
       const inStock = currentStock > 0;
 
-      document.getElementById('displayPrice').textContent = `$${currentPrice.toFixed(2)}`;
-      document.getElementById('displaySku').textContent = activeItem.sku || product.sku || product.id;
-
+      const priceEl = document.getElementById('displayPrice');
+      const skuEl = document.getElementById('displaySku');
       const stockEl = document.getElementById('displayStock');
-      stockEl.textContent = inStock ? 'In Stock' : 'Out of Stock';
-      stockEl.style.color = inStock ? '#4ADE80' : '#ff5c5c';
-
       const buyBtn = document.getElementById('buyBtn');
+      const qtyWrapper = document.getElementById('qtyWrapper');
+
+      if (priceEl) priceEl.textContent = `$${currentPrice.toFixed(2)}`;
+      if (skuEl) skuEl.textContent = activeItem.sku || product.sku || product.id;
+
+      if (stockEl) {
+        stockEl.textContent = inStock ? 'In Stock' : 'Out of Stock';
+        stockEl.style.color = inStock ? '#4ADE80' : '#ff5c5c';
+      }
+
       if (buyBtn) {
         buyBtn.disabled = !inStock;
         buyBtn.textContent = inStock ? 'Add to Cart' : 'Out of Stock';
       }
 
-      const qtyWrapper = document.getElementById('qtyWrapper');
       if (qtyWrapper) {
         if (inStock) {
           qtyWrapper.style.display = 'flex';
           const qtySelect = document.getElementById('qtySelect');
-          let opts = '';
-          const maxQty = Math.min(currentStock, 10);
-          for (let i = 1; i <= maxQty; i++) opts += `<option value="${i}">${i}</option>`;
-          qtySelect.innerHTML = opts;
+          if (qtySelect) {
+            let opts = '';
+            const maxQty = Math.min(currentStock, 10);
+            for (let i = 1; i <= maxQty; i++) opts += `<option value="${i}">${i}</option>`;
+            qtySelect.innerHTML = opts;
+          }
         } else {
           qtyWrapper.style.display = 'none';
         }
@@ -65,7 +76,7 @@
       <div>
         <span class="product-sku" id="displaySku">${activeItem.sku || product.sku || product.id}</span>
         <h1 class="product-title">${product.name}</h1>
-        <div class="product-price" id="displayPrice">$${parseFloat(activeItem.price).toFixed(2)}</div>
+        <div class="product-price" id="displayPrice">$${parseFloat(activeItem.price || product.price || 0).toFixed(2)}</div>
         <div class="product-stock" id="displayStock"></div>
 
         ${hasVariants ? `
@@ -109,41 +120,46 @@
     updateDisplay();
 
     if (hasVariants) {
-      document.getElementById('variantSelect').addEventListener('change', (e) => {
-        activeItem = product.variants[e.target.value];
-        updateDisplay();
-      });
+      const vSelect = document.getElementById('variantSelect');
+      if (vSelect) {
+        vSelect.addEventListener('change', (e) => {
+          activeItem = product.variants[e.target.value];
+          updateDisplay();
+        });
+      }
     }
 
-    document.getElementById('buyBtn').addEventListener('click', () => {
-      const qtySelect = document.getElementById('qtySelect');
-      const qty = qtySelect ? parseInt(qtySelect.value, 10) : 1;
-      const selectedSku = activeItem.sku || product.id;
-      const selectedName = hasVariants ? `${product.name} (${activeItem.option})` : product.name;
-      const selectedPrice = parseFloat(activeItem.price);
+    const buyBtn = document.getElementById('buyBtn');
+    if (buyBtn) {
+      buyBtn.addEventListener('click', () => {
+        const qtySelect = document.getElementById('qtySelect');
+        const qty = qtySelect ? parseInt(qtySelect.value, 10) : 1;
+        const selectedSku = activeItem.sku || product.id;
+        const selectedName = hasVariants ? `${product.name} (${activeItem.option || 'Selected Option'})` : product.name;
+        const selectedPrice = parseFloat(activeItem.price !== undefined ? activeItem.price : product.price) || 0;
 
-      const existing = cart.find(item => item.id === selectedSku);
-      if (existing) {
-        existing.qty += qty;
-      } else {
-        cart.push({ id: selectedSku, name: selectedName, price: selectedPrice, qty: qty });
-      }
-      saveCart();
-      toggleCart();
-    });
+        const existing = cart.find(item => item.id === selectedSku);
+        if (existing) {
+          existing.qty += qty;
+        } else {
+          cart.push({ id: selectedSku, name: selectedName, price: selectedPrice, qty: qty });
+        }
+        saveCart();
+        toggleCart();
+      });
+    }
   }
 
-  loadInventory().then((products) => {
-    const queryId = getParam('id');
-    
-    // Smart match: Check product.id, product.sku, or nested variant SKUs
-    const product = products.find(p => 
-      p.id === queryId || 
-      p.sku === queryId || 
-      (p.variants && p.variants.some(v => v.sku === queryId))
-    );
-
-    renderProduct(product);
-    updateCartUI();
+  document.addEventListener('DOMContentLoaded', () => {
+    loadInventory().then((products) => {
+      const queryId = getParam('id');
+      const product = products.find(p => 
+        p.id === queryId || 
+        p.sku === queryId || 
+        (p.variants && p.variants.some(v => v.sku === queryId))
+      );
+      renderProduct(product);
+      updateCartUI();
+    });
   });
 </script>
