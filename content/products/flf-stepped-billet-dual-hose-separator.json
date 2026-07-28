@@ -1,0 +1,29 @@
+{
+  "stock": 100,
+  "variants": [
+    {
+      "stock": 100,
+      "sku": "CLAMP-BDHS-11MM-14MM",
+      "option": "FLF Stepped Billet Dual Hose Separator (11MM-14MM)",
+      "price": 10.69
+    },
+    {
+      "stock": 100,
+      "option": "FLF Stepped Billet Dual Hose Separator (11MM-16MM)",
+      "price": 10.69,
+      "sku": "CLAMP-BDHS-11MM-16MM"
+    },
+    {
+      "stock": 100,
+      "option": "FLF Stepped Billet Dual Hose Separator (14MM-16MM)",
+      "price": 10.69,
+      "sku": "CLAMP-BDHS-14MM-16MM"
+    }
+  ],
+  "title": "FLF Stepped Billet Dual Hose Separator",
+  "price": 10.69,
+  "category": "Lines",
+  "image": "https://finishlinefactory.com/wp-content/uploads/2022/06/offset-billet-dual-hose-clamp-Large.jpg",
+  "description": "These hose separators allow for the pairing of two hoses of different sizes, making it easy to run fluid systems such as a fuel feed and return system side-by-side.",
+  "sku": "CLAMP-BDHS-"
+}
