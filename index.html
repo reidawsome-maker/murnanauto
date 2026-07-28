@@ -457,32 +457,26 @@
       subcatPanel.appendChild(container);
     }
 
-    // Flexible matching logic for sub-categories + fallback to broad category matches
-    let filtered = inventory.filter(p => {
+    const key = categoryKey.toLowerCase();
+    const label = subcatLabel.toLowerCase();
+
+    // Strict & Precise Filtering Rules (Fixes dual-listing and forces exact category placement)
+    const filtered = inventory.filter(p => {
       if (!p.category) return false;
       const cat = p.category.toLowerCase();
-      const key = categoryKey.toLowerCase();
-      const label = subcatLabel.toLowerCase();
 
-      return (
-        cat === key ||
-        cat.includes(key) ||
-        cat.includes(label) ||
-        (key === 'anfittings' && (cat.includes('lines') || cat.includes('fittings') || cat.includes('an'))) ||
-        (key === 'nylonhose' && (cat.includes('lines') || cat.includes('nylon') || cat.includes('hose'))) ||
-        (key === 'ptfehose' && cat.includes('ptfe')) ||
-        (key === 'hoseclamps' && (cat.includes('clamp') || cat.includes('separator')))
-      );
+      // 1. Direct match on value key or Decap full label string
+      if (cat === key || cat === label || cat.endsWith(label) || cat.includes(`— ${label}`)) return true;
+
+      // 2. Exact legacy mappings to prevent cross-category bleed
+      if (key === 'fuelfilters' && (cat === 'filters' || cat.includes('fuel filter'))) return true;
+      if (key === 'anfittings' && (cat === 'lines' || cat.includes('an fittings') || cat.includes('hose ends'))) return true;
+      if (key === 'nylonhose' && (cat.includes('nylon braided') || cat.includes('stainless braided'))) return true;
+      if (key === 'ptfehose' && cat.includes('ptfe')) return true;
+      if (key === 'hoseclamps' && (cat.includes('clamp') || cat.includes('separator'))) return true;
+
+      return false;
     });
-
-    // Fallback: If 0 products matched the specific subcat key, show any products belonging to the parent category
-    if (filtered.length === 0 && parentCatName) {
-      const parentLower = parentCatName.toLowerCase();
-      filtered = inventory.filter(p => p.category && (
-        p.category.toLowerCase().includes(parentLower) ||
-        parentLower.includes(p.category.toLowerCase())
-      ));
-    }
 
     if (filtered.length === 0) {
       container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">No live inventory currently loaded for <strong>${subcatLabel}</strong>. Check back soon or contact support for direct orders.</div>`;
