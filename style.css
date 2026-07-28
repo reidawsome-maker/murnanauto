@@ -496,3 +496,23 @@ footer a{ color:var(--blue-bright); text-decoration:none; }
   line-height: 1.4;
   margin: 0;
 }
+
+/* PRODUCT PAGE IMAGE FIX */
+.product-wrap .product-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--panel-2);
+  border: 1px solid var(--steel);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-wrap .product-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
