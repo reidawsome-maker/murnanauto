@@ -1,0 +1,29 @@
+{
+  "stock": 100,
+  "variants": [
+    {
+      "stock": 100,
+      "option": "-06 AN (11/32\" ID - 9/16\" OD)",
+      "sku": "NYL-6AN-50FT",
+      "price": 262.29
+    },
+    {
+      "stock": 100,
+      "option": "-08 AN (7/16\" ID - 11/16\" OD)",
+      "sku": "NYL-8AN-50FT",
+      "price": 300.09
+    },
+    {
+      "stock": 100,
+      "option": "-10 AN (9/16\" ID - 53/64\" OD)",
+      "sku": "NYL-10AN-50FT",
+      "price": 363.29
+    }
+  ],
+  "title": "FLF Nylon Braided Hose (50 Foot Roll)",
+  "sku": "NYL-",
+  "image": "https://www.finishlinefactory.com/wp-content/uploads/2016/10/IMG_6293.png",
+  "price": 262.29,
+  "category": "Lines",
+  "description": "Finish Line Factory’s Nylon Braided Hose uses high-quality nylon braids and rubber lining that resists oxidation and is more than strong enough to withstand the toughest racing duties. Compatible with most fuels, coolants, and oils, featuring high operating temperature and maximum pressure ratings."
+}
