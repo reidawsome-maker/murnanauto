@@ -22,29 +22,34 @@ async function loadInventory() {
     const ghRes = await fetch(`https://api.github.com/repos/reidawsome-maker/murnanauto/contents/content/products?t=${Date.now()}`);
     if (ghRes.ok) {
       const files = await ghRes.json();
-      for (const file of files) {
-        if (file.name.endsWith('.json')) {
-          const prodRes = await fetch(`${file.download_url}?t=${Date.now()}`);
-          if (prodRes.ok) {
-            const item = await prodRes.json();
-            
-            // Map Decap fields to match your site's expected product layout
-            const formattedProduct = {
-              id: file.name.replace('.json', ''), // ALWAYS matches the exact GitHub JSON filename
-              sku: item.sku || 'N/A',
-              name: item.title,
-              price: parseFloat(item.price) || 0,
-              stock: parseInt(item.stock, 10) || 0,
-              image: item.image || '',
-              description: item.description || '',
-              category: item.category || 'Fluids' // Subcategory match key
-            };
+      
+      const jsonFiles = files.filter(file => file.name.endsWith('.json'));
 
-            // Avoid duplicate items if ID matches static JSON
-            if (!inventory.some(p => p.id === formattedProduct.id)) {
-              inventory.push(formattedProduct);
-            }
-          }
+      // Fetch all JSON files in parallel for much faster load times
+      const loadedProducts = await Promise.all(
+        jsonFiles.map(async (file) => {
+          const prodRes = await fetch(`${file.download_url}?t=${Date.now()}`);
+          if (!prodRes.ok) return null;
+          const item = await prodRes.json();
+
+          return {
+            id: file.name.replace('.json', ''), // ALWAYS matches the exact GitHub JSON filename
+            sku: item.sku || 'N/A',
+            name: item.title || item.name,
+            price: parseFloat(item.price) || 0,
+            stock: parseInt(item.stock, 10) || 0,
+            image: item.image || '',
+            description: item.description || '',
+            category: item.category || 'Fluids',
+            variants: item.variants || [] // <--- ADDED: Passes variants to frontend
+          };
+        })
+      );
+
+      // Filter out failed fetches and avoid duplicate items
+      for (const formattedProduct of loadedProducts) {
+        if (formattedProduct && !inventory.some(p => p.id === formattedProduct.id)) {
+          inventory.push(formattedProduct);
         }
       }
     }
