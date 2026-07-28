@@ -1,4 +1,4 @@
-backend:
+local_backend: truebackend:
   name: github
   repo: repo: reidawsome-maker/murnanauto
   branch: main # or master, depending on your primary branch name
