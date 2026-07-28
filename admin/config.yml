@@ -92,3 +92,14 @@ collections:
 
       - { label: "Product Image", name: "image", widget: "image" }
       - { label: "Description", name: "description", widget: "text" }
+
+      # Product Variants Section
+      - label: "Product Variants (Optional)"
+        name: "variants"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Variant Option Name (e.g., 6AN - Braided, 10AN - PTFE)", name: "option", widget: "string" }
+          - { label: "Variant SKU", name: "sku", widget: "string" }
+          - { label: "Variant Price ($)", name: "price", widget: "number", value_type: "float" }
+          - { label: "Variant Stock Count", name: "stock", widget: "number", default: 10 }
