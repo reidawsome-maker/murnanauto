@@ -457,19 +457,25 @@
       return;
     }
     container.innerHTML = filtered.map(item => {
-      const inStock = item.stock > 0;
+      const hasVariants = item.variants && item.variants.length > 0;
+      const inStock = hasVariants ? item.variants.some(v => v.stock > 0) : item.stock > 0;
+      const displayPrice = hasVariants ? `From $${item.price.toFixed(2)}` : `$${item.price.toFixed(2)}`;
+      
       return `
         <div class="live-prod-card">
           <div>
             ${item.image ? `<img src="${item.image}" alt="${item.name}" style="width:100%; aspect-ratio:1/1; object-fit:contain; background:var(--panel); border-radius:4px; margin-bottom:10px;">` : ''}
             <span class="live-prod-sku">${item.sku || item.id}</span>
             <h4 class="live-prod-name"><a href="product.html?id=${item.id}" style="color:inherit; text-decoration:none;">${item.name}</a></h4>
-            <div class="live-prod-price">$${item.price.toFixed(2)}</div>
+            <div class="live-prod-price">${displayPrice}</div>
             <div class="live-prod-stock" style="color:${inStock ? '#4ADE80' : '#ff5c5c'};">${inStock ? 'In Stock' : 'Out of Stock'}</div>
           </div>
           <div style="display:flex; gap:8px;">
             <a href="product.html?id=${item.id}" class="live-prod-btn" style="text-decoration:none; text-align:center; background:var(--panel-2); border:1px solid var(--steel); color:var(--paper);">View</a>
-            <button class="live-prod-btn" onclick="addToCart('${item.id}')" ${!inStock ? 'disabled' : ''}>${inStock ? 'Add To Cart' : 'Out of Stock'}</button>
+            ${hasVariants ? 
+              `<a href="product.html?id=${item.id}" class="live-prod-btn" style="text-decoration:none; text-align:center;">Select Option</a>` : 
+              `<button class="live-prod-btn" onclick="addToCart('${item.id}')" ${!inStock ? 'disabled' : ''}>${inStock ? 'Add To Cart' : 'Out of Stock'}</button>`
+            }
           </div>
         </div>`;
     }).join('');
