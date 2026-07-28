@@ -1,7 +1,3 @@
-// Murnan Auto — shared cart logic
-// Used by index.html and product.html so cart state stays consistent
-// across pages (stored in the browser via localStorage).
-
 const CHECKOUT_API = 'https://murnan-checkout.murnanauto.workers.dev';
 
 let inventory = [];
@@ -23,18 +19,18 @@ async function loadInventory() {
 
   // 2. Fetch Decap CMS individual product JSON files from GitHub
   try {
-    const ghRes = await fetch('https://api.github.com/repos/reidawsome-maker/murnanauto/contents/content/products');
+    const ghRes = await fetch(`https://api.github.com/repos/reidawsome-maker/murnanauto/contents/content/products?t=${Date.now()}`);
     if (ghRes.ok) {
       const files = await ghRes.json();
       for (const file of files) {
         if (file.name.endsWith('.json')) {
-          const prodRes = await fetch(file.download_url);
+          const prodRes = await fetch(`${file.download_url}?t=${Date.now()}`);
           if (prodRes.ok) {
             const item = await prodRes.json();
             
             // Map Decap fields to match your site's expected product layout
             const formattedProduct = {
-              id: item.sku || file.name.replace('.json', ''),
+              id: file.name.replace('.json', ''), // ALWAYS matches the exact GitHub JSON filename
               sku: item.sku || 'N/A',
               name: item.title,
               price: parseFloat(item.price) || 0,
@@ -44,7 +40,7 @@ async function loadInventory() {
               category: item.category || 'Fluids' // Subcategory match key
             };
 
-            // Avoid duplicate items if SKU matches static JSON
+            // Avoid duplicate items if ID matches static JSON
             if (!inventory.some(p => p.id === formattedProduct.id)) {
               inventory.push(formattedProduct);
             }
