@@ -1,18 +1,20 @@
-local_backend: truebackend:
+backend:
   name: github
-  repo: repo: reidawsome-maker/murnanauto
+  repo: reidawsome-maker/murnanauto
   branch: main # or master, depending on your primary branch name
+  base_url: https://decap-oauth.murnanauto.workers.dev
+  auth_endpoint: auth
 
-media_folder: "images/products" # Where uploaded product images will be saved
-public_folder: "/images/products" # Path used in your site's code to render images
+media_folder: "images/products"
+public_folder: "/images/products"
 
 collections:
   - name: "products"
     label: "Products"
-    folder: "content/products" # Folder where individual product JSON files will save
-    create: true # Allows employees to create new products
-    slug: "{{slug}}" # Uses the title/SKU to name the JSON file
-    format: "json" # Saves products in JSON format
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
     fields:
       - { label: "Product Title", name: "title", widget: "string" }
       - { label: "SKU", name: "sku", widget: "string" }
