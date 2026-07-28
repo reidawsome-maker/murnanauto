@@ -6,7 +6,12 @@
 
   function renderProduct(product) {
     const wrap = document.getElementById('productWrap');
-    if (!wrap) return;
+    
+    // RETRY GUARD: If the DOM element isn't ready, retry in 50ms instead of crashing
+    if (!wrap) {
+      setTimeout(() => renderProduct(product), 50);
+      return;
+    }
 
     if (!product) {
       wrap.innerHTML = `<div style="grid-column:1/-1; padding:40px 0; text-align:center; color:var(--paper-dim);">
@@ -150,7 +155,7 @@
     }
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
+  function initPage() {
     loadInventory().then((products) => {
       const queryId = getParam('id');
       const product = products.find(p => 
@@ -161,5 +166,11 @@
       renderProduct(product);
       updateCartUI();
     });
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPage);
+  } else {
+    initPage();
+  }
 </script>
