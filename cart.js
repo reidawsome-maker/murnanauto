@@ -8,13 +8,54 @@ let inventory = [];
 let cart = JSON.parse(localStorage.getItem('murnan_cart')) || [];
 
 async function loadInventory() {
+  inventory = [];
+
+  // 1. Try loading legacy static products.json if present
   try {
     const res = await fetch('products.json', { cache: 'no-store' });
-    inventory = await res.json();
+    if (res.ok) {
+      const staticProds = await res.json();
+      inventory.push(...staticProds);
+    }
   } catch (err) {
-    console.error('Could not load products.json', err);
-    inventory = [];
+    console.log('No static products.json found, loading Decap products...');
   }
+
+  // 2. Fetch Decap CMS individual product JSON files from GitHub
+  try {
+    const ghRes = await fetch('https://api.github.com/repos/reidawsome-maker/murnanauto/contents/content/products');
+    if (ghRes.ok) {
+      const files = await ghRes.json();
+      for (const file of files) {
+        if (file.name.endsWith('.json')) {
+          const prodRes = await fetch(file.download_url);
+          if (prodRes.ok) {
+            const item = await prodRes.json();
+            
+            // Map Decap fields to match your site's expected product layout
+            const formattedProduct = {
+              id: item.sku || file.name.replace('.json', ''),
+              sku: item.sku || 'N/A',
+              name: item.title,
+              price: parseFloat(item.price) || 0,
+              stock: parseInt(item.stock, 10) || 0,
+              image: item.image || '',
+              description: item.description || '',
+              category: item.category || 'Fluids' // Subcategory match key
+            };
+
+            // Avoid duplicate items if SKU matches static JSON
+            if (!inventory.some(p => p.id === formattedProduct.id)) {
+              inventory.push(formattedProduct);
+            }
+          }
+        }
+      }
+    }
+  } catch (err) {
+    console.error('Error fetching Decap CMS products:', err);
+  }
+
   return inventory;
 }
 
