@@ -36,7 +36,24 @@
   .product-buy-btn { padding:15px 32px; border-radius:5px; font-family:'Oswald',sans-serif; text-transform:uppercase;
     letter-spacing:0.06em; font-weight:600; font-size:0.9rem; border:none; cursor:pointer; background:var(--blue); color:var(--asphalt); }
   .product-buy-btn:disabled { background:#333; color:#666; cursor:not-allowed; }
-  .product-desc { margin-top:30px; color:var(--paper-dim); font-size:0.95rem; line-height:1.6; max-width:60ch; }
+  
+  /* Formatted product description container */
+  .product-desc { 
+    margin-top:30px; 
+    color:var(--paper-dim); 
+    font-size:0.95rem; 
+    line-height:1.6; 
+    max-width:65ch; 
+    border-top:1px solid var(--steel);
+    padding-top:20px;
+  }
+  .product-desc-body {
+    white-space: pre-wrap; 
+    word-break: break-word;
+    margin-top: 14px; 
+    color: var(--paper);
+  }
+
   .product-back { font-family:'JetBrains Mono',monospace; font-size:0.8rem; color:var(--paper-dim); text-decoration:none; }
   .product-back:hover { color:var(--blue-bright); }
   @media (max-width:820px){ .product-wrap{ grid-template-columns:1fr; } }
@@ -117,10 +134,12 @@
       return;
     }
 
+    const prodTitle = product.title || product.name || 'Product';
+    const prodImg = product.image || product.featured_image || (product.images && product.images[0]);
     const hasVariants = product.variants && product.variants.length > 0;
     let activeItem = hasVariants ? product.variants[0] : product;
 
-    document.title = `${product.name} — Murnan Auto`;
+    document.title = `${prodTitle} — Murnan Auto`;
 
     function buildVariantOptions() {
       if (!hasVariants) return '';
@@ -173,11 +192,11 @@
 
     wrap.innerHTML = `
       <div class="product-img">
-        ${product.image ? `<img src="${product.image}" alt="${product.name}">` : 'IMAGE PENDING'}
+        ${prodImg ? `<img src="${prodImg}" alt="${prodTitle}">` : 'IMAGE PENDING'}
       </div>
       <div>
         <span class="product-sku" id="displaySku">${activeItem.sku || product.sku || product.id}</span>
-        <h1 class="product-title">${product.name}</h1>
+        <h1 class="product-title">${prodTitle}</h1>
         <div class="product-price" id="displayPrice">$${parseFloat(activeItem.price || product.price || 0).toFixed(2)}</div>
         <div class="product-stock" id="displayStock"></div>
 
@@ -198,9 +217,8 @@
         <button class="product-buy-btn" id="buyBtn">Add to Cart</button>
 
         <div class="product-desc">
-          <p>Category: ${product.category || 'Uncategorized'}</p>
-          ${product.description ? `<p style="margin-top:14px; color:var(--paper);">${product.description}</p>` : ''}
-          <p style="margin-top:18px;">These are general sizing guidelines, not a guarantee of fitment for every build.</p>
+          <p><strong>Category:</strong> ${product.category || 'Uncategorized'}</p>
+          ${product.description ? `<div class="product-desc-body">${product.description}</div>` : ''}
         </div>
       </div>
     `;
@@ -223,7 +241,7 @@
         const qtySelect = document.getElementById('qtySelect');
         const qty = qtySelect ? parseInt(qtySelect.value, 10) : 1;
         const selectedSku = activeItem.sku || product.id;
-        const selectedName = hasVariants ? `${product.name} (${activeItem.option || 'Selected Option'})` : product.name;
+        const selectedName = hasVariants ? `${prodTitle} (${activeItem.option || 'Selected Option'})` : prodTitle;
         const selectedPrice = parseFloat(activeItem.price !== undefined ? activeItem.price : product.price) || 0;
 
         const existing = cart.find(item => item.id === selectedSku);
