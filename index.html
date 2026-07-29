@@ -488,12 +488,16 @@
       const inStock = hasVariants ? item.variants.some(v => v.stock > 0) : item.stock > 0;
       const displayPrice = hasVariants ? `From $${item.price.toFixed(2)}` : `$${item.price.toFixed(2)}`;
       
+      // Fallback property check to handle both Decap CMS field names (image / featured_image / title / name)
+      const imgSrc = item.image || item.featured_image || (item.images && item.images[0]);
+      const titleText = item.title || item.name;
+
       return `
         <div class="live-prod-card">
           <div>
-            ${item.image ? `<img src="${item.image}" alt="${item.name}" style="width:100%; aspect-ratio:1/1; object-fit:contain; background:var(--panel); border-radius:4px; margin-bottom:10px;">` : ''}
+            ${imgSrc ? `<img src="${imgSrc}" alt="${titleText}" style="width:100%; aspect-ratio:1/1; object-fit:contain; background:var(--panel); border-radius:4px; margin-bottom:10px;">` : ''}
             <span class="live-prod-sku">${item.sku || item.id}</span>
-            <h4 class="live-prod-name"><a href="product.html?id=${item.id}" style="color:inherit; text-decoration:none;">${item.name}</a></h4>
+            <h4 class="live-prod-name"><a href="product.html?id=${item.id}" style="color:inherit; text-decoration:none;">${titleText}</a></h4>
             <div class="live-prod-price">${displayPrice}</div>
             <div class="live-prod-stock" style="color:${inStock ? '#4ADE80' : '#ff5c5c'};">${inStock ? 'In Stock' : 'Out of Stock'}</div>
           </div>
