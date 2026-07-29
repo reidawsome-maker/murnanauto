@@ -5,7 +5,7 @@ backend:
   base_url: https://decap-oauth.murnanauto.workers.dev
   auth_endpoint: auth
 
-media_folder: "public/images/products"
+media_folder: "images/products"
 public_folder: "/images/products"
 
 collections:
@@ -97,7 +97,7 @@ collections:
           - { label: "Merch — Branded Apparel & Gear", value: "Merch" }
 
       - { label: "Product Image", name: "image", widget: "image" }
-      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Description", name: "description", widget: "markdown" }
 
       # Product Variants Section
       - label: "Product Variants (Optional)"
