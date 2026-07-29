@@ -50,12 +50,13 @@ collections:
           - { label: "Exhaust — Mufflers & Resonators", value: "Mufflers" }
           - { label: "Exhaust — Exhaust Tips", value: "Tips" }
           
-          # Fuel System & Plumbing (Granular Breakdown)
-          - { label: "Plumbing — AN Hose Ends & Swivel Fittings", value: "ANFittings" }
-          - { label: "Plumbing — PTFE Hose & Lines", value: "PTFEHose" }
-          - { label: "Plumbing — Nylon & Stainless Braided Hose", value: "NylonHose" }
-          - { label: "Plumbing — Hose Separators & Clamps", value: "HoseClamps" }
-          - { label: "Plumbing — AN Adapters & NPT Fittings", value: "ANAdapters" }
+          # Fuel System (Granular Breakdown)
+          - { label: "Fuel System — Complete Fuel Kits", value: "FuelKits" }
+          - { label: "Fuel System — AN Hose Ends & Swivel Fittings", value: "ANFittings" }
+          - { label: "Fuel System — PTFE Hose & Lines", value: "PTFEHose" }
+          - { label: "Fuel System — Nylon & Stainless Braided Hose", value: "NylonHose" }
+          - { label: "Fuel System — Hose Separators & Clamps", value: "HoseClamps" }
+          - { label: "Fuel System — AN Adapters & NPT Fittings", value: "ANAdapters" }
           - { label: "Fuel System — Fuel Pumps & Components", value: "Pumps" }
           - { label: "Fuel System — Fuel Injectors", value: "Injectors" }
           - { label: "Fuel System — Fuel Rails & Regulators", value: "Regulators" }
