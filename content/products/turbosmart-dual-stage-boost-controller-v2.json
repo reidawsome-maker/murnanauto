@@ -1,0 +1,23 @@
+{
+  "stock": 0,
+  "variants": [
+    {
+      "stock": 0,
+      "option": "Blue",
+      "sku": "TS-0105-1101",
+      "price": 314.99
+    },
+    {
+      "stock": 0,
+      "price": 314.99,
+      "option": "Black",
+      "sku": "TS-0105-1102"
+    }
+  ],
+  "sku": "TS-0105-",
+  "title": "Turbosmart Dual Stage Boost Controller V2 ",
+  "price": 314.99,
+  "category": "Controllers",
+  "image": "https://830533.app.netsuite.com//core/media/media.nl?id=15003950&c=830533&h=2dyk8ijiQ07JI-MmfvFkMlgBE5fhEfXlk4d75IJ3RDCbGBjh",
+  "description": "The Turbosmart Dual Stage Boost Controller V2 offers fast, on-the-fly boost adjustment between two user-defined pressure settings. Ideal for race applications, towing, or toggling between street and high-octane track tunes, this controller allows you to switch boost levels instantly via an internal or cabin-mounted electric toggle switch.\n\nEngineered with Turbosmart’s signature Gate Feature, the controller minimizes wastegate creep to deliver faster spool-up and aggressive low-end response. Built from high-grade anodized billet aluminum with detent adjustment caps, it provides precise, repeatable boost increases while preventing accidental changes from engine vibration.\n\nKey Features• Dual Boost Control: Easily switch between a low base setting and a high boost setting at the flip of a switch.• Proprietary Gate Feature: Reduces wastegate creep for faster turbo spool and maximum low-end torque.• Precision Detent System: Ensures positive, incremental adjustments that stay locked in under hard driving.• High-Grade Billet Construction: Machined from durable anodized aluminum for reliable performance in harsh engine bays.• Universal Compatibility: Works with all boost-based internal wastegate actuators and external wastegates.\n\nProduct Specifications• Part Number: TS-0105-1102• Brand: Turbosmart• Control Type: Pneumatic Dual-Stage with Electronic Toggle Switch• Fitment: Universal"
+}
