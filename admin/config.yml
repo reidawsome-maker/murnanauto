@@ -89,6 +89,11 @@ collections:
           - { label: "Cooling — Fans & Shrouds", value: "Fans" }
           - { label: "Cooling — Hoses & Thermostats", value: "Thermostats" }
           
+          # Interior & Electronics
+          - { label: "Interior — Gauges & Pods", value: "Gauges" }
+          - { label: "Interior — Digital Dashes & Monitors", value: "Monitors" }
+          - { label: "Interior — Switches, Wiring & Accessories", value: "InteriorAcc" }
+
           # Tools
           - { label: "Tools — Hand Tools & Specialty Equipment", value: "Tools" }
           - { label: "Tools — Shop Fluids & Chemicals", value: "Fluids" }
