@@ -185,7 +185,7 @@
 <section id="shop">
   <div class="section-head">
     <h2>Shop by category</h2>
-    <span class="sub" id="catCount">11 CATEGORIES</span>
+    <span class="sub" id="catCount">12 CATEGORIES</span>
   </div>
   <div class="cat-grid-lg" id="catGridLg"></div>
 
@@ -404,6 +404,11 @@
       { label: "Fans & Shrouds", match: "Fans" },
       { label: "Thermostats & Hoses", match: "Thermostats" }
     ]},
+    { name: "Interior & Electronics", img: "interior.jpg", subs: [
+      { label: "Gauges & Pods", match: "Gauges" },
+      { label: "Digital Dashes & Monitors", match: "Monitors" },
+      { label: "Switches, Wiring & Trim", match: "InteriorAcc" }
+    ]},
     { name: "Tools", img: "tools.jpg", subs: [
       { label: "Hand Tools & Specialty", match: "Tools" },
       { label: "Fluids & Chemicals", match: "Fluids" }
@@ -466,7 +471,7 @@
       if (!p.category) return false;
       const cat = p.category.toLowerCase().trim();
 
-      // Step 1: Match against the CMS value key (e.g., "fuelkits", "nylonhose", "anfittings")
+      // Step 1: Match against the CMS value key (e.g., "gauges", "monitors", "interioracc")
       if (cat === key) return true;
 
       // Step 2: Match against full Decap CMS label or sub-label string
@@ -524,7 +529,7 @@
 
 <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/VcGnuL/klaviyo.js?company_id=VcGnuL'></script>
 <script type="text/javascript">
-  !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w Auth=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();
+  !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++){o[w]=arguments[w];}var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();
 </script>
 
 </body>
