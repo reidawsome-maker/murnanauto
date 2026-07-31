@@ -1,0 +1,26 @@
+{
+  "price": 138.69,
+  "variants": [
+    {
+      "weight": 4,
+      "stock": 100,
+      "option": "LS1/LS2",
+      "sku": "PS102",
+      "price": 138.69
+    },
+    {
+      "weight": 4,
+      "stock": 100,
+      "option": "LS3 PUMP ONLY",
+      "sku": "PS102A",
+      "price": 138.69
+    }
+  ],
+  "stock": 100,
+  "title": "Sikky Nissan 350z and Infiniti G35 LHD LS Swap Power Steering Line Kit",
+  "weight": 4,
+  "image": "https://www.sikky.com/wp-content/uploads/2015/10/350z-power-steering-line.jpg",
+  "description": "This power steering line is designed to mate your LS1 or LS2 power steering pump to your 350z power steering rack with OEM fitment.\n\nFeatures:\n\n\n\nFits LS1 & LS2 Power steering reservoirs\n\nSwiveling fitting for optimum fitment\n\nMaximum durability to heat and racing conditions\n\nExtreme high pressure line with max pressure of 10,000 PSI for no worries of breakage\n\nIncludes Low pressure power steering return line w/ clamps",
+  "sku": "PS10XX",
+  "category": "350z"
+}
