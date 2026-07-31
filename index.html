@@ -40,7 +40,7 @@
   .live-prod-card { background: var(--panel-2); border: 1px solid var(--steel); padding: 16px; display: flex; flex-direction: column; justify-content: space-between; border-radius: 6px; }
   .live-prod-sku { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--blue-bright); }
   .live-prod-name { font-family: 'Oswald', sans-serif; margin: 6px 0; color: var(--paper); font-size: 1rem; text-transform: none; letter-spacing: 0; }
-  .live-prod-price { font-weight: 700; color: var(--paper); font-size: 1.1rem; margin-bottom: 6px; }
+  .live-prod-price { font-weight: 700; color: var(--paper); font-size: 1.1rem; margin-bottom: 6px; display: flex; align-items: baseline; gap: 8px; }
   .live-prod-stock { font-size: 0.75rem; margin-bottom: 12px; font-weight: 600; }
   .live-prod-btn { width: 100%; padding: 10px; background: var(--blue); color: var(--asphalt); border: none; border-radius: 4px; font-family: 'Oswald', sans-serif; font-size: 0.8rem; text-transform: uppercase; font-weight:600; cursor: pointer; }
   .live-prod-btn:disabled { background: #333; color: #666; cursor: not-allowed; }
@@ -503,8 +503,13 @@
       const inStock = hasVariants ? item.variants.some(v => v.stock > 0) : item.stock > 0;
       const displayPrice = hasVariants ? `From $${item.price.toFixed(2)}` : `$${item.price.toFixed(2)}`;
       
-      const hasCompare = item.compare_price && Number(item.compare_price) > Number(item.price);
-      const compareHtml = hasCompare ? `<span style="text-decoration:line-through; color:var(--paper-dim); font-size:0.85rem; font-weight:400; margin-left:8px;">$${Number(item.compare_price).toFixed(2)}</span>` : '';
+      // Robust comparison check for both object schema key formats
+      const rawCompare = item.compare_price || item.compare_at_price;
+      const hasCompare = rawCompare && Number(rawCompare) > Number(item.price);
+      
+      const compareHtml = hasCompare 
+        ? `<span style="text-decoration: line-through !important; -webkit-text-decoration-line: line-through !important; color: var(--paper-dim); font-size: 0.85rem; font-weight: 400; margin-left: 8px; opacity: 0.75;">$${Number(rawCompare).toFixed(2)}</span>` 
+        : '';
 
       const imgSrc = item.image || item.featured_image || (item.images && item.images[0]);
       const titleText = item.title || item.name;
