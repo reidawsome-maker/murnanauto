@@ -78,7 +78,7 @@ collections:
           - { label: "Fluids & Chemicals — Transmission & Gear Oils", value: "GearOils" }
           - { label: "Fluids & Chemicals — Brake Fluids", value: "BrakeFluids" }
           - { label: "Fluids & Chemicals — Coolants & Additives", value: "Coolants" }
-          - { label: "Fluids & Chemicals — Washing & Detailing", value: "Washing"
+          - { label: "Fluids & Chemicals — Washing & Detailing", value: "Washing" }
           
           # Drivetrain
           - { label: "Drivetrain — Clutches & Flywheels", value: "Clutches" }
