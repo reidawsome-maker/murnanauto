@@ -51,6 +51,7 @@ collections:
           - { label: "Engine — Oil Pumps & Pans", value: "Oil" }
           
           # Exhaust
+          - { label: "Exhaust — V-Bands & Clamps", value: "V-Band" }
           - { label: "Exhaust — Headers & Manifolds", value: "Headers" }
           - { label: "Exhaust — Cat-Back Systems", value: "Exhaust" }
           - { label: "Exhaust — Downpipes & Midpipes", value: "Downpipes" }
