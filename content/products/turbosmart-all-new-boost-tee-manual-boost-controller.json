@@ -2,14 +2,14 @@
   "price": 124.99,
   "variants": [
     {
-      "stock": 0,
+      "stock": 10,
       "option": "Blue",
       "sku": "TS-0101-1101",
       "price": 124.99,
       "weight": 1
     },
     {
-      "stock": 0,
+      "stock": 10,
       "option": "Black",
       "sku": "TS-0101-1102",
       "price": 124.99,
