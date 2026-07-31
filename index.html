@@ -78,7 +78,11 @@
     <p style="color:var(--paper-dim); text-align:center; margin-top:40px;">Your cart is empty.</p>
   </div>
   <div class="cart-footer">
-    <div style="display:flex; justify-content:space-between; font-weight:700; margin-bottom:16px;">
+    <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:var(--paper-dim); margin-bottom:6px;">
+      <span>Estimated Freight:</span>
+      <span id="cart-shipping">$0.00</span>
+    </div>
+    <div style="display:flex; justify-content:space-between; font-weight:700; font-size:1.1rem; margin-bottom:16px;">
       <span>Total:</span>
       <span id="cart-total">$0.00</span>
     </div>
@@ -493,7 +497,6 @@
       const inStock = hasVariants ? item.variants.some(v => v.stock > 0) : item.stock > 0;
       const displayPrice = hasVariants ? `From $${item.price.toFixed(2)}` : `$${item.price.toFixed(2)}`;
       
-      // Fallback property check to handle both Decap CMS field names (image / featured_image / title / name)
       const imgSrc = item.image || item.featured_image || (item.images && item.images[0]);
       const titleText = item.title || item.name;
 
