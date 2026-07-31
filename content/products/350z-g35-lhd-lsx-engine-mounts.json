@@ -1,0 +1,26 @@
+{
+  "price": 404.69,
+  "variants": [
+    {
+      "weight": 17,
+      "stock": 10,
+      "option": "Aluminum bushings (Pair)",
+      "sku": "MK003-AL-MA",
+      "price": 564.28
+    },
+    {
+      "weight": 15,
+      "stock": 103,
+      "option": "Urethane Bushings (Pair)",
+      "sku": "MK003-UMA1",
+      "price": 159.59
+    }
+  ],
+  "stock": 100,
+  "title": "350z/G35 LHD LSx Engine Mounts",
+  "weight": 10,
+  "image": "https://www.sikky.com/wp-content/uploads/2018/11/MK003-3-1.jpg",
+  "description": "Sikky motor mounts are CAD/CAM designed and CNC machined using solid 6061 T-6 aluminum and include a high grade hardware kit.\n\n\n\nGet proper engine placement and driveshaft alignment. Peace of mind comes from Sikky’s Limited Lifetime Warranty.\n\n\n\nCan be used on LS1, LS2, LS3, LS6, L99, LQ4, LQ9, LSA, LS7, LS9, LSX and any other LS based engine using this engine mount bolt pattern.\n\n\n\nFor correct fitment be sure to use with Sikky Engine Mount Bushings, Oil Pan, and Transmission Cross member\n\n\n\nIncludes:\n\n\\-Billet Motor mount (left)\n\n\\-Billet Motor mount (right)\n\n\\-High grade hardware",
+  "sku": "MK003",
+  "category": "Turbos"
+}
