@@ -29,7 +29,31 @@
   .product-img img { width:100%; height:100%; object-fit:contain; }
   .product-sku { font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--blue-bright); }
   .product-title { font-size: clamp(1.6rem, 3vw, 2.4rem); margin: 12px 0 18px; }
-  .product-price { font-family:'JetBrains Mono',monospace; font-size: 1.6rem; color: var(--paper); margin-bottom: 10px; display: flex; align-items: baseline; gap: 12px; }
+  
+  /* UPDATED PRICE FLEX & SAVINGS BADGE */
+  .product-price { 
+    font-family:'JetBrains Mono',monospace; 
+    font-size: 1.6rem; 
+    color: var(--paper); 
+    margin-bottom: 10px; 
+    display: flex; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    gap: 12px; 
+  }
+  .save-tag {
+    background: rgba(255, 92, 92, 0.15);
+    color: #ff5c5c;
+    border: 1px solid #ff5c5c;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+  }
+
   .product-stock { font-size: 0.9rem; margin-bottom: 24px; font-weight: 600; }
   .product-qty { display:flex; align-items:center; gap:12px; margin-bottom:22px; }
   .product-qty select, .variant-select { background:var(--panel-2); border:1px solid var(--steel); color:var(--paper); padding:10px 14px; border-radius:5px; font-family:'Inter',sans-serif; }
@@ -154,6 +178,7 @@
       
       const comparePrice = parseFloat(rawCompare) || 0;
       const hasCompare = comparePrice > currentPrice;
+      const savings = (comparePrice - currentPrice).toFixed(2);
 
       const currentStock = parseInt(activeItem.stock !== undefined ? activeItem.stock : product.stock, 10) || 0;
       const inStock = currentStock > 0;
@@ -167,7 +192,10 @@
       if (priceEl) {
         let priceHtml = `<span>$${currentPrice.toFixed(2)}</span>`;
         if (hasCompare) {
-          priceHtml += `<span style="text-decoration: line-through !important; -webkit-text-decoration-line: line-through !important; color: var(--paper-dim); font-size: 1.1rem; font-weight: 400; margin-left: 12px; opacity: 0.75;">$${comparePrice.toFixed(2)}</span>`;
+          priceHtml += `
+            <span style="text-decoration: line-through !important; -webkit-text-decoration-line: line-through !important; color: #888888; font-size: 1.1rem; font-weight: 400; opacity: 0.8;">$${comparePrice.toFixed(2)}</span>
+            <span class="save-tag">Save $${savings}</span>
+          `;
         }
         priceEl.innerHTML = priceHtml;
       }
