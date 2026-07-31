@@ -491,7 +491,7 @@
       if (cat === key) return true;
       if (cat === label || cat.endsWith(label)) return true;
       if (key === 'anfittings' && cat === 'lines') return true;
-      if (key === 'v-band' && (cat.includes('v-band') || cat.includes('clamp'))) return true;
+      if (key === 'v-band' && (cat.includes('v-band') || cat.includes('v-band clamps'))) return true;
 
       return false;
     });
