@@ -540,3 +540,60 @@ footer a{ color:var(--blue-bright); text-decoration:none; }
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+/* RETRO 1980s NEON SIGN STYLES */
+.neon-hero {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.neon-logo-text {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(3rem, 7.5vw, 6rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.neon-blue {
+  color: #5B93FF;
+  text-shadow:
+    0 0 5px rgba(91, 147, 255, 0.8),
+    0 0 15px rgba(91, 147, 255, 0.6),
+    0 0 30px rgba(47, 111, 232, 0.8),
+    0 0 60px rgba(47, 111, 232, 0.5);
+}
+
+.neon-white {
+  color: #ECE9E1;
+  text-shadow:
+    0 0 5px rgba(236, 233, 225, 0.9),
+    0 0 15px rgba(236, 233, 225, 0.6),
+    0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.neon-red {
+  color: #FF4D4D;
+  text-shadow:
+    0 0 5px rgba(255, 77, 77, 0.9),
+    0 0 15px rgba(255, 77, 77, 0.6),
+    0 0 30px rgba(239, 68, 68, 0.5);
+}
+
+.neon-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--paper-dim);
+  border: 1px solid var(--steel);
+  background: var(--panel);
+  padding: 8px 18px;
+  border-radius: 100px;
+  display: inline-block;
+  margin-bottom: 24px;
+  letter-spacing: 0.12em;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
