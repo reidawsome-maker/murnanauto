@@ -103,18 +103,15 @@
     loadInventory().then(products => {
       const grid = document.getElementById('platformGrid');
       
-      // Strict filter: ONLY parts explicitly tagged for 350Z / VQ35 platform
+      // ISOLATED FILTER: ONLY items explicitly set to "350z" category in CMS
       const zProducts = products.filter(p => {
-        if (!p) return false;
-        const platform = (p.platform || "").toLowerCase();
-        const title = (p.title || p.name || "").toLowerCase();
-
-        return platform.includes('350z') || platform.includes('vq35') || title.includes('350z');
+        if (!p || !p.category) return false;
+        return p.category.toLowerCase().trim() === '350z';
       });
 
       if (zProducts.length === 0) {
         grid.innerHTML = `<div style="grid-column:1/-1; padding:40px 0; text-align:center; color:var(--paper-dim);">
-          No direct-fit 350Z parts loaded in catalog yet. Check back soon or <a href="index.html#shop" style="color:var(--blue-bright);">browse the general shop</a>.
+          No 350Z specific parts loaded in catalog yet. Check back soon or <a href="index.html#shop" style="color:var(--blue-bright);">browse the general shop</a>.
         </div>`;
         return;
       }
