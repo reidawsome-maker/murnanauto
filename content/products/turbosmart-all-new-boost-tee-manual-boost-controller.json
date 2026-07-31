@@ -1,21 +1,22 @@
 {
-  "price": 124.99,
+  "price": 112.49,
   "variants": [
     {
       "stock": 10,
       "option": "Blue",
       "sku": "TS-0101-1101",
-      "price": 124.99,
+      "price": 112.49,
       "weight": 1
     },
     {
       "stock": 10,
       "option": "Black",
       "sku": "TS-0101-1102",
-      "price": 124.99,
+      "price": 112.49,
       "weight": 1
     }
   ],
+  "compare_price": 124.99,
   "stock": 10,
   "title": "Turbosmart All New Boost Tee Manual Boost Controller ",
   "weight": 1,
