@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ford Mustang Parts & Performance — Murnan Auto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="favicon-180.png">
+<style>
+  #cart-overlay {
+    position: fixed; top: 0; right: -400px; width: 380px; height: 100vh;
+    background: var(--panel-2, #181b20); border-left: 1px solid var(--steel, #333);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5); z-index: 9999; transition: right 0.3s ease;
+    padding: 24px; box-sizing: border-box; display: flex; flex-direction: column;
+  }
+  #cart-overlay.open { right: 0; }
+  .cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--steel, #333); padding-bottom: 12px; }
+  .cart-items { flex: 1; overflow-y: auto; margin: 20px 0; }
+  .cart-footer { border-top: 1px solid var(--steel, #333); padding-top: 16px; }
+
+  #platform-products-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; width: 100%;
+  }
+  .live-prod-card { background: var(--panel-2); border: 1px solid var(--steel); padding: 16px; display: flex; flex-direction: column; justify-content: space-between; border-radius: 6px; }
+  .live-prod-sku { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--blue-bright); }
+  .live-prod-name { font-family: 'Oswald', sans-serif; margin: 6px 0; color: var(--paper); font-size: 1rem; text-transform: none; letter-spacing: 0; }
+  .live-prod-price { font-weight: 700; color: var(--paper); font-size: 1.1rem; margin-bottom: 6px; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .save-tag-sm { background: rgba(255, 92, 92, 0.15); color: #ff5c5c; border: 1px solid #ff5c5c; font-family: 'Oswald', sans-serif; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; padding: 1px 6px; border-radius: 3px; }
+  .live-prod-stock { font-size: 0.75rem; margin-bottom: 12px; font-weight: 600; }
+  .live-prod-btn { width: 100%; padding: 10px; background: var(--blue); color: var(--asphalt); border: none; border-radius: 4px; font-family: 'Oswald', sans-serif; font-size: 0.8rem; text-transform: uppercase; font-weight:600; cursor: pointer; }
+  .live-prod-btn:disabled { background: #333; color: #666; cursor: not-allowed; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><a href="index.html" style="color:inherit; text-decoration:none;">MURNAN <span>AUTO</span></a></div>
+  <ul class="cat-nav" style="display:flex; align-items:center;">
+    <li><a href="index.html#fitment">Platforms</a></li>
+    <li><a href="index.html#shop">Shop</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li>
+      <button onclick="toggleCart()" style="background:var(--steel); border:1px solid var(--paper-dim); color:var(--paper); padding:6px 14px; font-family:'JetBrains Mono',monospace; font-size:0.8rem; text-transform:uppercase; cursor:pointer;">
+        Cart (<span id="cart-count">0</span>)
+      </button>
+    </li>
+  </ul>
+</nav>
+
+<div id="cart-overlay">
+  <div class="cart-header">
+    <h3 style="margin:0; font-family:'Oswald',sans-serif; text-transform:uppercase;">Your Cart</h3>
+    <button onclick="toggleCart()" style="background:none; border:none; color:var(--paper); font-size:1.5rem; cursor:pointer;">&times;</button>
+  </div>
+  <div class="cart-items" id="cart-items-list">
+    <p style="color:var(--paper-dim); text-align:center; margin-top:40px;">Your cart is empty.</p>
+  </div>
+  <div class="cart-footer">
+    <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:var(--paper-dim); margin-bottom:6px;">
+      <span>Estimated Freight:</span>
+      <span id="cart-shipping">$0.00</span>
+    </div>
+    <div style="display:flex; justify-content:space-between; font-weight:700; font-size:1.1rem; margin-bottom:16px;">
+      <span>Total:</span>
+      <span id="cart-total">$0.00</span>
+    </div>
+    <button id="cart-checkout-btn" onclick="processCheckout()" style="display:block; width:100%; padding:12px; background:var(--blue); color:var(--asphalt); text-align:center; font-weight:700; text-transform:uppercase; box-sizing:border-box; border:none; border-radius:5px; cursor:pointer; font-family:'Oswald',sans-serif;">
+      Proceed to Checkout
+    </button>
+  </div>
+</div>
+
+<section class="hero" style="padding-top:4vh; padding-bottom:4vh; border-top:none;">
+  <div class="neon-hero">
+    <div class="neon-badge">
+      PLATFORM FOCUS // <span class="neon-blue" style="font-weight:700;">FORD MUSTANG</span>
+    </div>
+    <h1 class="neon-logo-text" style="font-size:2.8rem;">
+      <span class="neon-white">MUSTANG</span> <span class="neon-blue">CATALOG</span>
+    </h1>
+    <p style="margin: 10px auto 0; max-width: 58ch; color: var(--paper-dim); font-size: 0.98rem; line-height: 1.5;">
+      Curated performance components, forced induction, plumbing, and upgrade hardware specifically for Foxbody, SN95, S197, S550 & S650 Mustang builds.
+    </p>
+  </div>
+</section>
+
+<section style="padding: 20px 5vw 60px;">
+  <div class="section-head">
+    <h2>Mustang Platform Parts</h2>
+    <span class="sub" id="mustangCount">LOADING PRODUCTS...</span>
+  </div>
+
+  <div id="platform-products-grid"></div>
+</section>
+
+<footer>
+  <div>© 2026 Murnan Auto</div>
+  <div><a href="mailto:support@murnanauto.store">support@murnanauto.store</a> · murnanauto.store</div>
+  <div><a href="policies.html#shipping">Shipping &amp; Returns</a> · <a href="policies.html#privacy">Privacy Policy</a> · <a href="policies.html#terms">Terms of Service</a></div>
+</footer>
+
+<script src="cart.js"></script>
+<script>
+  async function renderMustangProducts() {
+    await loadInventory();
+    const grid = document.getElementById('platform-products-grid');
+    const countEl = document.getElementById('mustangCount');
+
+    // Filter products tagged as 'mustang' or 'standalone — ford mustang'
+    const filtered = inventory.filter(p => {
+      if (!p.category) return false;
+      const cat = p.category.toLowerCase().trim();
+      return cat === 'mustang' || cat.includes('mustang');
+    });
+
+    countEl.textContent = `${filtered.length} PRODUCTS FOUND`;
+
+    if (filtered.length === 0) {
+      grid.innerHTML = `<div style="grid-column: 1/-1; padding: 40px; text-align: center; color: var(--paper-dim);">No Mustang products loaded yet. Check back soon or contact us to request specific parts.</div>`;
+      return;
+    }
+
+    grid.innerHTML = filtered.map(item => {
+      const hasVariants = item.variants && item.variants.length > 0;
+      const inStock = hasVariants ? item.variants.some(v => v.stock > 0) : item.stock > 0;
+      const displayPrice = hasVariants ? `From $${item.price.toFixed(2)}` : `$${item.price.toFixed(2)}`;
+      
+      const rawCompare = item.compare_price || item.compare_at_price;
+      const hasCompare = rawCompare && Number(rawCompare) > Number(item.price);
+      const savings = hasCompare ? (Number(rawCompare) - Number(item.price)).toFixed(2) : '0.00';
+      
+      const compareHtml = hasCompare 
+        ? `<span style="text-decoration: line-through !important; color: #888888; font-size: 0.85rem; font-weight: 400; opacity: 0.8;">$${Number(rawCompare).toFixed(2)}</span><span class="save-tag-sm">Save $${savings}</span>` 
+        : '';
+
+      const imgSrc = item.image || item.featured_image || (item.images && item.images[0]);
+      const titleText = item.title || item.name;
+
+      return `
+        <div class="live-prod-card">
+          <div>
+            ${imgSrc ? `<img src="${imgSrc}" alt="${titleText}" style="width:100%; aspect-ratio:1/1; object-fit:contain; background:var(--panel); border-radius:4px; margin-bottom:10px;">` : ''}
+            <span class="live-prod-sku">${item.sku || item.id}</span>
+            <h4 class="live-prod-name"><a href="product.html?id=${item.id}" style="color:inherit; text-decoration:none;">${titleText}</a></h4>
+            <div class="live-prod-price">${displayPrice} ${compareHtml}</div>
+            <div class="live-prod-stock" style="color:${inStock ? '#4ADE80' : '#ff5c5c'};">${inStock ? 'In Stock' : 'Out of Stock'}</div>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <a href="product.html?id=${item.id}" class="live-prod-btn" style="text-decoration:none; text-align:center; background:var(--panel-2); border:1px solid var(--steel); color:var(--paper);">View</a>
+            ${hasVariants ? 
+              `<a href="product.html?id=${item.id}" class="live-prod-btn" style="text-decoration:none; text-align:center;">Select Option</a>` : 
+              `<button class="live-prod-btn" onclick="addToCart('${item.id}')" ${!inStock ? 'disabled' : ''}>${inStock ? 'Add To Cart' : 'Out of Stock'}</button>`
+            }
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    renderMustangProducts();
+    updateCartUI();
+  });
+</script>
+
+</body>
+</html>

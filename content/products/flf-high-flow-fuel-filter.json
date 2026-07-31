@@ -1,0 +1,47 @@
+{
+  "stock": 100,
+  "variants": [
+    {
+      "stock": 100,
+      "option": "10 ORB — 10 Micron",
+      "sku": "FILT-HF-10ORB-10M",
+      "price": 98.19
+    },
+    {
+      "stock": 100,
+      "option": "10 ORB — 30 Micron",
+      "sku": "FILT-HF-10ORB-30M",
+      "price": 98.19
+    },
+    {
+      "stock": 100,
+      "option": "10 ORB — 100 Micron",
+      "sku": "FILT-HF-10ORB-100M",
+      "price": 98.19
+    },
+    {
+      "stock": 100,
+      "option": "12 ORB — 10 Micron",
+      "sku": "FILT-HF-12ORB-10M",
+      "price": 164.79
+    },
+    {
+      "stock": 100,
+      "option": "12 ORB — 30 Micron",
+      "sku": "FILT-HF-12ORB-30M",
+      "price": 164.79
+    },
+    {
+      "stock": 100,
+      "option": "12 ORB — 100 Micron",
+      "sku": "FILT-HF-12ORB-100M",
+      "price": 164.79
+    }
+  ],
+  "title": "FLF High Flow Fuel Filter",
+  "price": 98.19,
+  "sku": "FILT-HF-",
+  "category": "FuelFilters",
+  "image": "https://finishlinefactory.com/wp-content/uploads/2018/11/10-ORB-High-Flow-Fuel-Filter.jpg",
+  "description": "High-flow billet inline fuel filter featuring cleanable/replaceable filter elements. Available in 10 ORB and 12 ORB housing sizes across multiple micron ratings."
+}

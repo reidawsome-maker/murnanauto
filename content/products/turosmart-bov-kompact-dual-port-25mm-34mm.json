@@ -1,0 +1,26 @@
+{
+  "price": 253.99,
+  "variants": [
+    {
+      "stock": 20,
+      "option": "34mm",
+      "sku": "TS-0203-1023",
+      "price": 253.99,
+      "weight": 5
+    },
+    {
+      "stock": 20,
+      "option": "25mm",
+      "sku": "TS-0203-1022",
+      "price": 253.99,
+      "weight": 5
+    }
+  ],
+  "stock": 12,
+  "title": "Turbosmart BOV Kompact Dual Port-25mm/34mm",
+  "weight": 5,
+  "image": "https://830533.app.netsuite.com//core/media/media.nl?id=24853216&c=830533&h=xslEqhHw9WOWiVU3dNFPv-592Z59_gQNfM7rHd3JQADv_rG4",
+  "description": "The Turbosmart Kompact Dual Port 25mm Blow-Off Valve is a high-performance, direct replacement for weak factory plastic bypass valves. Designed with a 50/50 split operation, it vents simultaneously to the atmosphere for the signature blow-off sound while recirculating back into the intake to prevent stalling, backfiring, and rich fuel conditions on airflow-metered (MAF) engines.\n\n\n\nEngineered with billet aluminum construction and precision-machined brass pistons, the Kompact Dual Port handles high boost levels without flexing or leaking. Its compact body makes it an easy, space-saving fit in tight engine bays, offering improved throttle response, faster boost recovery between shifts, and long-term durability.\n\n\n\nKey Features\n\n• 50/50 Dual Port Operation: Combines atmospheric venting audio with intake recirculation for smooth driveability and zero MAF sensor issues.\n\n• Billet Aluminum Construction: Built to withstand high boost pressures and harsh under-hood temperatures without cracking like OEM plastic valves.\n\n• Precision Brass Piston: Provides fast response, airtight sealing, and long service life without relying on fragile rubber diaphragms.\n\n• Easily Adjustable Cap: Allows quick spring preload tuning to match your specific vacuum setup and engine setup.\n\n\n\nProduct Specifications\n\n• Brand: Turbosmart\n\n• Operation Type: Dual Port (50/50 Recirculating & Atmospheric)\n\n• Color / Finish: Anodized Black",
+  "sku": "TS-0203-",
+  "category": "Valves"
+}
