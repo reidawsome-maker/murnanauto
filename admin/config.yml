@@ -22,9 +22,7 @@ collections:
       - { label: "Compare Price ($ Racer/MSRP)", name: "compare_price", widget: "number", value_type: "float", required: false }
       - { label: "Wholesale Cost ($ P1)", name: "cost", widget: "number", value_type: "float", required: false }
       
-      # Item Weight Field (Crucial for Shipping Calculations)
       - { label: "Item Weight (lbs)", name: "weight", widget: "number", value_type: "float", default: 0 }
-      
       - { label: "In Stock Count", name: "stock", widget: "number", default: 1 }
       
       # Category selection dropdown
@@ -32,6 +30,9 @@ collections:
         name: "category"
         widget: "select"
         options:
+          # VEHICLE PLATFORMS (STANDALONE)
+          - { label: "STANDALONE — Nissan 350Z (Z33)", value: "350z" }
+
           # Forced Induction & Nitrous
           - { label: "Forced Induction — Turbochargers", value: "Turbos" }
           - { label: "Forced Induction — Intercoolers & Piping", value: "Intercoolers" }
@@ -56,7 +57,7 @@ collections:
           - { label: "Exhaust — Mufflers & Resonators", value: "Mufflers" }
           - { label: "Exhaust — Exhaust Tips", value: "Tips" }
           
-          # Fuel System (Granular Breakdown)
+          # Fuel System
           - { label: "Fuel System — Complete Fuel Kits", value: "FuelKits" }
           - { label: "Fuel System — AN Hose Ends & Swivel Fittings", value: "ANFittings" }
           - { label: "Fuel System — PTFE Hose & Lines", value: "PTFEHose" }
@@ -108,16 +109,6 @@ collections:
           # Merch
           - { label: "Merch — Branded Apparel & Gear", value: "Merch" }
 
-      # Dedicated Vehicle Platform Selection
-      - label: "Vehicle Platform / Chassis"
-        name: "platform"
-        widget: "select"
-        required: false
-        default: "universal"
-        options:
-          - { label: "Universal / Non-Vehicle Specific", value: "universal" }
-          - { label: "Nissan 350Z (Z33) / Infiniti G35", value: "350z" }
-
       - { label: "Product Image", name: "image", widget: "image" }
       - { label: "Description", name: "description", widget: "markdown" }
 
@@ -127,7 +118,7 @@ collections:
         widget: "list"
         required: false
         fields:
-          - { label: "Variant Option Name (e.g., Black Calipers / Drilled Rotor)", name: "option", widget: "string" }
+          - { label: "Variant Option Name", name: "option", widget: "string" }
           - { label: "Variant SKU", name: "sku", widget: "string" }
           - { label: "Variant Price ($)", name: "price", widget: "number", value_type: "float" }
           - { label: "Variant Weight (lbs)", name: "weight", widget: "number", value_type: "float", default: 0 }
