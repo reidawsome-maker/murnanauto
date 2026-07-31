@@ -498,6 +498,10 @@
       const inStock = hasVariants ? item.variants.some(v => v.stock > 0) : item.stock > 0;
       const displayPrice = hasVariants ? `From $${item.price.toFixed(2)}` : `$${item.price.toFixed(2)}`;
       
+      // Compare Price formatting (Strikethrough MSRP)
+      const hasCompare = item.compare_price && Number(item.compare_price) > Number(item.price);
+      const compareHtml = hasCompare ? `<span style="text-decoration:line-through; color:var(--paper-dim); font-size:0.85rem; font-weight:400; margin-left:8px;">$${Number(item.compare_price).toFixed(2)}</span>` : '';
+
       const imgSrc = item.image || item.featured_image || (item.images && item.images[0]);
       const titleText = item.title || item.name;
 
@@ -507,7 +511,7 @@
             ${imgSrc ? `<img src="${imgSrc}" alt="${titleText}" style="width:100%; aspect-ratio:1/1; object-fit:contain; background:var(--panel); border-radius:4px; margin-bottom:10px;">` : ''}
             <span class="live-prod-sku">${item.sku || item.id}</span>
             <h4 class="live-prod-name"><a href="product.html?id=${item.id}" style="color:inherit; text-decoration:none;">${titleText}</a></h4>
-            <div class="live-prod-price">${displayPrice}</div>
+            <div class="live-prod-price">${displayPrice} ${compareHtml}</div>
             <div class="live-prod-stock" style="color:${inStock ? '#4ADE80' : '#ff5c5c'};">${inStock ? 'In Stock' : 'Out of Stock'}</div>
           </div>
           <div style="display:flex; gap:8px;">
