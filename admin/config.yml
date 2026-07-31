@@ -73,10 +73,12 @@ collections:
           - { label: "Ignition & Electrical — Spark Plugs", value: "Plugs" }
           - { label: "Ignition & Electrical — Wiring & Harnesses", value: "Wiring" }
           
-          # Suspension & Steering
-          - { label: "Suspension — Coilovers & Shocks", value: "Coilovers" }
-          - { label: "Suspension — Control Arms & Links", value: "ControlArms" }
-          - { label: "Suspension — Sway Bars & Bushings", value: "SwayBars" }
+          # Fluids & Chemicals 
+          - { label: "Fluids & Chemicals — Motor & Engine Oils", value: "EngineOils" }
+          - { label: "Fluids & Chemicals — Transmission & Gear Oils", value: "GearOils" }
+          - { label: "Fluids & Chemicals — Brake Fluids", value: "BrakeFluids" }
+          - { label: "Fluids & Chemicals — Coolants & Additives", value: "Coolants" }
+          - { label: "Fluids & Chemicals — Washing & Detailing", value: "Washing"
           
           # Drivetrain
           - { label: "Drivetrain — Clutches & Flywheels", value: "Clutches" }
@@ -87,13 +89,12 @@ collections:
           - { label: "Brakes — Brake Pads", value: "Pads" }
           - { label: "Brakes — Rotors", value: "Rotors" }
           - { label: "Brakes — Big Brake Kits & Calipers", value: "Calipers" }
-          - { label: "Brakes — Brake Lines & Fluid", value: "BrakeLines" }
           
           # Cooling
           - { label: "Cooling — Radiators", value: "Radiators" }
           - { label: "Cooling — Oil Coolers", value: "OilCoolers" }
           - { label: "Cooling — Fans & Shrouds", value: "Fans" }
-          - { label: "Cooling — Hoses & Thermostats", value: "Thermostats" }
+          - { label: "Cooling — Thermostats", value: "Thermostats" }
           
           # Interior & Electronics
           - { label: "Interior — Gauges & Pods", value: "Gauges" }
