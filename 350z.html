@@ -84,7 +84,7 @@
   <span style="font-family:'JetBrains Mono',monospace; font-size:0.85rem; color:var(--blue-bright);">PLATFORM CATALOG</span>
   <h1 style="font-family:'Oswald',sans-serif; font-size: clamp(2rem, 4vw, 3rem); margin: 8px 0 12px; text-transform:uppercase; color:var(--paper);">Nissan 350Z (Z33) / VQ35</h1>
   <p style="color:var(--paper-dim); max-width:65ch; margin:0;">
-    Curated engine oils, fluids, exhaust hardware, and performance components verified for the 2003–2009 Nissan 350Z and Infiniti G35 chassis.
+    Direct-fit performance parts, cooling upgrades, suspension, and hardware verified for the 2003–2009 Nissan 350Z and Infiniti G35 chassis.
   </p>
 </div>
 
@@ -103,18 +103,18 @@
     loadInventory().then(products => {
       const grid = document.getElementById('platformGrid');
       
-      // Filter products that belong to 350z platform or are marked universal
+      // Strict filter: ONLY parts explicitly tagged for 350Z / VQ35 platform
       const zProducts = products.filter(p => {
         if (!p) return false;
         const platform = (p.platform || "").toLowerCase();
         const title = (p.title || p.name || "").toLowerCase();
 
-        return platform.includes('350z') || platform.includes('vq35') || title.includes('350z') || p.universal === true;
+        return platform.includes('350z') || platform.includes('vq35') || title.includes('350z');
       });
 
       if (zProducts.length === 0) {
         grid.innerHTML = `<div style="grid-column:1/-1; padding:40px 0; text-align:center; color:var(--paper-dim);">
-          No specific 350Z parts loaded yet. Check back soon or <a href="index.html#shop" style="color:var(--blue-bright);">browse the general shop</a>.
+          No direct-fit 350Z parts loaded in catalog yet. Check back soon or <a href="index.html#shop" style="color:var(--blue-bright);">browse the general shop</a>.
         </div>`;
         return;
       }
