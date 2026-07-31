@@ -68,6 +68,13 @@
   </ul>
 </nav>
 
+<!-- BRAND TICKER (MOVED RIGHT HERE BELOW NAV, ABOVE HERO) -->
+<div class="ticker-wrap">
+  <div class="ticker-move" id="brandTicker">
+    <!-- Populated dynamically via JS -->
+  </div>
+</div>
+
 <div id="cart-overlay">
   <div class="cart-header">
     <h3 style="margin:0; font-family:'Oswald',sans-serif; text-transform:uppercase;">Your Cart</h3>
@@ -91,35 +98,14 @@
   </div>
 </div>
 
+<!-- HERO SECTION (FLF CARD REMOVED) -->
 <section class="hero" style="padding-top:6vh; border-top:none;">
-  <div class="hero-left">
+  <div class="hero-left" style="max-width: 100%;">
     <div class="hero-badge">CATALOG LIVE</div>
     <h1>Auto parts, <em>tools &amp; merch</em>.</h1>
     <p>Murnan Auto is a premier supplier of automotive parts, tools, and branded gear — built by people who work on cars, for people who work on cars.</p>
   </div>
-
-  <div class="stock-panel dealer-hero-card" onclick="openActiveDealerModal()" style="cursor: pointer;">
-    <div class="dealer-slide active" id="slide-flf">
-      <div class="dealer-badge-tag">OFFICIAL DEALER</div>
-      <div class="row" style="border-bottom: none; padding-bottom: 4px;">
-        <span style="font-family:'Oswald',sans-serif; font-size: 1.1rem; color: var(--paper); text-transform: uppercase;">FINISH LINE FACTORY</span>
-      </div>
-      <div class="row" style="padding-top: 0;">
-        <span style="font-size: 0.75rem; color: var(--paper-dim);">Authorized Retail Partner</span>
-      </div>
-    </div>
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
-      <span class="verify-link" style="font-size: 0.75rem;">View Verification Cert &rarr;</span>
-    </div>
-  </div>
 </section>
-
-<!-- BRAND TICKER (TOP POSITION) -->
-<div class="ticker-wrap">
-  <div class="ticker-move" id="brandTicker">
-    <!-- Populated dynamically via JS -->
-  </div>
-</div>
 
 <div class="trust-bar">
   <div class="trust-item">
