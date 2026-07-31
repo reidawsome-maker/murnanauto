@@ -108,6 +108,16 @@ collections:
           # Merch
           - { label: "Merch — Branded Apparel & Gear", value: "Merch" }
 
+      # Dedicated Vehicle Platform Selection
+      - label: "Vehicle Platform / Chassis"
+        name: "platform"
+        widget: "select"
+        required: false
+        default: "universal"
+        options:
+          - { label: "Universal / Non-Vehicle Specific", value: "universal" }
+          - { label: "Nissan 350Z (Z33) / Infiniti G35", value: "350z" }
+
       - { label: "Product Image", name: "image", widget: "image" }
       - { label: "Description", name: "description", widget: "markdown" }
 
