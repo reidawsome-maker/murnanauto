@@ -58,7 +58,6 @@
   <ul class="cat-nav" style="display:flex; align-items:center;">
     <li><a href="#fitment">Platforms</a></li>
     <li><a href="#shop">Shop</a></li>
-    <li><a href="#partners">Brands &amp; Partners</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
     <li>
@@ -114,6 +113,13 @@
     </div>
   </div>
 </section>
+
+<!-- BRAND TICKER (TOP POSITION) -->
+<div class="ticker-wrap">
+  <div class="ticker-move" id="brandTicker">
+    <!-- Populated dynamically via JS -->
+  </div>
+</div>
 
 <div class="trust-bar">
   <div class="trust-item">
@@ -196,29 +202,6 @@
       <button class="subcat-close" id="subcatClose">Close &times;</button>
     </div>
     <div class="subcat-pills" id="subcatPills"></div>
-  </div>
-</section>
-
-<section id="partners">
-  <div class="section-head">
-    <h2>Authorized Supply Partners</h2>
-    <span class="sub">DIRECT FACTORY RELATIONSHIPS</span>
-  </div>
-  <p style="color:var(--paper-dim); max-width:65ch; margin-bottom:32px;">
-    Murnan Auto holds direct authorized dealer relationships with performance manufacturers, offering direct warehouse fulfillment.
-  </p>
-  <div class="brand-display-grid">
-    <div class="brand-display-card" onclick="document.getElementById('modal-flf').classList.add('show')">
-      <div class="brand-img-wrap">
-        <img src="FLF-Authorized-Dealer-Banner-2022.png" alt="Finish Line Factory Authorized Dealer">
-      </div>
-      <div class="brand-card-info">
-        <span class="dealer-badge-tag">OFFICIAL DEALER</span>
-        <h3>Finish Line Factory</h3>
-        <p>High-performance AN plumbing, race fittings, hoses, and fluid containment systems.</p>
-        <span class="verify-link">Verify Credentials &rarr;</span>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -323,6 +306,32 @@
 
 <script src="cart.js"></script>
 <script>
+  const partnerBrands = [
+    "Finish Line Factory",
+    "Color Fittings",
+    "Sikky Manufacturing",
+    "Motul",
+    "Fortune Auto",
+    "Wilwood Brakes",
+    "Vibrant Performance",
+    "Turbosmart",
+    "Maxpeedingrods"
+  ];
+
+  function renderBrandTicker() {
+    const tickerContainer = document.getElementById('brandTicker');
+    if (!tickerContainer) return;
+
+    const brandListHtml = partnerBrands.map(brand => 
+      `<span>${brand.toUpperCase()}</span> <span class="divider">✦</span>`
+    ).join(' ');
+
+    tickerContainer.innerHTML = `
+      <div class="ticker-item">${brandListHtml}</div>
+      <div class="ticker-item">${brandListHtml}</div>
+    `;
+  }
+
   const categories = [
     { name: "Forced Induction & Nitrous", img: "Forced.jpg", subs: [
       { label: "Turbochargers", match: "Turbos" },
@@ -505,6 +514,7 @@
     }
   }
 
+  document.addEventListener('DOMContentLoaded', renderBrandTicker);
   loadInventory().then(updateCartUI);
 </script>
 
