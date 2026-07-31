@@ -37,6 +37,7 @@ async function loadInventory() {
             sku: item.sku || 'N/A',
             name: item.title || item.name,
             price: parseFloat(item.price) || 0,
+            compare_price: parseFloat(item.compare_price || item.compare_at_price || item.msrp) || 0, // <-- MAPS COMPARE PRICE FROM JSON
             weight: parseFloat(item.weight) || 0, // <-- MAPS WEIGHT FROM DECAP JSON
             stock: parseInt(item.stock, 10) || 0,
             image: item.image || '',
