@@ -32,6 +32,7 @@ collections:
         options:
           # VEHICLE PLATFORMS (STANDALONE)
           - { label: "STANDALONE — Nissan 350Z (Z33)", value: "350z" }
+          - { label: "STANDALONE — Ford Mustang", value: "mustang" }
 
           # Forced Induction & Nitrous
           - { label: "Forced Induction — Turbochargers", value: "Turbos" }
