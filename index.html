@@ -170,6 +170,14 @@
       </div>
     </a>
 
+    <!-- Ford Mustang Card -->
+    <a href="mustang.html" style="text-decoration: none; color: inherit;">
+      <div class="cat-card-lg" style="background-image: url('mustang.jpg'); height: 180px; position: relative; border-radius: 6px; overflow: hidden; border: 1px solid var(--steel); display: flex; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; transition: border-color 0.2s;">
+        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 1;"></div>
+        <h3 style="position: relative; z-index: 2; margin: 0; font-family: 'Oswald', sans-serif; font-size: 1.8rem; text-transform: uppercase; color: var(--paper); letter-spacing: 0.05em; text-align: center;">Mustang</h3>
+      </div>
+    </a>
+
     <!-- Placeholder for Future Platform -->
     <div class="cat-card-lg" style="background: var(--panel-2); height: 180px; border-radius: 6px; border: 1px dashed var(--steel); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; text-align: center;">
       <span style="font-family:'JetBrains Mono',monospace; font-size: 0.75rem; color: var(--paper-dim);">MORE PLATFORMS</span>
@@ -492,6 +500,7 @@
       if (cat === label || cat.endsWith(label)) return true;
       if (key === 'anfittings' && cat === 'lines') return true;
       if (key === 'v-band' && (cat.includes('v-band') || cat.includes('v-band clamps'))) return true;
+      if (key === 'mustang' && cat.includes('mustang')) return true;
 
       return false;
     });
