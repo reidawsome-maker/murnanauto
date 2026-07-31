@@ -56,7 +56,7 @@
 <nav>
   <div class="logo">MURNAN <span>AUTO</span></div>
   <ul class="cat-nav" style="display:flex; align-items:center;">
-    <li><a href="#fitment">Vehicle Fit</a></li>
+    <li><a href="#fitment">Platforms</a></li>
     <li><a href="#shop">Shop</a></li>
     <li><a href="#partners">Brands &amp; Partners</a></li>
     <li><a href="#about">About</a></li>
@@ -157,33 +157,33 @@
 
 <section id="fitment">
   <div class="section-head">
-    <h2>Find parts for your vehicle</h2>
-    <span class="sub">FITMENT SEARCH</span>
+    <h2>Shop by Vehicle Platform</h2>
+    <span class="sub">CURATED PLATFORMS</span>
   </div>
-  <div class="fit-search">
-    <div class="fit-field">
-      <label for="yr">Year</label>
-      <select id="yr"><option>Select year</option><option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option><option>Older</option></select>
+  <p style="color:var(--paper-dim); max-width:65ch; margin-bottom:24px;">
+    Explore curated, verified catalog offerings built specifically for your vehicle platform.
+  </p>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%;">
+    
+    <!-- Nissan 350Z (Z33) Card -->
+    <a href="350z.html" style="text-decoration: none; color: inherit;">
+      <div class="cat-card-lg" style="background-image: url('350z.jpg'); height: 180px; position: relative; border-radius: 6px; overflow: hidden; border: 1px solid var(--steel); display: flex; align-items: flex-end; padding: 16px; box-sizing: border-box; transition: border-color 0.2s;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 100%); z-index: 1;"></div>
+        <div style="position: relative; z-index: 2;">
+          <span style="font-family:'JetBrains Mono',monospace; font-size: 0.75rem; color: var(--blue-bright); font-weight: 700;">NISSAN / INFINITI</span>
+          <h3 style="margin: 4px 0 0 0; font-family: 'Oswald', sans-serif; font-size: 1.4rem; text-transform: uppercase; color: var(--paper);">350Z (Z33) / G35</h3>
+        </div>
+      </div>
+    </a>
+
+    <!-- Placeholder for Future Platform -->
+    <div class="cat-card-lg" style="background: var(--panel-2); height: 180px; border-radius: 6px; border: 1px dashed var(--steel); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; text-align: center;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size: 0.75rem; color: var(--paper-dim);">MORE PLATFORMS</span>
+      <h4 style="margin: 6px 0 0 0; font-family: 'Oswald', sans-serif; font-size: 1.1rem; color: var(--paper-dim); text-transform: uppercase;">Coming Soon</h4>
     </div>
-    <div class="fit-field">
-      <label for="mk">Make</label>
-      <select id="mk" onchange="updateModels()">
-        <option value="">Select make</option>
-        <option value="Jeep">Jeep</option>
-        <option value="Ford">Ford</option>
-        <option value="Chevrolet">Chevrolet</option>
-        <option value="Dodge / Ram">Dodge / Ram</option>
-        <option value="Toyota">Toyota</option>
-        <option value="Other">Other</option>
-      </select>
-    </div>
-    <div class="fit-field">
-      <label for="md">Model</label>
-      <select id="md"><option>Select make first</option></select>
-    </div>
-    <button class="fit-btn" onclick="showFitNote()">Search</button>
+
   </div>
-  <p class="fit-note" id="fitNote">Full year/make/model fitment search is launching alongside the complete catalog. Browse parts by category below in the meantime, or email <a href="mailto:support@murnanauto.store" style="color:var(--blue-bright);">support@murnanauto.store</a> and we'll confirm fitment directly.</p>
 </section>
 
 <section id="shop">
@@ -326,24 +326,6 @@
 
 <script src="cart.js"></script>
 <script>
-  const modelsByMake = {
-    "Jeep": ["Grand Cherokee", "Wrangler", "Cherokee", "Gladiator", "Compass"],
-    "Ford": ["F-150", "Mustang", "Explorer", "Bronco", "Escape"],
-    "Chevrolet": ["Silverado", "Camaro", "Tahoe", "Equinox", "Malibu"],
-    "Dodge / Ram": ["Ram 1500", "Charger", "Challenger", "Durango"],
-    "Toyota": ["Tacoma", "Camry", "4Runner", "Tundra", "RAV4"],
-    "Other": ["Other"]
-  };
-  function updateModels(){
-    const make = document.getElementById('mk').value;
-    const modelSelect = document.getElementById('md');
-    modelSelect.innerHTML = "";
-    if(!make){ modelSelect.innerHTML = "<option>Select make first</option>"; return; }
-    const opts = ["Select model"].concat(modelsByMake[make] || ["Other"]);
-    opts.forEach(m => { const o = document.createElement('option'); o.textContent = m; modelSelect.appendChild(o); });
-  }
-  function showFitNote(){ document.getElementById('fitNote').classList.add('show'); }
-
   const categories = [
     { name: "Forced Induction & Nitrous", img: "Forced.jpg", subs: [
       { label: "Turbochargers", match: "Turbos" },
@@ -476,13 +458,8 @@
       if (!p.category) return false;
       const cat = p.category.toLowerCase().trim();
 
-      // Step 1: Match against the CMS value key (e.g., "gauges", "monitors", "interioracc")
       if (cat === key) return true;
-
-      // Step 2: Match against full Decap CMS label or sub-label string
       if (cat === label || cat.endsWith(label)) return true;
-
-      // Step 3: Temporary fallback ONLY for legacy un-updated "Lines" items
       if (key === 'anfittings' && cat === 'lines') return true;
 
       return false;
@@ -498,7 +475,6 @@
       const inStock = hasVariants ? item.variants.some(v => v.stock > 0) : item.stock > 0;
       const displayPrice = hasVariants ? `From $${item.price.toFixed(2)}` : `$${item.price.toFixed(2)}`;
       
-      // Compare Price formatting (Strikethrough MSRP)
       const hasCompare = item.compare_price && Number(item.compare_price) > Number(item.price);
       const compareHtml = hasCompare ? `<span style="text-decoration:line-through; color:var(--paper-dim); font-size:0.85rem; font-weight:400; margin-left:8px;">$${Number(item.compare_price).toFixed(2)}</span>` : '';
 
