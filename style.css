@@ -23,8 +23,8 @@ nav{
   position:sticky; top:0; background:rgba(21,23,26,0.95); backdrop-filter:blur(6px);
   z-index:20; border-bottom:1px solid var(--steel);
 }
-.logo{ font-family:'Oswald',sans-serif; font-size:1.4rem; font-weight:700; letter-spacing:0.04em; color:var(--paper); }
-.logo span{color:var(--blue-bright);}
+.logo{ font-family:'Oswald',sans-serif; font-size:1.4rem; font-weight:700; letter-spacing:0.04em; color:var(--blue-bright); }
+.logo span{ color:var(--paper); }
 .cat-nav{ display:flex; gap:28px; font-size:0.8rem; letter-spacing:0.05em; text-transform:uppercase; font-weight:500; }
 .cat-nav a{ text-decoration:none; opacity:0.85; transition:opacity .2s, color .2s; }
 .cat-nav a:hover, .cat-nav a:focus-visible{ opacity:1; color:var(--blue-bright); }
@@ -544,4 +544,34 @@ footer a{ color:var(--blue-bright); text-decoration:none; }
   margin-bottom: 10px;
   letter-spacing: 0.1em;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/* INQUIRY MODAL STYLES */
+.inquiry-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.inquiry-modal.show {
+  display: flex;
+}
+
+.inquiry-modal-content {
+  background: var(--panel);
+  border: 1px solid var(--blue-dim);
+  border-radius: 10px;
+  padding: 32px;
+  max-width: 680px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  margin: auto;
 }
