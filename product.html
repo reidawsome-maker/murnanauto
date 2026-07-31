@@ -29,7 +29,7 @@
   .product-img img { width:100%; height:100%; object-fit:contain; }
   .product-sku { font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--blue-bright); }
   .product-title { font-size: clamp(1.6rem, 3vw, 2.4rem); margin: 12px 0 18px; }
-  .product-price { font-family:'JetBrains Mono',monospace; font-size: 1.6rem; color: var(--paper); margin-bottom: 10px; display: flex; align-items: baseline; }
+  .product-price { font-family:'JetBrains Mono',monospace; font-size: 1.6rem; color: var(--paper); margin-bottom: 10px; display: flex; align-items: baseline; gap: 12px; }
   .product-stock { font-size: 0.9rem; margin-bottom: 24px; font-weight: 600; }
   .product-qty { display:flex; align-items:center; gap:12px; margin-bottom:22px; }
   .product-qty select, .variant-select { background:var(--panel-2); border:1px solid var(--steel); color:var(--paper); padding:10px 14px; border-radius:5px; font-family:'Inter',sans-serif; }
@@ -60,11 +60,6 @@
 </style>
 </head>
 <body>
-
-<div class="util-bar">
-  <span>MURNANAUTO.STORE — DEALER &amp; DISTRIBUTOR INQUIRIES WELCOME</span>
-  <span>Support: <a href="mailto:support@murnanauto.store">support@murnanauto.store</a></span>
-</div>
 
 <nav>
   <div class="logo"><a href="index.html" style="text-decoration:none;">MURNAN <span>AUTO</span></a></div>
@@ -144,7 +139,7 @@
     function buildVariantOptions() {
       if (!hasVariants) return '';
       return product.variants.map((v, idx) => {
-        const optName = v.option || `Option ${idx + 1}`;
+        const optName = v.option || v.name || `Option ${idx + 1}`;
         const optPrice = v.price !== undefined ? parseFloat(v.price) : (parseFloat(product.price) || 0);
         return `<option value="${idx}">${optName} — $${optPrice.toFixed(2)}</option>`;
       }).join('');
@@ -153,8 +148,10 @@
     function updateDisplay() {
       const currentPrice = parseFloat(activeItem.price !== undefined ? activeItem.price : product.price) || 0;
       
-      // Compare Price (MSRP) Logic
-      const rawCompare = activeItem.compare_price !== undefined ? activeItem.compare_price : product.compare_price;
+      // Multi-key checking for compare prices across variants & main product object
+      const rawCompare = activeItem.compare_price || activeItem.compare_at_price || activeItem.msrp ||
+                         product.compare_price || product.compare_at_price || product.msrp;
+      
       const comparePrice = parseFloat(rawCompare) || 0;
       const hasCompare = comparePrice > currentPrice;
 
@@ -168,9 +165,9 @@
       const qtyWrapper = document.getElementById('qtyWrapper');
 
       if (priceEl) {
-        let priceHtml = `$${currentPrice.toFixed(2)}`;
+        let priceHtml = `<span>$${currentPrice.toFixed(2)}</span>`;
         if (hasCompare) {
-          priceHtml += `<span style="text-decoration: line-through; color: var(--paper-dim); font-size: 1.1rem; font-weight: 400; margin-left: 12px;">$${comparePrice.toFixed(2)}</span>`;
+          priceHtml += `<span style="text-decoration: line-through !important; -webkit-text-decoration-line: line-through !important; color: var(--paper-dim); font-size: 1.1rem; font-weight: 400; margin-left: 12px; opacity: 0.75;">$${comparePrice.toFixed(2)}</span>`;
         }
         priceEl.innerHTML = priceHtml;
       }
@@ -254,7 +251,7 @@
         const qtySelect = document.getElementById('qtySelect');
         const qty = qtySelect ? parseInt(qtySelect.value, 10) : 1;
         const selectedSku = activeItem.sku || product.id;
-        const selectedName = hasVariants ? `${prodTitle} (${activeItem.option || 'Selected Option'})` : prodTitle;
+        const selectedName = hasVariants ? `${prodTitle} (${activeItem.option || activeItem.name || 'Selected Option'})` : prodTitle;
         const selectedPrice = parseFloat(activeItem.price !== undefined ? activeItem.price : product.price) || 0;
 
         const existing = cart.find(item => item.id === selectedSku);
