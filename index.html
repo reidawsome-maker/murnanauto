@@ -66,7 +66,9 @@
 
 <!-- BRAND TICKER -->
 <div class="ticker-wrap">
-  <div class="ticker-move" id="brandTicker"></div>
+  <div class="ticker-move" id="brandTicker">
+    <!-- Populated dynamically via JS -->
+  </div>
 </div>
 
 <div id="cart-overlay">
@@ -92,15 +94,17 @@
   </div>
 </div>
 
-<!-- HERO SECTION -->
+<!-- FLATTENED NEON HERO SECTION -->
 <section class="hero" style="padding-top:3vh; padding-bottom:3vh; border-top:none;">
   <div class="neon-hero">
     <div class="neon-badge">
       EST. 2026 // <span class="neon-red" style="font-weight:700;">U</span><span class="neon-white" style="font-weight:700;">S</span><span class="neon-blue" style="font-weight:700;">A</span>
     </div>
+    
     <h1 class="neon-logo-text">
       <span class="neon-white">MURNAN</span> <span class="neon-blue">AUTO</span>
     </h1>
+
     <p style="margin: 10px auto 0; max-width: 58ch; color: var(--paper-dim); font-size: 0.98rem; line-height: 1.5;">
       High-performance parts, specialty tools, and shop gear — built by people who work on cars, for people who work on cars.
     </p>
@@ -108,10 +112,22 @@
 </section>
 
 <div class="trust-bar">
-  <div class="trust-item"><span class="trust-icon">🛠️</span><div class="trust-text"><h4>Hands-On Standard</h4><p>Tested &amp; vetted by actual wrench-turners.</p></div></div>
-  <div class="trust-item"><span class="trust-icon">🇺🇸</span><div class="trust-text"><h4>U.S. Based Support</h4><p>Direct communication — no corporate runaround.</p></div></div>
-  <div class="trust-item"><span class="trust-icon">💬</span><div class="trust-text"><h4>Accessible Support</h4><p>Direct human assistance when you need a hand.</p></div></div>
-  <div class="trust-item"><span class="trust-icon">📦</span><div class="trust-text"><h4>Direct Fulfillment</h4><p>Sourced straight from factory warehouse partners.</p></div></div>
+  <div class="trust-item">
+    <span class="trust-icon">🛠️</span>
+    <div class="trust-text"><h4>Hands-On Standard</h4><p>Tested &amp; vetted by actual wrench-turners.</p></div>
+  </div>
+  <div class="trust-item">
+    <span class="trust-icon">🇺🇸</span>
+    <div class="trust-text"><h4>U.S. Based Support</h4><p>Direct communication — no corporate runaround.</p></div>
+  </div>
+  <div class="trust-item">
+    <span class="trust-icon">💬</span>
+    <div class="trust-text"><h4>Accessible Support</h4><p>Direct human assistance when you need a hand.</p></div>
+  </div>
+  <div class="trust-item">
+    <span class="trust-icon">📦</span>
+    <div class="trust-text"><h4>Direct Fulfillment</h4><p>Sourced straight from factory warehouse partners.</p></div>
+  </div>
 </div>
 
 <div id="modal-flf" class="dealer-modal" onclick="closeDealerModal(event, 'modal-flf')">
@@ -125,7 +141,7 @@
       </div>
       <hr style="border-color: var(--steel); margin: 20px 0;">
       <p style="color: var(--paper-dim); font-size: 0.9rem;">
-        Murnan Auto is an officially recognized Dealer for <strong>Finish Line Factory (FLF)</strong> components.
+        Murnan Auto is an officially recognized Dealer for <strong>Finish Line Factory (FLF)</strong> components. All AN fittings, hoses, and high-performance plumbing hardware sold through Murnan Auto are sourced directly from Finish Line Factory with full factory quality backing and direct warehouse fulfillment.
       </p>
       <div class="cert-footer">
         <span>AUTHENTICITY GUARANTEED</span>
@@ -135,7 +151,6 @@
   </div>
 </div>
 
-<!-- DYNAMIC PLATFORMS GRID -->
 <section id="fitment">
   <div class="section-head">
     <h2>Shop by Vehicle Platform</h2>
@@ -144,20 +159,40 @@
   <p style="color:var(--paper-dim); max-width:65ch; margin-bottom:24px;">
     Explore curated, verified catalog offerings built specifically for your vehicle platform.
   </p>
-  <div id="platformGridLg" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%;">
-    <!-- Dynamically Populated -->
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%;">
+    
+    <!-- Nissan 350Z Card -->
+    <a href="350z.html" style="text-decoration: none; color: inherit;">
+      <div class="cat-card-lg" style="background-image: url('350z.jpg'); height: 180px; position: relative; border-radius: 6px; overflow: hidden; border: 1px solid var(--steel); display: flex; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; transition: border-color 0.2s;">
+        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 1;"></div>
+        <h3 style="position: relative; z-index: 2; margin: 0; font-family: 'Oswald', sans-serif; font-size: 1.8rem; text-transform: uppercase; color: var(--paper); letter-spacing: 0.05em; text-align: center;">350Z</h3>
+      </div>
+    </a>
+
+    <!-- Ford Mustang Card -->
+    <a href="mustang.html" style="text-decoration: none; color: inherit;">
+      <div class="cat-card-lg" style="background-image: url('mustang.jpg'); height: 180px; position: relative; border-radius: 6px; overflow: hidden; border: 1px solid var(--steel); display: flex; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; transition: border-color 0.2s;">
+        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 1;"></div>
+        <h3 style="position: relative; z-index: 2; margin: 0; font-family: 'Oswald', sans-serif; font-size: 1.8rem; text-transform: uppercase; color: var(--paper); letter-spacing: 0.05em; text-align: center;">Mustang</h3>
+      </div>
+    </a>
+
+    <!-- Placeholder for Future Platform -->
+    <div class="cat-card-lg" style="background: var(--panel-2); height: 180px; border-radius: 6px; border: 1px dashed var(--steel); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; text-align: center;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size: 0.75rem; color: var(--paper-dim);">MORE PLATFORMS</span>
+      <h4 style="margin: 6px 0 0 0; font-family: 'Oswald', sans-serif; font-size: 1.1rem; color: var(--paper-dim); text-transform: uppercase;">Coming Soon</h4>
+    </div>
+
   </div>
 </section>
 
-<!-- DYNAMIC SHOP CATEGORIES -->
 <section id="shop">
   <div class="section-head">
     <h2>Shop by category</h2>
-    <span class="sub" id="catCount">CATEGORIES</span>
+    <span class="sub" id="catCount">12 CATEGORIES</span>
   </div>
-  <div class="cat-grid-lg" id="catGridLg">
-    <!-- Dynamically Populated -->
-  </div>
+  <div class="cat-grid-lg" id="catGridLg"></div>
 
   <div class="subcat-panel" id="subcatPanel">
     <div class="subcat-head">
@@ -200,27 +235,51 @@
 <div id="modal-inquiry" class="inquiry-modal" onclick="closeInquiryModal(event)">
   <div class="inquiry-modal-content">
     <button class="modal-close" onclick="toggleInquiryModal(false)">&times;</button>
+    
     <div style="margin-bottom: 20px;">
       <h2 style="font-size: 1.5rem; margin-bottom: 6px;">PARTNER WITH MURNAN AUTO</h2>
       <p style="color: var(--paper-dim); font-size: 0.85rem;">Fill out the form below and our team will follow up directly.</p>
     </div>
+
     <form class="wholesale-form" action="https://formspree.io/f/xkodvker" method="POST" style="padding: 0; background: none; border: none;">
-      <!-- Original Form Fields Preserved -->
-      <div class="form-field"><label for="company">Company name</label><input type="text" id="company" name="Company name" required></div>
-      <div class="form-field"><label for="contactname">Contact name</label><input type="text" id="contactname" name="Contact name" required></div>
-      <div class="form-field"><label for="email">Email</label><input type="email" id="email" name="Email" required></div>
-      <div class="form-field"><label for="phone">Phone (optional)</label><input type="tel" id="phone" name="Phone"></div>
-      <div class="form-field full"><label for="whatsell">What do you sell / carry?</label><input type="text" id="whatsell" name="What they sell" placeholder="e.g. aftermarket suspension parts, shop tools"></div>
+      <div class="form-field">
+        <label for="company">Company name</label>
+        <input type="text" id="company" name="Company name" required>
+      </div>
+      <div class="form-field">
+        <label for="contactname">Contact name</label>
+        <input type="text" id="contactname" name="Contact name" required>
+      </div>
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" required>
+      </div>
+      <div class="form-field">
+        <label for="phone">Phone (optional)</label>
+        <input type="tel" id="phone" name="Phone">
+      </div>
+      <div class="form-field full">
+        <label for="whatsell">What do you sell / carry?</label>
+        <input type="text" id="whatsell" name="What they sell" placeholder="e.g. aftermarket suspension parts, shop tools">
+      </div>
       <div class="form-field">
         <label for="volume">Estimated monthly volume</label>
         <select id="volume" name="Estimated volume">
-          <option>Select a range</option><option>Under $1,000</option><option>$1,000 – $5,000</option><option>$5,000 – $20,000</option><option>$20,000+</option><option>Not sure yet</option>
+          <option>Select a range</option>
+          <option>Under $1,000</option>
+          <option>$1,000 – $5,000</option>
+          <option>$5,000 – $20,000</option>
+          <option>$20,000+</option>
+          <option>Not sure yet</option>
         </select>
       </div>
       <div class="form-field">
         <label for="inquirytype">Inquiry type</label>
         <select id="inquirytype" name="Inquiry type">
-          <option>Supplier / vendor</option><option>Distributor / reseller</option><option>Wholesale buyer</option><option>Other</option>
+          <option>Supplier / vendor</option>
+          <option>Distributor / reseller</option>
+          <option>Wholesale buyer</option>
+          <option>Other</option>
         </select>
       </div>
       <div class="form-field full">
@@ -266,110 +325,163 @@
   function toggleInquiryModal(show) {
     const modal = document.getElementById('modal-inquiry');
     if (!modal) return;
-    if (show) modal.classList.add('show'); else modal.classList.remove('show');
+    if (show) {
+      modal.classList.add('show');
+    } else {
+      modal.classList.remove('show');
+    }
   }
 
   function closeInquiryModal(e) {
-    if (e.target.id === 'modal-inquiry') toggleInquiryModal(false);
+    if (e.target.id === 'modal-inquiry') {
+      toggleInquiryModal(false);
+    }
   }
 
-  const partnerBrands = ["Finish Line Factory", "Color Fittings", "Sikky Manufacturing", "Motul", "Fortune Auto", "Wilwood Brakes", "Vibrant Performance", "Turbosmart", "Maxpeedingrods"];
-  
+  const partnerBrands = [
+    "Finish Line Factory",
+    "Color Fittings",
+    "Sikky Manufacturing",
+    "Motul",
+    "Fortune Auto",
+    "Wilwood Brakes",
+    "Vibrant Performance",
+    "Turbosmart",
+    "Maxpeedingrods"
+  ];
+
   function renderBrandTicker() {
     const tickerContainer = document.getElementById('brandTicker');
     if (!tickerContainer) return;
-    const brandListHtml = partnerBrands.map(brand => `<span>${brand.toUpperCase()}</span> <span class="divider">✦</span>`).join(' ');
-    tickerContainer.innerHTML = `<div class="ticker-item">${brandListHtml}</div><div class="ticker-item">${brandListHtml}</div>`;
+
+    const brandListHtml = partnerBrands.map(brand => 
+      `<span>${brand.toUpperCase()}</span> <span class="divider">✦</span>`
+    ).join(' ');
+
+    tickerContainer.innerHTML = `
+      <div class="ticker-item">${brandListHtml}</div>
+      <div class="ticker-item">${brandListHtml}</div>
+    `;
   }
 
+  const categories = [
+    { name: "Forced Induction & Nitrous", img: "Forced.jpg", subs: [
+      { label: "Turbochargers", match: "Turbos" },
+      { label: "Intercoolers & Piping", match: "Intercoolers" },
+      { label: "Complete Turbo Kits", match: "Kits" },
+      { label: "Superchargers", match: "Superchargers" },
+      { label: "Nitrous Kits & Bottles", match: "Nitrous" },
+      { label: "Boost Controllers", match: "Controllers" },
+      { label: "Wastegates & BOVs", match: "Valves" }
+    ]},
+    { name: "Engine", img: "engine.jpg", subs: [
+      { label: "Pistons & Rings", match: "Pistons" },
+      { label: "Connecting Rods", match: "Rods" },
+      { label: "Camshafts & Valvetrain", match: "Camshafts" },
+      { label: "Gaskets & Seals", match: "Gaskets" },
+      { label: "Engine Rebuild Kits", match: "Rebuild" },
+      { label: "Oil Pumps & Pans", match: "Oil" }
+    ]},
+    { name: "Exhaust", img: "Exhaust.jpg", subs: [
+      { label: "V-Bands & Clamps", match: "V-Band" },
+      { label: "Headers & Manifolds", match: "Headers" },
+      { label: "Cat-Back Systems", match: "Exhaust" },
+      { label: "Downpipes & Midpipes", match: "Downpipes" },
+      { label: "Mufflers & Resonators", match: "Mufflers" },
+      { label: "Exhaust Tips", match: "Tips" }
+    ]},
+    { name: "Fuel System", img: "fuel.jpg", subs: [
+      { label: "Complete Fuel Kits", match: "FuelKits" },
+      { label: "AN Hose Ends & Fittings", match: "ANFittings" },
+      { label: "PTFE Hose & Lines", match: "PTFEHose" },
+      { label: "Nylon Braided Hose", match: "NylonHose" },
+      { label: "Hose Separators & Clamps", match: "HoseClamps" },
+      { label: "AN Adapters & Specialty", match: "ANAdapters" },
+      { label: "Fuel Pumps & Components", match: "Pumps" },
+      { label: "Fuel Injectors", match: "Injectors" },
+      { label: "Fuel Rails & Regulators", match: "Regulators" },
+      { label: "Fuel Filters", match: "FuelFilters" }
+    ]},
+    { name: "Ignition & Electrical", img: "ignition.jpg", subs: [
+      { label: "Ignition Coils", match: "Coils" },
+      { label: "Spark Plugs", match: "Plugs" },
+      { label: "Wiring & Harnesses", match: "Wiring" }
+    ]},
+    { name: "Fluids & Chemicals", img: "fluids.jpg", subs: [
+      { label: "Motor & Engine Oils", match: "EngineOils" },
+      { label: "Transmission & Gear Oils", match: "GearOils" },
+      { label: "Brake Fluids", match: "BrakeFluids" },
+      { label: "Coolants & Additives", match: "Coolants" },
+      { label: "Washing & Detailing", match: "Washing" }
+    ]},
+    { name: "Drivetrain", img: "drivetrain.jpg", subs: [
+      { label: "Clutches & Flywheels", match: "Clutches" },
+      { label: "Axles & Driveshafts", match: "Axles" },
+      { label: "Differentials & Gears", match: "Differentials" }
+    ]},
+    { name: "Brakes", img: "brakes.jpg", subs: [
+      { label: "Brake Pads", match: "Pads" },
+      { label: "Rotors", match: "Rotors" },
+      { label: "Big Brake Kits & Calipers", match: "Calipers" },
+      { label: "Brake Lines & Fluid", match: "BrakeLines" }
+    ]},
+    { name: "Cooling", img: "cooling.jpg", subs: [
+      { label: "Radiators", match: "Radiators" },
+      { label: "Oil Coolers", match: "OilCoolers" },
+      { label: "Fans & Shrouds", match: "Fans" },
+      { label: "Thermostats & Hoses", match: "Thermostats" }
+    ]},
+    { name: "Interior & Electronics", img: "interior.jpg", subs: [
+      { label: "Gauges & Pods", match: "Gauges" },
+      { label: "Digital Dashes & Monitors", match: "Monitors" },
+      { label: "Switches, Wiring & Trim", match: "InteriorAcc" }
+    ]},
+    { name: "Tools", img: "tools.jpg", subs: [
+      { label: "Hand Tools & Specialty", match: "Tools" }
+    ]},
+    { name: "Merch", img: "merch.jpg", subs: [
+      { label: "Apparel & Gear", match: "Merch" }
+    ]}
+  ];
+
   const catGridLg = document.getElementById('catGridLg');
-  const platformGridLg = document.getElementById('platformGridLg');
   const subcatPanel = document.getElementById('subcatPanel');
   const subcatTitle = document.getElementById('subcatTitle');
   const subcatPills = document.getElementById('subcatPills');
+  document.getElementById('catCount').textContent = categories.length + " CATEGORIES";
+
+  categories.forEach((cat) => {
+    const card = document.createElement('button');
+    card.className = 'cat-card-lg';
+    card.style.backgroundImage = `url('${cat.img}')`;
+    card.innerHTML = `<h3>${cat.name}</h3>`;
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      subcatTitle.textContent = cat.name;
+      subcatPills.innerHTML = cat.subs.map((s, index) =>
+        `<span class="subcat-pill ${index === 0 ? 'active-pill' : ''}" onclick="filterCategoryProducts('${s.match}', '${s.label}', this)">${s.label}</span>`
+      ).join('');
+      subcatPanel.classList.add('open');
+      subcatPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      if (cat.subs.length > 0) {
+        const firstPill = subcatPills.querySelector('.subcat-pill');
+        filterCategoryProducts(cat.subs[0].match, cat.subs[0].label, firstPill);
+      }
+    });
+    catGridLg.appendChild(card);
+  });
 
   document.getElementById('subcatClose').addEventListener('click', () => {
     subcatPanel.classList.remove('open');
     document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
   });
 
-  // DYNAMIC RENDER ENGINE
-  function buildDynamicStorefront() {
-    // 1. Build Categories
-    const allCategories = inventory.map(item => item.category).filter(Boolean);
-    const uniqueCategories = [...new Set(allCategories)].sort((a, b) => a.localeCompare(b));
-    document.getElementById('catCount').textContent = uniqueCategories.length + " CATEGORIES";
-    catGridLg.innerHTML = '';
-
-    uniqueCategories.forEach(catName => {
-      const safeImgName = catName.toLowerCase().replace(/[^a-z0-9]/g, '');
-      const card = document.createElement('button');
-      card.className = 'cat-card-lg';
-      // Attempts to load a matched image, defaults to standard dark panel if missing
-      card.style.backgroundImage = `url('${safeImgName}.jpg')`;
-      card.style.backgroundColor = 'var(--panel-2)';
-      card.innerHTML = `<h3>${catName}</h3>`;
-      
-      card.addEventListener('click', () => {
-        document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
-        card.classList.add('active');
-        subcatTitle.textContent = catName;
-        subcatPills.innerHTML = `<span class="subcat-pill active-pill">All ${catName}</span>`;
-        subcatPanel.classList.add('open');
-        subcatPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        
-        // Filter by Category
-        const filtered = inventory.filter(p => p.category && p.category.toLowerCase().trim() === catName.toLowerCase().trim());
-        renderProductGrid(filtered, catName);
-      });
-      catGridLg.appendChild(card);
-    });
-
-    // 2. Build Platforms
-    const allPlatforms = inventory.map(item => item.platform).filter(Boolean);
-    // Remove "Universal" so it doesn't crowd the specific vehicle grid
-    const uniquePlatforms = [...new Set(allPlatforms)].filter(p => p.toLowerCase() !== 'universal').sort((a, b) => a.localeCompare(b));
-    platformGridLg.innerHTML = '';
-
-    uniquePlatforms.forEach(platName => {
-      const safeImgName = platName.toLowerCase().replace(/[^a-z0-9]/g, '');
-      const pCard = document.createElement('a');
-      pCard.href = `javascript:void(0)`; 
-      pCard.style.textDecoration = 'none';
-      pCard.style.color = 'inherit';
-
-      pCard.innerHTML = `
-        <div class="cat-card-lg" style="background-image: url('${safeImgName}.jpg'); background-color: var(--panel-2); background-size: cover; background-position: center; height: 180px; position: relative; border-radius: 6px; overflow: hidden; border: 1px solid var(--steel); display: flex; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; transition: border-color 0.2s;">
-          <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 1;"></div>
-          <h3 style="position: relative; z-index: 2; margin: 0; font-family: 'Oswald', sans-serif; font-size: 1.8rem; text-transform: uppercase; color: var(--paper); letter-spacing: 0.05em; text-align: center;">${platName}</h3>
-        </div>
-      `;
-
-      pCard.onclick = () => {
-        document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
-        subcatTitle.textContent = platName + ' Parts';
-        subcatPills.innerHTML = `<span class="subcat-pill active-pill">All ${platName}</span>`;
-        subcatPanel.classList.add('open');
-        subcatPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        
-        // Filter by Platform
-        const filtered = inventory.filter(p => p.platform && p.platform.toLowerCase().trim() === platName.toLowerCase().trim());
-        renderProductGrid(filtered, platName);
-      };
-      platformGridLg.appendChild(pCard);
-    });
-
-    // Add generic "Coming Soon" block for aesthetics
-    platformGridLg.innerHTML += `
-      <div class="cat-card-lg" style="background: var(--panel-2); height: 180px; border-radius: 6px; border: 1px dashed var(--steel); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; text-align: center;">
-        <span style="font-family:'JetBrains Mono',monospace; font-size: 0.75rem; color: var(--paper-dim);">MORE PLATFORMS</span>
-        <h4 style="margin: 6px 0 0 0; font-family: 'Oswald', sans-serif; font-size: 1.1rem; color: var(--paper-dim); text-transform: uppercase;">Coming Soon</h4>
-      </div>
-    `;
-  }
-
-  // Unified Product Renderer
-  function renderProductGrid(filteredItems, filterName) {
+  function filterCategoryProducts(categoryKey, subcatLabel, pillElem) {
+    if (pillElem) {
+      document.querySelectorAll('.subcat-pill').forEach(p => p.classList.remove('active-pill'));
+      pillElem.classList.add('active-pill');
+    }
     let container = document.getElementById('category-products-grid');
     if (!container) {
       container = document.createElement('div');
@@ -377,12 +489,28 @@
       subcatPanel.appendChild(container);
     }
 
-    if (filteredItems.length === 0) {
-      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">No items currently in stock for <strong>${filterName}</strong>.</div>`;
+    const key = categoryKey.toLowerCase();
+    const label = subcatLabel.toLowerCase();
+
+    const filtered = inventory.filter(p => {
+      if (!p.category) return false;
+      const cat = p.category.toLowerCase().trim();
+
+      if (cat === key) return true;
+      if (cat === label || cat.endsWith(label)) return true;
+      if (key === 'anfittings' && cat === 'lines') return true;
+      if (key === 'v-band' && (cat.includes('v-band') || cat.includes('v-band clamps'))) return true;
+      if (key === 'mustang' && cat.includes('mustang')) return true;
+
+      return false;
+    });
+
+    if (filtered.length === 0) {
+      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">No live inventory currently loaded for <strong>${subcatLabel}</strong>. Check back soon or contact support for direct orders.</div>`;
       return;
     }
 
-    container.innerHTML = filteredItems.map(item => {
+    container.innerHTML = filtered.map(item => {
       const hasVariants = item.variants && item.variants.length > 0;
       const inStock = hasVariants ? item.variants.some(v => v.stock > 0) : item.stock > 0;
       const displayPrice = hasVariants ? `From $${item.price.toFixed(2)}` : `$${item.price.toFixed(2)}`;
@@ -419,14 +547,14 @@
   }
 
   function openActiveDealerModal() { document.getElementById('modal-flf').classList.add('show'); }
-  
+  function closeDealerModal(e, modalId) {
+    if (e.target.id === modalId || e.target.classList.contains('modal-close')) {
+      document.getElementById(modalId).classList.remove('show');
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', renderBrandTicker);
-  
-  // Chain the loading events
-  loadInventory().then(() => {
-    updateCartUI();
-    buildDynamicStorefront();
-  });
+  loadInventory().then(updateCartUI);
 </script>
 
 <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/VcGnuL/klaviyo.js?company_id=VcGnuL'></script>
