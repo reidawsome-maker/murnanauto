@@ -3,7 +3,7 @@ title: test
 sku: test123
 brand: Murnan auto
 platform: 'Universal '
-category: Turbocharger
+category: Radiators
 in_stock: true
 price: 300
 compare_price: 200
