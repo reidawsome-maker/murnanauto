@@ -513,14 +513,24 @@
 
   function handleGlobalSearch(query) {
     searchQuery = query.toLowerCase().trim();
-    if (searchQuery.length > 0 && !subcatPanel.classList.contains('open')) {
+
+    if (searchQuery.length > 0) {
       subcatPanel.classList.add('open');
-      subcatTitle.textContent = "Search Results";
+      subcatTitle.textContent = `Search Results for "${query}"`;
+      if (sizeSubPills) sizeSubPills.style.display = 'none';
+      subcatPills.innerHTML = '<span style="color:var(--paper-dim); font-size:0.85rem;">Searching entire catalog...</span>';
+    } else {
+      subcatTitle.textContent = activeSubcatLabel || 'Select a Category';
     }
+
     renderFilteredGrid();
   }
 
   function filterCategoryProducts(categoryKey, subcatLabel, pillElem, showSizeBar = false) {
+    searchQuery = ''; // Clear search when clicking category pills
+    const searchInput = document.getElementById('global-search');
+    if (searchInput) searchInput.value = '';
+
     if (pillElem) {
       document.querySelectorAll('#subcatPills .subcat-pill').forEach(p => p.classList.remove('active-pill'));
       pillElem.classList.add('active-pill');
@@ -559,7 +569,7 @@
     }
 
     if (!window.inventory || window.inventory.length === 0) {
-      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">Loading inventory...</div>`;
+      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">Loading inventory or no items found...</div>`;
       return;
     }
 
@@ -572,12 +582,20 @@
       const pName = (p.name || p.title || '').toLowerCase().trim();
       const pSku = (p.sku || '').toLowerCase().trim();
 
-      // 1. Search Query Match
+      // 1. SEARCH QUERY OVERRIDE
       if (searchQuery.length > 0) {
-        return pName.includes(searchQuery) || pSku.includes(searchQuery) || pCat.includes(searchQuery);
+        const matchesName = pName.includes(searchQuery);
+        const matchesSku = pSku.includes(searchQuery);
+        const matchesCat = pCat.includes(searchQuery);
+        const matchesVariants = p.variants && p.variants.some(v => 
+          (v.sku && v.sku.toLowerCase().includes(searchQuery)) || 
+          (v.name && v.name.toLowerCase().includes(searchQuery))
+        );
+
+        return matchesName || matchesSku || matchesCat || matchesVariants;
       }
 
-      // 2. Category / Subcategory Matching
+      // 2. STANDARD CATEGORY MATCHING
       let matchesCategory = false;
       if (pCat === targetKey || pSubcat === targetLabel) {
         matchesCategory = true;
@@ -599,7 +617,7 @@
 
       if (!matchesCategory) return false;
 
-      // 3. AN Size Filter Matching (-6AN, -8AN, -10AN)
+      // 3. AN SIZE FILTER MATCHING
       if (activeAnSizeFilter !== 'ALL') {
         const prodSize = (p.anSize || '').toUpperCase().replace('-', '').trim();
         const targetSize = activeAnSizeFilter.toUpperCase().replace('-', '').trim();
@@ -611,7 +629,7 @@
     });
 
     if (filtered.length === 0) {
-      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">No live inventory currently loaded for <strong>${activeSubcatLabel} ${activeAnSizeFilter !== 'ALL' ? '(' + activeAnSizeFilter + ')' : ''}</strong>.</div>`;
+      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">No parts found matching <strong>"${searchQuery || activeSubcatLabel}"</strong>.</div>`;
       return;
     }
 
