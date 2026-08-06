@@ -1,4 +1,4 @@
-name: Generate Products
+name: Generate Products and Deploy
 
 on:
   push:
@@ -9,10 +9,12 @@ on:
       - CF-Catalog-Filtered-6-8-10AN-EFI-Tools-Hose.csv
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pages: write
+      id-token: write
 
     steps:
       - name: Checkout code
