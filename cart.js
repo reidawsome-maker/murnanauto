@@ -1,12 +1,23 @@
 const CHECKOUT_API = 'https://murnan-checkout.murnanauto.workers.dev';
 
 let inventory = [];
-let cart = JSON.parse(localStorage.getItem('murnan_cart')) || [];
+let cart = [];
+
+// Safely load local storage cart without crashing on stale formats
+try {
+  const saved = localStorage.getItem('murnan_cart');
+  if (saved) {
+    cart = JSON.parse(saved);
+    if (!Array.isArray(cart)) cart = [];
+  }
+} catch (e) {
+  cart = [];
+}
 
 async function loadInventory() {
   inventory = [];
 
-  // 1. Try loading root inventory.json or static products.json first (Fast path)
+  // 1. Primary: Load root inventory.json (Fast path)
   try {
     const res = await fetch('inventory.json', { cache: 'no-store' });
     if (res.ok) {
@@ -18,18 +29,16 @@ async function loadInventory() {
       }
     }
   } catch (err) {
-    console.log('inventory.json not found at root, falling back to Decap CMS folder...');
+    console.log('inventory.json fallback to Decap CMS folder...');
   }
 
-  // 2. Fetch Decap CMS individual product JSON files from GitHub
+  // 2. Secondary Fallback: Fetch individual JSON files from GitHub API
   try {
     const ghRes = await fetch(`https://api.github.com/repos/reidawsome-maker/murnanauto/contents/content/products?t=${Date.now()}`);
     if (ghRes.ok) {
       const files = await ghRes.json();
-      
       const jsonFiles = files.filter(file => file.name.endsWith('.json'));
 
-      // Fetch all JSON files in parallel
       const loadedProducts = await Promise.all(
         jsonFiles.map(async (file) => {
           const prodRes = await fetch(`${file.download_url}?t=${Date.now()}`);
@@ -48,14 +57,13 @@ async function loadInventory() {
             description: item.description || '',
             category: item.category || 'ANFittings',
             subcategory: item.subcategory || '',
-            anSize: item.anSize || '',            // <-- PRESERVES AN SIZE FOR SUB-PILL FILTERING
+            anSize: item.anSize || '',
             tags: item.tags || [],
-            variants: item.variants || [] 
+            variants: item.variants || []
           };
         })
       );
 
-      // Filter out failed fetches and duplicate items
       for (const formattedProduct of loadedProducts) {
         if (formattedProduct && !inventory.some(p => p.id === formattedProduct.id)) {
           inventory.push(formattedProduct);
@@ -63,12 +71,10 @@ async function loadInventory() {
       }
     }
   } catch (err) {
-    console.error('Error fetching Decap CMS products:', err);
+    console.error('Error fetching CMS products:', err);
   }
 
-  // Always sort inventory alphabetically
   inventory.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
-
   window.inventory = inventory;
   return inventory;
 }
@@ -79,37 +85,40 @@ function saveCart() {
 }
 
 function addToCart(id, variantOptions = null) {
-  const product = inventory.find(p => p.id === id);
-  if (!product) return;
-  if (product.stock <= 0) { alert("This item is currently out of stock."); return; }
+  const product = (window.inventory || inventory).find(p => p.id === id);
+  if (!product) {
+    alert("Product not found in live inventory.");
+    return;
+  }
 
   let itemPrice = product.price;
   let itemWeight = product.weight;
   let itemId = product.id;
+  let optionName = '';
 
   if (variantOptions) {
     itemPrice = parseFloat(variantOptions.price) || itemPrice;
     itemWeight = parseFloat(variantOptions.weight) || itemWeight;
-    itemId = `${product.id}-${variantOptions.sku || variantOptions.option}`;
+    optionName = variantOptions.option || '';
+    itemId = `${product.id}-${variantOptions.sku || optionName}`;
   }
 
   const existing = cart.find(item => item.id === itemId);
   if (existing) {
-    if (existing.qty + 1 > product.stock) {
-      alert(`Only ${product.stock} units available.`);
-      return;
-    }
     existing.qty += 1;
   } else {
     cart.push({
       id: itemId,
-      name: product.name + (variantOptions ? ` (${variantOptions.option})` : ''),
+      baseId: product.id,
+      name: (product.name || product.title) + (optionName ? ` (${optionName})` : ''),
       price: itemPrice,
       weight: itemWeight,
       qty: 1
     });
   }
+
   saveCart();
+
   const overlay = document.getElementById('cart-overlay');
   if (overlay) overlay.classList.add('open');
 }
@@ -127,7 +136,6 @@ function toggleCart() {
 function calculateShipping(subtotal, totalWeight) {
   if (subtotal === 0) return 0;
   if (subtotal < 150) return 12.99;
-  
   if (subtotal >= 150 && totalWeight <= 35) return 0.00;
   if (totalWeight > 35 && totalWeight <= 60) return 29.99;
   return 49.99;
@@ -139,9 +147,9 @@ function updateCartUI() {
   const shippingEl = document.getElementById('cart-shipping');
   const listEl = document.getElementById('cart-items-list');
 
-  const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-  const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-  const totalWeight = cart.reduce((sum, item) => sum + ((item.weight || 0) * item.qty), 0);
+  const totalQty = cart.reduce((sum, item) => sum + (item.qty || 0), 0);
+  const subtotal = cart.reduce((sum, item) => sum + ((item.price || 0) * (item.qty || 0)), 0);
+  const totalWeight = cart.reduce((sum, item) => sum + (((item.weight || 0) * (item.qty || 0))), 0);
 
   const shippingCost = calculateShipping(subtotal, totalWeight);
   const finalTotal = subtotal + shippingCost;
@@ -153,7 +161,7 @@ function updateCartUI() {
     if (cart.length === 0) {
       shippingEl.textContent = '$0.00';
     } else if (shippingCost === 0) {
-      shippingEl.innerHTML = '<span style="color:#00e676;">FREE (Under 35 lbs)</span>';
+      shippingEl.innerHTML = '<span style="color:#4ADE80;">FREE (Under 35 lbs)</span>';
     } else {
       shippingEl.textContent = `$${shippingCost.toFixed(2)} ${totalWeight > 35 ? '(Heavy Freight)' : ''}`;
     }
@@ -166,12 +174,12 @@ function updateCartUI() {
       listEl.innerHTML = cart.map(item => `
         <div class="cart-item">
           <div>
-            <div style="font-weight:600; font-size:0.9rem;">${item.name}</div>
-            <div style="color:var(--paper-dim); font-size:0.8rem;">
-              Qty: ${item.qty} × $${item.price.toFixed(2)} ${item.weight ? `(${item.weight * item.qty} lbs)` : ''}
+            <div style="font-weight:600; font-size:0.9rem; color: var(--paper);">${item.name}</div>
+            <div style="color:var(--paper-dim); font-size:0.8rem; margin-top: 2px;">
+              Qty: ${item.qty} × $${(item.price || 0).toFixed(2)} ${item.weight ? `(${item.weight * item.qty} lbs)` : ''}
             </div>
           </div>
-          <button onclick="removeFromCart('${item.id}')" style="background:none; border:none; color:#ff5c5c; cursor:pointer; font-size:0.8rem;">Remove</button>
+          <button onclick="removeFromCart('${item.id}')" style="background:none; border:none; color:#ff5c5c; cursor:pointer; font-size:0.8rem; font-weight:600;">Remove</button>
         </div>
       `).join('');
     }
@@ -182,6 +190,7 @@ async function processCheckout() {
   if (cart.length === 0) { alert("Your cart is empty!"); return; }
   const btn = document.getElementById('cart-checkout-btn');
   if (btn) btn.textContent = "Loading Checkout...";
+
   try {
     const response = await fetch(CHECKOUT_API, {
       method: 'POST',
