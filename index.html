@@ -80,7 +80,7 @@
     <p style="color:var(--paper-dim); text-align:center; margin-top:40px;">Your cart is empty.</p>
   </div>
   <div class="cart-footer">
-    <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:var(--paper-dim); margin-bottom:6px;">
+    <div style="display:flex; justify-space-between; font-size:0.85rem; color:var(--paper-dim); margin-bottom:6px;">
       <span>Estimated Freight:</span>
       <span id="cart-shipping">$0.00</span>
     </div>
@@ -200,6 +200,15 @@
       <button class="subcat-close" id="subcatClose">Close &times;</button>
     </div>
     <div class="subcat-pills" id="subcatPills"></div>
+
+    <!-- DYNAMIC AN SIZE SUB-PILLS CONTAINER -->
+    <div id="sizeSubPills" style="display: none; margin-top: 12px; gap: 8px; flex-wrap: wrap; border-top: 1px dashed var(--steel); padding-top: 12px; align-items: center;">
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--blue-bright); text-transform: uppercase;">Select Size:</span>
+      <span class="subcat-pill active-pill" onclick="filterAnSize('ALL', this)">All Sizes</span>
+      <span class="subcat-pill" onclick="filterAnSize('6AN', this)">-6 AN</span>
+      <span class="subcat-pill" onclick="filterAnSize('8AN', this)">-8 AN</span>
+      <span class="subcat-pill" onclick="filterAnSize('10AN', this)">-10 AN</span>
+    </div>
   </div>
 </section>
 
@@ -392,11 +401,11 @@
     ]},
     { name: "Fuel System", img: "fuel.jpg", subs: [
       { label: "Complete Fuel Kits", match: "FuelKits" },
-      { label: "AN Hose Ends & Fittings", match: "ANFittings" },
-      { label: "PTFE Hose & Lines", match: "PTFEHose" },
-      { label: "Nylon Braided Hose", match: "NylonHose" },
+      { label: "AN Hose Ends & Fittings", match: "ANFittings", hasSizes: true },
+      { label: "AN Adapters & Specialty", match: "ANAdapters", hasSizes: true },
+      { label: "PTFE Hose & Lines", match: "PTFEHose", hasSizes: true },
+      { label: "Nylon Braided Hose", match: "NylonHose", hasSizes: true },
       { label: "Hose Separators & Clamps", match: "HoseClamps" },
-      { label: "AN Adapters & Specialty", match: "ANAdapters" },
       { label: "Fuel Pumps & Components", match: "Pumps" },
       { label: "Fuel Injectors", match: "Injectors" },
       { label: "Fuel Rails & Regulators", match: "Regulators" },
@@ -448,7 +457,12 @@
   const subcatPanel = document.getElementById('subcatPanel');
   const subcatTitle = document.getElementById('subcatTitle');
   const subcatPills = document.getElementById('subcatPills');
+  const sizeSubPills = document.getElementById('sizeSubPills');
   document.getElementById('catCount').textContent = categories.length + " CATEGORIES";
+
+  let activeCategoryKey = '';
+  let activeSubcatLabel = '';
+  let activeAnSizeFilter = 'ALL';
 
   categories.forEach((cat) => {
     const card = document.createElement('button');
@@ -459,14 +473,17 @@
       document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
       card.classList.add('active');
       subcatTitle.textContent = cat.name;
+      
       subcatPills.innerHTML = cat.subs.map((s, index) =>
-        `<span class="subcat-pill ${index === 0 ? 'active-pill' : ''}" onclick="filterCategoryProducts('${s.match}', '${s.label}', this)">${s.label}</span>`
+        `<span class="subcat-pill ${index === 0 ? 'active-pill' : ''}" onclick="filterCategoryProducts('${s.match}', '${s.label}', this, ${s.hasSizes || false})">${s.label}</span>`
       ).join('');
+      
       subcatPanel.classList.add('open');
       subcatPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      
       if (cat.subs.length > 0) {
         const firstPill = subcatPills.querySelector('.subcat-pill');
-        filterCategoryProducts(cat.subs[0].match, cat.subs[0].label, firstPill);
+        filterCategoryProducts(cat.subs[0].match, cat.subs[0].label, firstPill, cat.subs[0].hasSizes || false);
       }
     });
     catGridLg.appendChild(card);
@@ -477,11 +494,38 @@
     document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
   });
 
-  function filterCategoryProducts(categoryKey, subcatLabel, pillElem) {
+  function filterCategoryProducts(categoryKey, subcatLabel, pillElem, showSizeBar = false) {
     if (pillElem) {
-      document.querySelectorAll('.subcat-pill').forEach(p => p.classList.remove('active-pill'));
+      document.querySelectorAll('#subcatPills .subcat-pill').forEach(p => p.classList.remove('active-pill'));
       pillElem.classList.add('active-pill');
     }
+
+    activeCategoryKey = categoryKey;
+    activeSubcatLabel = subcatLabel;
+    activeAnSizeFilter = 'ALL'; // Reset size filter on subcategory click
+
+    // Toggle size sub-pills bar
+    if (sizeSubPills) {
+      sizeSubPills.style.display = showSizeBar ? 'flex' : 'none';
+      sizeSubPills.querySelectorAll('.subcat-pill').forEach((p, idx) => {
+        if (idx === 0) p.classList.add('active-pill');
+        else p.classList.remove('active-pill');
+      });
+    }
+
+    renderFilteredGrid();
+  }
+
+  function filterAnSize(sizeLabel, pillElem) {
+    if (pillElem) {
+      sizeSubPills.querySelectorAll('.subcat-pill').forEach(p => p.classList.remove('active-pill'));
+      pillElem.classList.add('active-pill');
+    }
+    activeAnSizeFilter = sizeLabel;
+    renderFilteredGrid();
+  }
+
+  function renderFilteredGrid() {
     let container = document.getElementById('category-products-grid');
     if (!container) {
       container = document.createElement('div');
@@ -489,24 +533,35 @@
       subcatPanel.appendChild(container);
     }
 
-    const key = categoryKey.toLowerCase();
-    const label = subcatLabel.toLowerCase();
+    const key = activeCategoryKey.toLowerCase();
+    const label = activeSubcatLabel.toLowerCase();
 
     const filtered = inventory.filter(p => {
       if (!p.category) return false;
       const cat = p.category.toLowerCase().trim();
 
-      if (cat === key) return true;
-      if (cat === label || cat.endsWith(label)) return true;
-      if (key === 'anfittings' && cat === 'lines') return true;
-      if (key === 'v-band' && (cat.includes('v-band') || cat.includes('v-band clamps'))) return true;
-      if (key === 'mustang' && cat.includes('mustang')) return true;
+      // Category matching
+      let matchesCategory = false;
+      if (cat === key) matchesCategory = true;
+      else if (cat === label || cat.endsWith(label)) matchesCategory = true;
+      else if (key === 'anfittings' && (cat === 'anfittings' || cat === 'lines')) matchesCategory = true;
+      else if (key === 'anadapters' && cat === 'anadapters') matchesCategory = true;
+      else if (key === 'v-band' && (cat.includes('v-band') || cat.includes('v-band clamps'))) matchesCategory = true;
 
-      return false;
+      if (!matchesCategory) return false;
+
+      // Size matching (-6AN, -8AN, -10AN)
+      if (activeAnSizeFilter !== 'ALL') {
+        const prodSize = (p.anSize || '').toUpperCase().replace('-', '').trim(); // e.g. "6AN"
+        const targetSize = activeAnSizeFilter.toUpperCase().replace('-', '').trim();
+        if (prodSize !== targetSize) return false;
+      }
+
+      return true;
     });
 
     if (filtered.length === 0) {
-      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">No live inventory currently loaded for <strong>${subcatLabel}</strong>. Check back soon or contact support for direct orders.</div>`;
+      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">No live inventory currently loaded for <strong>${activeSubcatLabel} ${activeAnSizeFilter !== 'ALL' ? '(' + activeAnSizeFilter + ')' : ''}</strong>. Check back soon or contact support for direct orders.</div>`;
       return;
     }
 
