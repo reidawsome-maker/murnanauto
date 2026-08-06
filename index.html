@@ -80,7 +80,7 @@
     <p style="color:var(--paper-dim); text-align:center; margin-top:40px;">Your cart is empty.</p>
   </div>
   <div class="cart-footer">
-    <div style="display:flex; justify-space-between; font-size:0.85rem; color:var(--paper-dim); margin-bottom:6px;">
+    <div style="display:flex; justify-content:space-between; font-size:0.85rem; color:var(--paper-dim); margin-bottom:6px;">
       <span>Estimated Freight:</span>
       <span id="cart-shipping">$0.00</span>
     </div>
@@ -533,28 +533,46 @@
       subcatPanel.appendChild(container);
     }
 
-    const key = activeCategoryKey.toLowerCase();
-    const label = activeSubcatLabel.toLowerCase();
+    if (!window.inventory || window.inventory.length === 0) {
+      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">Loading inventory or no items found in database...</div>`;
+      return;
+    }
+
+    const targetKey = activeCategoryKey.toLowerCase().trim();
+    const targetLabel = activeSubcatLabel.toLowerCase().trim();
 
     const filtered = inventory.filter(p => {
-      if (!p.category) return false;
-      const cat = p.category.toLowerCase().trim();
+      const pCat = (p.category || '').toLowerCase().trim();
+      const pSubcat = (p.subcategory || '').toLowerCase().trim();
+      const pName = (p.name || p.title || '').toLowerCase().trim();
 
-      // Category matching
+      // 1. Check Category / Subcategory Match
       let matchesCategory = false;
-      if (cat === key) matchesCategory = true;
-      else if (cat === label || cat.endsWith(label)) matchesCategory = true;
-      else if (key === 'anfittings' && (cat === 'anfittings' || cat === 'lines')) matchesCategory = true;
-      else if (key === 'anadapters' && cat === 'anadapters') matchesCategory = true;
-      else if (key === 'v-band' && (cat.includes('v-band') || cat.includes('v-band clamps'))) matchesCategory = true;
+
+      if (pCat === targetKey || pSubcat === targetLabel) {
+        matchesCategory = true;
+      } else if (targetKey === 'anfittings' && (pCat.includes('fitting') || pCat === 'lines')) {
+        matchesCategory = true;
+      } else if (targetKey === 'anadapters' && (pCat.includes('adapter') || pCat.includes('union'))) {
+        matchesCategory = true;
+      } else if (targetKey === 'tools' && (pCat.includes('tool') || pName.includes('wrench') || pName.includes('socket'))) {
+        matchesCategory = true;
+      } else if (pName.includes(targetKey) || pName.includes(targetLabel)) {
+        matchesCategory = true;
+      }
 
       if (!matchesCategory) return false;
 
-      // Size matching (-6AN, -8AN, -10AN)
+      // 2. Check AN Size Filter (-6AN, -8AN, -10AN)
       if (activeAnSizeFilter !== 'ALL') {
-        const prodSize = (p.anSize || '').toUpperCase().replace('-', '').trim(); // e.g. "6AN"
+        const prodSize = (p.anSize || '').toUpperCase().replace('-', '').trim();
         const targetSize = activeAnSizeFilter.toUpperCase().replace('-', '').trim();
-        if (prodSize !== targetSize) return false;
+        
+        const nameHasSize = pName.includes(`-${targetSize.toLowerCase()}`) || pName.includes(` ${targetSize.toLowerCase()}`);
+        
+        if (prodSize !== targetSize && !nameHasSize) {
+          return false;
+        }
       }
 
       return true;
