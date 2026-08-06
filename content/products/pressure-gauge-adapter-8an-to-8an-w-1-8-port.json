@@ -1,6 +1,7 @@
 {
   "id": "pressure-gauge-adapter-8an-to-8an-w-1-8-port",
   "name": "Pressure Gauge Adapter, 8AN to 8AN w/ 1/8\" port",
+  "sku": "CF-PGA-08-008-018-BL",
   "category": "ANAdapters",
   "price": 19.99,
   "description": "This Adapter is available in the following colors: Purple, Black",
@@ -10,12 +11,14 @@
       "name": "Black",
       "sku": "CF-PGA-08-008-018-BL",
       "price": 19.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2020/05/male-flare-to-female-flare-npt-port-black.png",
       "stock": 10
     },
     {
       "name": "Purple",
       "sku": "CF-PGA-08-008-018-PU",
       "price": 19.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2020/05/male-flare-to-female-flare-npt-port-purple.png",
       "stock": 10
     }
   ]

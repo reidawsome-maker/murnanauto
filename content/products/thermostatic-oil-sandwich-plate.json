@@ -1,7 +1,8 @@
 {
   "id": "thermostatic-oil-sandwich-plate",
   "name": "Thermostatic Oil Sandwich Plate",
-  "category": "ANFittings",
+  "sku": "CF-SND-08-000-001-RD",
+  "category": "Radiators",
   "price": 124.99,
   "description": "Founded in 2008, ColorFittings is an industry leader in premium automotive, marine, and aviation plumbing products.\u00a0\\n\\nWhether you\u2019re a professional building a 6-second NHRA bracket car, a perfectionist designing the ultimate engine bay for a SEMA car, or an HPDE enthusiast looking to improve your oil temps, our products are designed for all flavors of motorsports.\u00a0\\n\\nThe anodized finish provides an additional layer of protection to ColorFittings products, but using the wrong tools may damage the finish. It is critical to use the correct tools and follow the proper assembly procedure to ensure that the anodized finish is preserved.\u00a0\\n\\nWant to learn more about how our products apply to your vehicle? Read our handy guide here.",
   "image": "https://colorfittings.com/wp-content/uploads/2024/01/colorfittings-oil-sandwich-plate-red-main.png",
@@ -10,42 +11,49 @@
       "name": "Red",
       "sku": "CF-SND-08-000-001-RD",
       "price": 159.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2024/01/colorfittings-oil-sandwich-plate-red-main.png",
       "stock": 10
     },
     {
       "name": "Orange",
       "sku": "CF-SND-08-000-001-OR",
       "price": 159.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2024/01/colorfittings-oil-sandwich-plate-orange-main.png",
       "stock": 10
     },
     {
       "name": "Gold",
       "sku": "CF-SND-08-000-001-GD",
       "price": 159.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2024/01/colorfittings-oil-sandwich-plate-gold-main.png",
       "stock": 10
     },
     {
       "name": "Green",
       "sku": "CF-SND-08-000-001-GR",
       "price": 159.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2024/01/colorfittings-oil-sandwich-plate-green-main.png",
       "stock": 10
     },
     {
       "name": "Teal",
       "sku": "CF-SND-08-000-001-TL",
       "price": 159.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2024/01/colorfittings-oil-sandwich-plate-teal-main.png",
       "stock": 10
     },
     {
       "name": "Purple",
       "sku": "CF-SND-08-000-001-PU",
       "price": 159.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2024/01/colorfittings-oil-sandwich-plate-purple-main.png",
       "stock": 10
     },
     {
       "name": "Black",
       "sku": "CF-SND-08-000-001-BL",
       "price": 124.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2024/01/colorfittings-oil-sandwich-plate-black-main.png",
       "stock": 10
     }
   ]

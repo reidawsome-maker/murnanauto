@@ -1,6 +1,7 @@
 {
   "id": "06-an-fitting-y-block-union",
   "name": "-06 AN Fitting Y Block Union",
+  "sku": "CF-YBU-06-006-006-PU",
   "category": "ANAdapters",
   "price": 29.99,
   "description": "This AN Fitting is available in the following colors: Purple and Black",
@@ -10,12 +11,14 @@
       "name": "Purple",
       "sku": "CF-YBU-06-006-006-PU",
       "price": 29.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2018/06/cf-an-y-block-union-fitting-purple.png",
       "stock": 10
     },
     {
       "name": "Black",
       "sku": "CF-YBU-06-006-006-BL",
       "price": 29.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2018/06/cf-an-y-block-union-fitting-black-2.png",
       "stock": 10
     }
   ]

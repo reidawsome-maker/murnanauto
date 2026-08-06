@@ -1,7 +1,8 @@
 {
   "id": "8an-flare-to-5-16-quick-connect-adapter",
   "name": "-8AN Flare to 5/16\" Quick Connect Adapter",
-  "category": "ANFittings",
+  "sku": "CF-F2B-08-516-000-BL",
+  "category": "ANAdapters",
   "price": 17.99,
   "description": "-8AN Male Flare to 5/16\" Male Quick Disconnect Fuel Adapter\\n\\nAllows for seamless conversion of OEM-Style female quick-connect fittings to AN lines in Fuel and Vacuum systems.\\n\\nTechnical Specifications:\\n\\n \t-8AN male flare (37* JIC)\\n \t5/16\"(8mm) male quick connect\\n \tE85 &amp; Racefuel compatible\\n \tSignature polished, black anodized finish",
   "image": "https://colorfittings.com/wp-content/uploads/2024/11/Flare-Quick-Connect-black.png",
@@ -10,6 +11,7 @@
       "name": "Black",
       "sku": "CF-F2B-08-516-000-BL",
       "price": 17.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2024/11/Flare-Quick-Connect-black.png",
       "stock": 10
     }
   ]

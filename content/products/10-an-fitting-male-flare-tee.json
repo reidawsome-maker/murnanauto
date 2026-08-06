@@ -1,6 +1,7 @@
 {
   "id": "10-an-fitting-male-flare-tee",
   "name": "-10 AN Fitting Male Flare Tee",
+  "sku": "CF-TBU-10-010-010-BL",
   "category": "ANAdapters",
   "price": 19.99,
   "description": "This AN Fitting is available in the following color: Black",
@@ -10,6 +11,7 @@
       "name": "Black",
       "sku": "CF-TBU-10-010-010-BL",
       "price": 19.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2022/10/AN-Fitting-tee-adapter-male-to-male-1.png",
       "stock": 10
     }
   ]

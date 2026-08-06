@@ -1,7 +1,8 @@
 {
   "id": "8an-orb-to-3-8-quick-connect",
   "name": "-8AN ORB to 3/8\" Quick Connect",
-  "category": "ANFittings",
+  "sku": "CF-O2B-08-038-000-BL",
+  "category": "ANAdapters",
   "price": 17.99,
   "description": "Our ORB quick connect is now available in Black",
   "image": "https://colorfittings.com/wp-content/uploads/2024/11/Orb-Quick-Connect-black.png",
@@ -10,6 +11,7 @@
       "name": "Black",
       "sku": "CF-O2B-08-038-000-BL",
       "price": 17.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2024/11/Orb-Quick-Connect-black.png",
       "stock": 10
     }
   ]

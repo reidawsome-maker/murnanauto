@@ -1,7 +1,8 @@
 {
   "id": "oil-cooler-banjo-bolt-m22x1-5-to-10an-w-safety-wire-holes",
   "name": "Oil Cooler Banjo Bolt (M22x1.5 to 10AN) w/ Safety Wire Holes",
-  "category": "ANFittings",
+  "sku": "CF-BAN-10-M22-015-BL",
+  "category": "ANAdapters",
   "price": 49.99,
   "description": "A Metric M22x1.5 to 10AN Banjo Bolt perfect for Oil Coolers or other tight-fitting areas. Our banjo bolts are pre-drilled for safety wire to prevent accidental rotation. Includes the banjo fitting, banjo bolt, and washer pair.\\n\\nThis Banjo Bolt is available in the following color: Black",
   "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-black-safety-metric-banjo-bolt-M22.png",
@@ -10,6 +11,7 @@
       "name": "Black",
       "sku": "CF-BAN-10-M22-015-BL",
       "price": 49.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-black-safety-metric-banjo-bolt-M22.png",
       "stock": 10
     }
   ]

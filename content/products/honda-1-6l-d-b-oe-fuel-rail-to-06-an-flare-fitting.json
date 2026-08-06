@@ -1,7 +1,8 @@
 {
   "id": "honda-1-6l-d-b-oe-fuel-rail-to-06-an-flare-fitting",
   "name": "Honda 1.6L D/B OE Fuel rail to 06 AN Flare Fitting",
-  "category": "ANFittings",
+  "sku": "CF-F2S-06-012-125-GD",
+  "category": "ANAdapters",
   "price": 9.99,
   "description": "nan",
   "image": "https://colorfittings.com/wp-content/uploads/2022/03/colorfittings-an-fitting-oil_fitting_washer_M12x125_gold.png",
@@ -10,18 +11,21 @@
       "name": "Gold",
       "sku": "CF-F2S-06-012-125-GD",
       "price": 9.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2022/03/colorfittings-an-fitting-oil_fitting_washer_M12x125_gold.png",
       "stock": 10
     },
     {
       "name": "Purple",
       "sku": "CF-F2S-06-012-125-PU",
       "price": 9.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2018/06/colorfittings-an-fitting_metric_large_reducer_purple.png",
       "stock": 10
     },
     {
       "name": "Black",
       "sku": "CF-F2S-06-012-125-BL",
       "price": 9.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2018/06/colorfittings-an-fitting_metric_large_reducer_black.png",
       "stock": 10
     }
   ]

@@ -1,7 +1,8 @@
 {
   "id": "10an-ptfe-braided-stainless-steel-hose-line-e85-race-fuel-safe-by-the-foot",
   "name": "10AN PTFE Braided Stainless Steel Hose / Line (E85 + Race Fuel Safe) - BY THE FOOT",
-  "category": "ANFittings",
+  "sku": "CF-SPH-10-000-000-SS",
+  "category": "NylonHose",
   "price": 11.7,
   "description": "ColorFittings Stainless Steel PTFE Hose is engineered for high-pressure, high-temperature fluid transfer in fuel, oil, coolant, brake, and power steering systems. Featuring a smooth-bore PTFE inner liner with a tightly woven stainless steel braid, this hose delivers zero permeation, excellent chemical resistance, and consistent flow under extreme conditions.\\nDesigned for racing, street performance, and marine applications, this PTFE hose is compatible with E85, ethanol-based fuels, race fuels, and aggressive fluids that degrade traditional rubber hose. The stainless steel braid provides superior abrasion resistance and structural integrity while maintaining flexibility for clean, precise routing.\\nThis hose is designed to be used as part of the ColorFittings system. For a proper seal and reliable performance, pair it with our PTFE Hose Ends, precision-machined to match the PTFE liner and stainless braid. Use Hose Separators to organize multi-line installations and prevent abrasion, and complete assembly with our Hose Assembly Tools to ensure correct alignment, prevent damage, and achieve professional results.",
   "image": "https://colorfittings.com/wp-content/uploads/2026/02/AN-Fitting-PTFE-Stainless-Braided-Hose-Black-lowrez.png",
@@ -10,6 +11,7 @@
       "name": "Stainless Steel",
       "sku": "CF-SPH-10-000-000-SS",
       "price": 11.7,
+      "image": "https://colorfittings.com/wp-content/uploads/2026/02/AN-Fitting-PTFE-Stainless-Braided-Hose-Black-lowrez.png",
       "stock": 10
     }
   ]

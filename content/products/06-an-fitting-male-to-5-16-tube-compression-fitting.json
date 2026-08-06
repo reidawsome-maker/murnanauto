@@ -1,7 +1,8 @@
 {
   "id": "06-an-fitting-male-to-5-16-tube-compression-fitting",
   "name": "-06 AN Fitting Male to 5/16\" Tube Compression Fitting",
-  "category": "ANFittings",
+  "sku": "CF-MHL-06-516-000-BL",
+  "category": "ANAdapters",
   "price": 12.99,
   "description": "Designed for use with our\u00a05/16\" Hardline.\\n\\nThis Adapter is available in the following colors: Purple, Black",
   "image": "https://colorfittings.com/wp-content/uploads/2022/09/colorfittings-male-to-tube-compression-fitting_black.png",
@@ -10,12 +11,14 @@
       "name": "Black",
       "sku": "CF-MHL-06-516-000-BL",
       "price": 12.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2022/09/colorfittings-male-to-tube-compression-fitting_black.png",
       "stock": 10
     },
     {
       "name": "Purple",
       "sku": "CF-MHL-06-516-000-PU",
       "price": 12.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2022/09/colorfittings-male-to-tube-compression-fitting_purple.png",
       "stock": 10
     }
   ]
