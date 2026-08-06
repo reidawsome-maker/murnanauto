@@ -8,8 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="apple-touch-icon" href="favicon-180.png">
 <style>
   #cart-overlay {
     position: fixed; top: 0; right: -400px; width: 380px; height: 100vh;
@@ -45,12 +43,21 @@
   .live-prod-stock { font-size: 0.75rem; margin-bottom: 12px; font-weight: 600; }
   .live-prod-btn { width: 100%; padding: 10px; background: var(--blue); color: var(--asphalt); border: none; border-radius: 4px; font-family: 'Oswald', sans-serif; font-size: 0.8rem; text-transform: uppercase; font-weight:600; cursor: pointer; }
   .live-prod-btn:disabled { background: #333; color: #666; cursor: not-allowed; }
+
+  /* SEARCH BAR STYLING */
+  .search-wrap { margin-bottom: 24px; position: relative; max-width: 600px; }
+  .search-input {
+    width: 100%; padding: 14px 18px 14px 44px; background: var(--panel-2); border: 1px solid var(--steel);
+    color: var(--paper); font-family: 'Inter', sans-serif; font-size: 0.95rem; border-radius: 6px; box-sizing: border-box;
+  }
+  .search-input:focus { border-color: var(--blue-bright); outline: none; }
+  .search-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--paper-dim); font-size: 1rem; }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="logo">MURNAN <span>AUTO</span></div>
+  <div class="logo"><a href="index.html" style="color:inherit; text-decoration:none;">MURNAN <span>AUTO</span></a></div>
   <ul class="cat-nav" style="display:flex; align-items:center;">
     <li><a href="#fitment">Platforms</a></li>
     <li><a href="#shop">Shop</a></li>
@@ -63,13 +70,6 @@
     </li>
   </ul>
 </nav>
-
-<!-- BRAND TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker-move" id="brandTicker">
-    <!-- Populated dynamically via JS -->
-  </div>
-</div>
 
 <div id="cart-overlay">
   <div class="cart-header">
@@ -94,104 +94,18 @@
   </div>
 </div>
 
-<!-- FLATTENED NEON HERO SECTION -->
-<section class="hero" style="padding-top:3vh; padding-bottom:3vh; border-top:none;">
-  <div class="neon-hero">
-    <div class="neon-badge">
-      EST. 2026 // <span class="neon-red" style="font-weight:700;">U</span><span class="neon-white" style="font-weight:700;">S</span><span class="neon-blue" style="font-weight:700;">A</span>
-    </div>
-    
-    <h1 class="neon-logo-text">
-      <span class="neon-white">MURNAN</span> <span class="neon-blue">AUTO</span>
-    </h1>
-
-    <p style="margin: 10px auto 0; max-width: 58ch; color: var(--paper-dim); font-size: 0.98rem; line-height: 1.5;">
-      High-performance parts, specialty tools, and shop gear — built by people who work on cars, for people who work on cars.
-    </p>
-  </div>
-</section>
-
-<div class="trust-bar">
-  <div class="trust-item">
-    <span class="trust-icon">🛠️</span>
-    <div class="trust-text"><h4>Hands-On Standard</h4><p>Tested &amp; vetted by actual wrench-turners.</p></div>
-  </div>
-  <div class="trust-item">
-    <span class="trust-icon">🇺🇸</span>
-    <div class="trust-text"><h4>U.S. Based Support</h4><p>Direct communication — no corporate runaround.</p></div>
-  </div>
-  <div class="trust-item">
-    <span class="trust-icon">💬</span>
-    <div class="trust-text"><h4>Accessible Support</h4><p>Direct human assistance when you need a hand.</p></div>
-  </div>
-  <div class="trust-item">
-    <span class="trust-icon">📦</span>
-    <div class="trust-text"><h4>Direct Fulfillment</h4><p>Sourced straight from factory warehouse partners.</p></div>
-  </div>
-</div>
-
-<div id="modal-flf" class="dealer-modal" onclick="closeDealerModal(event, 'modal-flf')">
-  <div class="dealer-modal-content">
-    <button class="modal-close" onclick="closeDealerModal(event, 'modal-flf')">&times;</button>
-    <div class="cert-border">
-      <div class="cert-header">
-        <span class="cert-status">✓ VERIFIED ACTIVE DEALER</span>
-        <h2>FINISH LINE FACTORY</h2>
-        <p class="mono">PARTNER ID: FLF-MN-2026</p>
-      </div>
-      <hr style="border-color: var(--steel); margin: 20px 0;">
-      <p style="color: var(--paper-dim); font-size: 0.9rem;">
-        Murnan Auto is an officially recognized Dealer for <strong>Finish Line Factory (FLF)</strong> components. All AN fittings, hoses, and high-performance plumbing hardware sold through Murnan Auto are sourced directly from Finish Line Factory with full factory quality backing and direct warehouse fulfillment.
-      </p>
-      <div class="cert-footer">
-        <span>AUTHENTICITY GUARANTEED</span>
-        <span>MURNANAUTO.STORE</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<section id="fitment">
+<section id="shop" style="padding-top: 40px;">
   <div class="section-head">
-    <h2>Shop by Vehicle Platform</h2>
-    <span class="sub">CURATED PLATFORMS</span>
-  </div>
-  <p style="color:var(--paper-dim); max-width:65ch; margin-bottom:24px;">
-    Explore curated, verified catalog offerings built specifically for your vehicle platform.
-  </p>
-  
-  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%;">
-    
-    <!-- Nissan 350Z Card -->
-    <a href="350z.html" style="text-decoration: none; color: inherit;">
-      <div class="cat-card-lg" style="background-image: url('350z.jpg'); height: 180px; position: relative; border-radius: 6px; overflow: hidden; border: 1px solid var(--steel); display: flex; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; transition: border-color 0.2s;">
-        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 1;"></div>
-        <h3 style="position: relative; z-index: 2; margin: 0; font-family: 'Oswald', sans-serif; font-size: 1.8rem; text-transform: uppercase; color: var(--paper); letter-spacing: 0.05em; text-align: center;">350Z</h3>
-      </div>
-    </a>
-
-    <!-- Ford Mustang Card -->
-    <a href="mustang.html" style="text-decoration: none; color: inherit;">
-      <div class="cat-card-lg" style="background-image: url('mustang.jpg'); height: 180px; position: relative; border-radius: 6px; overflow: hidden; border: 1px solid var(--steel); display: flex; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; transition: border-color 0.2s;">
-        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 1;"></div>
-        <h3 style="position: relative; z-index: 2; margin: 0; font-family: 'Oswald', sans-serif; font-size: 1.8rem; text-transform: uppercase; color: var(--paper); letter-spacing: 0.05em; text-align: center;">Mustang</h3>
-      </div>
-    </a>
-
-    <!-- Placeholder for Future Platform -->
-    <div class="cat-card-lg" style="background: var(--panel-2); height: 180px; border-radius: 6px; border: 1px dashed var(--steel); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; text-align: center;">
-      <span style="font-family:'JetBrains Mono',monospace; font-size: 0.75rem; color: var(--paper-dim);">MORE PLATFORMS</span>
-      <h4 style="margin: 6px 0 0 0; font-family: 'Oswald', sans-serif; font-size: 1.1rem; color: var(--paper-dim); text-transform: uppercase;">Coming Soon</h4>
-    </div>
-
-  </div>
-</section>
-
-<section id="shop">
-  <div class="section-head">
-    <h2>Shop by category</h2>
+    <h2>Catalog Search &amp; Categories</h2>
     <span class="sub" id="catCount">12 CATEGORIES</span>
   </div>
+
+  <!-- GLOBAL SEARCH INPUT BAR -->
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="global-search" class="search-input" placeholder="Search by AN size, fitting degree, SKU, or part name (e.g. -6AN 90 degree)..." oninput="handleGlobalSearch(this.value)">
+  </div>
+
   <div class="cat-grid-lg" id="catGridLg"></div>
 
   <div class="subcat-panel" id="subcatPanel">
@@ -212,244 +126,29 @@
   </div>
 </section>
 
-<section id="about">
-  <div class="about-grid">
-    <div>
-      <h2>About Murnan Auto</h2>
-      <p>Murnan Auto is built around real shop experience — automotive repair, performance tuning, and wiring — not just parts we've never touched ourselves. Every category we carry is chosen against that same standard: parts and supplies worth putting on our own vehicles first.</p>
-      <p>We're building out a full catalog of parts, tools, and branded gear for daily drivers, project builds, and everyone in between. We're actively growing our supplier and distributor relationships as we scale — if that's you, we'd like to talk.</p>
-    </div>
-    <div class="values">
-      <div class="row"><span class="num">01</span><div><h4>Hands-on standard</h4><p>Sourced and vetted by people who actually work on cars.</p></div></div>
-      <div class="row"><span class="num">02</span><div><h4>U.S. based &amp; contactable</h4><p>Direct human support — reachable when you need assistance.</p></div></div>
-      <div class="row"><span class="num">03</span><div><h4>Curated performance</h4><p>No endless sea of junk parts — only vetted components built to perform.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- COMPACT INQUIRY BANNER -->
-<section id="contact" style="padding: 30px 5vw;">
-  <div style="background: var(--panel); border: 1px solid var(--steel); border-radius: 10px; padding: 28px 4vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
-    <div>
-      <h2 style="font-size: 1.4rem; margin-bottom: 4px;">DISTRIBUTOR &amp; SUPPLIER INQUIRIES</h2>
-      <p style="color: var(--paper-dim); font-size: 0.88rem; margin: 0;">Interested in partnering with Murnan Auto as a vendor, distributor, or wholesale buyer?</p>
-    </div>
-    <button onclick="toggleInquiryModal(true)" style="background: var(--blue); color: var(--asphalt); border: none; padding: 12px 24px; border-radius: 5px; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: background 0.15s ease;">
-      Dealer / Supplier Inquiries &rarr;
-    </button>
-  </div>
-</section>
-
-<!-- INQUIRY POPUP MODAL -->
-<div id="modal-inquiry" class="inquiry-modal" onclick="closeInquiryModal(event)">
-  <div class="inquiry-modal-content">
-    <button class="modal-close" onclick="toggleInquiryModal(false)">&times;</button>
-    
-    <div style="margin-bottom: 20px;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 6px;">PARTNER WITH MURNAN AUTO</h2>
-      <p style="color: var(--paper-dim); font-size: 0.85rem;">Fill out the form below and our team will follow up directly.</p>
-    </div>
-
-    <form class="wholesale-form" action="https://formspree.io/f/xkodvker" method="POST" style="padding: 0; background: none; border: none;">
-      <div class="form-field">
-        <label for="company">Company name</label>
-        <input type="text" id="company" name="Company name" required>
-      </div>
-      <div class="form-field">
-        <label for="contactname">Contact name</label>
-        <input type="text" id="contactname" name="Contact name" required>
-      </div>
-      <div class="form-field">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="Email" required>
-      </div>
-      <div class="form-field">
-        <label for="phone">Phone (optional)</label>
-        <input type="tel" id="phone" name="Phone">
-      </div>
-      <div class="form-field full">
-        <label for="whatsell">What do you sell / carry?</label>
-        <input type="text" id="whatsell" name="What they sell" placeholder="e.g. aftermarket suspension parts, shop tools">
-      </div>
-      <div class="form-field">
-        <label for="volume">Estimated monthly volume</label>
-        <select id="volume" name="Estimated volume">
-          <option>Select a range</option>
-          <option>Under $1,000</option>
-          <option>$1,000 – $5,000</option>
-          <option>$5,000 – $20,000</option>
-          <option>$20,000+</option>
-          <option>Not sure yet</option>
-        </select>
-      </div>
-      <div class="form-field">
-        <label for="inquirytype">Inquiry type</label>
-        <select id="inquirytype" name="Inquiry type">
-          <option>Supplier / vendor</option>
-          <option>Distributor / reseller</option>
-          <option>Wholesale buyer</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="form-field full">
-        <label for="message">Message</label>
-        <textarea id="message" name="Message" placeholder="Tell us a bit about your business and what you're looking for."></textarea>
-      </div>
-      <div class="full" style="margin-top: 10px;">
-        <button type="submit" class="form-submit" style="width: 100%;">Submit Inquiry</button>
-        <p class="form-note" style="margin-top: 12px; text-align: center;">Or email us directly at <a href="mailto:support@murnanauto.store" style="color:var(--blue-bright);">support@murnanauto.store</a></p>
-      </div>
-    </form>
-  </div>
-</div>
-
-<section style="background: var(--panel-2); border-top: 1px solid var(--steel); border-bottom: 1px solid var(--steel); padding: 40px 5vw;">
-  <div style="max-width: 800px; margin: 0 auto;">
-    <div class="section-head" style="margin-bottom: 16px;">
-      <h2>Fulfillment &amp; Operating Hours</h2>
-      <span class="sub">SCHEDULE &amp; SCHEDULED CLOSURES</span>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; color: var(--paper-dim); font-size: 0.9rem; line-height: 1.6;">
-      <div>
-        <h4 style="color: var(--paper); font-family: 'Oswald', sans-serif; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 8px;">Business Hours</h4>
-        <p><strong>Monday – Friday:</strong> 8:00 AM – 5:00 PM CST</p>
-        <p style="margin-top: 8px;">Orders placed after 5:00 PM CST or over the weekend will be processed and fulfilled on the next business day.</p>
-      </div>
-      <div>
-        <h4 style="color: var(--paper); font-family: 'Oswald', sans-serif; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 8px;">Observed Holidays</h4>
-        <p>Fulfillment &amp; support are paused on major U.S. holidays, including New Year's Day, Labor Day, Halloween, Thanksgiving Day, Christmas Eve, and Christmas Day.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <footer>
   <div>© 2026 Murnan Auto</div>
   <div><a href="mailto:support@murnanauto.store">support@murnanauto.store</a> · murnanauto.store</div>
-  <div><a href="policies.html#shipping">Shipping &amp; Returns</a> · <a href="policies.html#privacy">Privacy Policy</a> · <a href="policies.html#terms">Terms of Service</a></div>
 </footer>
 
 <script src="cart.js"></script>
 <script>
-  function toggleInquiryModal(show) {
-    const modal = document.getElementById('modal-inquiry');
-    if (!modal) return;
-    if (show) {
-      modal.classList.add('show');
-    } else {
-      modal.classList.remove('show');
-    }
-  }
-
-  function closeInquiryModal(e) {
-    if (e.target.id === 'modal-inquiry') {
-      toggleInquiryModal(false);
-    }
-  }
-
-  const partnerBrands = [
-    "Finish Line Factory",
-    "Color Fittings",
-    "Sikky Manufacturing",
-    "Motul",
-    "Fortune Auto",
-    "Wilwood Brakes",
-    "Vibrant Performance",
-    "Turbosmart",
-    "Maxpeedingrods"
-  ];
-
-  function renderBrandTicker() {
-    const tickerContainer = document.getElementById('brandTicker');
-    if (!tickerContainer) return;
-
-    const brandListHtml = partnerBrands.map(brand => 
-      `<span>${brand.toUpperCase()}</span> <span class="divider">✦</span>`
-    ).join(' ');
-
-    tickerContainer.innerHTML = `
-      <div class="ticker-item">${brandListHtml}</div>
-      <div class="ticker-item">${brandListHtml}</div>
-    `;
-  }
+  let activeCategoryKey = '';
+  let activeSubcatLabel = '';
+  let activeAnSizeFilter = 'ALL';
+  let searchQuery = '';
 
   const categories = [
-    { name: "Forced Induction & Nitrous", img: "Forced.jpg", subs: [
-      { label: "Turbochargers", match: "Turbos" },
-      { label: "Intercoolers & Piping", match: "Intercoolers" },
-      { label: "Complete Turbo Kits", match: "Kits" },
-      { label: "Superchargers", match: "Superchargers" },
-      { label: "Nitrous Kits & Bottles", match: "Nitrous" },
-      { label: "Boost Controllers", match: "Controllers" },
-      { label: "Wastegates & BOVs", match: "Valves" }
-    ]},
-    { name: "Engine", img: "engine.jpg", subs: [
-      { label: "Pistons & Rings", match: "Pistons" },
-      { label: "Connecting Rods", match: "Rods" },
-      { label: "Camshafts & Valvetrain", match: "Camshafts" },
-      { label: "Gaskets & Seals", match: "Gaskets" },
-      { label: "Engine Rebuild Kits", match: "Rebuild" },
-      { label: "Oil Pumps & Pans", match: "Oil" }
-    ]},
-    { name: "Exhaust", img: "Exhaust.jpg", subs: [
-      { label: "V-Bands & Clamps", match: "V-Band" },
-      { label: "Headers & Manifolds", match: "Headers" },
-      { label: "Cat-Back Systems", match: "Exhaust" },
-      { label: "Downpipes & Midpipes", match: "Downpipes" },
-      { label: "Mufflers & Resonators", match: "Mufflers" },
-      { label: "Exhaust Tips", match: "Tips" }
-    ]},
-    { name: "Fuel System", img: "fuel.jpg", subs: [
-      { label: "Complete Fuel Kits", match: "FuelKits" },
+    { name: "Fuel System & AN Hardware", img: "fuel.jpg", subs: [
       { label: "AN Hose Ends & Fittings", match: "ANFittings", hasSizes: true },
       { label: "AN Adapters & Specialty", match: "ANAdapters", hasSizes: true },
       { label: "PTFE Hose & Lines", match: "PTFEHose", hasSizes: true },
       { label: "Nylon Braided Hose", match: "NylonHose", hasSizes: true },
-      { label: "Hose Separators & Clamps", match: "HoseClamps" },
-      { label: "Fuel Pumps & Components", match: "Pumps" },
-      { label: "Fuel Injectors", match: "Injectors" },
-      { label: "Fuel Rails & Regulators", match: "Regulators" },
+      { label: "Hose Separators & Clamps", match: "HoseClamps", hasSizes: true },
       { label: "Fuel Filters", match: "FuelFilters" }
-    ]},
-    { name: "Ignition & Electrical", img: "ignition.jpg", subs: [
-      { label: "Ignition Coils", match: "Coils" },
-      { label: "Spark Plugs", match: "Plugs" },
-      { label: "Wiring & Harnesses", match: "Wiring" }
-    ]},
-    { name: "Fluids & Chemicals", img: "fluids.jpg", subs: [
-      { label: "Motor & Engine Oils", match: "EngineOils" },
-      { label: "Transmission & Gear Oils", match: "GearOils" },
-      { label: "Brake Fluids", match: "BrakeFluids" },
-      { label: "Coolants & Additives", match: "Coolants" },
-      { label: "Washing & Detailing", match: "Washing" }
-    ]},
-    { name: "Drivetrain", img: "drivetrain.jpg", subs: [
-      { label: "Clutches & Flywheels", match: "Clutches" },
-      { label: "Axles & Driveshafts", match: "Axles" },
-      { label: "Differentials & Gears", match: "Differentials" }
-    ]},
-    { name: "Brakes", img: "brakes.jpg", subs: [
-      { label: "Brake Pads", match: "Pads" },
-      { label: "Rotors", match: "Rotors" },
-      { label: "Big Brake Kits & Calipers", match: "Calipers" },
-      { label: "Brake Lines & Fluid", match: "BrakeLines" }
-    ]},
-    { name: "Cooling", img: "cooling.jpg", subs: [
-      { label: "Radiators", match: "Radiators" },
-      { label: "Oil Coolers", match: "OilCoolers" },
-      { label: "Fans & Shrouds", match: "Fans" },
-      { label: "Thermostats & Hoses", match: "Thermostats" }
-    ]},
-    { name: "Interior & Electronics", img: "interior.jpg", subs: [
-      { label: "Gauges & Pods", match: "Gauges" },
-      { label: "Digital Dashes & Monitors", match: "Monitors" },
-      { label: "Switches, Wiring & Trim", match: "InteriorAcc" }
     ]},
     { name: "Tools", img: "tools.jpg", subs: [
       { label: "Hand Tools & Specialty", match: "Tools" }
-    ]},
-    { name: "Merch", img: "merch.jpg", subs: [
-      { label: "Apparel & Gear", match: "Merch" }
     ]}
   ];
 
@@ -458,11 +157,6 @@
   const subcatTitle = document.getElementById('subcatTitle');
   const subcatPills = document.getElementById('subcatPills');
   const sizeSubPills = document.getElementById('sizeSubPills');
-  document.getElementById('catCount').textContent = categories.length + " CATEGORIES";
-
-  let activeCategoryKey = '';
-  let activeSubcatLabel = '';
-  let activeAnSizeFilter = 'ALL';
 
   categories.forEach((cat) => {
     const card = document.createElement('button');
@@ -493,6 +187,15 @@
     subcatPanel.classList.remove('open');
     document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
   });
+
+  function handleGlobalSearch(query) {
+    searchQuery = query.toLowerCase().trim();
+    if (searchQuery.length > 0 && !subcatPanel.classList.contains('open')) {
+      subcatPanel.classList.add('open');
+      subcatTitle.textContent = "Search Results";
+    }
+    renderFilteredGrid();
+  }
 
   function filterCategoryProducts(categoryKey, subcatLabel, pillElem, showSizeBar = false) {
     if (pillElem) {
@@ -533,7 +236,7 @@
     }
 
     if (!window.inventory || window.inventory.length === 0) {
-      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">Loading inventory or no items found...</div>`;
+      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">Loading inventory...</div>`;
       return;
     }
 
@@ -544,52 +247,52 @@
       const pCat = (p.category || '').toLowerCase().trim();
       const pSubcat = (p.subcategory || '').toLowerCase().trim();
       const pName = (p.name || p.title || '').toLowerCase().trim();
+      const pSku = (p.sku || '').toLowerCase().trim();
 
+      // Search Query Override
+      if (searchQuery.length > 0) {
+        return pName.includes(searchQuery) || pSku.includes(searchQuery) || pCat.includes(searchQuery);
+      }
+
+      // Category matching
       let matchesCategory = false;
-
       if (pCat === targetKey || pSubcat === targetLabel) {
         matchesCategory = true;
       } else if (targetKey === 'anfittings' && (pCat.includes('fitting') || pCat === 'lines')) {
         matchesCategory = true;
       } else if (targetKey === 'anadapters' && (pCat.includes('adapter') || pCat.includes('union'))) {
         matchesCategory = true;
-      } else if (targetKey === 'tools' && (pCat.includes('tool') || pName.includes('wrench') || pName.includes('socket'))) {
+      } else if (targetKey === 'ptfehose' && pCat === 'ptfehose') {
         matchesCategory = true;
-      } else if (pName.includes(targetKey) || pName.includes(targetLabel)) {
+      } else if (targetKey === 'nylonhose' && pCat === 'nylonhose') {
+        matchesCategory = true;
+      } else if (targetKey === 'hoseclamps' && pCat === 'hoseclamps') {
+        matchesCategory = true;
+      } else if (targetKey === 'tools' && pCat === 'tools') {
         matchesCategory = true;
       }
 
       if (!matchesCategory) return false;
 
+      // Size matching
       if (activeAnSizeFilter !== 'ALL') {
         const prodSize = (p.anSize || '').toUpperCase().replace('-', '').trim();
         const targetSize = activeAnSizeFilter.toUpperCase().replace('-', '').trim();
         const nameHasSize = pName.includes(`-${targetSize.toLowerCase()}`) || pName.includes(` ${targetSize.toLowerCase()}`);
-        if (prodSize !== targetSize && !nameHasSize) {
-          return false;
-        }
+        if (prodSize !== targetSize && !nameHasSize) return false;
       }
 
       return true;
     });
 
     if (filtered.length === 0) {
-      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">No live inventory currently loaded for <strong>${activeSubcatLabel} ${activeAnSizeFilter !== 'ALL' ? '(' + activeAnSizeFilter + ')' : ''}</strong>. Check back soon or contact support.</div>`;
+      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">No parts matched your criteria.</div>`;
       return;
     }
 
     container.innerHTML = filtered.map(item => {
       const hasVariants = item.variants && item.variants.length > 0;
-      const inStock = hasVariants ? item.variants.some(v => v.stock > 0) : item.stock > 0;
       const displayPrice = hasVariants ? `From $${item.price.toFixed(2)}` : `$${item.price.toFixed(2)}`;
-      
-      const rawCompare = item.compare_price || item.compare_at_price;
-      const hasCompare = rawCompare && Number(rawCompare) > Number(item.price);
-      const savings = hasCompare ? (Number(rawCompare) - Number(item.price)).toFixed(2) : '0.00';
-      const compareHtml = hasCompare 
-        ? `<span style="text-decoration: line-through !important; color: #888888; font-size: 0.85rem; font-weight: 400; opacity: 0.8;">$${Number(rawCompare).toFixed(2)}</span><span class="save-tag-sm">Save $${savings}</span>` 
-        : '';
-
       const imgSrc = item.image || item.featured_image || (item.images && item.images[0]);
       const titleText = item.title || item.name;
 
@@ -597,13 +300,7 @@
       if (hasVariants) {
         const colors = [...new Set(item.variants.map(v => v.name))];
         if (colors.length > 1) {
-          colorPillsHtml = `
-            <div style="display:flex; align-items:center; gap:4px; margin-top:4px; margin-bottom:8px; flex-wrap:wrap;">
-              <span style="font-size:0.7rem; color:var(--blue-bright); font-family:'JetBrains Mono',monospace;">${colors.length} COLORS:</span>
-              ${colors.map(c => `<span style="font-size:0.65rem; background:var(--steel); color:var(--paper); padding:1px 5px; border-radius:3px; border:1px solid #444;">${c}</span>`).join('')}
-            </div>`;
-        } else if (colors.length === 1) {
-          colorPillsHtml = `<div style="font-size:0.7rem; color:var(--paper-dim); margin-bottom:8px;">Color: ${colors[0]}</div>`;
+          colorPillsHtml = `<div style="font-size:0.7rem; color:var(--blue-bright); margin-bottom:8px;">${colors.length} COLORS AVAILABLE</div>`;
         }
       }
 
@@ -614,35 +311,16 @@
             <span class="live-prod-sku">${item.sku || item.id}</span>
             <h4 class="live-prod-name"><a href="product.html?id=${item.id}" style="color:inherit; text-decoration:none;">${titleText}</a></h4>
             ${colorPillsHtml}
-            <div class="live-prod-price">${displayPrice} ${compareHtml}</div>
-            <div class="live-prod-stock" style="color:${inStock ? '#4ADE80' : '#ff5c5c'};">${inStock ? 'In Stock' : 'Out of Stock'}</div>
+            <div class="live-prod-price">${displayPrice}</div>
           </div>
           <div style="display:flex; gap:8px;">
-            <a href="product.html?id=${item.id}" class="live-prod-btn" style="text-decoration:none; text-align:center; background:var(--panel-2); border:1px solid var(--steel); color:var(--paper);">View</a>
-            ${hasVariants ? 
-              `<a href="product.html?id=${item.id}" class="live-prod-btn" style="text-decoration:none; text-align:center;">Select Option</a>` : 
-              `<button class="live-prod-btn" onclick="addToCart('${item.id}')" ${!inStock ? 'disabled' : ''}>${inStock ? 'Add To Cart' : 'Out of Stock'}</button>`
-            }
+            <a href="product.html?id=${item.id}" class="live-prod-btn" style="text-decoration:none; text-align:center;">View Part</a>
           </div>
         </div>`;
     }).join('');
   }
 
-  function openActiveDealerModal() { document.getElementById('modal-flf').classList.add('show'); }
-  function closeDealerModal(e, modalId) {
-    if (e.target.id === modalId || e.target.classList.contains('modal-close')) {
-      document.getElementById(modalId).classList.remove('show');
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', renderBrandTicker);
   loadInventory().then(updateCartUI);
 </script>
-
-<script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/VcGnuL/klaviyo.js?company_id=VcGnuL'></script>
-<script type="text/javascript">
-  !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++){o[w]=arguments[w];}var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();
-</script>
-
 </body>
 </html>
