@@ -502,9 +502,8 @@
 
     activeCategoryKey = categoryKey;
     activeSubcatLabel = subcatLabel;
-    activeAnSizeFilter = 'ALL'; // Reset size filter on subcategory click
+    activeAnSizeFilter = 'ALL';
 
-    // Toggle size sub-pills bar
     if (sizeSubPills) {
       sizeSubPills.style.display = showSizeBar ? 'flex' : 'none';
       sizeSubPills.querySelectorAll('.subcat-pill').forEach((p, idx) => {
@@ -534,7 +533,7 @@
     }
 
     if (!window.inventory || window.inventory.length === 0) {
-      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">Loading inventory or no items found in database...</div>`;
+      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">Loading inventory or no items found...</div>`;
       return;
     }
 
@@ -546,7 +545,6 @@
       const pSubcat = (p.subcategory || '').toLowerCase().trim();
       const pName = (p.name || p.title || '').toLowerCase().trim();
 
-      // 1. Check Category / Subcategory Match
       let matchesCategory = false;
 
       if (pCat === targetKey || pSubcat === targetLabel) {
@@ -563,13 +561,10 @@
 
       if (!matchesCategory) return false;
 
-      // 2. Check AN Size Filter (-6AN, -8AN, -10AN)
       if (activeAnSizeFilter !== 'ALL') {
         const prodSize = (p.anSize || '').toUpperCase().replace('-', '').trim();
         const targetSize = activeAnSizeFilter.toUpperCase().replace('-', '').trim();
-        
         const nameHasSize = pName.includes(`-${targetSize.toLowerCase()}`) || pName.includes(` ${targetSize.toLowerCase()}`);
-        
         if (prodSize !== targetSize && !nameHasSize) {
           return false;
         }
@@ -579,7 +574,7 @@
     });
 
     if (filtered.length === 0) {
-      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">No live inventory currently loaded for <strong>${activeSubcatLabel} ${activeAnSizeFilter !== 'ALL' ? '(' + activeAnSizeFilter + ')' : ''}</strong>. Check back soon or contact support for direct orders.</div>`;
+      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">No live inventory currently loaded for <strong>${activeSubcatLabel} ${activeAnSizeFilter !== 'ALL' ? '(' + activeAnSizeFilter + ')' : ''}</strong>. Check back soon or contact support.</div>`;
       return;
     }
 
@@ -591,13 +586,26 @@
       const rawCompare = item.compare_price || item.compare_at_price;
       const hasCompare = rawCompare && Number(rawCompare) > Number(item.price);
       const savings = hasCompare ? (Number(rawCompare) - Number(item.price)).toFixed(2) : '0.00';
-      
       const compareHtml = hasCompare 
-        ? `<span style="text-decoration: line-through !important; -webkit-text-decoration-line: line-through !important; color: #888888; font-size: 0.85rem; font-weight: 400; opacity: 0.8;">$${Number(rawCompare).toFixed(2)}</span><span class="save-tag-sm">Save $${savings}</span>` 
+        ? `<span style="text-decoration: line-through !important; color: #888888; font-size: 0.85rem; font-weight: 400; opacity: 0.8;">$${Number(rawCompare).toFixed(2)}</span><span class="save-tag-sm">Save $${savings}</span>` 
         : '';
 
       const imgSrc = item.image || item.featured_image || (item.images && item.images[0]);
       const titleText = item.title || item.name;
+
+      let colorPillsHtml = '';
+      if (hasVariants) {
+        const colors = [...new Set(item.variants.map(v => v.name))];
+        if (colors.length > 1) {
+          colorPillsHtml = `
+            <div style="display:flex; align-items:center; gap:4px; margin-top:4px; margin-bottom:8px; flex-wrap:wrap;">
+              <span style="font-size:0.7rem; color:var(--blue-bright); font-family:'JetBrains Mono',monospace;">${colors.length} COLORS:</span>
+              ${colors.map(c => `<span style="font-size:0.65rem; background:var(--steel); color:var(--paper); padding:1px 5px; border-radius:3px; border:1px solid #444;">${c}</span>`).join('')}
+            </div>`;
+        } else if (colors.length === 1) {
+          colorPillsHtml = `<div style="font-size:0.7rem; color:var(--paper-dim); margin-bottom:8px;">Color: ${colors[0]}</div>`;
+        }
+      }
 
       return `
         <div class="live-prod-card">
@@ -605,6 +613,7 @@
             ${imgSrc ? `<img src="${imgSrc}" alt="${titleText}" style="width:100%; aspect-ratio:1/1; object-fit:contain; background:var(--panel); border-radius:4px; margin-bottom:10px;">` : ''}
             <span class="live-prod-sku">${item.sku || item.id}</span>
             <h4 class="live-prod-name"><a href="product.html?id=${item.id}" style="color:inherit; text-decoration:none;">${titleText}</a></h4>
+            ${colorPillsHtml}
             <div class="live-prod-price">${displayPrice} ${compareHtml}</div>
             <div class="live-prod-stock" style="color:${inStock ? '#4ADE80' : '#ff5c5c'};">${inStock ? 'In Stock' : 'Out of Stock'}</div>
           </div>
