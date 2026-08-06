@@ -36,7 +36,7 @@
   .subcat-pill.active-pill { background: var(--blue-bright) !important; color: #000 !important; font-weight: 700; }
   .subcat-pill { cursor: pointer; }
 
-  #category-products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 24px; width: 100%; }
+  .live-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 16px; width: 100%; }
   .live-prod-card { background: var(--panel-2); border: 1px solid var(--steel); padding: 16px; display: flex; flex-direction: column; justify-content: space-between; border-radius: 6px; }
   .live-prod-sku { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--blue-bright); }
   .live-prod-name { font-family: 'Oswald', sans-serif; margin: 6px 0; color: var(--paper); font-size: 1rem; text-transform: none; letter-spacing: 0; }
@@ -46,7 +46,7 @@
   .live-prod-btn { width: 100%; padding: 10px; background: var(--blue); color: var(--asphalt); border: none; border-radius: 4px; font-family: 'Oswald', sans-serif; font-size: 0.8rem; text-transform: uppercase; font-weight:600; cursor: pointer; }
   .live-prod-btn:disabled { background: #333; color: #666; cursor: not-allowed; }
 
-  /* GLOBAL CATALOG SEARCH STYLING */
+  /* SEARCH BAR & IN-LINE RESULTS CONTAINER */
   .search-wrap { margin: 20px 0; position: relative; width: 100%; max-width: 600px; }
   .search-input {
     width: 100%; padding: 14px 18px 14px 44px; background: var(--panel-2); border: 1px solid var(--steel);
@@ -54,6 +54,11 @@
   }
   .search-input:focus { border-color: var(--blue-bright); outline: none; }
   .search-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--paper-dim); font-size: 1rem; }
+  
+  #search-results-tray {
+    margin-top: 16px; padding: 20px; background: var(--panel-2); border: 1px solid var(--steel);
+    border-radius: 8px; display: none;
+  }
 </style>
 </head>
 <body>
@@ -103,7 +108,7 @@
   </div>
 </div>
 
-<!-- FLATTENED NEON HERO SECTION -->
+<!-- HERO SECTION -->
 <section class="hero" style="padding-top:3vh; padding-bottom:3vh; border-top:none;">
   <div class="neon-hero">
     <div class="neon-badge">
@@ -171,7 +176,6 @@
   
   <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%;">
     
-    <!-- Nissan 350Z Card -->
     <a href="350z.html" style="text-decoration: none; color: inherit;">
       <div class="cat-card-lg" style="background-image: url('350z.jpg'); height: 180px; position: relative; border-radius: 6px; overflow: hidden; border: 1px solid var(--steel); display: flex; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; transition: border-color 0.2s;">
         <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 1;"></div>
@@ -179,7 +183,6 @@
       </div>
     </a>
 
-    <!-- Ford Mustang Card -->
     <a href="mustang.html" style="text-decoration: none; color: inherit;">
       <div class="cat-card-lg" style="background-image: url('mustang.jpg'); height: 180px; position: relative; border-radius: 6px; overflow: hidden; border: 1px solid var(--steel); display: flex; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; transition: border-color 0.2s;">
         <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 1;"></div>
@@ -187,7 +190,6 @@
       </div>
     </a>
 
-    <!-- Placeholder for Future Platform -->
     <div class="cat-card-lg" style="background: var(--panel-2); height: 180px; border-radius: 6px; border: 1px dashed var(--steel); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; text-align: center;">
       <span style="font-family:'JetBrains Mono',monospace; font-size: 0.75rem; color: var(--paper-dim);">MORE PLATFORMS</span>
       <h4 style="margin: 6px 0 0 0; font-family: 'Oswald', sans-serif; font-size: 1.1rem; color: var(--paper-dim); text-transform: uppercase;">Coming Soon</h4>
@@ -202,10 +204,19 @@
     <span class="sub" id="catCount">12 CATEGORIES</span>
   </div>
 
-  <!-- GLOBAL SEARCH INPUT -->
+  <!-- IN-LINE CATALOG SEARCH BAR -->
   <div class="search-wrap">
     <span class="search-icon">🔍</span>
     <input type="text" id="global-search" class="search-input" placeholder="Search fittings, hose, or sizes (e.g. -6 90, -10 45, -8 adapter)..." oninput="handleGlobalSearch(this.value)">
+  </div>
+
+  <!-- IN-LINE SEARCH RESULTS TRAY (NO JUMPING) -->
+  <div id="search-results-tray">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom: 1px solid var(--steel); padding-bottom: 8px;">
+      <h3 id="search-results-title" style="margin:0; font-family:'Oswald',sans-serif; font-size:1.2rem; text-transform:uppercase;">Search Results</h3>
+      <button onclick="clearSearch()" style="background:none; border:none; color:var(--blue-bright); cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:0.8rem;">Clear Search &times;</button>
+    </div>
+    <div id="search-products-grid" class="live-grid"></div>
   </div>
 
   <div class="cat-grid-lg" id="catGridLg"></div>
@@ -217,7 +228,6 @@
     </div>
     <div class="subcat-pills" id="subcatPills"></div>
 
-    <!-- DYNAMIC AN SIZE SUB-PILLS CONTAINER -->
     <div id="sizeSubPills" style="display: none; margin-top: 12px; gap: 8px; flex-wrap: wrap; border-top: 1px dashed var(--steel); padding-top: 12px; align-items: center;">
       <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--blue-bright); text-transform: uppercase;">Select Size:</span>
       <span class="subcat-pill active-pill" onclick="filterAnSize('ALL', this)">All Sizes</span>
@@ -225,6 +235,7 @@
       <span class="subcat-pill" onclick="filterAnSize('8AN', this)">-8 AN</span>
       <span class="subcat-pill" onclick="filterAnSize('10AN', this)">-10 AN</span>
     </div>
+    <div id="category-products-grid" class="live-grid"></div>
   </div>
 </section>
 
@@ -350,29 +361,17 @@
   function toggleInquiryModal(show) {
     const modal = document.getElementById('modal-inquiry');
     if (!modal) return;
-    if (show) {
-      modal.classList.add('show');
-    } else {
-      modal.classList.remove('show');
-    }
+    if (show) modal.classList.add('show');
+    else modal.classList.remove('show');
   }
 
   function closeInquiryModal(e) {
-    if (e.target.id === 'modal-inquiry') {
-      toggleInquiryModal(false);
-    }
+    if (e.target.id === 'modal-inquiry') toggleInquiryModal(false);
   }
 
   const partnerBrands = [
-    "Finish Line Factory",
-    "Color Fittings",
-    "Sikky Manufacturing",
-    "Motul",
-    "Fortune Auto",
-    "Wilwood Brakes",
-    "Vibrant Performance",
-    "Turbosmart",
-    "Maxpeedingrods"
+    "Finish Line Factory", "Color Fittings", "Sikky Manufacturing",
+    "Motul", "Fortune Auto", "Wilwood Brakes", "Vibrant Performance", "Turbosmart", "Maxpeedingrods"
   ];
 
   function renderBrandTicker() {
@@ -474,12 +473,15 @@
   const subcatTitle = document.getElementById('subcatTitle');
   const subcatPills = document.getElementById('subcatPills');
   const sizeSubPills = document.getElementById('sizeSubPills');
+  const searchTray = document.getElementById('search-results-tray');
+  const searchGrid = document.getElementById('search-products-grid');
+  const searchTitle = document.getElementById('search-results-title');
+
   document.getElementById('catCount').textContent = categories.length + " CATEGORIES";
 
   let activeCategoryKey = '';
   let activeSubcatLabel = '';
   let activeAnSizeFilter = 'ALL';
-  let searchQuery = '';
 
   categories.forEach((cat) => {
     const card = document.createElement('button');
@@ -496,7 +498,6 @@
       ).join('');
       
       subcatPanel.classList.add('open');
-      subcatPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       
       if (cat.subs.length > 0) {
         const firstPill = subcatPills.querySelector('.subcat-pill');
@@ -511,28 +512,62 @@
     document.querySelectorAll('.cat-card-lg').forEach(c => c.classList.remove('active'));
   });
 
+  // IN-LINE SEARCH LOGIC (NO JUMPS OR DROPS)
   function handleGlobalSearch(query) {
-    searchQuery = query.toLowerCase().trim();
+    const q = query.toLowerCase().trim();
 
-    if (searchQuery.length > 0) {
-      subcatPanel.classList.add('open');
-      subcatTitle.textContent = `Search Results for "${query}"`;
-      if (sizeSubPills) sizeSubPills.style.display = 'none';
-      subcatPills.innerHTML = '<span style="color:var(--paper-dim); font-size:0.85rem;">Searching entire catalog...</span>';
-      
-      // Auto-scroll down to results so user doesn't have to manually scroll
-      subcatPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    } else {
-      subcatTitle.textContent = activeSubcatLabel || 'Select a Category';
+    if (q.length === 0) {
+      searchTray.style.display = 'none';
+      searchGrid.innerHTML = '';
+      return;
     }
 
-    renderFilteredGrid();
+    searchTray.style.display = 'block';
+    searchTitle.textContent = `Search Results for "${query}"`;
+
+    if (!window.inventory || window.inventory.length === 0) {
+      searchGrid.innerHTML = `<div style="grid-column: 1/-1; color: var(--paper-dim);">Loading inventory...</div>`;
+      return;
+    }
+
+    const tokens = q.split(/\s+/).filter(t => t.length > 0);
+
+    const results = inventory.filter(p => {
+      const pName = (p.name || p.title || '').toLowerCase();
+      const pSku = (p.sku || '').toLowerCase();
+      const pCat = (p.category || '').toLowerCase();
+      const pSubcat = (p.subcategory || '').toLowerCase();
+
+      const fullText = `${pName} ${pSku} ${pCat} ${pSubcat} ${p.anSize || ''} ${
+        p.variants ? p.variants.map(v => `${v.name} ${v.sku}`).join(' ') : ''
+      }`.toLowerCase();
+
+      return tokens.every(token => {
+        if (/^-?\d+$/.test(token)) {
+          const num = token.replace('-', '');
+          return fullText.includes(`-${num}`) || fullText.includes(`${num}an`) || fullText.includes(` ${num} `);
+        }
+        return fullText.includes(token);
+      });
+    });
+
+    if (results.length === 0) {
+      searchGrid.innerHTML = `<div style="grid-column: 1/-1; color: var(--paper-dim); padding: 10px 0;">No parts found matching <strong>"${query}"</strong>.</div>`;
+      return;
+    }
+
+    searchGrid.innerHTML = results.map(item => renderProductCardHtml(item)).join('');
+  }
+
+  function clearSearch() {
+    const searchInput = document.getElementById('global-search');
+    if (searchInput) searchInput.value = '';
+    searchTray.style.display = 'none';
+    searchGrid.innerHTML = '';
   }
 
   function filterCategoryProducts(categoryKey, subcatLabel, pillElem, showSizeBar = false) {
-    searchQuery = ''; // Clear search when clicking category pills
-    const searchInput = document.getElementById('global-search');
-    if (searchInput) searchInput.value = '';
+    clearSearch();
 
     if (pillElem) {
       document.querySelectorAll('#subcatPills .subcat-pill').forEach(p => p.classList.remove('active-pill'));
@@ -565,14 +600,10 @@
 
   function renderFilteredGrid() {
     let container = document.getElementById('category-products-grid');
-    if (!container) {
-      container = document.createElement('div');
-      container.id = 'category-products-grid';
-      subcatPanel.appendChild(container);
-    }
+    if (!container) return;
 
     if (!window.inventory || window.inventory.length === 0) {
-      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">Loading inventory or no items found...</div>`;
+      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">Loading inventory...</div>`;
       return;
     }
 
@@ -583,30 +614,7 @@
       const pCat = (p.category || '').toLowerCase().trim();
       const pSubcat = (p.subcategory || '').toLowerCase().trim();
       const pName = (p.name || p.title || '').toLowerCase().trim();
-      const pSku = (p.sku || '').toLowerCase().trim();
 
-      // 1. BLANKET MULTI-WORD SEARCH OVERRIDE (e.g., "-6 90", "-10 45", "8 adapter")
-      if (searchQuery.length > 0) {
-        // Split query into tokens (e.g. ["-6", "90"])
-        const tokens = searchQuery.split(/\s+/).filter(t => t.length > 0);
-        
-        // Product text buffer combining all search-relevant fields
-        const fullText = `${pName} ${pSku} ${pCat} ${pSubcat} ${p.anSize || ''} ${
-          p.variants ? p.variants.map(v => `${v.name} ${v.sku}`).join(' ') : ''
-        }`.toLowerCase();
-
-        // Check if EVERY token is present in the product's text buffer
-        return tokens.every(token => {
-          // Flexible AN size token check (e.g. "-6" matches "-6an", "-06", "6an")
-          if (/^-?\d+$/.test(token)) {
-            const num = token.replace('-', '');
-            return fullText.includes(`-${num}`) || fullText.includes(`${num}an`) || fullText.includes(` ${num} `);
-          }
-          return fullText.includes(token);
-        });
-      }
-
-      // 2. STANDARD CATEGORY MATCHING
       let matchesCategory = false;
       if (pCat === targetKey || pSubcat === targetLabel) {
         matchesCategory = true;
@@ -628,7 +636,6 @@
 
       if (!matchesCategory) return false;
 
-      // 3. AN SIZE FILTER MATCHING
       if (activeAnSizeFilter !== 'ALL') {
         const prodSize = (p.anSize || '').toUpperCase().replace('-', '').trim();
         const targetSize = activeAnSizeFilter.toUpperCase().replace('-', '').trim();
@@ -640,58 +647,60 @@
     });
 
     if (filtered.length === 0) {
-      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">No parts found matching <strong>"${searchQuery || activeSubcatLabel}"</strong>.</div>`;
+      container.innerHTML = `<div style="grid-column: 1/-1; padding: 20px; text-align: center; color: var(--paper-dim);">No live inventory currently loaded for <strong>${activeSubcatLabel} ${activeAnSizeFilter !== 'ALL' ? '(' + activeAnSizeFilter + ')' : ''}</strong>.</div>`;
       return;
     }
 
-    container.innerHTML = filtered.map(item => {
-      const hasVariants = item.variants && item.variants.length > 0;
-      const inStock = hasVariants ? item.variants.some(v => v.stock > 0) : item.stock > 0;
-      const displayPrice = hasVariants ? `From $${item.price.toFixed(2)}` : `$${item.price.toFixed(2)}`;
-      
-      const rawCompare = item.compare_price || item.compare_at_price;
-      const hasCompare = rawCompare && Number(rawCompare) > Number(item.price);
-      const savings = hasCompare ? (Number(rawCompare) - Number(item.price)).toFixed(2) : '0.00';
-      const compareHtml = hasCompare 
-        ? `<span style="text-decoration: line-through !important; color: #888888; font-size: 0.85rem; font-weight: 400; opacity: 0.8;">$${Number(rawCompare).toFixed(2)}</span><span class="save-tag-sm">Save $${savings}</span>` 
-        : '';
+    container.innerHTML = filtered.map(item => renderProductCardHtml(item)).join('');
+  }
 
-      const imgSrc = item.image || item.featured_image || (item.images && item.images[0]);
-      const titleText = item.title || item.name;
+  function renderProductCardHtml(item) {
+    const hasVariants = item.variants && item.variants.length > 0;
+    const inStock = hasVariants ? item.variants.some(v => v.stock > 0) : item.stock > 0;
+    const displayPrice = hasVariants ? `From $${item.price.toFixed(2)}` : `$${item.price.toFixed(2)}`;
+    
+    const rawCompare = item.compare_price || item.compare_at_price;
+    const hasCompare = rawCompare && Number(rawCompare) > Number(item.price);
+    const savings = hasCompare ? (Number(rawCompare) - Number(item.price)).toFixed(2) : '0.00';
+    const compareHtml = hasCompare 
+      ? `<span style="text-decoration: line-through !important; color: #888888; font-size: 0.85rem; font-weight: 400; opacity: 0.8;">$${Number(rawCompare).toFixed(2)}</span><span class="save-tag-sm">Save $${savings}</span>` 
+      : '';
 
-      let colorPillsHtml = '';
-      if (hasVariants) {
-        const colors = [...new Set(item.variants.map(v => v.name))];
-        if (colors.length > 1) {
-          colorPillsHtml = `
-            <div style="display:flex; align-items:center; gap:4px; margin-top:4px; margin-bottom:8px; flex-wrap:wrap;">
-              <span style="font-size:0.7rem; color:var(--blue-bright); font-family:'JetBrains Mono',monospace;">${colors.length} COLORS:</span>
-              ${colors.map(c => `<span style="font-size:0.65rem; background:var(--steel); color:var(--paper); padding:1px 5px; border-radius:3px; border:1px solid #444;">${c}</span>`).join('')}
-            </div>`;
-        } else if (colors.length === 1) {
-          colorPillsHtml = `<div style="font-size:0.7rem; color:var(--paper-dim); margin-bottom:8px;">Color: ${colors[0]}</div>`;
-        }
+    const imgSrc = item.image || item.featured_image || (item.images && item.images[0]);
+    const titleText = item.title || item.name;
+
+    let colorPillsHtml = '';
+    if (hasVariants) {
+      const colors = [...new Set(item.variants.map(v => v.name))];
+      if (colors.length > 1) {
+        colorPillsHtml = `
+          <div style="display:flex; align-items:center; gap:4px; margin-top:4px; margin-bottom:8px; flex-wrap:wrap;">
+            <span style="font-size:0.7rem; color:var(--blue-bright); font-family:'JetBrains Mono',monospace;">${colors.length} COLORS:</span>
+            ${colors.map(c => `<span style="font-size:0.65rem; background:var(--steel); color:var(--paper); padding:1px 5px; border-radius:3px; border:1px solid #444;">${c}</span>`).join('')}
+          </div>`;
+      } else if (colors.length === 1) {
+        colorPillsHtml = `<div style="font-size:0.7rem; color:var(--paper-dim); margin-bottom:8px;">Color: ${colors[0]}</div>`;
       }
+    }
 
-      return `
-        <div class="live-prod-card">
-          <div>
-            ${imgSrc ? `<img src="${imgSrc}" alt="${titleText}" style="width:100%; aspect-ratio:1/1; object-fit:contain; background:var(--panel); border-radius:4px; margin-bottom:10px;">` : ''}
-            <span class="live-prod-sku">${item.sku || item.id}</span>
-            <h4 class="live-prod-name"><a href="product.html?id=${item.id}" style="color:inherit; text-decoration:none;">${titleText}</a></h4>
-            ${colorPillsHtml}
-            <div class="live-prod-price">${displayPrice} ${compareHtml}</div>
-            <div class="live-prod-stock" style="color:${inStock ? '#4ADE80' : '#ff5c5c'};">${inStock ? 'In Stock' : 'Out of Stock'}</div>
-          </div>
-          <div style="display:flex; gap:8px;">
-            <a href="product.html?id=${item.id}" class="live-prod-btn" style="text-decoration:none; text-align:center; background:var(--panel-2); border:1px solid var(--steel); color:var(--paper);">View</a>
-            ${hasVariants ? 
-              `<a href="product.html?id=${item.id}" class="live-prod-btn" style="text-decoration:none; text-align:center;">Select Option</a>` : 
-              `<button class="live-prod-btn" onclick="addToCart('${item.id}')" ${!inStock ? 'disabled' : ''}>${inStock ? 'Add To Cart' : 'Out of Stock'}</button>`
-            }
-          </div>
-        </div>`;
-    }).join('');
+    return `
+      <div class="live-prod-card">
+        <div>
+          ${imgSrc ? `<img src="${imgSrc}" alt="${titleText}" style="width:100%; aspect-ratio:1/1; object-fit:contain; background:var(--panel); border-radius:4px; margin-bottom:10px;">` : ''}
+          <span class="live-prod-sku">${item.sku || item.id}</span>
+          <h4 class="live-prod-name"><a href="product.html?id=${item.id}" style="color:inherit; text-decoration:none;">${titleText}</a></h4>
+          ${colorPillsHtml}
+          <div class="live-prod-price">${displayPrice} ${compareHtml}</div>
+          <div class="live-prod-stock" style="color:${inStock ? '#4ADE80' : '#ff5c5c'};">${inStock ? 'In Stock' : 'Out of Stock'}</div>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <a href="product.html?id=${item.id}" class="live-prod-btn" style="text-decoration:none; text-align:center; background:var(--panel-2); border:1px solid var(--steel); color:var(--paper);">View</a>
+          ${hasVariants ? 
+            `<a href="product.html?id=${item.id}" class="live-prod-btn" style="text-decoration:none; text-align:center;">Select Option</a>` : 
+            `<button class="live-prod-btn" onclick="addToCart('${item.id}')" ${!inStock ? 'disabled' : ''}>${inStock ? 'Add To Cart' : 'Out of Stock'}</button>`
+          }
+        </div>
+      </div>`;
   }
 
   function openActiveDealerModal() { document.getElementById('modal-flf').classList.add('show'); }
