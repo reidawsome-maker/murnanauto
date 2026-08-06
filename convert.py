@@ -5,7 +5,6 @@ import json, os, re
 df = pd.read_csv('CF-Catalog-Filtered-6-8-10AN-EFI-Tools-Hose.csv')
 os.makedirs('content/products', exist_ok=True)
 
-# Comprehensive Category Mapping
 cat_mapping = {
     'Adapters and Unions': 'ANAdapters',
     'ORB Adapters': 'ANAdapters',
@@ -41,41 +40,40 @@ cat_mapping = {
     'Oil Cooler Parts': 'Radiators'
 }
 
-# Helper to extract AN size for clean sorting/filtering
-def get_an_size(title):
+def extract_an_size_label(title):
     match = re.search(r'(-?\d+)\s*AN', str(title), re.IGNORECASE)
     if match:
         val = int(match.group(1).replace('-', ''))
-        return val
-    return 99 # Tools and universal items
+        return f"{val}AN"
+    return "Universal"
 
-# Filter out non-target AN sizes (-4, -12, -16) unless it's a Tool or Universal item
+def get_an_size_num(title):
+    match = re.search(r'(-?\d+)\s*AN', str(title), re.IGNORECASE)
+    if match:
+        return int(match.group(1).replace('-', ''))
+    return 99
+
 def is_keep_item(row):
     cat = str(row['Category'])
-    if 'Tool' in cat or 'Socket' in cat or 'Filter' in cat or 'Cooler' in cat:
+    if any(k in cat for k in ['Tool', 'Socket', 'Filter', 'Cooler']):
         return True
-    size = get_an_size(row['Title'])
+    size = get_an_size_num(row['Title'])
     if size in [6, 8, 10, 99]:
         return True
     return False
 
 df_filtered = df[df.apply(is_keep_item, axis=1)].copy()
-
-# Add sorting helper columns
-df_filtered['an_order'] = df_filtered['Title'].apply(get_an_size)
-df_filtered['sort_title'] = df_filtered['Title'].str.lower()
-df_filtered = df_filtered.sort_values(by=['an_order', 'sort_title'])
-
-# Group by Title
 grouped = df_filtered.groupby('Title', sort=False)
 
-count = 0
+all_products = []
+
 for title, group in grouped:
     slug = re.sub(r'[^a-z0-9]+', '-', str(title).lower()).strip('-')
     first = group.iloc[0]
     
     cat_raw = str(first['Category']).replace('&amp;', '&')
     category = cat_mapping.get(cat_raw, 'ANFittings')
+    an_size_label = extract_an_size_label(title)
     
     variants = []
     for _, row in group.iterrows():
@@ -88,23 +86,31 @@ for title, group in grouped:
             'name': color_name,
             'sku': sku_val,
             'price': price_val,
-            'image': img_link,  # Crucial for dynamic image switching on color selection!
+            'image': img_link,
             'stock': 10
         })
         
     product = {
         'id': slug,
         'name': str(title),
-        'sku': str(first['Variation SKU']).strip(),  # Main SKU
+        'title': str(title),
+        'sku': str(first['Variation SKU']).strip(),
         'category': category,
+        'anSize': an_size_label,
         'price': float(group['Price'].min()),
         'description': str(first['Description']).split('\n')[0].strip(),
-        'image': str(first['Variation Image Link']).strip(), # Default image
+        'image': str(first['Variation Image Link']).strip(),
         'variants': variants
     }
     
+    # Save individual product file
     with open(f'content/products/{slug}.json', 'w') as f:
         json.dump(product, f, indent=2)
-    count += 1
+        
+    all_products.append(product)
 
-print(f"Successfully created {count} clean, organized product JSON files!")
+# ALSO save master compiled inventory.json
+with open('inventory.json', 'w') as f:
+    json.dump(all_products, f, indent=2)
+
+print(f"Successfully compiled {len(all_products)} products into inventory.json and content/products/")
