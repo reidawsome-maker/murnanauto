@@ -1,8 +1,10 @@
 {
   "id": "efi-connector-an6-to-3-8-quick-connect",
   "name": "EFI Connector AN6 to 3/8\" Quick Connect",
+  "title": "EFI Connector AN6 to 3/8\" Quick Connect",
   "sku": "CF-EFI-06-038-000-GD",
   "category": "ANAdapters",
+  "anSize": "Universal",
   "price": 10.99,
   "description": "This Adapter is available in the following colors: Purple, Black, Teal, Red, and Gold",
   "image": "https://colorfittings.com/wp-content/uploads/2021/09/AN-fitting-EFI-Quick-Connect-LS1-gold.png",

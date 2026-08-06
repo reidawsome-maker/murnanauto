@@ -1,8 +1,10 @@
 {
   "id": "4-an-hose-fitting-end-socket",
   "name": "-4 AN Hose Fitting End Socket",
+  "title": "-4 AN Hose Fitting End Socket",
   "sku": "CF-FHS-04-000-000-PU",
   "category": "Tools",
+  "anSize": "4AN",
   "price": 3.99,
   "description": "This AN Fitting is available in the following color: Purple",
   "image": "https://colorfittings.com/wp-content/uploads/2020/11/AN-fitting-hose-fitting-end-socket-purple_2.png",

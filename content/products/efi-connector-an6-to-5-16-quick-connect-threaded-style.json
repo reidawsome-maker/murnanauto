@@ -1,8 +1,10 @@
 {
   "id": "efi-connector-an6-to-5-16-quick-connect-threaded-style",
   "name": "EFI Connector AN6 to 5/16\" Quick Connect (Threaded Style)",
+  "title": "EFI Connector AN6 to 5/16\" Quick Connect (Threaded Style)",
   "sku": "CF-EFI-06-516-001-TL",
   "category": "ANAdapters",
+  "anSize": "Universal",
   "price": 16.99,
   "description": "This Adapter is available in the following colors: Black, Teal",
   "image": "https://colorfittings.com/wp-content/uploads/2024/03/EFI-Quick-Connect-Fuel-LS-Fitting-2PC-Teal.png",
