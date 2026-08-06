@@ -378,14 +378,45 @@
       { label: "Fuel Rails & Regulators", match: "Regulators" },
       { label: "Fuel Filters", match: "FuelFilters" }
     ]},
+    { name: "Ignition & Electrical", img: "ignition.jpg", subs: [
+      { label: "Ignition Coils", match: "Coils" },
+      { label: "Spark Plugs", match: "Plugs" },
+      { label: "Wiring & Harnesses", match: "Wiring" }
+    ]},
+    { name: "Fluids & Chemicals", img: "fluids.jpg", subs: [
+      { label: "Motor & Engine Oils", match: "EngineOils" },
+      { label: "Transmission & Gear Oils", match: "GearOils" },
+      { label: "Brake Fluids", match: "BrakeFluids" },
+      { label: "Coolants & Additives", match: "Coolants" },
+      { label: "Washing & Detailing", match: "Washing" }
+    ]},
+    { name: "Drivetrain", img: "drivetrain.jpg", subs: [
+      { label: "Clutches & Flywheels", match: "Clutches" },
+      { label: "Axles & Driveshafts", match: "Axles" },
+      { label: "Differentials & Gears", match: "Differentials" }
+    ]},
+    { name: "Brakes", img: "brakes.jpg", subs: [
+      { label: "Brake Pads", match: "Pads" },
+      { label: "Rotors", match: "Rotors" },
+      { label: "Big Brake Kits & Calipers", match: "Calipers" },
+      { label: "Brake Lines & Fluid", match: "BrakeLines" }
+    ]},
     { name: "Cooling", img: "cooling.jpg", subs: [
       { label: "Radiators", match: "Radiators" },
       { label: "Oil Coolers", match: "OilCoolers" },
       { label: "Fans & Shrouds", match: "Fans" },
       { label: "Thermostats & Hoses", match: "Thermostats" }
     ]},
+    { name: "Interior & Electronics", img: "interior.jpg", subs: [
+      { label: "Gauges & Pods", match: "Gauges" },
+      { label: "Digital Dashes & Monitors", match: "Monitors" },
+      { label: "Switches, Wiring & Trim", match: "InteriorAcc" }
+    ]},
     { name: "Tools", img: "tools.jpg", subs: [
       { label: "Hand Tools & Specialty", match: "Tools" }
+    ]},
+    { name: "Merch", img: "merch.jpg", subs: [
+      { label: "Apparel & Gear", match: "Merch" }
     ]}
   ];
 
@@ -532,7 +563,6 @@
       const pCat = (p.category || '').toLowerCase().trim();
       const pSubcat = (p.subcategory || '').toLowerCase().trim();
 
-      // STRICT CATEGORY MATCHING (Preventing Turbos from leaking into V-Band, and Oil Coolers from leaking into Radiators)
       let matchesCategory = false;
       if (pCat === targetKey || pSubcat === targetLabel) {
         matchesCategory = true;
