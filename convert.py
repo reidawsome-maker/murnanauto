@@ -1,43 +1,42 @@
 import pandas as pd
 import json, os, re
 
-# Read CSV
 df = pd.read_csv('CF-Catalog-Filtered-6-8-10AN-EFI-Tools-Hose.csv')
 os.makedirs('content/products', exist_ok=True)
 
-cat_mapping = {
-    'Adapters and Unions': 'ANAdapters',
-    'ORB Adapters': 'ANAdapters',
-    'NPT Adapters': 'ANAdapters',
-    'Hardline Adapters': 'ANAdapters',
-    'Metric adapters': 'ANAdapters',
-    'SAE Fittings': 'ANAdapters',
-    'Brake Fittings': 'ANAdapters',
-    'EFI/LS-Connector/Quick-Connector': 'ANAdapters',
-    'Specialty Fitting & PCV Delete': 'ANAdapters',
-    'Weld-On Bungs': 'ANAdapters',
-    'Barb Fittings': 'ANAdapters',
-    'Caps, Plugs, and Blockoffs': 'ANAdapters',
+# Main & Subcategory Mapping
+subcat_mapping = {
+    'Adapters and Unions': ('ANAdapters', 'AN Adapters & Specialty'),
+    'ORB Adapters': ('ANAdapters', 'ORB Adapters'),
+    'NPT Adapters': ('ANAdapters', 'NPT Adapters'),
+    'Hardline Adapters': ('ANAdapters', 'Hardline Adapters'),
+    'Metric adapters': ('ANAdapters', 'Metric Adapters'),
+    'SAE Fittings': ('ANAdapters', 'SAE Fittings'),
+    'Brake Fittings': ('ANAdapters', 'Brake Fittings'),
+    'EFI/LS-Connector/Quick-Connector': ('ANAdapters', 'EFI Quick Connectors'),
+    'Specialty Fitting & PCV Delete': ('ANAdapters', 'Specialty Fittings'),
+    'Weld-On Bungs': ('ANAdapters', 'Weld-On Bungs'),
+    'Barb Fittings': ('ANAdapters', 'Barb Fittings'),
+    'Caps, Plugs, and Blockoffs': ('ANAdapters', 'Plugs & Blockoffs'),
     
-    'AN Fittings': 'ANFittings',
-    'Hose Fittings': 'ANFittings',
-    'PTFE Hose Fittings': 'ANFittings',
-    'Push-Loc Hose Ends': 'ANFittings',
+    'AN Fittings': ('ANFittings', 'AN Hose Ends & Fittings'),
+    'Hose Fittings': ('ANFittings', 'AN Hose Ends & Fittings'),
+    'PTFE Hose Fittings': ('ANFittings', 'PTFE Hose Ends'),
+    'Push-Loc Hose Ends': ('ANFittings', 'Push-Loc Hose Ends'),
     
-    'PTFE Hose': 'PTFEHose',
-    'Nylon Hose': 'NylonHose',
-    'Hose & Line': 'NylonHose',
+    'PTFE Hose': ('PTFEHose', 'PTFE Hose & Lines'),
+    'Nylon Hose': ('NylonHose', 'Nylon Braided Hose'),
+    'Hose & Line': ('NylonHose', 'Nylon Braided Hose'),
     
-    'Hose Clamps & Separators': 'HoseClamps',
-    'Hose Separators': 'HoseClamps',
-    'Hex / Worm-Clamp Hose Finishers Ends': 'HoseClamps',
+    'Hose Clamps & Separators': ('HoseClamps', 'Hose Separators & Clamps'),
+    'Hose Separators': ('HoseClamps', 'Hose Separators & Clamps'),
     
-    'Fitting Assembly Tools': 'Tools',
-    'Fitting Sockets': 'Tools',
-    'Tools': 'Tools',
+    'Fitting Assembly Tools': ('Tools', 'Hand Tools & Specialty'),
+    'Fitting Sockets': ('Tools', 'Hand Tools & Specialty'),
+    'Tools': ('Tools', 'Hand Tools & Specialty'),
     
-    'Fuel Filters': 'FuelFilters',
-    'Oil Cooler Parts': 'Radiators'
+    'Fuel Filters': ('FuelFilters', 'Fuel Filters'),
+    'Oil Cooler Parts': ('Radiators', 'Oil Coolers')
 }
 
 def extract_an_size_label(title):
@@ -54,12 +53,30 @@ def get_an_size_num(title):
     return 99
 
 def is_keep_item(row):
-    cat = str(row['Category'])
-    if any(k in cat for k in ['Tool', 'Socket', 'Filter', 'Cooler']):
+    title = str(row['Title']).lower()
+    cat = str(row['Category']).lower()
+
+    # 1. REMOVE: Worm clamp finishers
+    if 'finisher' in title or 'worm' in title or 'hex / worm' in cat:
+        return False
+        
+    # 2. REMOVE: Stainless Steel Exterior Hose
+    if 'stainless steel' in title and ('hose' in title or 'line' in title):
+        return False
+
+    # 3. REMOVE: By the foot sales
+    if 'per foot' in title or 'by the foot' in title or '1 foot' in title:
+        return False
+
+    # Keep tools/filters/coolers
+    if any(k in cat for k in ['tool', 'socket', 'filter', 'cooler']):
         return True
+
+    # Keep target sizes (-6, -8, -10)
     size = get_an_size_num(row['Title'])
     if size in [6, 8, 10, 99]:
         return True
+
     return False
 
 df_filtered = df[df.apply(is_keep_item, axis=1)].copy()
@@ -71,9 +88,18 @@ for title, group in grouped:
     slug = re.sub(r'[^a-z0-9]+', '-', str(title).lower()).strip('-')
     first = group.iloc[0]
     
+    title_str = str(title)
     cat_raw = str(first['Category']).replace('&amp;', '&')
-    category = cat_mapping.get(cat_raw, 'ANFittings')
-    an_size_label = extract_an_size_label(title)
+    
+    # Precise PTFE vs Nylon re-sorting based on title text
+    if 'ptfe' in title_str.lower() and 'fitting' not in title_str.lower() and 'end' not in title_str.lower():
+        category, subcategory = ('PTFEHose', 'PTFE Hose & Lines')
+    elif 'nylon' in title_str.lower() or 'braided hose' in title_str.lower():
+        category, subcategory = ('NylonHose', 'Nylon Braided Hose')
+    else:
+        category, subcategory = subcat_mapping.get(cat_raw, ('ANFittings', 'AN Hose Ends & Fittings'))
+        
+    an_size_label = extract_an_size_label(title_str)
     
     variants = []
     for _, row in group.iterrows():
@@ -92,10 +118,11 @@ for title, group in grouped:
         
     product = {
         'id': slug,
-        'name': str(title),
-        'title': str(title),
+        'name': title_str,
+        'title': title_str,
         'sku': str(first['Variation SKU']).strip(),
         'category': category,
+        'subcategory': subcategory,
         'anSize': an_size_label,
         'price': float(group['Price'].min()),
         'description': str(first['Description']).split('\n')[0].strip(),
@@ -103,14 +130,13 @@ for title, group in grouped:
         'variants': variants
     }
     
-    # Save individual product file
     with open(f'content/products/{slug}.json', 'w') as f:
         json.dump(product, f, indent=2)
         
     all_products.append(product)
 
-# ALSO save master compiled inventory.json
+# Save master compiled inventory.json
 with open('inventory.json', 'w') as f:
     json.dump(all_products, f, indent=2)
 
-print(f"Successfully compiled {len(all_products)} products into inventory.json and content/products/")
+print(f"Successfully cleaned catalog: generated {len(all_products)} products.")
