@@ -1,0 +1,22 @@
+{
+  "id": "pressure-gauge-adapter-10an-to-10an-w-1-8-port",
+  "name": "Pressure Gauge Adapter, 10AN to 10AN w/ 1/8\" port",
+  "category": "ANAdapters",
+  "price": 19.99,
+  "description": "This Adapter is available in the following colors: Purple, Black",
+  "image": "https://colorfittings.com/wp-content/uploads/2020/05/male-flare-to-female-flare-npt-port-purple.png",
+  "variants": [
+    {
+      "name": "Purple",
+      "sku": "CF-PGA-10-010-018-PU",
+      "price": 19.99,
+      "stock": 10
+    },
+    {
+      "name": "Black",
+      "sku": "CF-PGA-10-010-018-BL",
+      "price": 19.99,
+      "stock": 10
+    }
+  ]
+}

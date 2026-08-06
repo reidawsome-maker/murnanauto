@@ -1,0 +1,16 @@
+{
+  "id": "10-an-fitting-y-block-to-08-an-reducer",
+  "name": "-10 AN Fitting Y Block to -08 AN Reducer",
+  "category": "ANAdapters",
+  "price": 39.99,
+  "description": "This AN Fitting is available in the following color: Black",
+  "image": "https://colorfittings.com/wp-content/uploads/2022/10/AN-Fitting-Y-adapter-reducer-1.png",
+  "variants": [
+    {
+      "name": "Black",
+      "sku": "CF-YBU-10-008-008-BL",
+      "price": 39.99,
+      "stock": 10
+    }
+  ]
+}

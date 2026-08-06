@@ -1,0 +1,16 @@
+{
+  "id": "6an-to-5-8-18-inverted-flare",
+  "name": "-6AN to 5/8\" - 18 (Inverted Flare)",
+  "category": "ANFittings",
+  "price": 9.99,
+  "description": "This Fitting is offered in the following colors: Black",
+  "image": "https://colorfittings.com/wp-content/uploads/2018/06/AN-flare-ORB-straight-fuel-fitting-black.png",
+  "variants": [
+    {
+      "name": "Black",
+      "sku": "CF-F2S-06-058-018-BL",
+      "price": 9.99,
+      "stock": 10
+    }
+  ]
+}

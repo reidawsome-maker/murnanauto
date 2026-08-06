@@ -1,0 +1,52 @@
+{
+  "id": "6an-hose-separator",
+  "name": "-6AN Hose Separator",
+  "category": "ANFittings",
+  "price": 10.99,
+  "description": "This product is designed for and sized to be used with our Standard Nylon Braided Hose.\\n\\nFor use with our\u00a0PTFE Hose, you must use a hose separator one size smaller than the hose (difference of -2AN).\\n\\nI.e. For a 6AN PTFE Hose, the best fitting hose separator will be 4AN.\\n\\nThis Hose Separator is available in the following colors: Purple, Black, Teal, Red, Green, Orange, and Gold",
+  "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Red-Hose-Separator.png",
+  "variants": [
+    {
+      "name": "red",
+      "sku": "CF-AHS-06-000-000-RD",
+      "price": 10.99,
+      "stock": 10
+    },
+    {
+      "name": "black",
+      "sku": "CF-AHS-06-000-000-BL",
+      "price": 10.99,
+      "stock": 10
+    },
+    {
+      "name": "orange",
+      "sku": "CF-AHS-06-000-000-OR",
+      "price": 10.99,
+      "stock": 10
+    },
+    {
+      "name": "green",
+      "sku": "CF-AHS-06-000-000-GR",
+      "price": 10.99,
+      "stock": 10
+    },
+    {
+      "name": "teal",
+      "sku": "CF-AHS-06-000-000-TL",
+      "price": 10.99,
+      "stock": 10
+    },
+    {
+      "name": "gold",
+      "sku": "CF-AHS-06-000-000-GD",
+      "price": 10.99,
+      "stock": 10
+    },
+    {
+      "name": "purple",
+      "sku": "CF-AHS-06-000-000-PU",
+      "price": 10.99,
+      "stock": 10
+    }
+  ]
+}

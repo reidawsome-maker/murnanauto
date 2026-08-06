@@ -1,0 +1,52 @@
+{
+  "id": "8-an-orb-plug-to-1-8-npt",
+  "name": "-8 AN ORB Plug to 1/8\" NPT",
+  "category": "ANFittings",
+  "price": 14.99,
+  "description": "This Product is available in the following colors: Purple, Black, Teal, Red, Green, Orange, and Gold",
+  "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-gold-plug-NPT-adapter-slim.png",
+  "variants": [
+    {
+      "name": "Gold",
+      "sku": "CF-FPO-08-018-000-GD",
+      "price": 14.99,
+      "stock": 10
+    },
+    {
+      "name": "Orange",
+      "sku": "CF-FPO-08-018-000-OR",
+      "price": 14.99,
+      "stock": 10
+    },
+    {
+      "name": "Green",
+      "sku": "CF-FPO-08-018-000-GR",
+      "price": 14.99,
+      "stock": 10
+    },
+    {
+      "name": "Red",
+      "sku": "CF-FPO-08-018-000-RD",
+      "price": 14.99,
+      "stock": 10
+    },
+    {
+      "name": "Teal",
+      "sku": "CF-FPO-08-018-000-TL",
+      "price": 14.99,
+      "stock": 10
+    },
+    {
+      "name": "Black",
+      "sku": "CF-FPO-08-018-000-BL",
+      "price": 14.99,
+      "stock": 10
+    },
+    {
+      "name": "Purple",
+      "sku": "CF-FPO-08-018-000-PU",
+      "price": 14.99,
+      "stock": 10
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "3-8-ptc-air-fitting-to-6-an-adapter",
+  "name": "3/8\" PTC Air Fitting to 6 AN Adapter",
+  "category": "ANFittings",
+  "price": 16.99,
+  "description": "nan",
+  "image": "https://colorfittings.com/wp-content/uploads/2022/10/AN-Fitting-PTC-to-AN-Air-bag-adapter-1.png",
+  "variants": [
+    {
+      "name": "Black",
+      "sku": "CF-PTC-06-038-000-BL",
+      "price": 16.99,
+      "stock": 10
+    }
+  ]
+}

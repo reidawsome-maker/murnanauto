@@ -1,0 +1,52 @@
+{
+  "id": "8-an-straight-female-aluminum-hose-end-fitting",
+  "name": "-8 AN Straight Female Aluminum Hose End Fitting",
+  "category": "ANFittings",
+  "price": 18.96,
+  "description": "ColorFittings Standard AN Hose Ends are precision-engineered for high-pressure fuel, oil, coolant, brake, clutch, and power steering applications. Designed for use with nylon or stainless steel braided hose, these AN fittings provide a secure, leak-free 37-degree flare seal for street performance, racing, marine, and motorsport plumbing systems.\\n\\nEach hose end is CNC-machined from aerospace-grade 6061-T6 billet aluminum and finished with ColorFittings' proprietary polishing and anodizing process for superior strength, corrosion resistance, and long-term durability. Compatible with E85, ethanol, race fuel, pump gas, oil, coolant, brake fluid, transmission fluid, and hydraulic systems, these fittings are built to handle high-pressure, high-temperature environments.\\n\\nLooking to complete your setup? Check out our full range of Standard Hose, Hose Separators, and AN Fitting Assembly Tools.",
+  "image": "https://colorfittings.com/wp-content/uploads/2026/04/Gold-Straight-Female-Hose-End.png",
+  "variants": [
+    {
+      "name": "Gold",
+      "sku": "CF-FHE-08-000-000-GD",
+      "price": 18.96,
+      "stock": 10
+    },
+    {
+      "name": "Orange",
+      "sku": "CF-FHE-08-000-000-OR",
+      "price": 18.96,
+      "stock": 10
+    },
+    {
+      "name": "Lime Green",
+      "sku": "CF-FHE-08-000-000-GR",
+      "price": 18.96,
+      "stock": 10
+    },
+    {
+      "name": "Red",
+      "sku": "CF-FHE-08-000-000-RD",
+      "price": 18.96,
+      "stock": 10
+    },
+    {
+      "name": "Teal",
+      "sku": "CF-FHE-08-000-000-TL",
+      "price": 18.96,
+      "stock": 10
+    },
+    {
+      "name": "Purple",
+      "sku": "CF-FHE-08-000-000-PU",
+      "price": 18.96,
+      "stock": 10
+    },
+    {
+      "name": "Black",
+      "sku": "CF-FHE-08-000-000-BL",
+      "price": 18.96,
+      "stock": 10
+    }
+  ]
+}

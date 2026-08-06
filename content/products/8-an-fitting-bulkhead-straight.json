@@ -1,0 +1,22 @@
+{
+  "id": "8-an-fitting-bulkhead-straight",
+  "name": "-8 AN Fitting Bulkhead Straight",
+  "category": "ANFittings",
+  "price": 10.99,
+  "description": "ColorFittings AN Union Bulkhead Fittings are precision CNC-machined adapters designed to pass AN lines securely through firewalls, panels, fuel cells, and chassis components. Engineered for high-performance fuel, oil, coolant, transmission, brake, and power steering systems, these AN bulkhead unions provide a secure, leak-free 37-degree flare seal on both sides of the panel.\\n\\nManufactured from aerospace-grade 6061-T6 billet aluminum and finished with ColorFittings\u2019 proprietary anodizing process, these bulkhead fittings offer superior strength, corrosion resistance, and durability in high-pressure and high-temperature environments. Compatible with E85, ethanol-based fuels, race fuel, pump gas, oil, coolant, hydraulic fluid, and air systems, they are ideal for street performance, drag racing, road racing, off-road, and marine applications.\\n\\nThe threaded bulkhead design with included locking nut ensures a tight, secure mount through sheet metal, carbon fiber, aluminum panels, or firewalls while maintaining proper AN flare alignment for consistent sealing performance.\\n\\nComplete your install with our matching AN Bulkhead Nuts, AN Fittings, and AN Assembly Tools for a clean, professional-grade plumbing solution built to perform.",
+  "image": "https://colorfittings.com/wp-content/uploads/2026/02/Bulkhead-Fitting-Straight-Purple.png",
+  "variants": [
+    {
+      "name": "Purple",
+      "sku": "CF-BHF-08-000-000-PU",
+      "price": 10.99,
+      "stock": 10
+    },
+    {
+      "name": "Black",
+      "sku": "CF-BHF-08-000-000-BL",
+      "price": 10.99,
+      "stock": 10
+    }
+  ]
+}

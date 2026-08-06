@@ -1,0 +1,16 @@
+{
+  "id": "08-an-fitting-90-degree-female-to-female-flare-union",
+  "name": "-08 AN Fitting 90 Degree Female to Female Flare Union",
+  "category": "ANAdapters",
+  "price": 16.99,
+  "description": "This AN Fitting is available in the following color: Black",
+  "image": "https://colorfittings.com/wp-content/uploads/2022/10/AN-Fitting-elbow-female-to-female.png",
+  "variants": [
+    {
+      "name": "Black",
+      "sku": "CF-FFS-08-090-000-BL",
+      "price": 16.99,
+      "stock": 10
+    }
+  ]
+}

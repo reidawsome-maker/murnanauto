@@ -1,0 +1,16 @@
+{
+  "id": "1-4-npt-to-3-8-barb",
+  "name": "1/4\" NPT to 3/8\" Barb",
+  "category": "ANFittings",
+  "price": 9.99,
+  "description": "This Adapter is available in the following color: Purple",
+  "image": "https://colorfittings.com/wp-content/uploads/2019/10/14npt38barb-purple.png",
+  "variants": [
+    {
+      "name": "Purple",
+      "sku": "CF-BNF-14-000-038-PU",
+      "price": 9.99,
+      "stock": 10
+    }
+  ]
+}

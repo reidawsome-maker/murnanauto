@@ -1,0 +1,52 @@
+{
+  "id": "4an-hose-separator",
+  "name": "-4AN Hose Separator",
+  "category": "ANFittings",
+  "price": 9.99,
+  "description": "This product is designed for and sized to be used with our Standard Nylon Braided Hose.\\n\\nFor use with our\u00a0PTFE Hose, you must use a hose separator one size smaller than the hose (difference of -2AN).\\n\\nThis 4AN hose separator will not create an ideal fit with 4AN PTFE Hose.\\n\\nThis Hose Separator is available in the following colors: Purple, Black, Teal, Red, Green, Orange, and Gold",
+  "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Red-Hose-Separator.png",
+  "variants": [
+    {
+      "name": "red",
+      "sku": "CF-AHS-04-000-000-RD",
+      "price": 9.99,
+      "stock": 10
+    },
+    {
+      "name": "black",
+      "sku": "CF-AHS-04-000-000-BL",
+      "price": 9.99,
+      "stock": 10
+    },
+    {
+      "name": "orange",
+      "sku": "CF-AHS-04-000-000-OR",
+      "price": 9.99,
+      "stock": 10
+    },
+    {
+      "name": "green",
+      "sku": "CF-AHS-04-000-000-GR",
+      "price": 9.99,
+      "stock": 10
+    },
+    {
+      "name": "teal",
+      "sku": "CF-AHS-04-000-000-TL",
+      "price": 9.99,
+      "stock": 10
+    },
+    {
+      "name": "gold",
+      "sku": "CF-AHS-04-000-000-GD",
+      "price": 9.99,
+      "stock": 10
+    },
+    {
+      "name": "purple",
+      "sku": "CF-AHS-04-000-000-PU",
+      "price": 9.99,
+      "stock": 10
+    }
+  ]
+}

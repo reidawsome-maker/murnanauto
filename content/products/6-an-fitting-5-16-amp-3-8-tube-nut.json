@@ -1,0 +1,52 @@
+{
+  "id": "6-an-fitting-5-16-amp-3-8-tube-nut",
+  "name": "-6 AN Fitting \u2013 5/16\u2033 &amp; 3/8\u2033 Tube Nut",
+  "category": "ANFittings",
+  "price": 3.0,
+  "description": "ColorFittings Tube Nuts are precision CNC-machined to convert 37-degree flared hard lines into AN connections for fuel, brake, clutch, oil, coolant, and hydraulic systems. Designed for professional hard line plumbing, these tube nuts provide a secure, leak-free AN connection with consistent sealing performance in high-pressure applications.\\nManufactured from aerospace-grade 6061-T6 billet aluminum and finished with ColorFittings' proprietary polishing and anodizing process, these tube nuts deliver exceptional strength, corrosion resistance, and long-term durability. Compatible with aluminum, steel, and stainless steel hard lines, they are ideal for street performance, racing, off-road, marine, and custom fabrication projects.\\nFor a complete hard line solution, pair these Tube Nuts with our matching Tube Sleeves to convert flared hard lines into durable AN connections.\\nFinish your system with our AN fittings, adapters, braided hose, and fitting assembly tools.",
+  "image": "https://colorfittings.com/wp-content/uploads/2018/06/colorfittings-tube-nut_black_large.png",
+  "variants": [
+    {
+      "name": "Black",
+      "sku": "CF-HTN-06-516-038-BL",
+      "price": 3.0,
+      "stock": 10
+    },
+    {
+      "name": "Teal",
+      "sku": "CF-HTN-06-516-038-TL",
+      "price": 3.0,
+      "stock": 10
+    },
+    {
+      "name": "Gold",
+      "sku": "CF-HTN-06-516-038-GD",
+      "price": 3.0,
+      "stock": 10
+    },
+    {
+      "name": "Orange",
+      "sku": "CF-HTN-06-516-038-OR",
+      "price": 3.0,
+      "stock": 10
+    },
+    {
+      "name": "Lime Green",
+      "sku": "CF-HTN-06-516-038-GR",
+      "price": 3.0,
+      "stock": 10
+    },
+    {
+      "name": "Red",
+      "sku": "CF-HTN-06-516-038-RD",
+      "price": 3.0,
+      "stock": 10
+    },
+    {
+      "name": "Purple",
+      "sku": "CF-HTN-06-516-038-PU",
+      "price": 3.0,
+      "stock": 10
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "12an-hose-separator",
+  "name": "-12AN Hose Separator",
+  "category": "ANFittings",
+  "price": 13.99,
+  "description": "This product is designed for and sized to be used with our Standard Nylon Braided Hose.\\n\\nThis Hose Separator is available in the following colors: Purple, Black, Teal, Red, Green, Orange, and Gold",
+  "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Black-Hose-Separator.png",
+  "variants": [
+    {
+      "name": "black",
+      "sku": "CF-AHS-12-000-000-BL",
+      "price": 13.99,
+      "stock": 10
+    },
+    {
+      "name": "teal",
+      "sku": "CF-AHS-12-000-000-TL",
+      "price": 13.99,
+      "stock": 10
+    },
+    {
+      "name": "gold",
+      "sku": "CF-AHS-12-000-000-GD",
+      "price": 13.99,
+      "stock": 10
+    },
+    {
+      "name": "purple",
+      "sku": "CF-AHS-12-000-000-PU",
+      "price": 13.99,
+      "stock": 10
+    }
+  ]
+}

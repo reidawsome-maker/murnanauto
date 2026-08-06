@@ -1,0 +1,16 @@
+{
+  "id": "8-an-hose-fitting-end-socket",
+  "name": "-8 AN Hose Fitting End Socket",
+  "category": "ANFittings",
+  "price": 4.99,
+  "description": "This AN Fitting is available in the following color: Purple",
+  "image": "https://colorfittings.com/wp-content/uploads/2020/11/AN-fitting-hose-fitting-end-socket-purple_2.png",
+  "variants": [
+    {
+      "name": "purple",
+      "sku": "CF-FHS-08-000-000-PU",
+      "price": 4.99,
+      "stock": 10
+    }
+  ]
+}

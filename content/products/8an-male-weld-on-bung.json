@@ -1,0 +1,22 @@
+{
+  "id": "8an-male-weld-on-bung",
+  "name": "-8AN Male Weld-on Bung",
+  "category": "ANFittings",
+  "price": 6.99,
+  "description": "This Weld-on Bung is available in the following materials: Aluminum and Steel",
+  "image": "https://colorfittings.com/wp-content/uploads/2022/03/colorfittings-an-fitting-steel_weld_bung.png",
+  "variants": [
+    {
+      "name": "Steel",
+      "sku": "CF-WBM-08-01E-000-ST",
+      "price": 6.99,
+      "stock": 10
+    },
+    {
+      "name": "Aluminum",
+      "sku": "CF-WBM-08-01E-000-AL",
+      "price": 6.99,
+      "stock": 10
+    }
+  ]
+}

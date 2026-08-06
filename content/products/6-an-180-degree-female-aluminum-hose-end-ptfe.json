@@ -1,0 +1,52 @@
+{
+  "id": "6-an-180-degree-female-aluminum-hose-end-ptfe",
+  "name": "-6 AN 180 Degree Female Aluminum Hose End (PTFE)",
+  "category": "ANFittings",
+  "price": 23.69,
+  "description": "ColorFittings 180 Degree PTFE Female Aluminum Hose Ends are precision-engineered for high-pressure fuel, oil, coolant, brake, clutch, power steering, and E85 applications. Designed specifically for PTFE (Teflon-lined) braided hose, these PTFE fittings provide a secure, leak-free 37-degree flare seal for demanding street performance, racing, marine, and motorsport plumbing systems.\\n\\nEach PTFE female hose end is CNC machined from aerospace-grade 6061-T6 billet aluminum and finished with ColorFittings\u2019 proprietary polishing and anodizing process for superior corrosion resistance, strength, and long-term durability. Built to handle high temperature and high-pressure environments, these fittings are fully compatible with E85, ethanol, race fuel, pump gas, brake fluid, transmission fluid, oil, coolant, and hydraulic systems.\\n\\nLooking to complete your system? Explore our full range of PTFE Hose, Hose Separators, and Fitting Assembly Tools.",
+  "image": "https://colorfittings.com/wp-content/uploads/2026/02/gold-ptfe-180-degree-swivel-hose-end.png",
+  "variants": [
+    {
+      "name": "Gold",
+      "sku": "CF-FPE-06-180-000-GD",
+      "price": 23.69,
+      "stock": 10
+    },
+    {
+      "name": "Red",
+      "sku": "CF-FPE-06-180-000-RD",
+      "price": 23.69,
+      "stock": 10
+    },
+    {
+      "name": "Orange",
+      "sku": "CF-FPE-06-180-000-OR",
+      "price": 23.69,
+      "stock": 10
+    },
+    {
+      "name": "Lime Green",
+      "sku": "CF-FPE-06-180-000-GR",
+      "price": 23.69,
+      "stock": 10
+    },
+    {
+      "name": "Teal",
+      "sku": "CF-FPE-06-180-000-TL",
+      "price": 23.69,
+      "stock": 10
+    },
+    {
+      "name": "Black",
+      "sku": "CF-FPE-06-180-000-BL",
+      "price": 23.69,
+      "stock": 10
+    },
+    {
+      "name": "Purple",
+      "sku": "CF-FPE-06-180-000-PU",
+      "price": 23.69,
+      "stock": 10
+    }
+  ]
+}

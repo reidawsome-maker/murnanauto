@@ -1,0 +1,22 @@
+{
+  "id": "honda-cr125-cylinder-head-to-08-an-flare-fitting",
+  "name": "Honda CR125 Cylinder Head to 08 AN Flare Fitting",
+  "category": "ANAdapters",
+  "price": 19.99,
+  "description": "This Adapter is available in the following colors: Purple, Black",
+  "image": "https://colorfittings.com/wp-content/uploads/2019/03/colorfittings-cr125-black.png",
+  "variants": [
+    {
+      "name": "Black",
+      "sku": "CF-F2S-08-016-001-BL",
+      "price": 19.99,
+      "stock": 10
+    },
+    {
+      "name": "Purple",
+      "sku": "CF-F2S-08-016-001-PU",
+      "price": 19.99,
+      "stock": 10
+    }
+  ]
+}
