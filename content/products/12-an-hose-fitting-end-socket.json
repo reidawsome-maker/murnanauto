@@ -1,0 +1,21 @@
+{
+  "id": "12-an-hose-fitting-end-socket",
+  "name": "-12 AN Hose Fitting End Socket",
+  "title": "-12 AN Hose Fitting End Socket",
+  "sku": "CF-FHS-12-000-000-PU",
+  "category": "Tools",
+  "subcategory": "Hand Tools & Specialty",
+  "anSize": "12AN",
+  "price": 5.99,
+  "description": "This AN Fitting is available in the following color: Purple",
+  "image": "https://colorfittings.com/wp-content/uploads/2020/11/AN-fitting-hose-fitting-end-socket-purple_2.png",
+  "variants": [
+    {
+      "name": "purple",
+      "sku": "CF-FHS-12-000-000-PU",
+      "price": 5.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2020/11/AN-fitting-hose-fitting-end-socket-purple_2.png",
+      "stock": 10
+    }
+  ]
+}

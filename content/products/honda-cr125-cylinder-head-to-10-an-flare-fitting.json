@@ -1,0 +1,28 @@
+{
+  "id": "honda-cr125-cylinder-head-to-10-an-flare-fitting",
+  "name": "Honda CR125 Cylinder Head to 10 AN Flare Fitting",
+  "title": "Honda CR125 Cylinder Head to 10 AN Flare Fitting",
+  "sku": "CF-F2S-10-016-001-BL",
+  "category": "ANAdapters",
+  "subcategory": "Specialty Fittings",
+  "anSize": "10AN",
+  "price": 19.99,
+  "description": "nan",
+  "image": "https://colorfittings.com/wp-content/uploads/2019/03/colorfittings-cr125-black.png",
+  "variants": [
+    {
+      "name": "Black",
+      "sku": "CF-F2S-10-016-001-BL",
+      "price": 19.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2019/03/colorfittings-cr125-black.png",
+      "stock": 10
+    },
+    {
+      "name": "Purple",
+      "sku": "CF-F2S-10-016-001-PU",
+      "price": 19.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2018/06/AN-fitting-VQ35DE-PCV-adapter-purple.png",
+      "stock": 10
+    }
+  ]
+}
