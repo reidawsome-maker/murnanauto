@@ -2,6 +2,8 @@ name: Generate Products
 
 on:
   push:
+    branches:
+      - main
     paths:
       - convert.py
       - CF-Catalog-Filtered-6-8-10AN-EFI-Tools-Hose.csv
@@ -11,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
