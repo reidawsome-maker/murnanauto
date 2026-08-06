@@ -8,8 +8,8 @@ os.makedirs('content/products', exist_ok=True)
 # Explicit items and keywords to permanently purge
 EXCLUDE_EXACT_TITLES = [
     "cummins turbo drain tube adapter",
-    '3/8" ptc air fitting to 6 an adapter',
-    '3/8" ptc air fitting to -6 an adapter'
+    "3/8\" ptc air fitting to 6 an adapter",
+    "3/8\" ptc air fitting to -6 an adapter"
 ]
 
 DELETED_KEYWORDS = [
@@ -51,6 +51,24 @@ subcat_mapping = {
     'Radiators': ('Radiators', 'Radiators')
 }
 
+def clean_description(raw_desc, title):
+    if not isinstance(raw_desc, str) or not raw_desc.strip():
+        return f"High-performance {title} engineered for extreme fluid management under demanding motorsport conditions."
+
+    # 1. Convert literal string '\n' to actual linebreaks
+    desc = raw_desc.replace('\\n', '\n')
+
+    # 2. Remove generic cross-sell footer fluff
+    desc = re.sub(r'Looking to complete your system\?.*', '', desc, flags=re.DOTALL | re.IGNORECASE)
+    desc = re.sub(r'Explore our full range.*', '', desc, flags=re.DOTALL | re.IGNORECASE)
+
+    # 3. Clean up multiple empty lines
+    paragraphs = [p.strip() for p in desc.split('\n') if p.strip()]
+    
+    # Rejoin cleanly as readable paragraphs
+    cleaned = "<br><br>".join(paragraphs)
+    return cleaned
+
 def extract_an_size_label(title):
     match = re.search(r'(-?\d+)\s*AN', str(title), re.IGNORECASE)
     if match:
@@ -68,19 +86,15 @@ def is_keep_item(row):
     title = str(row['Title']).lower().strip()
     cat = str(row['Category']).lower().strip()
 
-    # 1. Exact title removals
     if any(ex in title for ex in EXCLUDE_EXACT_TITLES):
         return False
 
-    # 2. General keyword removals
     if any(k in title or k in cat for k in DELETED_KEYWORDS):
         return False
 
-    # 3. Remove all pre-made lines (preserving hardline adapters)
     if ('line' in title or 'lines' in title) and 'hardline adapter' not in title:
         return False
 
-    # 4. Remove Stainless Hose
     if 'stainless steel' in title and 'hose' in title:
         return False
 
@@ -118,7 +132,7 @@ def determine_category(title, raw_cat):
 
     return subcat_mapping.get(c, ('ANFittings', 'AN Hose Ends & Fittings'))
 
-# Wipe existing json products before building clean catalog
+# Wipe old content/products before rebuilding
 if os.path.exists('content/products'):
     for f in os.listdir('content/products'):
         if f.endswith('.json'):
@@ -136,6 +150,10 @@ for title, group in grouped:
     
     category, subcategory = determine_category(title_str, first['Category'])
     an_size_label = extract_an_size_label(title_str)
+    
+    # Process cleaned description
+    raw_desc = str(first['Description'])
+    cleaned_desc = clean_description(raw_desc, title_str)
     
     variants = []
     for _, row in group.iterrows():
@@ -161,7 +179,7 @@ for title, group in grouped:
         'subcategory': subcategory,
         'anSize': an_size_label,
         'price': float(group['Price'].min()),
-        'description': str(first['Description']).split('\n')[0].strip(),
+        'description': cleaned_desc,
         'image': str(first['Variation Image Link']).strip(),
         'variants': variants
     }
@@ -174,4 +192,4 @@ for title, group in grouped:
 with open('inventory.json', 'w') as f:
     json.dump(all_products, f, indent=2)
 
-print(f"Catalog rebuilt. Total active SKUs: {len(all_products)}")
+print(f"Cleaned catalog generated: {len(all_products)} products with formatted descriptions.")
