@@ -6,15 +6,19 @@ let cart = JSON.parse(localStorage.getItem('murnan_cart')) || [];
 async function loadInventory() {
   inventory = [];
 
-  // 1. Try loading legacy static products.json if present
+  // 1. Try loading root inventory.json or static products.json first (Fast path)
   try {
-    const res = await fetch('products.json', { cache: 'no-store' });
+    const res = await fetch('inventory.json', { cache: 'no-store' });
     if (res.ok) {
-      const staticProds = await res.json();
-      inventory.push(...staticProds);
+      const data = await res.json();
+      if (Array.isArray(data) && data.length > 0) {
+        inventory = data;
+        window.inventory = inventory;
+        return inventory;
+      }
     }
   } catch (err) {
-    console.log('No static products.json found, loading Decap products...');
+    console.log('inventory.json not found at root, falling back to Decap CMS folder...');
   }
 
   // 2. Fetch Decap CMS individual product JSON files from GitHub
@@ -25,7 +29,7 @@ async function loadInventory() {
       
       const jsonFiles = files.filter(file => file.name.endsWith('.json'));
 
-      // Fetch all JSON files in parallel for fast loading
+      // Fetch all JSON files in parallel
       const loadedProducts = await Promise.all(
         jsonFiles.map(async (file) => {
           const prodRes = await fetch(`${file.download_url}?t=${Date.now()}`);
@@ -33,22 +37,25 @@ async function loadInventory() {
           const item = await prodRes.json();
 
           return {
-            id: file.name.replace('.json', ''), // Matches GitHub JSON filename
+            id: file.name.replace('.json', ''),
             sku: item.sku || 'N/A',
             name: item.title || item.name,
             price: parseFloat(item.price) || 0,
-            compare_price: parseFloat(item.compare_price || item.compare_at_price || item.msrp) || 0, // <-- MAPS COMPARE PRICE FROM JSON
-            weight: parseFloat(item.weight) || 0, // <-- MAPS WEIGHT FROM DECAP JSON
-            stock: parseInt(item.stock, 10) || 0,
+            compare_price: parseFloat(item.compare_price || item.compare_at_price || item.msrp) || 0,
+            weight: parseFloat(item.weight) || 0,
+            stock: parseInt(item.stock, 10) || 10,
             image: item.image || '',
             description: item.description || '',
-            category: item.category || 'Fluids',
+            category: item.category || 'ANFittings',
+            subcategory: item.subcategory || '',
+            anSize: item.anSize || '',            // <-- PRESERVES AN SIZE FOR SUB-PILL FILTERING
+            tags: item.tags || [],
             variants: item.variants || [] 
           };
         })
       );
 
-      // Filter out failed fetches and avoid duplicate items
+      // Filter out failed fetches and duplicate items
       for (const formattedProduct of loadedProducts) {
         if (formattedProduct && !inventory.some(p => p.id === formattedProduct.id)) {
           inventory.push(formattedProduct);
@@ -62,6 +69,7 @@ async function loadInventory() {
   // Always sort inventory alphabetically
   inventory.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
 
+  window.inventory = inventory;
   return inventory;
 }
 
@@ -75,7 +83,6 @@ function addToCart(id, variantOptions = null) {
   if (!product) return;
   if (product.stock <= 0) { alert("This item is currently out of stock."); return; }
 
-  // Use variant weight if selected, otherwise fallback to item weight
   let itemPrice = product.price;
   let itemWeight = product.weight;
   let itemId = product.id;
@@ -98,7 +105,7 @@ function addToCart(id, variantOptions = null) {
       id: itemId,
       name: product.name + (variantOptions ? ` (${variantOptions.option})` : ''),
       price: itemPrice,
-      weight: itemWeight, // <-- STORES WEIGHT IN CART
+      weight: itemWeight,
       qty: 1
     });
   }
@@ -117,15 +124,13 @@ function toggleCart() {
   if (overlay) overlay.classList.toggle('open');
 }
 
-// Shipping Rate Calculation Rule
 function calculateShipping(subtotal, totalWeight) {
   if (subtotal === 0) return 0;
-  if (subtotal < 150) return 12.99; // Base standard shipping rate
+  if (subtotal < 150) return 12.99;
   
-  // Free shipping threshold logic
-  if (subtotal >= 150 && totalWeight <= 35) return 0.00; // Free ground shipping
-  if (totalWeight > 35 && totalWeight <= 60) return 29.99; // Tier 1 Heavy Freight (Dynalite/Drag Kits)
-  return 49.99; // Tier 2 Heavy Freight (50+ lb twin-rotor/AERO kits)
+  if (subtotal >= 150 && totalWeight <= 35) return 0.00;
+  if (totalWeight > 35 && totalWeight <= 60) return 29.99;
+  return 49.99;
 }
 
 function updateCartUI() {
@@ -144,7 +149,6 @@ function updateCartUI() {
   if (countEl) countEl.textContent = totalQty;
   if (totalEl) totalEl.textContent = `$${finalTotal.toFixed(2)}`;
 
-  // Display Shipping Breakdown line if element exists
   if (shippingEl) {
     if (cart.length === 0) {
       shippingEl.textContent = '$0.00';
