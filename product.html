@@ -175,7 +175,10 @@
         ${swatchesHtml}
         <button class="add-cart-btn" onclick="handleAddToCart()">Add To Cart</button>
         <div style="margin-top: 30px; border-top: 1px solid var(--steel); padding-top: 20px; color: #aaa; line-height: 1.6;">
-          <p>${currentProduct.description || 'High-performance automotive plumbing component.'}</p>
+          <h4 style="color:var(--paper); font-family:'Oswald',sans-serif; text-transform:uppercase; margin-bottom:12px;">Specifications &amp; Overview</h4>
+          <div style="font-size: 0.92rem; color: var(--paper-dim, #aaa);">
+            ${currentProduct.description || 'High-performance automotive plumbing component engineered for extreme fluid systems.'}
+          </div>
         </div>
       </div>`;
   }
