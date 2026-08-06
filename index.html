@@ -205,7 +205,7 @@
   <!-- GLOBAL SEARCH INPUT -->
   <div class="search-wrap">
     <span class="search-icon">🔍</span>
-    <input type="text" id="global-search" class="search-input" placeholder="Search by AN size, fitting degree, SKU, or part name (e.g. -6AN 90 degree)..." oninput="handleGlobalSearch(this.value)">
+    <input type="text" id="global-search" class="search-input" placeholder="Search fittings, hose, or sizes (e.g. -6 90, -10 45, -8 adapter)..." oninput="handleGlobalSearch(this.value)">
   </div>
 
   <div class="cat-grid-lg" id="catGridLg"></div>
@@ -519,6 +519,9 @@
       subcatTitle.textContent = `Search Results for "${query}"`;
       if (sizeSubPills) sizeSubPills.style.display = 'none';
       subcatPills.innerHTML = '<span style="color:var(--paper-dim); font-size:0.85rem;">Searching entire catalog...</span>';
+      
+      // Auto-scroll down to results so user doesn't have to manually scroll
+      subcatPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     } else {
       subcatTitle.textContent = activeSubcatLabel || 'Select a Category';
     }
@@ -582,17 +585,25 @@
       const pName = (p.name || p.title || '').toLowerCase().trim();
       const pSku = (p.sku || '').toLowerCase().trim();
 
-      // 1. SEARCH QUERY OVERRIDE
+      // 1. BLANKET MULTI-WORD SEARCH OVERRIDE (e.g., "-6 90", "-10 45", "8 adapter")
       if (searchQuery.length > 0) {
-        const matchesName = pName.includes(searchQuery);
-        const matchesSku = pSku.includes(searchQuery);
-        const matchesCat = pCat.includes(searchQuery);
-        const matchesVariants = p.variants && p.variants.some(v => 
-          (v.sku && v.sku.toLowerCase().includes(searchQuery)) || 
-          (v.name && v.name.toLowerCase().includes(searchQuery))
-        );
+        // Split query into tokens (e.g. ["-6", "90"])
+        const tokens = searchQuery.split(/\s+/).filter(t => t.length > 0);
+        
+        // Product text buffer combining all search-relevant fields
+        const fullText = `${pName} ${pSku} ${pCat} ${pSubcat} ${p.anSize || ''} ${
+          p.variants ? p.variants.map(v => `${v.name} ${v.sku}`).join(' ') : ''
+        }`.toLowerCase();
 
-        return matchesName || matchesSku || matchesCat || matchesVariants;
+        // Check if EVERY token is present in the product's text buffer
+        return tokens.every(token => {
+          // Flexible AN size token check (e.g. "-6" matches "-6an", "-06", "6an")
+          if (/^-?\d+$/.test(token)) {
+            const num = token.replace('-', '');
+            return fullText.includes(`-${num}`) || fullText.includes(`${num}an`) || fullText.includes(` ${num} `);
+          }
+          return fullText.includes(token);
+        });
       }
 
       // 2. STANDARD CATEGORY MATCHING
