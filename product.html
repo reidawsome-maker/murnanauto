@@ -3,52 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Product Details — Murnan Auto</title>
+<title>Product — Murnan Auto</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="favicon-180.png">
 <style>
-  .product-page-container {
-    max-width: 1200px; margin: 20px auto 60px; padding: 0 5vw;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  #cart-overlay {
+    position: fixed; top: 0; right: -400px; width: 380px; height: 100vh;
+    background: var(--panel-2); border-left: 1px solid var(--steel);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5); z-index: 9999; transition: right 0.3s ease;
+    padding: 24px; box-sizing: border-box; display: flex; flex-direction: column;
   }
-  @media (max-width: 768px) {
-    .product-page-container { grid-template-columns: 1fr; }
+  #cart-overlay.open { right: 0; }
+  .cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--steel); padding-bottom: 12px; }
+  .cart-items { flex: 1; overflow-y: auto; margin: 20px 0; }
+  .cart-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px dashed var(--steel); padding-bottom: 12px; }
+  .cart-footer { border-top: 1px solid var(--steel); padding-top: 16px; }
+
+  .product-wrap { display:grid; grid-template-columns: 1fr 1fr; gap: 48px; padding: 7vh 5vw; }
+  .product-img { aspect-ratio: 1/1; background: var(--panel-2); border: 1px solid var(--steel); border-radius: 8px;
+    display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; color:var(--paper-dim); font-size:0.85rem; overflow:hidden; }
+  .product-img img { width:100%; height:100%; object-fit:contain; }
+  .product-sku { font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--blue-bright); }
+  .product-title { font-size: clamp(1.6rem, 3vw, 2.4rem); margin: 12px 0 18px; }
+  
+  .product-price { 
+    font-family:'JetBrains Mono',monospace; 
+    font-size: 1.6rem; 
+    color: var(--paper); 
+    margin-bottom: 10px; 
+    display: flex; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    gap: 12px; 
   }
-  .back-nav-bar { max-width: 1200px; margin: 20px auto 0; padding: 0 5vw; }
-  .back-btn {
-    display: inline-flex; align-items: center; gap: 8px; background: var(--panel-2, #181b20);
-    border: 1px solid var(--steel, #333); color: var(--paper, #fff); padding: 8px 16px;
-    border-radius: 4px; font-family: 'Oswald', sans-serif; text-transform: uppercase;
-    font-size: 0.85rem; text-decoration: none; transition: border-color 0.15s ease;
+  .save-tag {
+    background: rgba(255, 92, 92, 0.15);
+    color: #ff5c5c;
+    border: 1px solid #ff5c5c;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
   }
-  .back-btn:hover { border-color: var(--blue-bright, #00d2ff); color: var(--blue-bright, #00d2ff); }
-  .product-img-box {
-    background: var(--panel-2, #181b20); border: 1px solid var(--steel, #333);
-    border-radius: 8px; padding: 24px; display: flex; align-items: center; justify-content: center;
+
+  .product-stock { font-size: 0.9rem; margin-bottom: 24px; font-weight: 600; }
+  .product-qty { display:flex; align-items:center; gap:12px; margin-bottom:22px; }
+  .product-qty select, .variant-select { background:var(--panel-2); border:1px solid var(--steel); color:var(--paper); padding:10px 14px; border-radius:5px; font-family:'Inter',sans-serif; }
+  .product-buy-btn { padding:15px 32px; border-radius:5px; font-family:'Oswald',sans-serif; text-transform:uppercase;
+    letter-spacing:0.06em; font-weight:600; font-size:0.9rem; border:none; cursor:pointer; background:var(--blue); color:var(--asphalt); }
+  .product-buy-btn:disabled { background:#333; color:#666; cursor:not-allowed; }
+  
+  .product-desc { 
+    margin-top:30px; 
+    color:var(--paper-dim); 
+    font-size:0.95rem; 
+    line-height:1.6; 
+    max-width:65ch; 
+    border-top:1px solid var(--steel);
+    padding-top:20px;
   }
-  .product-img-box img { width: 100%; max-height: 450px; object-fit: contain; }
-  .p-sku { font-family: 'JetBrains Mono', monospace; color: var(--blue-bright, #00d2ff); font-size: 0.85rem; }
-  .p-title { font-family: 'Oswald', sans-serif; font-size: 2rem; margin: 8px 0 12px 0; color: #fff; text-transform: uppercase; }
-  .p-price { font-size: 1.8rem; font-weight: 700; color: #fff; margin-bottom: 16px; }
-  .swatch-btn {
-    padding: 8px 16px; background: var(--panel-2); border: 1px solid var(--steel);
-    color: #fff; border-radius: 4px; font-size: 0.85rem; cursor: pointer;
+  .product-desc-body {
+    white-space: pre-wrap; 
+    word-break: break-word;
+    margin-top: 14px; 
+    color: var(--paper);
   }
-  .swatch-btn.active { border-color: var(--blue-bright) !important; color: var(--blue-bright) !important; font-weight: bold; }
-  .add-cart-btn {
-    width: 100%; padding: 14px; background: var(--blue, #00d2ff); color: #000;
-    border: none; border-radius: 6px; font-family: 'Oswald', sans-serif; font-size: 1.1rem;
-    text-transform: uppercase; font-weight: 700; cursor: pointer; margin-top: 24px;
-  }
+
+  .product-back { font-family:'JetBrains Mono',monospace; font-size:0.8rem; color:var(--paper-dim); text-decoration:none; }
+  .product-back:hover { color:var(--blue-bright); }
+  @media (max-width:820px){ .product-wrap{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="logo"><a href="index.html" style="color:inherit; text-decoration:none;">MURNAN <span>AUTO</span></a></div>
+  <div class="logo"><a href="index.html" style="text-decoration:none;">MURNAN <span>AUTO</span></a></div>
   <ul class="cat-nav" style="display:flex; align-items:center;">
     <li><a href="index.html#shop">Shop</a></li>
+    <li><a href="index.html#partners">Brands &amp; Partners</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
     <li>
       <button onclick="toggleCart()" style="background:var(--steel); border:1px solid var(--paper-dim); color:var(--paper); padding:6px 14px; font-family:'JetBrains Mono',monospace; font-size:0.8rem; text-transform:uppercase; cursor:pointer;">
         Cart (<span id="cart-count">0</span>)
@@ -57,118 +98,235 @@
   </ul>
 </nav>
 
-<!-- DEDICATED BACK BUTTON -->
-<div class="back-nav-bar">
-  <a href="javascript:history.back()" class="back-btn">&larr; Back to Shop</a>
-</div>
-
-<div class="product-page-container" id="product-root">
-  <div style="grid-column: 1/-1; text-align: center; color: var(--paper-dim); padding: 60px 0;">
-    Loading product information...
+<div id="cart-overlay">
+  <div class="cart-header">
+    <h3 style="margin:0; font-family:'Oswald',sans-serif; text-transform:uppercase;">Your Cart</h3>
+    <button onclick="toggleCart()" style="background:none; border:none; color:var(--paper); font-size:1.5rem; cursor:pointer;">&times;</button>
+  </div>
+  <div class="cart-items" id="cart-items-list">
+    <p style="color:var(--paper-dim); text-align:center; margin-top:40px;">Your cart is empty.</p>
+  </div>
+  <div class="cart-footer">
+    <div style="display:flex; justify-content:space-between; font-weight:700; margin-bottom:16px;">
+      <span>Total:</span>
+      <span id="cart-total">$0.00</span>
+    </div>
+    <button id="cart-checkout-btn" onclick="processCheckout()" style="display:block; width:100%; padding:12px; background:var(--blue); color:var(--asphalt); text-align:center; font-weight:700; text-transform:uppercase; box-sizing:border-box; border:none; border-radius:5px; cursor:pointer; font-family:'Oswald',sans-serif;">
+      Proceed to Checkout
+    </button>
   </div>
 </div>
 
+<div style="padding: 24px 5vw 0;">
+  <a href="index.html#shop" class="product-back">&larr; Back to shop</a>
+</div>
+
+<div class="product-wrap" id="productWrap">
+  <p style="color:var(--paper-dim);">Loading product…</p>
+</div>
+
+<footer>
+  <div>© 2026 Murnan Auto</div>
+  <div><a href="mailto:support@murnanauto.store">support@murnanauto.store</a> · murnanauto.store</div>
+  <div><a href="policies.html#shipping">Shipping &amp; Returns</a> · <a href="policies.html#privacy">Privacy Policy</a> · <a href="policies.html#terms">Terms of Service</a></div>
+</footer>
+
 <script src="cart.js"></script>
 <script>
-  let currentProduct = null;
-  let selectedVariant = null;
+  function getParam(name) {
+    return new URLSearchParams(window.location.search).get(name);
+  }
 
-  async function loadInventory() {
-    try {
-      const res = await fetch('/inventory.json?t=' + Date.now());
-      if (res.ok) {
-        window.inventory = await res.json();
+  function renderProduct(product) {
+    const wrap = document.getElementById('productWrap');
+    if (!wrap) return;
+
+    if (!product) {
+      wrap.innerHTML = `<div style="grid-column:1/-1; padding:40px 0; text-align:center; color:var(--paper-dim);">
+        Product not found. <a href="index.html#shop" style="color:var(--blue-bright);">Return to shop</a>.
+      </div>`;
+      return;
+    }
+
+    const prodTitle = product.title || product.name || 'Product';
+    const prodImg = product.image || product.featured_image || (product.images && product.images[0]);
+    const hasVariants = product.variants && product.variants.length > 0;
+    let activeItem = hasVariants ? product.variants[0] : product;
+
+    document.title = `${prodTitle} — Murnan Auto`;
+
+    function buildVariantOptions() {
+      if (!hasVariants) return '';
+      return product.variants.map((v, idx) => {
+        const optName = v.option || v.name || `Option ${idx + 1}`;
+        const optPrice = v.price !== undefined ? parseFloat(v.price) : (parseFloat(product.price) || 0);
+        return `<option value="${idx}">${optName} — $${optPrice.toFixed(2)}</option>`;
+      }).join('');
+    }
+
+    function updateDisplay() {
+      const currentPrice = parseFloat(activeItem.price !== undefined ? activeItem.price : product.price) || 0;
+      
+      const rawCompare = activeItem.compare_price || activeItem.compare_at_price || activeItem.msrp ||
+                         product.compare_price || product.compare_at_price || product.msrp;
+      
+      const comparePrice = parseFloat(rawCompare) || 0;
+      const hasCompare = comparePrice > currentPrice;
+      const savings = (comparePrice - currentPrice).toFixed(2);
+
+      const currentStock = parseInt(activeItem.stock !== undefined ? activeItem.stock : product.stock, 10) || 0;
+      const inStock = currentStock > 0;
+
+      const priceEl = document.getElementById('displayPrice');
+      const skuEl = document.getElementById('displaySku');
+      const stockEl = document.getElementById('displayStock');
+      const buyBtn = document.getElementById('buyBtn');
+      const qtyWrapper = document.getElementById('qtyWrapper');
+
+      if (priceEl) {
+        let priceHtml = `<span>$${currentPrice.toFixed(2)}</span>`;
+        if (hasCompare) {
+          priceHtml += `
+            <span style="text-decoration: line-through !important; -webkit-text-decoration-line: line-through !important; color: #888888; font-size: 1.1rem; font-weight: 400; opacity: 0.8;">$${comparePrice.toFixed(2)}</span>
+            <span class="save-tag">Save $${savings}</span>
+          `;
+        }
+        priceEl.innerHTML = priceHtml;
       }
-    } catch (e) {
-      console.error("Error fetching inventory.json", e);
-    }
-  }
 
-  async function initProductPage() {
-    await loadInventory();
-    if (typeof updateCartUI === 'function') updateCartUI();
+      if (skuEl) skuEl.textContent = activeItem.sku || product.sku || product.id;
 
-    const params = new URLSearchParams(window.location.search);
-    const productId = params.get('id') || params.get('sku');
+      if (stockEl) {
+        stockEl.textContent = inStock ? 'In Stock' : 'Out of Stock';
+        stockEl.style.color = inStock ? '#4ADE80' : '#ff5c5c';
+      }
 
-    if (!productId || !window.inventory) return;
+      if (buyBtn) {
+        buyBtn.disabled = !inStock;
+        buyBtn.textContent = inStock ? 'Add to Cart' : 'Out of Stock';
+      }
 
-    currentProduct = inventory.find(p => p.id === productId || p.sku === productId || (p.title && p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-') === productId.toLowerCase()));
-    if (currentProduct) renderProduct();
-  }
-
-  function renderProduct() {
-    const hasVariants = currentProduct.variants && currentProduct.variants.length > 0;
-    if (hasVariants) selectedVariant = currentProduct.variants[0];
-
-    const defaultImg = selectedVariant && selectedVariant.image ? selectedVariant.image : (currentProduct.image || '');
-    const defaultSku = selectedVariant && selectedVariant.sku ? selectedVariant.sku : (currentProduct.sku || '');
-    const defaultPrice = selectedVariant && selectedVariant.price ? selectedVariant.price : (currentProduct.price || 0);
-
-    let swatchesHtml = '';
-    if (hasVariants) {
-      swatchesHtml = `
-        <div style="margin: 20px 0;">
-          <div style="font-family:'JetBrains Mono',monospace; font-size: 0.8rem; color: #888; margin-bottom: 8px;">SELECT COLOR: <span id="color-name" style="color:#fff;">${selectedVariant.name}</span></div>
-          <div style="display:flex; flex-wrap:wrap; gap:8px;">
-            ${currentProduct.variants.map((v, idx) => `
-              <button class="swatch-btn ${idx === 0 ? 'active' : ''}" onclick="switchVariant('${v.name.replace(/'/g, "\\'")}', this)">
-                ${v.name}
-              </button>
-            `).join('')}
-          </div>
-        </div>`;
+      if (qtyWrapper) {
+        if (inStock) {
+          qtyWrapper.style.display = 'flex';
+          const qtySelect = document.getElementById('qtySelect');
+          if (qtySelect) {
+            let opts = '';
+            const maxQty = Math.min(currentStock, 10);
+            for (let i = 1; i <= maxQty; i++) opts += `<option value="${i}">${i}</option>`;
+            qtySelect.innerHTML = opts;
+          }
+        } else {
+          qtyWrapper.style.display = 'none';
+        }
+      }
     }
 
-    // Clean description fail-safe against python script injection
-    let cleanDesc = currentProduct.description || 'High-performance automotive plumbing component.';
+    // Scrub residual python code text from description
+    let cleanDesc = product.description || 'High-performance automotive component.';
     if (cleanDesc.includes('import pandas') || cleanDesc.includes('def build_part_description') || cleanDesc.includes('build_part_description(')) {
-      cleanDesc = `The <b>${currentProduct.title || currentProduct.name || 'component'}</b> is engineered for demanding high-performance automotive fluid systems.`;
+      cleanDesc = `The <b>${prodTitle}</b> is engineered for demanding high-performance automotive fluid systems.`;
     }
 
-    document.getElementById('product-root').innerHTML = `
-      <div class="product-img-box">
-        <img id="main-prod-img" src="${defaultImg}" alt="${currentProduct.name || currentProduct.title}">
+    wrap.innerHTML = `
+      <div class="product-img">
+        ${prodImg ? `<img src="${prodImg}" alt="${prodTitle}">` : 'IMAGE PENDING'}
       </div>
       <div>
-        <span class="p-sku" id="main-prod-sku">${defaultSku}</span>
-        <h1 class="p-title">${currentProduct.name || currentProduct.title}</h1>
-        <div class="p-price" id="main-prod-price">$${typeof defaultPrice === 'number' ? defaultPrice.toFixed(2) : defaultPrice}</div>
-        ${swatchesHtml}
-        <button class="add-cart-btn" onclick="handleAddToCart()">Add To Cart</button>
-        <div style="margin-top: 30px; border-top: 1px solid var(--steel); padding-top: 20px; color: #aaa;">
-          <p>${cleanDesc}</p>
+        <span class="product-sku" id="displaySku">${activeItem.sku || product.sku || product.id}</span>
+        <h1 class="product-title">${prodTitle}</h1>
+        <div class="product-price" id="displayPrice"></div>
+        <div class="product-stock" id="displayStock"></div>
+
+        ${hasVariants ? `
+          <div style="margin-bottom: 20px;">
+            <label style="font-family:'JetBrains Mono',monospace; font-size:0.8rem; color:var(--paper-dim); display:block; margin-bottom:6px;">OPTION / SIZE</label>
+            <select id="variantSelect" class="variant-select" style="width:100%; max-width:320px; cursor:pointer;">
+              ${buildVariantOptions()}
+            </select>
+          </div>
+        ` : ''}
+
+        <div class="product-qty" id="qtyWrapper">
+          <label for="qtySelect" style="font-family:'JetBrains Mono',monospace; font-size:0.8rem; color:var(--paper-dim);">QTY</label>
+          <select id="qtySelect"><option value="1">1</option></select>
         </div>
-      </div>`;
-  }
 
-  function switchVariant(colorName, btnElem) {
-    if (!currentProduct || !currentProduct.variants) return;
-    const variant = currentProduct.variants.find(v => v.name === colorName);
-    if (!variant) return;
+        <button class="product-buy-btn" id="buyBtn">Add to Cart</button>
 
-    selectedVariant = variant;
-    if (variant.image) document.getElementById('main-prod-img').src = variant.image;
-    if (variant.sku) document.getElementById('main-prod-sku').innerText = variant.sku;
-    if (variant.price) document.getElementById('main-prod-price').innerText = `$${typeof variant.price === 'number' ? variant.price.toFixed(2) : variant.price}`;
-    document.getElementById('color-name').innerText = variant.name;
+        <div class="product-desc">
+          <p><strong>Category:</strong> ${product.category || 'Uncategorized'}</p>
+          <div class="product-desc-body">${cleanDesc}</div>
+        </div>
+      </div>
+    `;
 
-    document.querySelectorAll('.swatch-btn').forEach(b => b.classList.remove('active'));
-    if (btnElem) btnElem.classList.add('active');
-  }
+    updateDisplay();
 
-  function handleAddToCart() {
-    if (!currentProduct) return;
-    if (typeof addToCart === 'function') {
-      if (selectedVariant) {
-        addToCart(currentProduct.id, { option: selectedVariant.name, sku: selectedVariant.sku, price: selectedVariant.price });
-      } else {
-        addToCart(currentProduct.id);
+    if (hasVariants) {
+      const vSelect = document.getElementById('variantSelect');
+      if (vSelect) {
+        vSelect.addEventListener('change', (e) => {
+          activeItem = product.variants[e.target.value];
+          updateDisplay();
+        });
       }
+    }
+
+    const buyBtn = document.getElementById('buyBtn');
+    if (buyBtn) {
+      buyBtn.addEventListener('click', () => {
+        const qtySelect = document.getElementById('qtySelect');
+        const qty = qtySelect ? parseInt(qtySelect.value, 10) : 1;
+        const selectedSku = activeItem.sku || product.id;
+        const selectedName = hasVariants ? `${prodTitle} (${activeItem.option || activeItem.name || 'Selected Option'})` : prodTitle;
+        const selectedPrice = parseFloat(activeItem.price !== undefined ? activeItem.price : product.price) || 0;
+
+        if (typeof cart !== 'undefined') {
+          const existing = cart.find(item => item.id === selectedSku);
+          if (existing) {
+            existing.qty += qty;
+          } else {
+            cart.push({ id: selectedSku, name: selectedName, price: selectedPrice, qty: qty });
+          }
+          if (typeof saveCart === 'function') saveCart();
+          if (typeof toggleCart === 'function') toggleCart();
+        }
+      });
     }
   }
 
-  document.addEventListener('DOMContentLoaded', initProductPage);
+  async function initPage() {
+    let products = [];
+    if (typeof loadInventory === 'function') {
+      products = await loadInventory();
+    }
+    
+    const queryId = getParam('id') || getParam('sku') || getParam('slug');
+    if (!queryId) {
+      renderProduct(null);
+      return;
+    }
+
+    const target = queryId.toLowerCase().trim();
+    const product = products.find(p => {
+      const pId = (p.id || '').toLowerCase();
+      const pSku = (p.sku || '').toLowerCase();
+      const pTitle = (p.title || p.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      const hasVariantMatch = p.variants && p.variants.some(v => (v.sku || '').toLowerCase() === target);
+      return pId === target || pSku === target || pTitle === target || hasVariantMatch;
+    });
+
+    renderProduct(product);
+    if (typeof updateCartUI === 'function') updateCartUI();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPage);
+  } else {
+    initPage();
+  }
 </script>
+
 </body>
 </html>
