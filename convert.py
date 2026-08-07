@@ -3,11 +3,12 @@ import json
 import os
 import re
 
-# Read CSV
-df = pd.read_csv('your-master-catalog.csv')
+# Read CSV (Ensure this points to your primary catalog CSV file)
+CSV_FILENAME = 'CF-Catalog-Filtered-6-8-10AN-EFI-Tools-Hose.csv'
+df = pd.read_csv(CSV_FILENAME)
 os.makedirs('content/products', exist_ok=True)
 
-# Explicit items and keywords to permanently purge
+# Specific items and keywords to permanently exclude
 EXCLUDE_EXACT_TITLES = [
     "cummins turbo drain tube adapter",
     "3/8\" ptc air fitting to 6 an adapter",
@@ -15,7 +16,7 @@ EXCLUDE_EXACT_TITLES = [
 ]
 
 DELETED_KEYWORDS = [
-    "finisher", "worm", "hex / worm", "per foot", "by the foot", "1 foot"
+    "per foot", "by the foot", "1 foot"
 ]
 
 subcat_mapping = {
@@ -64,7 +65,7 @@ def build_part_description(row, title):
     title_str = str(title).strip()
     cat_str = str(row.get('Category', '')).strip()
     
-    # 1. Parse AN size, angle, and connection specs
+    # Parse AN size, angle, and connection specs
     an_match = re.search(r'(-?\d+)\s*AN', title_str, re.IGNORECASE)
     
     angle_match = re.search(r'(\d+)\s*(Degree|Deg|\°)', title_str, re.IGNORECASE)
@@ -75,10 +76,10 @@ def build_part_description(row, title):
     is_npt = 'npt' in title_str.lower()
     is_efi = 'efi' in title_str.lower() or 'quick connect' in title_str.lower()
 
-    # 2. Extract raw description & SANITIZE CORRUPTED PYTHON CODE TEXT
+    # Extract raw description
     raw_desc = str(row.get('Description', '')) if not pd.isna(row.get('Description', '')) else ""
     
-    # Hard purge if string contains raw python code from earlier pastes
+    # Hard-purge if string contains raw python code from prior pastes
     if "import pandas" in raw_desc or "def build_part_description" in raw_desc or "spec_block" in raw_desc:
         raw_desc = ""
 
@@ -90,7 +91,7 @@ def build_part_description(row, title):
     raw_desc = re.sub(r'Looking to complete your system\?.*', '', raw_desc, flags=re.DOTALL | re.IGNORECASE)
     raw_desc = re.sub(r'Explore our full range.*', '', raw_desc, flags=re.DOTALL | re.IGNORECASE)
 
-    # 3. Third-person conversion
+    # Neutralize third-person phrasing (removes we / our / us)
     raw_desc = re.sub(r'\bwe\b', 'Color-Fittings', raw_desc, flags=re.IGNORECASE)
     raw_desc = re.sub(r'\bour\b', 'the', raw_desc, flags=re.IGNORECASE)
     raw_desc = re.sub(r'\bus\b', 'the manufacturer', raw_desc, flags=re.IGNORECASE)
@@ -98,7 +99,7 @@ def build_part_description(row, title):
     clean_paragraphs = [p.strip() for p in raw_desc.split('\n') if p.strip()]
     lead_body = f" {clean_paragraphs[0]}" if clean_paragraphs else ""
 
-    # 4. Construct Technical Specs
+    # Technical specs list
     specs = [
         "<b>Origin:</b> Precision CNC-machined in the USA.",
         "<b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance."
@@ -126,41 +127,24 @@ def extract_an_size_label(title):
         return f"{val}AN"
     return "Universal"
 
-def get_an_size_num(title):
-    match = re.search(r'(-?\d+)\s*AN', str(title), re.IGNORECASE)
-    if match:
-        return int(match.group(1).replace('-', ''))
-    return 99
-
 def is_keep_item(row):
     title = str(row['Title']).lower().strip()
-    cat = str(row['Category']).lower().strip()
 
     if any(ex in title for ex in EXCLUDE_EXACT_TITLES):
         return False
 
-    if any(k in title or k in cat for k in DELETED_KEYWORDS):
+    if any(k in title for k in DELETED_KEYWORDS):
         return False
 
-    if ('line' in title or 'lines' in title) and 'hardline adapter' not in title:
-        return False
-
-    if 'stainless steel' in title and 'hose' in title:
-        return False
-
-    if any(k in cat for k in ['tool', 'socket', 'filter', 'cooler', 'radiator']):
-        return True
-
-    size = get_an_size_num(row['Title'])
-    if size in [6, 8, 10, 99]:
-        return True
-
-    return False
+    # Keep all valid items (turbos, mufflers, clamps, fittings, hoses, etc.)
+    return True
 
 def determine_category(title, raw_cat):
     t = str(title).lower()
     c = str(raw_cat).replace('&amp;', '&').strip()
 
+    if 'muffler' in t or 'exhaust' in t:
+        return ('Exhaust', 'Mufflers & Exhaust')
     if 'turbo kit' in t or 'twin turbo' in t or 'single turbo' in t:
         return ('Kits', 'Complete Turbo Kits')
     if 'turbocharger' in t or 'turbo ' in t or t.startswith('turbo'):
@@ -198,7 +182,7 @@ for title, group in grouped:
     first = group.iloc[0]
     title_str = str(title)
     
-    category, subcategory = determine_category(title_str, first['Category'])
+    category, subcategory = determine_category(title_str, first.get('Category', ''))
     an_size_label = extract_an_size_label(title_str)
     
     cleaned_desc = build_part_description(first, title_str)
@@ -206,10 +190,10 @@ for title, group in grouped:
     variants = []
     prices = []
     for _, row in group.iterrows():
-        color_name = re.sub(r'\s*\[\+\$[0-9\.]+\]', '', str(row['Variation name (color)'])).strip()
-        img_link = str(row['Variation Image Link']).strip()
-        sku_val = str(row['Variation SKU']).strip()
-        price_val = safe_float(row['Price'])
+        color_name = re.sub(r'\s*\[\+\$[0-9\.]+\]', '', str(row.get('Variation name (color)', 'Standard'))).strip()
+        img_link = str(row.get('Variation Image Link', '')).strip()
+        sku_val = str(row.get('Variation SKU', '')).strip()
+        price_val = safe_float(row.get('Price', 0))
         prices.append(price_val)
         
         variants.append({
@@ -226,13 +210,13 @@ for title, group in grouped:
         'id': slug,
         'name': title_str,
         'title': title_str,
-        'sku': str(first['Variation SKU']).strip(),
+        'sku': str(first.get('Variation SKU', '')).strip(),
         'category': category,
         'subcategory': subcategory,
         'anSize': an_size_label,
         'price': min_price,
         'description': cleaned_desc,
-        'image': str(first['Variation Image Link']).strip(),
+        'image': str(first.get('Variation Image Link', '')).strip(),
         'variants': variants
     }
     
