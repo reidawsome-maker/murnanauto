@@ -4,158 +4,119 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Details - Murnan Auto</title>
-  <style>
-    body {
-      background-color: #0b0f19;
-      color: #ffffff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
-    .product-container {
-      max-width: 1000px;
-      margin: 40px auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      background: #111827;
-      padding: 30px;
-      border-radius: 8px;
-      border: 1px solid #1f2937;
-    }
-    @media (max-width: 768px) {
-      .product-container {
-        grid-template-columns: 1fr;
-      }
-    }
-    .product-image img {
-      width: 100%;
-      border-radius: 6px;
-      object-fit: cover;
-      background: #1f2937;
-    }
-    .product-info h1 {
-      font-size: 2rem;
-      margin-top: 0;
-    }
-    .price {
-      font-size: 1.5rem;
-      color: #10b981;
-      font-weight: bold;
-      margin: 15px 0;
-    }
-    .meta-tag {
-      display: inline-block;
-      background: #1f2937;
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-size: 0.85rem;
-      margin-right: 8px;
-      margin-bottom: 15px;
-      color: #9ca3af;
-    }
-    .description {
-      margin-top: 20px;
-      line-height: 1.6;
-      color: #d1d5db;
-      border-top: 1px solid #1f2937;
-      padding-top: 20px;
-    }
-    .btn-buy {
-      background: #e11d48;
-      color: #fff;
-      border: none;
-      padding: 12px 24px;
-      font-size: 1rem;
-      font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 20px;
-    }
-    .btn-buy:hover {
-      background: #be123c;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-gray-900 text-white font-sans antialiased">
 
-  <div class="product-container" id="product-wrapper">
-    <div class="product-image">
-      <img id="product-image" src="" alt="Product Image" style="display:none;">
+  <header class="border-b border-gray-800 bg-black/50 backdrop-blur py-4 px-6 flex justify-between items-center">
+    <a href="index.html" class="text-xl font-bold tracking-wider text-red-500 uppercase">Murnan Auto</a>
+    <a href="index.html" class="text-sm text-gray-400 hover:text-white">← Back to Shop</a>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 bg-gray-800/40 border border-gray-800 rounded-xl p-6 md:p-10 shadow-2xl">
+      
+      <!-- Image Container -->
+      <div class="flex items-center justify-center bg-gray-950 rounded-lg p-4 border border-gray-800 min-h-[350px]">
+        <img id="product-image" src="" alt="Product Image" class="max-h-[400px] w-auto object-contain rounded-md" style="display: none;">
+        <div id="image-placeholder" class="text-gray-600 font-medium">No Image Available</div>
+      </div>
+
+      <!-- Details Container -->
+      <div class="flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span id="product-platform" class="px-2.5 py-1 text-xs font-semibold uppercase tracking-wider bg-red-950/80 text-red-400 border border-red-800/50 rounded">Universal</span>
+            <span id="product-category" class="px-2.5 py-1 text-xs font-semibold uppercase tracking-wider bg-gray-800 text-gray-300 border border-gray-700 rounded">Category</span>
+          </div>
+
+          <h1 id="product-title" class="text-3xl font-extrabold text-white tracking-tight mb-2">Loading...</h1>
+          <p id="product-sku" class="text-xs font-mono text-gray-500 mb-4"></p>
+
+          <div class="flex items-baseline gap-3 mb-6">
+            <span id="product-price" class="text-3xl font-black text-green-400">$0.00</span>
+            <span id="product-compare-price" class="text-sm text-gray-500 line-through"></span>
+          </div>
+
+          <button id="add-to-cart-btn" class="w-full py-3.5 px-6 bg-red-600 hover:bg-red-700 text-white font-bold uppercase tracking-wider rounded-lg transition-colors shadow-lg shadow-red-900/30 mb-8">
+            Add to Cart
+          </button>
+
+          <div class="border-t border-gray-800 pt-6">
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-3">Product Description</h3>
+            <div id="product-description" class="text-gray-300 text-sm leading-relaxed space-y-3">
+              <!-- Description HTML renders here -->
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="product-info">
-      <span class="meta-tag" id="product-platform">Universal</span>
-      <span class="meta-tag" id="product-category">General</span>
-      <h1 id="product-title">Loading product...</h1>
-      <div class="price" id="product-price"></div>
-      <div id="product-sku" style="color: #6b7280; font-size: 0.9rem;"></div>
-      <button class="btn-buy" id="add-to-cart-btn">ADD TO CART</button>
-      <div class="description" id="product-description"></div>
-    </div>
-  </div>
+  </main>
 
   <script>
     async function loadProductDetails() {
       const urlParams = new URLSearchParams(window.location.search);
-      const productId = urlParams.get('id') || urlParams.get('sku') || urlParams.get('slug');
+      const targetId = urlParams.get('id') || urlParams.get('sku') || urlParams.get('slug');
 
-      if (!productId) {
+      if (!targetId) {
         document.getElementById('product-title').innerText = "Product Not Found";
         document.getElementById('product-description').innerText = "No product ID was provided in the URL.";
         return;
       }
 
       try {
-        // Direct fetch from inventory.json
         const res = await fetch('/inventory.json?t=' + Date.now());
         if (!res.ok) throw new Error("Could not fetch inventory.json");
 
         const inventory = await res.json();
+        const searchSlug = targetId.toLowerCase().trim();
 
-        // Find item directly in inventory array
+        // Match product against ID, SKU, or Title slug
         const product = inventory.find(item => {
-          const target = productId.toLowerCase();
-          return (
-            (item.id && item.id.toLowerCase() === target) ||
-            (item.sku && item.sku.toLowerCase() === target) ||
-            (item.slug && item.slug.toLowerCase() === target)
-          );
+          const itemId = (item.id || '').toLowerCase();
+          const itemSku = (item.sku || '').toLowerCase();
+          const itemTitle = (item.title || item.name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+          return itemId === searchSlug || itemSku === searchSlug || itemTitle === searchSlug;
         });
 
         if (!product) {
           document.getElementById('product-title').innerText = "Product Not Found";
-          document.getElementById('product-description').innerText = "This item does not exist in inventory.json.";
+          document.getElementById('product-description').innerText = "This item is not present in inventory.json.";
           return;
         }
 
-        // Render details
-        document.title = `${product.title || product.name} - Murnan Auto`;
+        // Populate Metadata
+        document.title = `${product.title || product.name} | Murnan Auto`;
         document.getElementById('product-title').innerText = product.title || product.name || 'Untitled Product';
-        document.getElementById('product-price').innerText = product.price ? `$${parseFloat(product.price).toFixed(2)}` : '';
-        
-        if (product.sku) {
-          document.getElementById('product-sku').innerText = `SKU: ${product.sku}`;
+        document.getElementById('product-sku').innerText = product.sku ? `SKU: ${product.sku}` : '';
+        document.getElementById('product-price').innerText = `$${parseFloat(product.price || 0).toFixed(2)}`;
+
+        if (product.compare_price) {
+          document.getElementById('product-compare-price').innerText = `$${parseFloat(product.compare_price).toFixed(2)}`;
         }
+
         if (product.platform) {
           document.getElementById('product-platform').innerText = product.platform;
         }
+
         if (product.subcategory || product.category) {
           document.getElementById('product-category').innerText = product.subcategory || product.category;
         }
 
-        // Render Image
+        // Image Handling
         const imgEl = document.getElementById('product-image');
+        const placeholderEl = document.getElementById('image-placeholder');
         if (product.image && product.image.trim() !== '') {
           imgEl.src = product.image;
           imgEl.style.display = 'block';
+          if (placeholderEl) placeholderEl.style.display = 'none';
         }
 
-        // Clean & Sanitize Description (Strip any legacy python text)
+        // Description Sanitizer (Drops any residual script text)
         let desc = product.description || '';
-
         if (desc.includes('import pandas') || desc.includes('def build_part_description') || desc.includes('build_part_description(')) {
-          desc = `<p>The <b>${product.title || product.name || 'component'}</b> is engineered for demanding high-performance automotive applications.</p>
+          desc = `<p>The <b>${product.title || 'component'}</b> is engineered for high-performance automotive applications.</p>
           <br><b>Technical Specifications:</b><br>
           • <b>Origin:</b> Precision CNC-machined in the USA.<br>
           • <b>Material & Finish:</b> 6061-T6 Billet Aluminum with a durable anodized finish.`;
@@ -164,9 +125,9 @@
         document.getElementById('product-description').innerHTML = desc;
 
       } catch (err) {
-        console.error("Error loading product details:", err);
+        console.error("Error loading product:", err);
         document.getElementById('product-title').innerText = "Error Loading Product";
-        document.getElementById('product-description').innerText = "Unable to load inventory data.";
+        document.getElementById('product-description').innerText = "Unable to connect to inventory data.";
       }
     }
 
