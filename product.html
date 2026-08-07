@@ -1,62 +1,21 @@
-import pandas as pd
-import re
+// Fetch and render product data
+function renderProductPage(product) {
+  document.getElementById('product-title').innerText = product.title || product.name || '';
+  document.getElementById('product-price').innerText = `$${product.price}`;
+  
+  let desc = product.description || '';
 
-def build_part_description(row, title):
-    """
-    Generates a third-person, spec-driven product description highlighting 
-    USA manufacturing and specific technical properties.
-    """
-    title_str = str(title).strip()
-    cat_str = str(row.get('Category', '')).strip()
-    
-    # 1. Parse AN size, angle, and connection specs
-    an_match = re.search(r'(-?\d+)\s*AN', title_str, re.IGNORECASE)
-    an_size = f"-{an_match.group(1).replace('-', '')}AN" if an_match else "Universal AN"
-    
-    angle_match = re.search(r'(\d+)\s*(Degree|Deg|\°)', title_str, re.IGNORECASE)
-    angle = f"{angle_match.group(1)}°" if angle_match else None
-    
-    is_ptfe = 'ptfe' in title_str.lower() or 'ptfe' in cat_str.lower()
-    is_orb = 'orb' in title_str.lower() or 'o-ring boss' in title_str.lower()
-    is_npt = 'npt' in title_str.lower()
-    is_efi = 'efi' in title_str.lower() or 'quick connect' in title_str.lower()
+  // Fail-safe: Scrub out raw Python source code if present in the data
+  if (desc.includes('import pandas') || desc.includes('def build_part_description') || desc.includes('build_part_description(')) {
+    desc = `<p>The <b>${product.title || 'component'}</b> is engineered for demanding high-performance automotive fluid systems.</p>
+    <br><b>Technical Specifications:</b><br>
+    • <b>Origin:</b> Precision CNC-machined in the USA.<br>
+    • <b>Material & Finish:</b> 6061-T6 Billet Aluminum with a durable anodized finish.`;
+  }
 
-    # 2. Extract and scrub raw description text
-    raw_desc = str(row.get('Description', '')) if not pd.isna(row.get('Description', '')) else ""
-    raw_desc = raw_desc.replace('\\n', '\n').replace('\r', '')
-    
-    # Strip out all vendor boilerplate and link teasers
-    raw_desc = re.sub(r'Founded in 2008, ColorFittings.*?\.\s*', '', raw_desc, flags=re.DOTALL | re.IGNORECASE)
-    raw_desc = re.sub(r'Want to learn more.*', '', raw_desc, flags=re.DOTALL | re.IGNORECASE)
-    raw_desc = re.sub(r'Looking to complete your system\?.*', '', raw_desc, flags=re.DOTALL | re.IGNORECASE)
-    raw_desc = re.sub(r'Explore our full range.*', '', raw_desc, flags=re.DOTALL | re.IGNORECASE)
-
-    # 3. Convert any remaining "we / our / us / my" phrasing to neutral third-person
-    raw_desc = re.sub(r'\bwe\b', 'Color-Fittings', raw_desc, flags=re.IGNORECASE)
-    raw_desc = re.sub(r'\bour\b', 'the', raw_desc, flags=re.IGNORECASE)
-    raw_desc = re.sub(r'\bus\b', 'the manufacturer', raw_desc, flags=re.IGNORECASE)
-
-    clean_paragraphs = [p.strip() for p in raw_desc.split('\n') if p.strip()]
-    lead_body = f" {clean_paragraphs[0]}" if clean_paragraphs else ""
-
-    # 4. Construct technical specs checklist
-    specs = [
-        "<b>Origin:</b> Precision CNC-machined in the USA.",
-        "<b>Material & Finish:</b> 6061-T6 Billet Aluminum with a durable anodized finish for corrosion resistance."
-    ]
-    
-    if angle:
-        specs.append(f"<b>Flow Configuration:</b> {angle} mandrel-bent profile for maximum fluid velocity in tight spaces.")
-    if is_ptfe:
-        specs.append("<b>Compatibility:</b> Engineered specifically for PTFE hose. Impervious to E85, race gas, methanol, and power steering fluids.")
-    if is_orb:
-        specs.append("<b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.")
-    if is_npt:
-        specs.append("<b>Thread Pitch:</b> Precision NPT tapered threads for positive sealing in blocks and cells.")
-    if is_efi:
-        specs.append("<b>Quick Connect:</b> High-pressure fuel rail latch mechanism.")
-
-    spec_block = "<br><br><b>Technical Specifications:</b><br>• " + "<br>• ".join(specs)
-
-    # Combine into final formatted copy
-    return f"The <b>{title_str}</b> is engineered for demanding high-performance automotive fluid systems.{lead_body}{spec_block}"
+  // Inject sanitized HTML into description container
+  const descContainer = document.getElementById('product-description') || document.getElementById('description');
+  if (descContainer) {
+    descContainer.innerHTML = desc;
+  }
+}
