@@ -1,0 +1,13 @@
+{
+  "id": "test123",
+  "title": "test",
+  "sku": "test123",
+  "platform": "Universal",
+  "price": 1.99,
+  "compare_price": 2.99,
+  "weight": 2,
+  "stock": 2,
+  "category": "NylonHose",
+  "description": "test",
+  "image": ""
+}
