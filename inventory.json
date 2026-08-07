@@ -1,30 +1,30 @@
 [
   {
-    "id": "test1",
-    "name": "Turbo test",
-    "title": "Turbo test",
-    "sku": "test1",
-    "platform": "Universal",
+    "id": "test123",
+    "name": "test1",
+    "title": "test1",
+    "sku": "test123",
+    "platform": "350Z",
     "platforms": [
-      "Universal",
-      "universal"
+      "350Z",
+      "350z"
     ],
-    "price": 1.99,
-    "compare_price": 4.99,
+    "price": 2,
+    "compare_price": 2,
     "weight": 2,
     "stock": 2,
     "category": "Turbos",
     "subcategory": "Turbochargers",
     "parentCategory": "Forced Induction & Nitrous",
     "anSize": "Universal",
-    "description": "just a test ",
-    "image": "https://colorfittings.com/wp-content/uploads/2026/04/Flare-To-Metric-Adapter-Black-122.png",
+    "description": "test",
+    "image": "",
     "variants": [
       {
         "name": "Standard",
-        "sku": "test1",
-        "price": 1.99,
-        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Flare-To-Metric-Adapter-Black-122.png",
+        "sku": "test123",
+        "price": 2,
+        "image": "",
         "stock": 2
       }
     ]
