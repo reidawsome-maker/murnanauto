@@ -4,7 +4,7 @@ import os
 import re
 import glob
 
-# Ensure content/products directory exists WITHOUT clearing existing files
+# Ensure product directory exists (Never clears or deletes files)
 os.makedirs('content/products', exist_ok=True)
 
 def safe_float(val, default=0.0):
@@ -21,212 +21,203 @@ def clean_text(raw_desc):
         return ""
     
     desc = raw_desc.replace('\\n', '\n').replace('\r', '')
-    desc = re.sub(r'Founded in 2008, ColorFittings.*?\.\s*', '', desc, flags=re.DOTALL | re.IGNORECASE)
+    desc = re.sub(r'Founded in 2008.*?\\.\\s*', '', desc, flags=re.DOTALL | re.IGNORECASE)
     desc = re.sub(r'Want to learn more.*', '', desc, flags=re.DOTALL | re.IGNORECASE)
     desc = re.sub(r'Looking to complete your system\?.*', '', desc, flags=re.DOTALL | re.IGNORECASE)
-    desc = re.sub(r'Explore our full range.*', '', desc, flags=re.DOTALL | re.IGNORECASE)
-
-    desc = re.sub(r'\bwe\b', 'Color-Fittings', desc, flags=re.IGNORECASE)
-    desc = re.sub(r'\bour\b', 'the', desc, flags=re.IGNORECASE)
+    desc = re.sub(r'\bwe\b', 'the manufacturer', desc, flags=re.IGNORECASE)
+    desc = re.sub(r'\bour\b', 'their', desc, flags=re.IGNORECASE)
     desc = re.sub(r'\bus\b', 'the manufacturer', desc, flags=re.IGNORECASE)
 
     paragraphs = [p.strip() for p in desc.split('\n') if p.strip()]
     return "<br><br>".join(paragraphs) if paragraphs else ""
 
-def generate_turbosmart_desc(sku, title):
-    t = title.lower()
-    specs = [
-        "<b>Brand & Engineering:</b> Genuine Turbosmart high-performance motorsport hardware.",
-        "<b>Construction:</b> Precision CNC-machined billet aluminum housing with hard-anodized finish."
-    ]
+# ---------------------------------------------------------
+# Bulletproof Category Engine 
+# (Ensures Wastegates go to Wastegates, Turbos to Turbos, etc.)
+# ---------------------------------------------------------
+def auto_categorize(title, raw_cat=""):
+    search_text = (str(title) + " " + str(raw_cat)).lower()
     
-    if 'boost tee' in t or 'boost controller' in t:
-        lead = f"The <b>{title}</b> utilizes Turbosmart's proven gated boost control system to bring boost on faster and prevent premature wastegate opening."
-        specs.append("<b>Control Type:</b> Detent adjustment system for precise, leak-free boost adjustments.")
-        specs.append("<b>Flow Efficiency:</b> Gated feature minimizes wastegate creep and improves turbo spool response.")
-    elif 'eboost' in t:
-        lead = f"The <b>{title}</b> is an advanced electronic boost controller capable of handling high boost levels with multiple boost group settings and boost-by-gear control."
-        specs.append("<b>Pressure Rating:</b> Rated up to 40psi for high-output turbocharged applications.")
-        specs.append("<b>Feature Set:</b> Peak hold display, auxiliary output control, and programmable boost curve ramps.")
-    elif 'bov' in t or 'kompact' in t:
-        lead = f"The <b>{title}</b> provides direct plug-and-play upgrade capability over weak factory diverter valves, holding extreme boost pressure without leaking."
-        specs.append("<b>Porting:</b> Dual-port configuration allows partial recirculation for ECU stability with atmospheric blow-off sound.")
-        specs.append("<b>Response:</b> Fast-acting piston mechanism prevents compressor surge under sudden throttle lift.")
-    elif 'fpr' in t or 'fuel pressure' in t:
-        an_size = "-6AN" if "fpr6" in t else ("-8AN" if "fpr8" in t else ("-10AN" if "fpr10" in t else "1/8 NPT"))
-        lead = f"The <b>{title}</b> delivers dead-accurate fuel pressure regulation across high-horsepower EFI applications running pump gas, race gas, or E85."
-        specs.append(f"<b>Porting & Fittings:</b> Equipped for {an_size} high-flow feed and return lines with integrated gauge port.")
-        specs.append("<b>Ratio:</b> 1:1 manifold pressure reference for linear fuel delivery under boost.")
-    elif 'wg40' in t or 'wg45' in t or 'wastegate' in t:
-        size = "40mm" if "wg40" in t else "45mm"
-        lead = f"The <b>{title}</b> represents Turbosmart's GenV thermal engineering, featuring modular actuator housing and maximum flow efficiency."
-        specs.append(f"<b>Valve Size:</b> {size} high-temp stainless steel valve assembly.")
-        specs.append("<b>Cooling & Rotation:</b> Integrated liquid cooling ports and 360-degree actuator cap positioning.")
+    # 1. Turbos & Wastegates
+    if any(k in search_text for k in ['wastegate', 'wg40', 'wg45', 'compgate', 'hypergate', 'genv']):
+        return 'Wastegates', 'External Wastegates'
+    if 'turbo' in search_text and 'bov' not in search_text:
+        return 'Turbos', 'Turbochargers & Accessories'
+    
+    # 2. Boost Control & Valves
+    if any(k in search_text for k in ['bov', 'blow off', 'diverter', 'kompact']):
+        return 'Blow Off Valves', 'BOV & Diverter Valves'
+    if any(k in search_text for k in ['boost controller', 'boost tee', 'eboost']):
+        return 'Boost Controllers', 'Manual & Electronic Controllers'
+    
+    # 3. Fuel & Exhaust
+    if any(k in search_text for k in ['fpr', 'fuel pressure', 'regulator']):
+        return 'Fuel Systems', 'Fuel Pressure Regulators'
+    if 'muffler' in search_text or 'exhaust' in search_text:
+        return 'Exhaust', 'Mufflers & Hardware'
+    
+    # 4. Fittings & Hoses
+    if 'ptfe' in search_text:
+        return 'PTFE Hose', 'Lines & Fittings'
+    if 'nylon' in search_text or 'braided' in search_text:
+        return 'Nylon Hose', 'Lines & Fittings'
+    if any(k in search_text for k in ['fitting', 'adapter', 'orb', 'npt', 'union', 'bung', 'an ']):
+        return 'AN Fittings', 'Adapters & Hose Ends'
+    
+    # 5. General / Hardware
+    if 'gauge' in search_text:
+        return 'Gauges', 'Monitoring'
+    if 'cooler' in search_text or 'radiator' in search_text:
+        return 'Cooling', 'Coolers & Radiators'
+    
+    # Fallback to provided category from CSV, otherwise Universal
+    if raw_cat and str(raw_cat).lower() not in ['nan', '', 'none']:
+        return str(raw_cat).title(), 'General'
+        
+    return 'Performance Hardware', 'Universal'
+
+# ---------------------------------------------------------
+# Dynamic Description Builder
+# ---------------------------------------------------------
+def generate_smart_description(title, raw_desc, vendor):
+    t = str(title).lower()
+    clean_body = clean_text(raw_desc)
+    
+    lead = f"The <b>{title}</b> is a high-performance component engineered for demanding automotive applications."
+    specs = []
+    
+    if "turbosmart" in str(vendor).lower() or 'ts-' in t:
+        specs.append("<b>Brand & Engineering:</b> Genuine Turbosmart high-performance motorsport hardware.")
+        specs.append("<b>Construction:</b> Precision CNC-machined billet aluminum housing with hard-anodized finish.")
     else:
-        lead = f"The <b>{title}</b> is engineered for extreme durability and precise pressure management in competition fluid and boost systems."
+        specs.append("<b>Construction:</b> Precision machined for rigorous track and street applications.")
 
-    spec_block = "<br><br><b>Technical Specifications:</b><br>• " + "<br>• ".join(specs)
-    return f"{lead}{spec_block}"
-
-def generate_colorfittings_desc(title, row_desc):
-    title_str = str(title).strip()
-    angle_match = re.search(r'(\d+)\s*(Degree|Deg|\°)', title_str, re.IGNORECASE)
-    angle = f"{angle_match.group(1)}°" if angle_match else None
+    # Auto-detect specs based on keywords
+    if 'wastegate' in t or 'wg40' in t or 'wg45' in t:
+        specs.append("<b>Thermal Management:</b> Integrated liquid cooling ports and 360-degree actuator cap positioning.")
+    if 'bov' in t or 'kompact' in t:
+        specs.append("<b>Response:</b> Fast-acting piston mechanism prevents compressor surge under sudden throttle lift.")
+    if 'fpr' in t or 'fuel pressure' in t:
+        specs.append("<b>Ratio:</b> 1:1 manifold pressure reference for linear fuel delivery under boost.")
     
-    is_ptfe = 'ptfe' in title_str.lower()
-    is_orb = 'orb' in title_str.lower() or 'o-ring boss' in title_str.lower()
-    is_npt = 'npt' in title_str.lower()
-    is_efi = 'efi' in title_str.lower() or 'quick connect' in title_str.lower()
+    # Detect Angle
+    angle_match = re.search(r'(\d+)\s*(Degree|Deg|\°)', t, re.IGNORECASE)
+    if angle_match:
+        specs.append(f"<b>Flow Configuration:</b> {angle_match.group(1)}° profile for maximum fluid velocity in tight spaces.")
 
-    clean_body = clean_text(row_desc)
-    lead = f"The <b>{title_str}</b> is engineered for high-demand automotive fluid systems. {clean_body}".strip()
+    spec_html = "<br><br><b>Technical Specifications:</b><br>• " + "<br>• ".join(specs)
+    
+    if clean_body:
+        return f"{lead} {clean_body}{spec_html}"
+    return f"{lead}{spec_html}"
 
-    specs = [
-        "<b>Origin:</b> Precision CNC-machined in the USA.",
-        "<b>Material & Finish:</b> 6061-T6 Billet Aluminum with hard anodized protective finish."
-    ]
-    if angle:
-        specs.append(f"<b>Flow Configuration:</b> {angle} mandrel-bent profile for maximum fluid velocity in tight engine bays.")
-    if is_ptfe:
-        specs.append("<b>Compatibility:</b> Engineered specifically for PTFE hose. Impervious to E85, race gas, methanol, and power steering fluid.")
-    if is_orb:
-        specs.append("<b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.")
-    if is_npt:
-        specs.append("<b>Thread Pitch:</b> Precision NPT tapered threads for leak-free sealing in blocks and cells.")
-    if is_efi:
-        specs.append("<b>Quick Connect:</b> High-pressure fuel rail latch mechanism.")
+# ---------------------------------------------------------
+# Flexible Column Finder (Handles any CSV layout)
+# ---------------------------------------------------------
+def find_col(df_cols, possible_names):
+    col_map = {str(c).lower().strip(): c for c in df_cols}
+    for name in possible_names:
+        if name in col_map:
+            return col_map[name]
+    return None
 
-    spec_block = "<br><br><b>Technical Specifications:</b><br>• " + "<br>• ".join(specs)
-    return f"{lead}{spec_block}"
-
-# Scan all CSV files in root and subdirectories
-csv_files = glob.glob('**/*.csv', recursive=True)
-print(f"Scanning repository CSV files: {csv_files}")
+# ---------------------------------------------------------
+# Main Execution: Scan and Build
+# ---------------------------------------------------------
+print("Scanning repository for all CSV files...")
+csv_files = glob.glob('**/*.csv', recursive=True) + glob.glob('**/*.CSV', recursive=True)
+csv_files = list(set(csv_files))
 
 for csv_path in csv_files:
     try:
-        temp_df = pd.read_csv(csv_path)
-        cols = [str(c).lower().strip() for c in temp_df.columns]
+        df = pd.read_csv(csv_path)
+        cols = df.columns.tolist()
         
-        # 1. Turbosmart Format Matching
-        if 'vendor' in cols and 'map_price' in cols:
-            print(f"--> Building Turbosmart Catalog from: {csv_path}")
-            valid_df = temp_df.dropna(subset=['SKU', 'Title'])
-            valid_df = valid_df[~valid_df['SKU'].astype(str).str.lower().str.contains('stock')]
+        # Identify columns dynamically
+        title_col = find_col(cols, ['title', 'name', 'product name', 'item name'])
+        sku_col = find_col(cols, ['variation sku', 'sku', 'part number', 'item number'])
+        price_col = find_col(cols, ['map_price', 'price', 'retail price', 'msrp', 'variant price'])
+        img_col = find_col(cols, ['variation image link', 'image_url', 'image', 'picture', 'image src'])
+        cat_col = find_col(cols, ['category', 'product type', 'type'])
+        desc_col = find_col(cols, ['description', 'body', 'overview'])
+        color_col = find_col(cols, ['variation name (color)', 'color', 'option1 value', 'variant'])
+        vendor_col = find_col(cols, ['vendor', 'brand', 'manufacturer'])
+
+        # Fallback if no explicit title column exists (assume first column)
+        if not title_col:
+            title_col = cols[0]
+
+        grouped = df.groupby(title_col, sort=False)
+        
+        for title, group in grouped:
+            title_str = str(title).strip()
+            if not title_str or title_str.lower() in ['nan', 'none']:
+                continue
             
-            for _, row in valid_df.iterrows():
-                sku = str(row['SKU']).strip()
-                title = str(row['Title']).strip()
-                slug = re.sub(r'[^a-z0-9]+', '-', f"turbosmart-{sku}-{title}".lower()).strip('-')
+            # Skip invalid stock entries
+            first_sku = str(group.iloc[0][sku_col]).lower() if sku_col else ""
+            if 'stock' in first_sku and 'out of stock' in title_str.lower():
+                continue
                 
-                map_price = safe_float(row.get('MAP_Price'), safe_float(row.get('MSRP')))
-                msrp_price = safe_float(row.get('MSRP'), map_price)
-                
-                t_lower = title.lower()
-                if 'boost' in t_lower:
-                    cat, subcat = 'Boost Controllers', 'Manual & Electronic Controllers'
-                elif 'bov' in t_lower or 'kompact' in t_lower:
-                    cat, subcat = 'Blow Off Valves', 'BOV & Diverter Valves'
-                elif 'fpr' in t_lower or 'fuel pressure' in t_lower:
-                    cat, subcat = 'Fuel Systems', 'Fuel Pressure Regulators'
-                elif 'wg40' in t_lower or 'wg45' in t_lower or 'wastegate' in t_lower:
-                    cat, subcat = 'Turbos', 'External Wastegates'
-                elif 'gauge' in t_lower:
-                    cat, subcat = 'Gauges', 'Boost & Pressure Gauges'
-                else:
-                    cat, subcat = 'Performance Hardware', 'Turbosmart'
-
-                desc = generate_turbosmart_desc(sku, title)
-                img = str(row.get('Image_URL', '')).strip() if pd.notna(row.get('Image_URL')) else ""
-
-                product = {
-                    "id": slug,
-                    "name": title,
-                    "title": title,
-                    "sku": sku,
-                    "brand": "Turbosmart",
-                    "category": cat,
-                    "subcategory": subcat,
-                    "anSize": "Universal",
-                    "price": round(map_price, 2),
-                    "msrp": round(msrp_price, 2),
-                    "description": desc,
-                    "image": img,
-                    "variants": [{
-                        "name": "Standard",
-                        "sku": sku,
-                        "price": round(map_price, 2),
-                        "image": img,
-                        "stock": 10
-                    }]
-                }
-                with open(f'content/products/{slug}.json', 'w') as f:
-                    json.dump(product, f, indent=2)
-
-        # 2. General Fittings / Fuel Hardware / Custom Vendor CSV Matching
-        elif any(k in cols for k in ['title', 'variation sku', 'variation name (color)', 'price', 'name']):
-            title_col = None
-            for c in ['Title', 'title', 'Name', 'name', 'Product Name']:
-                if c in temp_df.columns:
-                    title_col = c
-                    break
-            if not title_col:
-                title_col = temp_df.columns[0]
-                
-            print(f"--> Building Catalog from: {csv_path}")
-            grouped = temp_df.groupby(title_col, sort=False)
+            slug = re.sub(r'[^a-z0-9]+', '-', title_str.lower()).strip('-')
+            first_row = group.iloc[0]
             
-            for title, group in grouped:
-                title_str = str(title).strip()
-                if not title_str or title_str.lower() in ['nan', 'title']:
-                    continue
+            # Extract basic data
+            raw_cat = str(first_row[cat_col]) if cat_col else ""
+            cat, subcat = auto_categorize(title_str, raw_cat)
+            
+            vendor_name = str(first_row[vendor_col]) if vendor_col else "Unknown"
+            raw_desc = str(first_row[desc_col]) if desc_col else ""
+            description = generate_smart_description(title_str, raw_desc, vendor_name)
+            
+            main_img = str(first_row[img_col]).strip() if img_col and pd.notna(first_row[img_col]) else ""
+            main_sku = str(first_row[sku_col]).strip() if sku_col else ""
+
+            # Build Variants & Prices
+            variants = []
+            prices = []
+            for _, row in group.iterrows():
+                p_val = safe_float(row[price_col]) if price_col else 0.0
+                prices.append(p_val)
                 
-                slug = re.sub(r'[^a-z0-9]+', '-', title_str.lower()).strip('-')
-                first = group.iloc[0]
+                v_name = str(row[color_col]) if color_col and pd.notna(row[color_col]) else "Standard"
+                v_name = re.sub(r'\s*\[\+\$[0-9\.]+\]', '', v_name).strip()
+                v_sku = str(row[sku_col]).strip() if sku_col else main_sku
+                v_img = str(row[img_col]).strip() if img_col and pd.notna(row[img_col]) else main_img
                 
-                variants = []
-                prices = []
-                for _, row in group.iterrows():
-                    p_val = safe_float(row.get('Price', row.get('price', row.get('MSRP', 0))))
-                    prices.append(p_val)
-                    c_name = str(row.get('Variation name (color)', row.get('color', row.get('Option1 Value', 'Standard'))))
-                    c_name = re.sub(r'\s*\[\+\$[0-9\.]+\]', '', c_name).strip()
-                    sku_val = str(row.get('Variation SKU', row.get('sku', row.get('SKU', '')))).strip()
-                    img_val = str(row.get('Variation Image Link', row.get('image', row.get('Image_URL', '')))).strip()
-                    
-                    variants.append({
-                        "name": c_name if c_name and c_name.lower() != 'nan' else "Standard",
-                        "sku": sku_val,
-                        "price": round(p_val, 2),
-                        "image": img_val,
-                        "stock": 10
-                    })
-                
-                min_price = min(prices) if prices else 0.0
-                raw_desc_val = first.get('Description', first.get('description', ''))
-                desc = generate_colorfittings_desc(title_str, raw_desc_val)
-                cat_val = str(first.get('Category', first.get('category', 'AN Fittings')))
-                img_main = str(first.get('Variation Image Link', first.get('image', first.get('Image_URL', '')))).strip()
-                
-                product = {
-                    "id": slug,
-                    "name": title_str,
-                    "title": title_str,
-                    "sku": str(first.get('Variation SKU', first.get('sku', first.get('SKU', '')))).strip(),
-                    "category": cat_val if cat_val and cat_val.lower() != 'nan' else 'AN Fittings',
-                    "price": round(min_price, 2),
-                    "description": desc,
-                    "image": img_main,
-                    "variants": variants
-                }
-                with open(f'content/products/{slug}.json', 'w') as f:
-                    json.dump(product, f, indent=2)
+                variants.append({
+                    "name": v_name if v_name.lower() != 'nan' else "Standard",
+                    "sku": v_sku,
+                    "price": round(p_val, 2),
+                    "image": v_img,
+                    "stock": 10
+                })
+
+            product = {
+                "id": slug,
+                "name": title_str,
+                "title": title_str,
+                "sku": main_sku,
+                "brand": vendor_name if vendor_name.lower() != 'nan' else "Aftermarket",
+                "category": cat,
+                "subcategory": subcat,
+                "anSize": "Universal",
+                "price": round(min(prices), 2) if prices else 0.0,
+                "description": description,
+                "image": main_img,
+                "variants": variants
+            }
+            
+            # Save the individual JSON
+            with open(f'content/products/{slug}.json', 'w') as f:
+                json.dump(product, f, indent=2)
 
     except Exception as e:
-        print(f"Error processing {csv_path}: {e}")
+        print(f"Error processing CSV {csv_path}: {e}")
 
-# 3. ABSOLUTE CRITICAL STEP: Build inventory.json by scanning ALL JSON files in content/products/
-# This ensures ANY existing product (Turbosmart, ColorFittings, Maxpeedingrods, Evil Energy, APG, manual JSONs) is retained.
+# ---------------------------------------------------------
+# Compile everything into inventory.json 
+# ---------------------------------------------------------
 all_products = []
 if os.path.exists('content/products'):
     for fname in os.listdir('content/products'):
@@ -234,12 +225,11 @@ if os.path.exists('content/products'):
             filepath = os.path.join('content/products', fname)
             try:
                 with open(filepath, 'r') as f:
-                    data = json.load(f)
-                    all_products.append(data)
+                    all_products.append(json.load(f))
             except Exception as e:
-                print(f"Error loading {fname}: {e}")
+                print(f"Error reading {fname}: {e}")
 
 with open('inventory.json', 'w') as f:
     json.dump(all_products, f, indent=2)
 
-print(f"Compilation Complete: {len(all_products)} total products saved to inventory.json.")
+print(f"Compilation Complete: {len(all_products)} products saved to inventory.json.")
