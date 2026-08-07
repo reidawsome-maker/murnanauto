@@ -1,5 +1,7 @@
 import pandas as pd
-import json, os, re
+import json
+import os
+import re
 
 # Read CSV
 df = pd.read_csv('CF-Catalog-Filtered-6-8-10AN-EFI-Tools-Hose.csv')
@@ -59,19 +61,59 @@ def safe_float(val):
     except Exception:
         return 0.0
 
-def clean_description(raw_desc, title):
-    if not isinstance(raw_desc, str) or pd.isna(raw_desc) or raw_desc.strip().lower() in ['', 'nan']:
-        return f"High-performance {title} engineered for extreme fluid management under demanding motorsport conditions."
+def build_part_description(row, title):
+    title_str = str(title).strip()
+    cat_str = str(row.get('Category', '')).strip()
+    
+    # 1. Parse AN size, angle, and connection specs
+    an_match = re.search(r'(-?\d+)\s*AN', title_str, re.IGNORECASE)
+    
+    angle_match = re.search(r'(\d+)\s*(Degree|Deg|\°)', title_str, re.IGNORECASE)
+    angle = f"{angle_match.group(1)}°" if angle_match else None
+    
+    is_ptfe = 'ptfe' in title_str.lower() or 'ptfe' in cat_str.lower()
+    is_orb = 'orb' in title_str.lower() or 'o-ring boss' in title_str.lower()
+    is_npt = 'npt' in title_str.lower()
+    is_efi = 'efi' in title_str.lower() or 'quick connect' in title_str.lower()
 
-    # Convert literal '\n' strings into actual linebreaks
-    desc = raw_desc.replace('\\n', '\n')
+    # 2. Extract and scrub raw description text
+    raw_desc = str(row.get('Description', '')) if not pd.isna(row.get('Description', '')) else ""
+    raw_desc = raw_desc.replace('\\n', '\n').replace('\r', '')
+    
+    # Strip out vendor boilerplate and external links
+    raw_desc = re.sub(r'Founded in 2008, ColorFittings.*?\.\s*', '', raw_desc, flags=re.DOTALL | re.IGNORECASE)
+    raw_desc = re.sub(r'Want to learn more.*', '', raw_desc, flags=re.DOTALL | re.IGNORECASE)
+    raw_desc = re.sub(r'Looking to complete your system\?.*', '', raw_desc, flags=re.DOTALL | re.IGNORECASE)
+    raw_desc = re.sub(r'Explore our full range.*', '', raw_desc, flags=re.DOTALL | re.IGNORECASE)
 
-    # Remove generic cross-sell footer fluff
-    desc = re.sub(r'Looking to complete your system\?.*', '', desc, flags=re.DOTALL | re.IGNORECASE)
-    desc = re.sub(r'Explore our full range.*', '', desc, flags=re.DOTALL | re.IGNORECASE)
+    # 3. Third-person conversion (replaces we/our/us)
+    raw_desc = re.sub(r'\bwe\b', 'Color-Fittings', raw_desc, flags=re.IGNORECASE)
+    raw_desc = re.sub(r'\bour\b', 'the', raw_desc, flags=re.IGNORECASE)
+    raw_desc = re.sub(r'\bus\b', 'the manufacturer', raw_desc, flags=re.IGNORECASE)
 
-    paragraphs = [p.strip() for p in desc.split('\n') if p.strip()]
-    return "<br><br>".join(paragraphs)
+    clean_paragraphs = [p.strip() for p in raw_desc.split('\n') if p.strip()]
+    lead_body = f" {clean_paragraphs[0]}" if clean_paragraphs else ""
+
+    # 4. Technical specs list
+    specs = [
+        "<b>Origin:</b> Precision CNC-machined in the USA.",
+        "<b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance."
+    ]
+    
+    if angle:
+        specs.append(f"<b>Flow Configuration:</b> {angle} mandrel-bent profile for high velocity in tight engine bays.")
+    if is_ptfe:
+        specs.append("<b>Compatibility:</b> Engineered specifically for PTFE hose. Impervious to E85, race gas, methanol, and power steering fluid.")
+    if is_orb:
+        specs.append("<b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.")
+    if is_npt:
+        specs.append("<b>Thread Pitch:</b> Precision NPT tapered threads for leak-free sealing in blocks and cells.")
+    if is_efi:
+        specs.append("<b>Quick Connect:</b> High-pressure fuel rail latch mechanism.")
+
+    spec_block = "<br><br><b>Technical Specifications:</b><br>• " + "<br>• ".join(specs)
+
+    return f"The <b>{title_str}</b> is engineered for demanding high-performance automotive fluid systems.{lead_body}{spec_block}"
 
 def extract_an_size_label(title):
     match = re.search(r'(-?\d+)\s*AN', str(title), re.IGNORECASE)
@@ -155,8 +197,7 @@ for title, group in grouped:
     category, subcategory = determine_category(title_str, first['Category'])
     an_size_label = extract_an_size_label(title_str)
     
-    raw_desc = str(first['Description']) if 'Description' in first and not pd.isna(first['Description']) else ""
-    cleaned_desc = clean_description(raw_desc, title_str)
+    cleaned_desc = build_part_description(first, title_str)
     
     variants = []
     prices = []
