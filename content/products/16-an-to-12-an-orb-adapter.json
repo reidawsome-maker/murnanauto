@@ -1,0 +1,42 @@
+{
+  "id": "16-an-to-12-an-orb-adapter",
+  "name": "-16 AN to -12 AN ORB Adapter",
+  "title": "-16 AN to -12 AN ORB Adapter",
+  "sku": "CF-F2S-16-012-000-GD",
+  "category": "ANAdapters",
+  "subcategory": "AN Adapters & Specialty",
+  "anSize": "16AN",
+  "price": 20.99,
+  "description": "The <b>-16 AN to -12 AN ORB Adapter</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings ORB Adapter Fittings are precision-engineered to connect AN flare fittings to O-Ring Boss (ORB) ports, providing a secure, leak-free solution for fuel, oil, coolant, power steering, and transmission plumbing systems. ORB ports are found on engine blocks, transmissions, power steering pumps, oil coolers, and other OEM components \u2014 making these adapters essential for any AN plumbing conversion.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.",
+  "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Gold-Fitting-Adapter-4.png",
+  "variants": [
+    {
+      "name": "Gold",
+      "sku": "CF-F2S-16-012-000-GD",
+      "price": 20.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Gold-Fitting-Adapter-4.png",
+      "stock": 10
+    },
+    {
+      "name": "Orange",
+      "sku": "CF-F2S-16-012-000-OR",
+      "price": 20.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Orange-Fitting-Adapter-4.png",
+      "stock": 10
+    },
+    {
+      "name": "Black",
+      "sku": "CF-F2S-16-012-000-BL",
+      "price": 20.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-60.png",
+      "stock": 10
+    },
+    {
+      "name": "Purple",
+      "sku": "CF-F2S-16-012-000-PU",
+      "price": 20.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Purple-Fitting-Adapter-20.png",
+      "stock": 10
+    }
+  ]
+}

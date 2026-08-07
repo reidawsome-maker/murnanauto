@@ -1,0 +1,21 @@
+{
+  "id": "4-an-to-10-an-orb-adapter",
+  "name": "-4 AN to -10 AN ORB Adapter",
+  "title": "-4 AN to -10 AN ORB Adapter",
+  "sku": "CF-F2S-04-010-000-BL",
+  "category": "ANAdapters",
+  "subcategory": "AN Adapters & Specialty",
+  "anSize": "4AN",
+  "price": 9.99,
+  "description": "The <b>-4 AN to -10 AN ORB Adapter</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings ORB Adapter Fittings are precision-engineered to connect AN flare fittings to O-Ring Boss (ORB) ports, providing a secure, leak-free solution for fuel, oil, coolant, power steering, and transmission plumbing systems. ORB ports are found on engine blocks, transmissions, power steering pumps, oil coolers, and other OEM components \u2014 making these adapters essential for any AN plumbing conversion.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.",
+  "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-28.png",
+  "variants": [
+    {
+      "name": "black",
+      "sku": "CF-F2S-04-010-000-BL",
+      "price": 9.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-28.png",
+      "stock": 10
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "16-an-fitting-bulkhead-straight",
+  "name": "-16 AN Fitting Bulkhead Straight",
+  "title": "-16 AN Fitting Bulkhead Straight",
+  "sku": "CF-BHF-16-000-000-BL",
+  "category": "ANAdapters",
+  "subcategory": "Brake Fittings",
+  "anSize": "16AN",
+  "price": 24.99,
+  "description": "The <b>-16 AN Fitting Bulkhead Straight</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN Union Bulkhead Fittings are precision CNC-machined adapters designed to pass AN lines securely through firewalls, panels, fuel cells, and chassis components. Engineered for high-performance fuel, oil, coolant, transmission, brake, and power steering systems, these AN bulkhead unions provide a secure, leak-free 37-degree flare seal on both sides of the panel.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+  "image": "https://colorfittings.com/wp-content/uploads/2026/02/Bulkhead-Fitting-Straight-Black.png",
+  "variants": [
+    {
+      "name": "Black",
+      "sku": "CF-BHF-16-000-000-BL",
+      "price": 24.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2026/02/Bulkhead-Fitting-Straight-Black.png",
+      "stock": 10
+    }
+  ]
+}

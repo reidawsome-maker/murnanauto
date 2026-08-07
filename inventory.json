@@ -175,6 +175,34 @@
     ]
   },
   {
+    "id": "16-an-30-degree-female-aluminum-hose-end-fitting",
+    "name": "-16 AN 30 Degree Female Aluminum Hose End Fitting",
+    "title": "-16 AN 30 Degree Female Aluminum Hose End Fitting",
+    "sku": "CF-FHE-16-030-000-BL",
+    "category": "ANFittings",
+    "subcategory": "AN Hose Ends & Fittings",
+    "anSize": "16AN",
+    "price": 46.99,
+    "description": "The <b>-16 AN 30 Degree Female Aluminum Hose End Fitting</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings Standard AN Hose Ends are precision-engineered for high-pressure fuel, oil, coolant, brake, clutch, and power steering applications. Designed for use with nylon or stainless steel braided hose, these AN fittings provide a secure, leak-free 37-degree flare seal for street performance, racing, marine, and motorsport plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Flow Configuration:</b> 30\u00b0 mandrel-bent profile for high velocity in tight engine bays.",
+    "image": "https://colorfittings.com/wp-content/uploads/2025/08/Black-30-Degree-Female-Hose-End.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-FHE-16-030-000-BL",
+        "price": 46.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2025/08/Black-30-Degree-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Purple",
+        "sku": "CF-FHE-16-030-000-PU",
+        "price": 46.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/05/Purple-30-Degree-Female-Hose-End.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
     "id": "6-an-to-1-4-npt-45-degree-elbow-adapter",
     "name": "-6 AN to 1/4\" NPT 45 Degree Elbow Adapter",
     "title": "-6 AN to 1/4\" NPT 45 Degree Elbow Adapter",
@@ -497,6 +525,27 @@
     ]
   },
   {
+    "id": "16-an-120-degree-female-aluminum-hose-end-fitting",
+    "name": "-16 AN 120 Degree Female Aluminum Hose End Fitting",
+    "title": "-16 AN 120 Degree Female Aluminum Hose End Fitting",
+    "sku": "CF-FHE-16-120-000-PU",
+    "category": "ANFittings",
+    "subcategory": "AN Hose Ends & Fittings",
+    "anSize": "16AN",
+    "price": 46.99,
+    "description": "The <b>-16 AN 120 Degree Female Aluminum Hose End Fitting</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings Standard AN Hose Ends are precision-engineered for high-pressure fuel, oil, coolant, brake, clutch, and power steering applications. Designed for use with nylon or stainless steel braided hose, these AN fittings provide a secure, leak-free 37-degree flare seal for street performance, racing, marine, and motorsport plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Flow Configuration:</b> 120\u00b0 mandrel-bent profile for high velocity in tight engine bays.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/04/Purple-120-Degree-Female-Hose-End.png",
+    "variants": [
+      {
+        "name": "purple",
+        "sku": "CF-FHE-16-120-000-PU",
+        "price": 46.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Purple-120-Degree-Female-Hose-End.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
     "id": "6an-male-to-female-gauge-adapter-w-1-8-npt-port",
     "name": "-6AN Male to Female Gauge Adapter w/ 1/8\" NPT Port",
     "title": "-6AN Male to Female Gauge Adapter w/ 1/8\" NPT Port",
@@ -576,6 +625,27 @@
         "sku": "CF-MGA-06-006-018-BL",
         "price": 11.99,
         "image": "https://colorfittings.com/wp-content/uploads/2026/03/Male-to-Male-Gauge-Adapter-Black.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "12-an-male-to-16-an-male-reducer-union",
+    "name": "-12 AN Male to -16 AN Male Reducer Union",
+    "title": "-12 AN Male to -16 AN Male Reducer Union",
+    "sku": "CF-M2M-12-016-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "12AN",
+    "price": 14.99,
+    "description": "The <b>-12 AN Male to -16 AN Male Reducer Union</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN Male to AN Male Reducer Union Fittings are precision-engineered to connect and transition between different AN flare sizes, providing a secure, leak-free solution for fuel, oil, coolant, transmission, and power steering plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/03/Male-to-Male-Reducer-Union-Black.png",
+    "variants": [
+      {
+        "name": "black",
+        "sku": "CF-M2M-12-016-000-BL",
+        "price": 14.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/03/Male-to-Male-Reducer-Union-Black.png",
         "stock": 10
       }
     ]
@@ -680,6 +750,48 @@
         "name": "black",
         "sku": "CF-M2M-06-008-000-BL",
         "price": 7.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/03/Male-to-Male-Reducer-Union-Black.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "4an-male-to-8an-male-reducer-union",
+    "name": "-4AN Male to -8AN Male Reducer Union",
+    "title": "-4AN Male to -8AN Male Reducer Union",
+    "sku": "CF-M2M-04-008-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "4AN",
+    "price": 7.99,
+    "description": "The <b>-4AN Male to -8AN Male Reducer Union</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN Male to AN Male Reducer Union Fittings are precision-engineered to connect and transition between different AN flare sizes, providing a secure, leak-free solution for fuel, oil, coolant, transmission, and power steering plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/03/Male-to-Male-Reducer-Union-Black.png",
+    "variants": [
+      {
+        "name": "black",
+        "sku": "CF-M2M-04-008-000-BL",
+        "price": 7.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/03/Male-to-Male-Reducer-Union-Black.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "3an-male-to-6an-male-reducer-union",
+    "name": "-3AN Male to -6AN Male Reducer Union",
+    "title": "-3AN Male to -6AN Male Reducer Union",
+    "sku": "CF-M2M-03-006-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "3AN",
+    "price": 6.99,
+    "description": "The <b>-3AN Male to -6AN Male Reducer Union</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN Male to AN Male Reducer Union Fittings are precision-engineered to connect and transition between different AN flare sizes, providing a secure, leak-free solution for fuel, oil, coolant, transmission, and power steering plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/03/Male-to-Male-Reducer-Union-Black.png",
+    "variants": [
+      {
+        "name": "black",
+        "sku": "CF-M2M-03-006-000-BL",
+        "price": 6.99,
         "image": "https://colorfittings.com/wp-content/uploads/2026/03/Male-to-Male-Reducer-Union-Black.png",
         "stock": 10
       }
@@ -954,6 +1066,48 @@
         "sku": "CF-IFA-06-012-020-BL",
         "price": 10.99,
         "image": "https://colorfittings.com/wp-content/uploads/2026/07/Inverted-Flare-Adapter-Black.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "16-an-60-degree-female-aluminum-hose-end-fitting",
+    "name": "-16 AN 60 Degree Female Aluminum Hose End Fitting",
+    "title": "-16 AN 60 Degree Female Aluminum Hose End Fitting",
+    "sku": "CF-FHE-16-060-000-BL",
+    "category": "ANFittings",
+    "subcategory": "AN Hose Ends & Fittings",
+    "anSize": "16AN",
+    "price": 46.99,
+    "description": "The <b>-16 AN 60 Degree Female Aluminum Hose End Fitting</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings Standard AN Hose Ends are precision-engineered for high-pressure fuel, oil, coolant, brake, clutch, and power steering applications. Designed for use with nylon or stainless steel braided hose, these AN fittings provide a secure, leak-free 37-degree flare seal for street performance, racing, marine, and motorsport plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Flow Configuration:</b> 60\u00b0 mandrel-bent profile for high velocity in tight engine bays.",
+    "image": "https://colorfittings.com/wp-content/uploads/2025/08/Black-60-Degree-Female-Hose-End.png",
+    "variants": [
+      {
+        "name": "black",
+        "sku": "CF-FHE-16-060-000-BL",
+        "price": 46.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2025/08/Black-60-Degree-Female-Hose-End.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "16an-flare-blockoff-plug",
+    "name": "-16AN Flare Blockoff Plug",
+    "title": "-16AN Flare Blockoff Plug",
+    "sku": "CF-FBP-16-000-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "Plugs & Blockoffs",
+    "anSize": "16AN",
+    "price": 11.99,
+    "description": "The <b>-16AN Flare Blockoff Plug</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN Flare Block Off Plugs are precision CNC-machined to securely seal unused AN ports in fuel, oil, coolant, brake, and power steering systems. Designed with a true 37-degree AN flare seat, these plugs provide a tight, leak-free seal for high-pressure and high-temperature applications.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/03/Flare-Blockoff-Plug-Black-Top-2.png",
+    "variants": [
+      {
+        "name": "black",
+        "sku": "CF-FBP-16-000-000-BL",
+        "price": 11.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/03/Flare-Blockoff-Plug-Black-Top-2.png",
         "stock": 10
       }
     ]
@@ -1484,6 +1638,90 @@
     ]
   },
   {
+    "id": "20-an-to-16-an-orb-adapter",
+    "name": "-20 AN to -16 AN ORB Adapter",
+    "title": "-20 AN to -16 AN ORB Adapter",
+    "sku": "CF-F2S-20-016-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "20AN",
+    "price": 24.99,
+    "description": "The <b>-20 AN to -16 AN ORB Adapter</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings ORB Adapter Fittings are precision-engineered to connect AN flare fittings to O-Ring Boss (ORB) ports, providing a secure, leak-free solution for fuel, oil, coolant, power steering, and transmission plumbing systems. ORB ports are found on engine blocks, transmissions, power steering pumps, oil coolers, and other OEM components \u2014 making these adapters essential for any AN plumbing conversion.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter.png",
+    "variants": [
+      {
+        "name": "black",
+        "sku": "CF-F2S-20-016-000-BL",
+        "price": 24.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "16-an-to-20-an-orb-adapter",
+    "name": "-16 AN to -20 AN ORB Adapter",
+    "title": "-16 AN to -20 AN ORB Adapter",
+    "sku": "CF-F2S-16-020-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "16AN",
+    "price": 24.99,
+    "description": "The <b>-16 AN to -20 AN ORB Adapter</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings ORB Adapter Fittings are precision-engineered to connect AN flare fittings to O-Ring Boss (ORB) ports, providing a secure, leak-free solution for fuel, oil, coolant, power steering, and transmission plumbing systems. ORB ports are found on engine blocks, transmissions, power steering pumps, oil coolers, and other OEM components \u2014 making these adapters essential for any AN plumbing conversion.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-2.png",
+    "variants": [
+      {
+        "name": "black",
+        "sku": "CF-F2S-16-020-000-BL",
+        "price": 24.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-2.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "16-an-to-10-an-orb-adapter",
+    "name": "-16 AN to -10 AN ORB Adapter",
+    "title": "-16 AN to -10 AN ORB Adapter",
+    "sku": "CF-F2S-16-010-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "16AN",
+    "price": 20.99,
+    "description": "The <b>-16 AN to -10 AN ORB Adapter</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings ORB Adapter Fittings are precision-engineered to connect AN flare fittings to O-Ring Boss (ORB) ports, providing a secure, leak-free solution for fuel, oil, coolant, power steering, and transmission plumbing systems. ORB ports are found on engine blocks, transmissions, power steering pumps, oil coolers, and other OEM components \u2014 making these adapters essential for any AN plumbing conversion.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-4.png",
+    "variants": [
+      {
+        "name": "black",
+        "sku": "CF-F2S-16-010-000-BL",
+        "price": 20.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-4.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "12-an-to-16-an-orb-adapter",
+    "name": "-12 AN to -16 AN ORB Adapter",
+    "title": "-12 AN to -16 AN ORB Adapter",
+    "sku": "CF-F2S-12-016-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "12AN",
+    "price": 20.99,
+    "description": "The <b>-12 AN to -16 AN ORB Adapter</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings ORB Adapter Fittings are precision-engineered to connect AN flare fittings to O-Ring Boss (ORB) ports, providing a secure, leak-free solution for fuel, oil, coolant, power steering, and transmission plumbing systems. ORB ports are found on engine blocks, transmissions, power steering pumps, oil coolers, and other OEM components \u2014 making these adapters essential for any AN plumbing conversion.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-6.png",
+    "variants": [
+      {
+        "name": "black",
+        "sku": "CF-F2S-12-016-000-BL",
+        "price": 20.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-6.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
     "id": "10-an-to-16-an-orb-adapter",
     "name": "-10 AN to -16 AN ORB Adapter",
     "title": "-10 AN to -16 AN ORB Adapter",
@@ -1694,6 +1932,69 @@
     ]
   },
   {
+    "id": "4-an-to-10-an-orb-adapter",
+    "name": "-4 AN to -10 AN ORB Adapter",
+    "title": "-4 AN to -10 AN ORB Adapter",
+    "sku": "CF-F2S-04-010-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "4AN",
+    "price": 9.99,
+    "description": "The <b>-4 AN to -10 AN ORB Adapter</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings ORB Adapter Fittings are precision-engineered to connect AN flare fittings to O-Ring Boss (ORB) ports, providing a secure, leak-free solution for fuel, oil, coolant, power steering, and transmission plumbing systems. ORB ports are found on engine blocks, transmissions, power steering pumps, oil coolers, and other OEM components \u2014 making these adapters essential for any AN plumbing conversion.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-28.png",
+    "variants": [
+      {
+        "name": "black",
+        "sku": "CF-F2S-04-010-000-BL",
+        "price": 9.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-28.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "4-an-to-8-an-orb-adapter",
+    "name": "-4 AN to -8 AN ORB Adapter",
+    "title": "-4 AN to -8 AN ORB Adapter",
+    "sku": "CF-F2S-04-008-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "4AN",
+    "price": 8.99,
+    "description": "The <b>-4 AN to -8 AN ORB Adapter</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings ORB Adapter Fittings are precision-engineered to connect AN flare fittings to O-Ring Boss (ORB) ports, providing a secure, leak-free solution for fuel, oil, coolant, power steering, and transmission plumbing systems. ORB ports are found on engine blocks, transmissions, power steering pumps, oil coolers, and other OEM components \u2014 making these adapters essential for any AN plumbing conversion.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-30.png",
+    "variants": [
+      {
+        "name": "black",
+        "sku": "CF-F2S-04-008-000-BL",
+        "price": 8.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-30.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "3-an-to-6-an-orb-adapter",
+    "name": "-3 AN to -6 AN ORB Adapter",
+    "title": "-3 AN to -6 AN ORB Adapter",
+    "sku": "CF-F2S-03-006-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "3AN",
+    "price": 6.99,
+    "description": "The <b>-3 AN to -6 AN ORB Adapter</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings ORB Adapter Fittings are precision-engineered to connect AN flare fittings to O-Ring Boss (ORB) ports, providing a secure, leak-free solution for fuel, oil, coolant, power steering, and transmission plumbing systems. ORB ports are found on engine blocks, transmissions, power steering pumps, oil coolers, and other OEM components \u2014 making these adapters essential for any AN plumbing conversion.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-34.png",
+    "variants": [
+      {
+        "name": "black",
+        "sku": "CF-F2S-03-006-000-BL",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-34.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
     "id": "10-an-90-degree-bulkhead-fitting",
     "name": "-10 AN 90\u00b0 Degree Bulkhead Fitting",
     "title": "-10 AN 90\u00b0 Degree Bulkhead Fitting",
@@ -1869,6 +2170,27 @@
     ]
   },
   {
+    "id": "16-an-to-m20x1-0mm-metric-adapter",
+    "name": "-16 AN to M20x1.0mm Metric Adapter",
+    "title": "-16 AN to M20x1.0mm Metric Adapter",
+    "sku": "CF-F2M-16-020-010-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "16AN",
+    "price": 16.99,
+    "description": "The <b>-16 AN to M20x1.0mm Metric Adapter</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN to Metric Adapter and Union Fittings are precision-engineered to connect metric female ports to AN flare fittings, providing a secure, leak-free solution for fuel, oil, coolant, and power steering plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/04/Flare-To-Metric-Adapter-Black-109.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-F2M-16-020-010-BL",
+        "price": 16.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Flare-To-Metric-Adapter-Black-109.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
     "id": "8-an-to-m20x1-0mm-metric-adapter",
     "name": "-8 AN to M20x1.0mm Metric Adapter",
     "title": "-8 AN to M20x1.0mm Metric Adapter",
@@ -2002,6 +2324,48 @@
     ]
   },
   {
+    "id": "12an-hose-separator",
+    "name": "-12AN Hose Separator",
+    "title": "-12AN Hose Separator",
+    "sku": "CF-AHS-12-000-000-BL",
+    "category": "HoseClamps",
+    "subcategory": "Hose Separators & Clamps",
+    "anSize": "12AN",
+    "price": 13.99,
+    "description": "The <b>-12AN Hose Separator</b> is engineered for demanding high-performance automotive fluid systems. This product is designed for and sized to be used with the Standard Nylon Braided Hose.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Black-Hose-Separator.png",
+    "variants": [
+      {
+        "name": "black",
+        "sku": "CF-AHS-12-000-000-BL",
+        "price": 13.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Black-Hose-Separator.png",
+        "stock": 10
+      },
+      {
+        "name": "teal",
+        "sku": "CF-AHS-12-000-000-TL",
+        "price": 13.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Teal-Hose-Separator.png",
+        "stock": 10
+      },
+      {
+        "name": "gold",
+        "sku": "CF-AHS-12-000-000-GD",
+        "price": 13.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Gold-Hose-Separator.png",
+        "stock": 10
+      },
+      {
+        "name": "purple",
+        "sku": "CF-AHS-12-000-000-PU",
+        "price": 13.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Purple-Hose-Separator.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
     "id": "10-an-180-degree-female-aluminum-hose-end-ptfe",
     "name": "-10 AN 180 Degree Female Aluminum Hose End (PTFE)",
     "title": "-10 AN 180 Degree Female Aluminum Hose End (PTFE)",
@@ -2079,6 +2443,48 @@
     ]
   },
   {
+    "id": "16-an-male-to-12-an-female-reducer-union",
+    "name": "-16 AN Male to -12 AN Female Reducer Union",
+    "title": "-16 AN Male to -12 AN Female Reducer Union",
+    "sku": "CF-M2F-16-012-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "16AN",
+    "price": 22.99,
+    "description": "The <b>-16 AN Male to -12 AN Female Reducer Union</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN Male to AN Female Reducer Union Fittings are precision-engineered to connect and transition between different AN flare sizes, providing a secure, leak-free solution for fuel, oil, coolant, transmission, and power steering plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/02/Male-To-Female-Reducer-Union-Black.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-M2F-16-012-000-BL",
+        "price": 22.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/02/Male-To-Female-Reducer-Union-Black.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "12-an-male-to-8-an-female-reducer-union",
+    "name": "-12 AN Male to -8 AN Female Reducer Union",
+    "title": "-12 AN Male to -8 AN Female Reducer Union",
+    "sku": "CF-M2F-12-008-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "12AN",
+    "price": 16.99,
+    "description": "The <b>-12 AN Male to -8 AN Female Reducer Union</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN Male to AN Female Reducer Union Fittings are precision-engineered to connect and transition between different AN flare sizes, providing a secure, leak-free solution for fuel, oil, coolant, transmission, and power steering plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/02/Male-To-Female-Reducer-Union-Black.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-M2F-12-008-000-BL",
+        "price": 16.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/02/Male-To-Female-Reducer-Union-Black.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
     "id": "6-an-male-to-10-an-female-reducer-union",
     "name": "-6 AN Male to -10 AN Female Reducer Union",
     "title": "-6 AN Male to -10 AN Female Reducer Union",
@@ -2100,6 +2506,27 @@
     ]
   },
   {
+    "id": "12-an-male-to-10-an-female-reducer-union",
+    "name": "-12 AN Male to -10 AN Female Reducer Union",
+    "title": "-12 AN Male to -10 AN Female Reducer Union",
+    "sku": "CF-M2F-12-010-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "12AN",
+    "price": 16.99,
+    "description": "The <b>-12 AN Male to -10 AN Female Reducer Union</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN Male to AN Female Reducer Union Fittings are precision-engineered to connect and transition between different AN flare sizes, providing a secure, leak-free solution for fuel, oil, coolant, transmission, and power steering plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/02/Male-To-Female-Reducer-Union-Black.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-M2F-12-010-000-BL",
+        "price": 16.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/02/Male-To-Female-Reducer-Union-Black.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
     "id": "10-an-male-to-10-an-female-reducer-union",
     "name": "-10 AN Male to -10 AN Female Reducer Union",
     "title": "-10 AN Male to -10 AN Female Reducer Union",
@@ -2115,6 +2542,27 @@
         "name": "Black",
         "sku": "CF-M2F-10-010-000-BL",
         "price": 16.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/02/Male-To-Female-Reducer-Union-Black.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "12-an-male-to-16-an-female-reducer-union",
+    "name": "-12 AN Male to -16 AN Female Reducer Union",
+    "title": "-12 AN Male to -16 AN Female Reducer Union",
+    "sku": "CF-M2F-12-016-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "12AN",
+    "price": 22.99,
+    "description": "The <b>-12 AN Male to -16 AN Female Reducer Union</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN Male to AN Female Reducer Union Fittings are precision-engineered to connect and transition between different AN flare sizes, providing a secure, leak-free solution for fuel, oil, coolant, transmission, and power steering plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/02/Male-To-Female-Reducer-Union-Black.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-M2F-12-016-000-BL",
+        "price": 22.99,
         "image": "https://colorfittings.com/wp-content/uploads/2026/02/Male-To-Female-Reducer-Union-Black.png",
         "stock": 10
       }
@@ -2241,6 +2689,90 @@
         "name": "Black",
         "sku": "CF-M2F-08-010-000-BL",
         "price": 12.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/02/Male-To-Female-Reducer-Union-Black.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "4-an-male-to-10-an-female-reducer-union",
+    "name": "-4 AN Male to -10 AN Female Reducer Union",
+    "title": "-4 AN Male to -10 AN Female Reducer Union",
+    "sku": "CF-M2F-04-010-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "4AN",
+    "price": 11.99,
+    "description": "The <b>-4 AN Male to -10 AN Female Reducer Union</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN Male to AN Female Reducer Union Fittings are precision-engineered to connect and transition between different AN flare sizes, providing a secure, leak-free solution for fuel, oil, coolant, transmission, and power steering plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/02/Male-To-Female-Reducer-Union-Black.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-M2F-04-010-000-BL",
+        "price": 11.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/02/Male-To-Female-Reducer-Union-Black.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "4-an-male-to-8-an-female-reducer-union",
+    "name": "-4 AN Male to -8 AN Female Reducer Union",
+    "title": "-4 AN Male to -8 AN Female Reducer Union",
+    "sku": "CF-M2F-04-008-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "4AN",
+    "price": 11.99,
+    "description": "The <b>-4 AN Male to -8 AN Female Reducer Union</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN Male to AN Female Reducer Union Fittings are precision-engineered to connect and transition between different AN flare sizes, providing a secure, leak-free solution for fuel, oil, coolant, transmission, and power steering plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/02/Male-To-Female-Reducer-Union-Black.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-M2F-04-008-000-BL",
+        "price": 11.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/02/Male-To-Female-Reducer-Union-Black.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "4-an-male-to-6-an-female-reducer-union",
+    "name": "-4 AN Male to -6 AN Female Reducer Union",
+    "title": "-4 AN Male to -6 AN Female Reducer Union",
+    "sku": "CF-M2F-04-006-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "4AN",
+    "price": 11.99,
+    "description": "The <b>-4 AN Male to -6 AN Female Reducer Union</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN Male to AN Female Reducer Union Fittings are precision-engineered to connect and transition between different AN flare sizes, providing a secure, leak-free solution for fuel, oil, coolant, transmission, and power steering plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/02/Male-To-Female-Reducer-Union-Black.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-M2F-04-006-000-BL",
+        "price": 11.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/02/Male-To-Female-Reducer-Union-Black.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "3-an-male-to-6-an-female-reducer-union",
+    "name": "-3 AN Male to -6 AN Female Reducer Union",
+    "title": "-3 AN Male to -6 AN Female Reducer Union",
+    "sku": "CF-M2F-03-006-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "3AN",
+    "price": 11.99,
+    "description": "The <b>-3 AN Male to -6 AN Female Reducer Union</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN Male to AN Female Reducer Union Fittings are precision-engineered to connect and transition between different AN flare sizes, providing a secure, leak-free solution for fuel, oil, coolant, transmission, and power steering plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/02/Male-To-Female-Reducer-Union-Black.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-M2F-03-006-000-BL",
+        "price": 11.99,
         "image": "https://colorfittings.com/wp-content/uploads/2026/02/Male-To-Female-Reducer-Union-Black.png",
         "stock": 10
       }
@@ -2996,6 +3528,34 @@
     ]
   },
   {
+    "id": "4-an-to-6-an-orb-adapter",
+    "name": "-4 AN to -6 AN ORB Adapter",
+    "title": "-4 AN to -6 AN ORB Adapter",
+    "sku": "cf-f2s-04-006-000-bl",
+    "category": "ANAdapters",
+    "subcategory": "ORB Adapters",
+    "anSize": "4AN",
+    "price": 8.99,
+    "description": "The <b>-4 AN to -6 AN ORB Adapter</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings ORB Adapter Fittings are precision-engineered to connect AN flare fittings to O-Ring Boss (ORB) ports, providing a secure, leak-free solution for fuel, oil, coolant, power steering, and transmission plumbing systems. ORB ports are found on engine blocks, transmissions, power steering pumps, oil coolers, and other OEM components \u2014 making these adapters essential for any AN plumbing conversion.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-46.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "cf-f2s-04-006-000-bl",
+        "price": 8.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-46.png",
+        "stock": 10
+      },
+      {
+        "name": "Purple",
+        "sku": "CF-F2S-04-006-000-PU",
+        "price": 8.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Purple-Fitting-Adapter-6.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
     "id": "10-an-male-to-m22x1-5-orb-swivel-banjo-adapter",
     "name": "-10 AN Male to M22x1.5 ORB Swivel Banjo Adapter",
     "title": "-10 AN Male to M22x1.5 ORB Swivel Banjo Adapter",
@@ -3507,6 +4067,27 @@
     ]
   },
   {
+    "id": "16-an-straight-female-push-loc-fitting",
+    "name": "-16 AN Straight Female Push-Loc Fitting",
+    "title": "-16 AN Straight Female Push-Loc Fitting",
+    "sku": "CF-PLF-16-000-000-BL",
+    "category": "ANFittings",
+    "subcategory": "Push-Loc Hose Ends",
+    "anSize": "16AN",
+    "price": 22.99,
+    "description": "The <b>-16 AN Straight Female Push-Loc Fitting</b> is engineered for demanding high-performance automotive fluid systems. Whether you\u2019re a professional building a 6-second NHRA bracket car, a perfectionist designing the ultimate engine bay for a SEMA car, or an HPDE enthusiast looking to improve your oil temps, the products are designed for all flavors of motorsports.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2024/08/Hose-Barb-AN-push-lock-fitting-black.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-PLF-16-000-000-BL",
+        "price": 22.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2024/08/Hose-Barb-AN-push-lock-fitting-black.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
     "id": "06-an-45-degree-female-push-loc-fitting",
     "name": "-06 AN 45 Degree Female Push-Loc Fitting",
     "title": "-06 AN 45 Degree Female Push-Loc Fitting",
@@ -3564,6 +4145,27 @@
         "name": "Black",
         "sku": "CF-PLF-08-045-000-BL",
         "price": 15.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2024/08/Hose-Barb-AN-push-lock-fitting-45-black.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "16-an-45-degree-female-push-loc-fitting",
+    "name": "-16 AN 45 Degree Female Push-Loc Fitting",
+    "title": "-16 AN 45 Degree Female Push-Loc Fitting",
+    "sku": "CF-PLF-16-045-000-BL",
+    "category": "ANFittings",
+    "subcategory": "Push-Loc Hose Ends",
+    "anSize": "16AN",
+    "price": 26.99,
+    "description": "The <b>-16 AN 45 Degree Female Push-Loc Fitting</b> is engineered for demanding high-performance automotive fluid systems. Whether you\u2019re a professional building a 6-second NHRA bracket car, a perfectionist designing the ultimate engine bay for a SEMA car, or an HPDE enthusiast looking to improve your oil temps, the products are designed for all flavors of motorsports.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Flow Configuration:</b> 45\u00b0 mandrel-bent profile for high velocity in tight engine bays.",
+    "image": "https://colorfittings.com/wp-content/uploads/2024/08/Hose-Barb-AN-push-lock-fitting-45-black.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-PLF-16-045-000-BL",
+        "price": 26.99,
         "image": "https://colorfittings.com/wp-content/uploads/2024/08/Hose-Barb-AN-push-lock-fitting-45-black.png",
         "stock": 10
       }
@@ -3689,6 +4291,27 @@
     ]
   },
   {
+    "id": "16-an-90-degree-female-push-loc-fitting",
+    "name": "-16 AN 90 Degree Female Push-Loc Fitting",
+    "title": "-16 AN 90 Degree Female Push-Loc Fitting",
+    "sku": "CF-PLF-16-090-000-BL",
+    "category": "ANFittings",
+    "subcategory": "Push-Loc Hose Ends",
+    "anSize": "16AN",
+    "price": 26.99,
+    "description": "The <b>-16 AN 90 Degree Female Push-Loc Fitting</b> is engineered for demanding high-performance automotive fluid systems. Whether you\u2019re a professional building a 6-second NHRA bracket car, a perfectionist designing the ultimate engine bay for a SEMA car, or an HPDE enthusiast looking to improve your oil temps, the products are designed for all flavors of motorsports.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Flow Configuration:</b> 90\u00b0 mandrel-bent profile for high velocity in tight engine bays.",
+    "image": "https://colorfittings.com/wp-content/uploads/2024/08/Hose-Barb-AN-push-lock-fitting-90-black.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-PLF-16-090-000-BL",
+        "price": 26.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2024/08/Hose-Barb-AN-push-lock-fitting-90-black.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
     "id": "6-an-to-m10x1-0mm-metric-adapter",
     "name": "-6 AN to M10x1.0mm Metric Adapter",
     "title": "-6 AN to M10x1.0mm Metric Adapter",
@@ -3754,6 +4377,27 @@
         "sku": "CF-F2S-06-058-018-BL",
         "price": 9.99,
         "image": "https://colorfittings.com/wp-content/uploads/2018/06/AN-flare-ORB-straight-fuel-fitting-black.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "16-an-120-degree-female-push-loc-fitting",
+    "name": "-16 AN 120 Degree Female Push-Loc Fitting",
+    "title": "-16 AN 120 Degree Female Push-Loc Fitting",
+    "sku": "CF-PLF-16-120-000-BL",
+    "category": "ANFittings",
+    "subcategory": "Push-Loc Hose Ends",
+    "anSize": "16AN",
+    "price": 28.99,
+    "description": "The <b>-16 AN 120 Degree Female Push-Loc Fitting</b> is engineered for demanding high-performance automotive fluid systems. Whether you\u2019re a professional building a 6-second NHRA bracket car, a perfectionist designing the ultimate engine bay for a SEMA car, or an HPDE enthusiast looking to improve your oil temps, the products are designed for all flavors of motorsports.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Flow Configuration:</b> 120\u00b0 mandrel-bent profile for high velocity in tight engine bays.",
+    "image": "https://colorfittings.com/wp-content/uploads/2024/08/Hose-Barb-AN-push-lock-fitting-120-black.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-PLF-16-120-000-BL",
+        "price": 28.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2024/08/Hose-Barb-AN-push-lock-fitting-120-black.png",
         "stock": 10
       }
     ]
@@ -4265,6 +4909,27 @@
         "sku": "CF-ASP-06-916-018-OR",
         "price": 6.99,
         "image": "https://colorfittings.com/wp-content/uploads/2021/12/colorfittings-an-fitting-oil_fitting_M22x10_orange.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "10-an-orb-plug-w-o-ring-slimline",
+    "name": "-10 AN ORB Plug w/ O-Ring (Slimline)",
+    "title": "-10 AN ORB Plug w/ O-Ring (Slimline)",
+    "sku": "CF-FPO-10-000-002-PU",
+    "category": "ANAdapters",
+    "subcategory": "Plugs & Blockoffs",
+    "anSize": "10AN",
+    "price": 9.99,
+    "description": "The <b>-10 AN ORB Plug w/ O-Ring (Slimline)</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN ORB Plugs are precision CNC-machined to securely seal unused O-Ring Boss (ORB) ports in fuel, oil, coolant, transmission, hydraulic, and power steering systems. Designed with straight-thread ORB connections and an integrated O-ring sealing surface, these plugs provide a reliable, leak-free solution for closing unused ports in high-performance fluid systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.",
+    "image": "https://colorfittings.com/wp-content/uploads/2024/03/10AN-ORB-Plug-Slim-Purple.png",
+    "variants": [
+      {
+        "name": "Purple",
+        "sku": "CF-FPO-10-000-002-PU",
+        "price": 9.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2024/03/10AN-ORB-Plug-Slim-Purple.png",
         "stock": 10
       }
     ]
@@ -4991,6 +5656,48 @@
     ]
   },
   {
+    "id": "12-an-to-8-an-orb-adapter",
+    "name": "-12 AN to -8 AN ORB Adapter",
+    "title": "-12 AN to -8 AN ORB Adapter",
+    "sku": "CF-F2S-12-008-000-PU",
+    "category": "ANAdapters",
+    "subcategory": "ORB Adapters",
+    "anSize": "12AN",
+    "price": 12.99,
+    "description": "The <b>-12 AN to -8 AN ORB Adapter</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings ORB Adapter Fittings are precision-engineered to connect AN flare fittings to O-Ring Boss (ORB) ports, providing a secure, leak-free solution for fuel, oil, coolant, power steering, and transmission plumbing systems. ORB ports are found on engine blocks, transmissions, power steering pumps, oil coolers, and other OEM components \u2014 making these adapters essential for any AN plumbing conversion.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Purple-Fitting-Adapter-4.png",
+    "variants": [
+      {
+        "name": "Purple",
+        "sku": "CF-F2S-12-008-000-PU",
+        "price": 12.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Purple-Fitting-Adapter-4.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "16-an-90-degree-male-orb-swivel-union-fitting",
+    "name": "-16 AN 90 Degree Male ORB Swivel Union Fitting",
+    "title": "-16 AN 90 Degree Male ORB Swivel Union Fitting",
+    "sku": "CF-F2F-16-016-090-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "16AN",
+    "price": 38.99,
+    "description": "The <b>-16 AN 90 Degree Male ORB Swivel Union Fitting</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings 90 Degree Male ORB Swivel Union Fittings are precision CNC-machined to connect male O-Ring Boss (ORB) ports while providing a compact 90-degree routing solution for fuel, oil, coolant, transmission, hydraulic, and power steering systems. The swivel design allows for easy clocking and precise alignment, ensuring a secure, leak-free seal without compromising installation flexibility.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Flow Configuration:</b> 90\u00b0 mandrel-bent profile for high velocity in tight engine bays.<br>\u2022 <b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.",
+    "image": "https://colorfittings.com/wp-content/uploads/2022/12/gast-26-3-scaled.jpg",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-F2F-16-016-090-BL",
+        "price": 38.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2022/12/gast-26-3-scaled.jpg",
+        "stock": 10
+      }
+    ]
+  },
+  {
     "id": "10-an-fitting-bulkhead-nut",
     "name": "-10 AN Fitting Bulkhead Nut",
     "title": "-10 AN Fitting Bulkhead Nut",
@@ -5384,6 +6091,69 @@
         "name": "purple",
         "sku": "CF-AHS-08-000-000-PU",
         "price": 11.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Purple-Hose-Separator.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "4an-hose-separator",
+    "name": "-4AN Hose Separator",
+    "title": "-4AN Hose Separator",
+    "sku": "CF-AHS-04-000-000-RD",
+    "category": "HoseClamps",
+    "subcategory": "Hose Separators & Clamps",
+    "anSize": "4AN",
+    "price": 9.99,
+    "description": "The <b>-4AN Hose Separator</b> is engineered for demanding high-performance automotive fluid systems. This product is designed for and sized to be used with the Standard Nylon Braided Hose.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Red-Hose-Separator.png",
+    "variants": [
+      {
+        "name": "red",
+        "sku": "CF-AHS-04-000-000-RD",
+        "price": 9.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Red-Hose-Separator.png",
+        "stock": 10
+      },
+      {
+        "name": "black",
+        "sku": "CF-AHS-04-000-000-BL",
+        "price": 9.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Black-Hose-Separator.png",
+        "stock": 10
+      },
+      {
+        "name": "orange",
+        "sku": "CF-AHS-04-000-000-OR",
+        "price": 9.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Orange-Hose-Separator.png",
+        "stock": 10
+      },
+      {
+        "name": "green",
+        "sku": "CF-AHS-04-000-000-GR",
+        "price": 9.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Green-Hose-Separator.png",
+        "stock": 10
+      },
+      {
+        "name": "teal",
+        "sku": "CF-AHS-04-000-000-TL",
+        "price": 9.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Teal-Hose-Separator.png",
+        "stock": 10
+      },
+      {
+        "name": "gold",
+        "sku": "CF-AHS-04-000-000-GD",
+        "price": 9.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Gold-Hose-Separator.png",
+        "stock": 10
+      },
+      {
+        "name": "purple",
+        "sku": "CF-AHS-04-000-000-PU",
+        "price": 9.99,
         "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Purple-Hose-Separator.png",
         "stock": 10
       }
@@ -6321,6 +7091,27 @@
     ]
   },
   {
+    "id": "16an-braided-black-nylon-hose-line-e85-race-fuel-safe-10ft-roll",
+    "name": "16AN Braided Black Nylon Hose / Line (E85 + Race Fuel Safe) - 10ft roll",
+    "title": "16AN Braided Black Nylon Hose / Line (E85 + Race Fuel Safe) - 10ft roll",
+    "sku": "CF-BNH-16-000-010-BL",
+    "category": "NylonHose",
+    "subcategory": "Nylon Braided Hose",
+    "anSize": "16AN",
+    "price": 143.0,
+    "description": "The <b>16AN Braided Black Nylon Hose / Line (E85 + Race Fuel Safe) - 10ft roll</b> is engineered for demanding high-performance automotive fluid systems. Whether you\u2019re a professional building a 6-second NHRA bracket car, a perfectionist designing the ultimate engine bay for a SEMA car, or an HPDE enthusiast looking to improve your oil temps, the products are designed for all flavors of motorsports.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2019/10/AN-Fitting-Nylon-Braided-Hose-Black-lowrez.jpg",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-BNH-16-000-010-BL",
+        "price": 143.0,
+        "image": "https://colorfittings.com/wp-content/uploads/2019/10/AN-Fitting-Nylon-Braided-Hose-Black-lowrez.jpg",
+        "stock": 10
+      }
+    ]
+  },
+  {
     "id": "6-an-fitting-5-16-amp-3-8-tube-nut",
     "name": "-6 AN Fitting \u2013 5/16\u2033 &amp; 3/8\u2033 Tube Nut",
     "title": "-6 AN Fitting \u2013 5/16\u2033 &amp; 3/8\u2033 Tube Nut",
@@ -6412,6 +7203,34 @@
     ]
   },
   {
+    "id": "16an-male-weld-on-bung",
+    "name": "-16AN Male Weld-on Bung",
+    "title": "-16AN Male Weld-on Bung",
+    "sku": "CF-WBM-16-01E-000-ST",
+    "category": "ANAdapters",
+    "subcategory": "Weld-On Bungs",
+    "anSize": "16AN",
+    "price": 11.99,
+    "description": "The <b>-16AN Male Weld-on Bung</b> is engineered for demanding high-performance automotive fluid systems. This Weld-on Bung is available in the following materials: Aluminum and Steel<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2022/03/colorfittings-an-fitting-steel_weld_bung.png",
+    "variants": [
+      {
+        "name": "Steel",
+        "sku": "CF-WBM-16-01E-000-ST",
+        "price": 11.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2022/03/colorfittings-an-fitting-steel_weld_bung.png",
+        "stock": 10
+      },
+      {
+        "name": "Aluminum",
+        "sku": "CF-WBM-16-01E-000-AL",
+        "price": 11.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2022/03/colorfittings-an-fitting-aluminum_weld_bung.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
     "id": "10an-male-weld-on-bung",
     "name": "-10AN Male Weld-on Bung",
     "title": "-10AN Male Weld-on Bung",
@@ -6491,6 +7310,48 @@
         "sku": "CF-WBM-06-01E-000-AL",
         "price": 5.99,
         "image": "https://colorfittings.com/wp-content/uploads/2022/03/colorfittings-an-fitting-aluminum_weld_bung.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "12-an-to-10-an-orb-adapter",
+    "name": "-12 AN to -10 AN ORB Adapter",
+    "title": "-12 AN to -10 AN ORB Adapter",
+    "sku": "CF-F2S-12-010-000-PU",
+    "category": "ANAdapters",
+    "subcategory": "ORB Adapters",
+    "anSize": "12AN",
+    "price": 12.99,
+    "description": "The <b>-12 AN to -10 AN ORB Adapter</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings ORB Adapter Fittings are precision-engineered to connect AN flare fittings to O-Ring Boss (ORB) ports, providing a secure, leak-free solution for fuel, oil, coolant, power steering, and transmission plumbing systems. ORB ports are found on engine blocks, transmissions, power steering pumps, oil coolers, and other OEM components \u2014 making these adapters essential for any AN plumbing conversion.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Purple-Fitting-Adapter-8.png",
+    "variants": [
+      {
+        "name": "Purple",
+        "sku": "CF-F2S-12-010-000-PU",
+        "price": 12.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Purple-Fitting-Adapter-8.png",
+        "stock": 10
+      },
+      {
+        "name": "Gold",
+        "sku": "CF-F2S-12-010-000-GD",
+        "price": 12.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Gold-Fitting-Adapter.png",
+        "stock": 10
+      },
+      {
+        "name": "Orange",
+        "sku": "CF-F2S-12-010-000-OR",
+        "price": 12.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Orange-Fitting-Adapter.png",
+        "stock": 10
+      },
+      {
+        "name": "Black",
+        "sku": "CF-F2S-12-010-000-BL",
+        "price": 12.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-48.png",
         "stock": 10
       }
     ]
@@ -6617,6 +7478,125 @@
         "sku": "CF-F2S-06-008-000-BL",
         "price": 8.99,
         "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-76.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "16-an-to-16-an-orb-adapter",
+    "name": "-16 AN to -16 AN ORB Adapter",
+    "title": "-16 AN to -16 AN ORB Adapter",
+    "sku": "CF-F2S-16-016-000-GD",
+    "category": "ANAdapters",
+    "subcategory": "ORB Adapters",
+    "anSize": "16AN",
+    "price": 22.99,
+    "description": "The <b>-16 AN to -16 AN ORB Adapter</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings ORB Adapter Fittings are precision-engineered to connect AN flare fittings to O-Ring Boss (ORB) ports, providing a secure, leak-free solution for fuel, oil, coolant, power steering, and transmission plumbing systems. ORB ports are found on engine blocks, transmissions, power steering pumps, oil coolers, and other OEM components \u2014 making these adapters essential for any AN plumbing conversion.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Gold-Fitting-Adapter-8.png",
+    "variants": [
+      {
+        "name": "Gold",
+        "sku": "CF-F2S-16-016-000-GD",
+        "price": 22.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Gold-Fitting-Adapter-8.png",
+        "stock": 10
+      },
+      {
+        "name": "Orange",
+        "sku": "CF-F2S-16-016-000-OR",
+        "price": 22.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Orange-Fitting-Adapter-8.png",
+        "stock": 10
+      },
+      {
+        "name": "Black",
+        "sku": "CF-F2S-16-016-000-BL",
+        "price": 22.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-68.png",
+        "stock": 10
+      },
+      {
+        "name": "Purple",
+        "sku": "CF-F2S-16-016-000-PU",
+        "price": 22.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Purple-Fitting-Adapter-28.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "16-an-to-12-an-orb-adapter",
+    "name": "-16 AN to -12 AN ORB Adapter",
+    "title": "-16 AN to -12 AN ORB Adapter",
+    "sku": "CF-F2S-16-012-000-GD",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "16AN",
+    "price": 20.99,
+    "description": "The <b>-16 AN to -12 AN ORB Adapter</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings ORB Adapter Fittings are precision-engineered to connect AN flare fittings to O-Ring Boss (ORB) ports, providing a secure, leak-free solution for fuel, oil, coolant, power steering, and transmission plumbing systems. ORB ports are found on engine blocks, transmissions, power steering pumps, oil coolers, and other OEM components \u2014 making these adapters essential for any AN plumbing conversion.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Sealing Type:</b> Viton O-Ring Boss (ORB) positive seal to prevent thread sealant contamination.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Gold-Fitting-Adapter-4.png",
+    "variants": [
+      {
+        "name": "Gold",
+        "sku": "CF-F2S-16-012-000-GD",
+        "price": 20.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Gold-Fitting-Adapter-4.png",
+        "stock": 10
+      },
+      {
+        "name": "Orange",
+        "sku": "CF-F2S-16-012-000-OR",
+        "price": 20.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Orange-Fitting-Adapter-4.png",
+        "stock": 10
+      },
+      {
+        "name": "Black",
+        "sku": "CF-F2S-16-012-000-BL",
+        "price": 20.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Black-Fitting-Adapter-60.png",
+        "stock": 10
+      },
+      {
+        "name": "Purple",
+        "sku": "CF-F2S-16-012-000-PU",
+        "price": 20.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/ORB-Purple-Fitting-Adapter-20.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "16-an-cap-blockoff",
+    "name": "-16 AN Cap / Blockoff",
+    "title": "-16 AN Cap / Blockoff",
+    "sku": "CF-FCO-16-000-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "Plugs & Blockoffs",
+    "anSize": "16AN",
+    "price": 9.49,
+    "description": "The <b>-16 AN Cap / Blockoff</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN Caps are precision CNC-machined to securely seal unused AN ports, fittings, and lines in fuel, oil, coolant, brake, transmission, and power steering systems. Designed with a true 37-degree AN flare seat, these caps provide a clean, leak-free solution for closing off unused connections during maintenance, fabrication, or custom plumbing projects.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2019/08/cf-dash-cap-purple-5.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-FCO-16-000-000-BL",
+        "price": 9.49,
+        "image": "https://colorfittings.com/wp-content/uploads/2019/08/cf-dash-cap-purple-5.png",
+        "stock": 10
+      },
+      {
+        "name": "Gold",
+        "sku": "CF-FCO-16-000-000-GD",
+        "price": 9.49,
+        "image": "https://colorfittings.com/wp-content/uploads/2021/09/AN-fitting-cap-gold.png",
+        "stock": 10
+      },
+      {
+        "name": "Purple",
+        "sku": "CF-FCO-16-000-000-PU",
+        "price": 9.49,
+        "image": "https://colorfittings.com/wp-content/uploads/2019/08/cf-dash-cap-purple-5.png",
         "stock": 10
       }
     ]
@@ -7959,6 +8939,447 @@
     ]
   },
   {
+    "id": "16-an-hex-worm-clamp-hose-finisher",
+    "name": "-16 AN Hex/Worm-Clamp Hose Finisher",
+    "title": "-16 AN Hex/Worm-Clamp Hose Finisher",
+    "sku": "CF-WCF-16-000-000-GD",
+    "category": "ANFittings",
+    "subcategory": "AN Hose Ends & Fittings",
+    "anSize": "16AN",
+    "price": 8.99,
+    "description": "The <b>-16 AN Hex/Worm-Clamp Hose Finisher</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings Worm Clamp Hose End Finishers are designed to transform ordinary worm gear hose clamps into a clean, show-quality detail for your engine bay. Perfect for coolant, vacuum, intercooler, breather, and other rubber hose applications, these finishers provide a sleek, professional appearance while concealing the industrial look of standard hose clamps.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2018/06/Gold-WormClamp.png",
+    "variants": [
+      {
+        "name": "Gold",
+        "sku": "CF-WCF-16-000-000-GD",
+        "price": 8.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Gold-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Orange",
+        "sku": "CF-WCF-16-000-000-OR",
+        "price": 8.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Orange-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Green",
+        "sku": "CF-WCF-16-000-000-GR",
+        "price": 8.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Green-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Red",
+        "sku": "CF-WCF-16-000-000-RD",
+        "price": 8.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Red-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Black",
+        "sku": "CF-WCF-16-000-000-BL",
+        "price": 8.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Black-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Teal",
+        "sku": "CF-WCF-16-000-000-TL",
+        "price": 8.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Teal-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Purple",
+        "sku": "CF-WCF-16-000-000-PU",
+        "price": 8.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Purple-WormClamp.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "10-an-hex-worm-clamp-hose-finisher",
+    "name": "-10 AN Hex/Worm-Clamp Hose Finisher",
+    "title": "-10 AN Hex/Worm-Clamp Hose Finisher",
+    "sku": "CF-WCF-10-000-000-GD",
+    "category": "ANFittings",
+    "subcategory": "AN Hose Ends & Fittings",
+    "anSize": "10AN",
+    "price": 6.99,
+    "description": "The <b>-10 AN Hex/Worm-Clamp Hose Finisher</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings Worm Clamp Hose End Finishers are designed to transform ordinary worm gear hose clamps into a clean, show-quality detail for your engine bay. Perfect for coolant, vacuum, intercooler, breather, and other rubber hose applications, these finishers provide a sleek, professional appearance while concealing the industrial look of standard hose clamps.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2018/06/Gold-WormClamp.png",
+    "variants": [
+      {
+        "name": "Gold",
+        "sku": "CF-WCF-10-000-000-GD",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Gold-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Red",
+        "sku": "CF-WCF-10-000-000-RD",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Red-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Green",
+        "sku": "CF-WCF-10-000-000-GR",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Green-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Orange",
+        "sku": "CF-WCF-10-000-000-OR",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Orange-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Black",
+        "sku": "CF-WCF-10-000-000-BL",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Black-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Teal",
+        "sku": "CF-WCF-10-000-000-TL",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Teal-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Purple",
+        "sku": "CF-WCF-10-000-000-PU",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Purple-WormClamp.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "8-an-hex-worm-clamp-hose-finisher",
+    "name": "-8 AN Hex/Worm-Clamp Hose Finisher",
+    "title": "-8 AN Hex/Worm-Clamp Hose Finisher",
+    "sku": "CF-WCF-08-000-000-GD",
+    "category": "ANFittings",
+    "subcategory": "AN Hose Ends & Fittings",
+    "anSize": "8AN",
+    "price": 6.99,
+    "description": "The <b>-8 AN Hex/Worm-Clamp Hose Finisher</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings Worm Clamp Hose End Finishers are designed to transform ordinary worm gear hose clamps into a clean, show-quality detail for your engine bay. Perfect for coolant, vacuum, intercooler, breather, and other rubber hose applications, these finishers provide a sleek, professional appearance while concealing the industrial look of standard hose clamps.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2018/06/Gold-WormClamp.png",
+    "variants": [
+      {
+        "name": "Gold",
+        "sku": "CF-WCF-08-000-000-GD",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Gold-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Orange",
+        "sku": "CF-WCF-08-000-000-OR",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Orange-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Green",
+        "sku": "CF-WCF-08-000-000-GR",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Green-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Red",
+        "sku": "CF-WCF-08-000-000-RD",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Red-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Black",
+        "sku": "CF-WCF-08-000-000-BL",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Black-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Teal",
+        "sku": "CF-WCF-08-000-000-TL",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Teal-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Purple",
+        "sku": "CF-WCF-08-000-000-PU",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Purple-WormClamp.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "6-an-hex-worm-clamp-hose-finisher",
+    "name": "-6 AN Hex/Worm-Clamp Hose Finisher",
+    "title": "-6 AN Hex/Worm-Clamp Hose Finisher",
+    "sku": "CF-WCF-06-000-000-GD",
+    "category": "ANFittings",
+    "subcategory": "AN Hose Ends & Fittings",
+    "anSize": "6AN",
+    "price": 6.99,
+    "description": "The <b>-6 AN Hex/Worm-Clamp Hose Finisher</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings Worm Clamp Hose End Finishers are designed to transform ordinary worm gear hose clamps into a clean, show-quality detail for your engine bay. Perfect for coolant, vacuum, intercooler, breather, and other rubber hose applications, these finishers provide a sleek, professional appearance while concealing the industrial look of standard hose clamps.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2018/06/Gold-WormClamp.png",
+    "variants": [
+      {
+        "name": "Gold",
+        "sku": "CF-WCF-06-000-000-GD",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Gold-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Red",
+        "sku": "CF-WCF-06-000-000-RD",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Red-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Green",
+        "sku": "CF-WCF-06-000-000-GR",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Green-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Orange",
+        "sku": "CF-WCF-06-000-000-OR",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Orange-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Black",
+        "sku": "CF-WCF-06-000-000-BL",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Black-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Teal",
+        "sku": "CF-WCF-06-000-000-TL",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Teal-WormClamp.png",
+        "stock": 10
+      },
+      {
+        "name": "Purple",
+        "sku": "CF-WCF-06-000-000-PU",
+        "price": 6.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/Purple-WormClamp.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "16-an-straight-female-aluminum-hose-end-fitting",
+    "name": "-16 AN Straight Female Aluminum Hose End Fitting",
+    "title": "-16 AN Straight Female Aluminum Hose End Fitting",
+    "sku": "CF-FHE-16-000-000-GD",
+    "category": "ANFittings",
+    "subcategory": "AN Hose Ends & Fittings",
+    "anSize": "16AN",
+    "price": 34.98,
+    "description": "The <b>-16 AN Straight Female Aluminum Hose End Fitting</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings Standard AN Hose Ends are precision-engineered for high-pressure fuel, oil, coolant, brake, clutch, and power steering applications. Designed for use with nylon or stainless steel braided hose, these AN fittings provide a secure, leak-free 37-degree flare seal for street performance, racing, marine, and motorsport plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/04/Gold-Straight-Female-Hose-End.png",
+    "variants": [
+      {
+        "name": "Gold",
+        "sku": "CF-FHE-16-000-000-GD",
+        "price": 34.98,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Gold-Straight-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Orange",
+        "sku": "CF-FHE-16-000-000-OR",
+        "price": 34.98,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Orange-Straight-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Lime Green",
+        "sku": "CF-FHE-16-000-000-GR",
+        "price": 34.98,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Green-Straight-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Red",
+        "sku": "CF-FHE-16-000-000-RD",
+        "price": 34.98,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Red-Straight-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Teal",
+        "sku": "CF-FHE-16-000-000-TL",
+        "price": 34.98,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Teal-Straight-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Black",
+        "sku": "CF-FHE-16-000-000-BL",
+        "price": 34.98,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Black-Straight-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Purple",
+        "sku": "CF-FHE-16-000-000-PU",
+        "price": 34.98,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Purple-Straight-Female-Hose-End.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "16-an-90-degree-female-aluminum-hose-end-fitting",
+    "name": "-16 AN 90 Degree Female Aluminum Hose End Fitting",
+    "title": "-16 AN 90 Degree Female Aluminum Hose End Fitting",
+    "sku": "CF-FHE-16-090-000-GD",
+    "category": "ANFittings",
+    "subcategory": "AN Hose Ends & Fittings",
+    "anSize": "16AN",
+    "price": 42.86,
+    "description": "The <b>-16 AN 90 Degree Female Aluminum Hose End Fitting</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings Standard AN Hose Ends are precision-engineered for high-pressure fuel, oil, coolant, brake, clutch, and power steering applications. Designed for use with nylon or stainless steel braided hose, these AN fittings provide a secure, leak-free 37-degree flare seal for street performance, racing, marine, and motorsport plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Flow Configuration:</b> 90\u00b0 mandrel-bent profile for high velocity in tight engine bays.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/04/Gold-90-Degree-Female-Hose-End.png",
+    "variants": [
+      {
+        "name": "Gold",
+        "sku": "CF-FHE-16-090-000-GD",
+        "price": 42.86,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Gold-90-Degree-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Orange",
+        "sku": "CF-FHE-16-090-000-OR",
+        "price": 42.86,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Orange-90-Degree-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Lime Green",
+        "sku": "CF-FHE-16-090-000-GR",
+        "price": 42.86,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Green-90-Degree-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Red",
+        "sku": "CF-FHE-16-090-000-RD",
+        "price": 42.86,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Red-90-Degree-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Teal",
+        "sku": "CF-FHE-16-090-000-TL",
+        "price": 42.86,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Teal-90-Degree-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Black",
+        "sku": "CF-FHE-16-090-000-BL",
+        "price": 42.86,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Black-90-Degree-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Purple",
+        "sku": "CF-FHE-16-090-000-PU",
+        "price": 42.86,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Purple-90-Degree-Female-Hose-End.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "16-an-45-degree-female-aluminum-hose-end-fitting",
+    "name": "-16 AN 45 Degree Female Aluminum Hose End Fitting",
+    "title": "-16 AN 45 Degree Female Aluminum Hose End Fitting",
+    "sku": "CF-FHE-16-045-000-GD",
+    "category": "ANFittings",
+    "subcategory": "AN Hose Ends & Fittings",
+    "anSize": "16AN",
+    "price": 42.86,
+    "description": "The <b>-16 AN 45 Degree Female Aluminum Hose End Fitting</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings Standard AN Hose Ends are precision-engineered for high-pressure fuel, oil, coolant, brake, clutch, and power steering applications. Designed for use with nylon or stainless steel braided hose, these AN fittings provide a secure, leak-free 37-degree flare seal for street performance, racing, marine, and motorsport plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Flow Configuration:</b> 45\u00b0 mandrel-bent profile for high velocity in tight engine bays.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/04/Gold-45-Degree-Female-Hose-End.png",
+    "variants": [
+      {
+        "name": "Gold",
+        "sku": "CF-FHE-16-045-000-GD",
+        "price": 42.86,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Gold-45-Degree-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Black",
+        "sku": "CF-FHE-16-045-000-BL",
+        "price": 42.86,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Black-45-Degree-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Orange",
+        "sku": "CF-FHE-16-045-000-OR",
+        "price": 42.86,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Orange-45-Degree-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Lime Green",
+        "sku": "CF-FHE-16-045-000-GR",
+        "price": 42.86,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Green-45-Degree-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Red",
+        "sku": "CF-FHE-16-045-000-RD",
+        "price": 42.86,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Red-45-Degree-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Teal",
+        "sku": "CF-FHE-16-045-000-TL",
+        "price": 42.86,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Teal-45-Degree-Female-Hose-End.png",
+        "stock": 10
+      },
+      {
+        "name": "Purple",
+        "sku": "CF-FHE-16-045-000-PU",
+        "price": 42.86,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Purple-45-Degree-Female-Hose-End.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
     "id": "10-an-straight-female-aluminum-hose-end-fitting",
     "name": "-10 AN Straight Female Aluminum Hose End Fitting",
     "title": "-10 AN Straight Female Aluminum Hose End Fitting",
@@ -8652,6 +10073,34 @@
     ]
   },
   {
+    "id": "16-an-fitting-90-degree-female-to-male-union",
+    "name": "-16 AN Fitting 90 Degree Female to Male Union",
+    "title": "-16 AN Fitting 90 Degree Female to Male Union",
+    "sku": "CF-FMS-16-090-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "16AN",
+    "price": 38.99,
+    "description": "The <b>-16 AN Fitting 90 Degree Female to Male Union</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings 90 Degree Female to Male Union Adapters are precision CNC-machined to provide a compact 90-degree connection between AN fittings, improving hose routing and clearance in tight engine bays. Designed with a true 37-degree AN flare on both ends, these adapters deliver a secure, leak-free seal for fuel, oil, coolant, transmission, brake, and power steering systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.<br>\u2022 <b>Flow Configuration:</b> 90\u00b0 mandrel-bent profile for high velocity in tight engine bays.",
+    "image": "https://colorfittings.com/wp-content/uploads/2021/02/AN-fitting-90-union-adaptor-black.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-FMS-16-090-000-BL",
+        "price": 38.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2021/02/AN-fitting-90-union-adaptor-black.png",
+        "stock": 10
+      },
+      {
+        "name": "Purple",
+        "sku": "CF-FMS-16-090-000-PU",
+        "price": 38.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2021/02/AN-fitting-90-union-adaptor-purple-scaled.jpg",
+        "stock": 10
+      }
+    ]
+  },
+  {
     "id": "10-an-fitting-90-degree-female-to-male-union",
     "name": "-10 AN Fitting 90 Degree Female to Male Union",
     "title": "-10 AN Fitting 90 Degree Female to Male Union",
@@ -8731,6 +10180,48 @@
         "sku": "CF-FMS-06-090-000-PU",
         "price": 19.99,
         "image": "https://colorfittings.com/wp-content/uploads/2021/02/AN-fitting-90-union-adaptor-purple-scaled.jpg",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "6an-braided-black-nylon-hose-line-e85-race-fuel-safe-20ft-roll",
+    "name": "6AN Braided Black Nylon Hose / Line (E85 + Race Fuel Safe) - 20ft roll",
+    "title": "6AN Braided Black Nylon Hose / Line (E85 + Race Fuel Safe) - 20ft roll",
+    "sku": "CF-BNH-06-000-020-BL",
+    "category": "NylonHose",
+    "subcategory": "Nylon Braided Hose",
+    "anSize": "6AN",
+    "price": 144.0,
+    "description": "The <b>6AN Braided Black Nylon Hose / Line (E85 + Race Fuel Safe) - 20ft roll</b> is engineered for demanding high-performance automotive fluid systems. Whether you\u2019re a professional building a 6-second NHRA bracket car, a perfectionist designing the ultimate engine bay for a SEMA car, or an HPDE enthusiast looking to improve your oil temps, the products are designed for all flavors of motorsports.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2019/10/AN-Fitting-Nylon-Braided-Hose-Black-lowrez.jpg",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-BNH-06-000-020-BL",
+        "price": 144.0,
+        "image": "https://colorfittings.com/wp-content/uploads/2019/10/AN-Fitting-Nylon-Braided-Hose-Black-lowrez.jpg",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "16-an-fitting-bulkhead-nut",
+    "name": "-16 AN Fitting Bulkhead Nut",
+    "title": "-16 AN Fitting Bulkhead Nut",
+    "sku": "CF-BHF-16-N00-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "Brake Fittings",
+    "anSize": "16AN",
+    "price": 5.49,
+    "description": "The <b>-16 AN Fitting Bulkhead Nut</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN Bulkhead Lock Nuts are precision CNC-machined to securely fasten AN bulkhead fittings through firewalls, chassis panels, fuel cells, and custom fabrication projects. Designed to provide a tight, vibration-resistant hold, these bulkhead nuts ensure proper alignment and a secure mounting surface for leak-free AN plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/02/Bulkhead-Nut-Black.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-BHF-16-N00-000-BL",
+        "price": 5.49,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/02/Bulkhead-Nut-Black.png",
         "stock": 10
       }
     ]
@@ -8850,6 +10341,27 @@
         "sku": "CF-VJW-00-000-001-BL",
         "price": 18.99,
         "image": "https://colorfittings.com/wp-content/uploads/2020/11/plastic-vice-inserts-black.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "16-an-fitting-bulkhead-straight",
+    "name": "-16 AN Fitting Bulkhead Straight",
+    "title": "-16 AN Fitting Bulkhead Straight",
+    "sku": "CF-BHF-16-000-000-BL",
+    "category": "ANAdapters",
+    "subcategory": "Brake Fittings",
+    "anSize": "16AN",
+    "price": 24.99,
+    "description": "The <b>-16 AN Fitting Bulkhead Straight</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN Union Bulkhead Fittings are precision CNC-machined adapters designed to pass AN lines securely through firewalls, panels, fuel cells, and chassis components. Engineered for high-performance fuel, oil, coolant, transmission, brake, and power steering systems, these AN bulkhead unions provide a secure, leak-free 37-degree flare seal on both sides of the panel.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/02/Bulkhead-Fitting-Straight-Black.png",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-BHF-16-000-000-BL",
+        "price": 24.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2026/02/Bulkhead-Fitting-Straight-Black.png",
         "stock": 10
       }
     ]
@@ -9086,6 +10598,48 @@
     ]
   },
   {
+    "id": "6an-braided-black-nylon-hose-line-e85-race-fuel-safe-10ft-roll",
+    "name": "6AN Braided Black Nylon Hose / Line (E85 + Race Fuel Safe) - 10ft roll",
+    "title": "6AN Braided Black Nylon Hose / Line (E85 + Race Fuel Safe) - 10ft roll",
+    "sku": "CF-BNH-06-000-010-BL",
+    "category": "NylonHose",
+    "subcategory": "Nylon Braided Hose",
+    "anSize": "6AN",
+    "price": 72.0,
+    "description": "The <b>6AN Braided Black Nylon Hose / Line (E85 + Race Fuel Safe) - 10ft roll</b> is engineered for demanding high-performance automotive fluid systems. Whether you\u2019re a professional building a 6-second NHRA bracket car, a perfectionist designing the ultimate engine bay for a SEMA car, or an HPDE enthusiast looking to improve your oil temps, the products are designed for all flavors of motorsports.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2019/10/AN-Fitting-Nylon-Braided-Hose-Black-lowrez.jpg",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-BNH-06-000-010-BL",
+        "price": 72.0,
+        "image": "https://colorfittings.com/wp-content/uploads/2019/10/AN-Fitting-Nylon-Braided-Hose-Black-lowrez.jpg",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "10an-braided-black-nylon-hose-line-e85-race-fuel-safe-10ft-roll",
+    "name": "10AN Braided Black Nylon Hose / Line (E85 + Race Fuel Safe) - 10ft roll",
+    "title": "10AN Braided Black Nylon Hose / Line (E85 + Race Fuel Safe) - 10ft roll",
+    "sku": "CF-BNH-10-000-010-BL",
+    "category": "NylonHose",
+    "subcategory": "Nylon Braided Hose",
+    "anSize": "10AN",
+    "price": 92.0,
+    "description": "The <b>10AN Braided Black Nylon Hose / Line (E85 + Race Fuel Safe) - 10ft roll</b> is engineered for demanding high-performance automotive fluid systems. Whether you\u2019re a professional building a 6-second NHRA bracket car, a perfectionist designing the ultimate engine bay for a SEMA car, or an HPDE enthusiast looking to improve your oil temps, the products are designed for all flavors of motorsports.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2019/10/AN-Fitting-Nylon-Braided-Hose-Black-lowrez.jpg",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-BNH-10-000-010-BL",
+        "price": 92.0,
+        "image": "https://colorfittings.com/wp-content/uploads/2019/10/AN-Fitting-Nylon-Braided-Hose-Black-lowrez.jpg",
+        "stock": 10
+      }
+    ]
+  },
+  {
     "id": "honda-cr125-cylinder-head-to-10-an-flare-fitting",
     "name": "Honda CR125 Cylinder Head to 10 AN Flare Fitting",
     "title": "Honda CR125 Cylinder Head to 10 AN Flare Fitting",
@@ -9228,6 +10782,76 @@
         "sku": "CF-F2N-10-012-000-BL",
         "price": 10.99,
         "image": "https://colorfittings.com/wp-content/uploads/2026/04/Flare-To-NPT-Adapter-Black-23.png",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "16an-braided-black-nylon-hose-line-e85-race-fuel-safe-5ft-roll",
+    "name": "16AN Braided Black Nylon Hose / Line (E85 + Race Fuel Safe) - 5ft roll",
+    "title": "16AN Braided Black Nylon Hose / Line (E85 + Race Fuel Safe) - 5ft roll",
+    "sku": "CF-BNH-16-000-005-BL",
+    "category": "NylonHose",
+    "subcategory": "Nylon Braided Hose",
+    "anSize": "16AN",
+    "price": 71.5,
+    "description": "The <b>16AN Braided Black Nylon Hose / Line (E85 + Race Fuel Safe) - 5ft roll</b> is engineered for demanding high-performance automotive fluid systems. Whether you\u2019re a professional building a 6-second NHRA bracket car, a perfectionist designing the ultimate engine bay for a SEMA car, or an HPDE enthusiast looking to improve your oil temps, the products are designed for all flavors of motorsports.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2019/10/AN-Fitting-Nylon-Braided-Hose-Black-lowrez.jpg",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-BNH-16-000-005-BL",
+        "price": 71.5,
+        "image": "https://colorfittings.com/wp-content/uploads/2019/10/AN-Fitting-Nylon-Braided-Hose-Black-lowrez.jpg",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "8an-braided-black-nylon-hose-line-e85-race-fuel-safe-10ft-roll",
+    "name": "8AN Braided Black Nylon Hose / Line (E85 + Race Fuel Safe) - 10ft roll",
+    "title": "8AN Braided Black Nylon Hose / Line (E85 + Race Fuel Safe) - 10ft roll",
+    "sku": "CF-BNH-08-000-010-BL",
+    "category": "NylonHose",
+    "subcategory": "Nylon Braided Hose",
+    "anSize": "8AN",
+    "price": 83.0,
+    "description": "The <b>8AN Braided Black Nylon Hose / Line (E85 + Race Fuel Safe) - 10ft roll</b> is engineered for demanding high-performance automotive fluid systems. Whether you\u2019re a professional building a 6-second NHRA bracket car, a perfectionist designing the ultimate engine bay for a SEMA car, or an HPDE enthusiast looking to improve your oil temps, the products are designed for all flavors of motorsports.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2019/10/AN-Fitting-Nylon-Braided-Hose-Black-lowrez.jpg",
+    "variants": [
+      {
+        "name": "Black",
+        "sku": "CF-BNH-08-000-010-BL",
+        "price": 83.0,
+        "image": "https://colorfittings.com/wp-content/uploads/2019/10/AN-Fitting-Nylon-Braided-Hose-Black-lowrez.jpg",
+        "stock": 10
+      }
+    ]
+  },
+  {
+    "id": "4-an-to-6-an-fitting-male-to-male-reducer-union",
+    "name": "-4 AN to -6 AN Fitting Male to Male Reducer Union",
+    "title": "-4 AN to -6 AN Fitting Male to Male Reducer Union",
+    "sku": "CF-F2F-04-006-000-PU",
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "anSize": "4AN",
+    "price": 9.99,
+    "description": "The <b>-4 AN to -6 AN Fitting Male to Male Reducer Union</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN Male to Male Flare Reducer Unions are precision CNC-machined to connect two female AN fittings while maintaining a secure, leak-free 37-degree flare seal. Designed for fuel, oil, coolant, transmission, brake, and power steering systems, these unions provide a reliable straight-through connection for custom plumbing and high-performance fluid transfer applications.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+    "image": "https://colorfittings.com/wp-content/uploads/2018/06/AN-flare-fitting-reducer-union-adapter-purple-1.png",
+    "variants": [
+      {
+        "name": "Purple",
+        "sku": "CF-F2F-04-006-000-PU",
+        "price": 9.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/AN-flare-fitting-reducer-union-adapter-purple-1.png",
+        "stock": 10
+      },
+      {
+        "name": "Black",
+        "sku": "CF-F2F-04-006-000-BL",
+        "price": 9.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/AN-flare-fitting-reducer-union-adapter-black-2.png",
         "stock": 10
       }
     ]

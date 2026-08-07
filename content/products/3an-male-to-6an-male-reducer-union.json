@@ -1,0 +1,21 @@
+{
+  "id": "3an-male-to-6an-male-reducer-union",
+  "name": "-3AN Male to -6AN Male Reducer Union",
+  "title": "-3AN Male to -6AN Male Reducer Union",
+  "sku": "CF-M2M-03-006-000-BL",
+  "category": "ANAdapters",
+  "subcategory": "AN Adapters & Specialty",
+  "anSize": "3AN",
+  "price": 6.99,
+  "description": "The <b>-3AN Male to -6AN Male Reducer Union</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN Male to AN Male Reducer Union Fittings are precision-engineered to connect and transition between different AN flare sizes, providing a secure, leak-free solution for fuel, oil, coolant, transmission, and power steering plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+  "image": "https://colorfittings.com/wp-content/uploads/2026/03/Male-to-Male-Reducer-Union-Black.png",
+  "variants": [
+    {
+      "name": "black",
+      "sku": "CF-M2M-03-006-000-BL",
+      "price": 6.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2026/03/Male-to-Male-Reducer-Union-Black.png",
+      "stock": 10
+    }
+  ]
+}

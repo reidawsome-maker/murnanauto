@@ -1,0 +1,21 @@
+{
+  "id": "16-an-to-m20x1-0mm-metric-adapter",
+  "name": "-16 AN to M20x1.0mm Metric Adapter",
+  "title": "-16 AN to M20x1.0mm Metric Adapter",
+  "sku": "CF-F2M-16-020-010-BL",
+  "category": "ANAdapters",
+  "subcategory": "AN Adapters & Specialty",
+  "anSize": "16AN",
+  "price": 16.99,
+  "description": "The <b>-16 AN to M20x1.0mm Metric Adapter</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings AN to Metric Adapter and Union Fittings are precision-engineered to connect metric female ports to AN flare fittings, providing a secure, leak-free solution for fuel, oil, coolant, and power steering plumbing systems.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+  "image": "https://colorfittings.com/wp-content/uploads/2026/04/Flare-To-Metric-Adapter-Black-109.png",
+  "variants": [
+    {
+      "name": "Black",
+      "sku": "CF-F2M-16-020-010-BL",
+      "price": 16.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2026/04/Flare-To-Metric-Adapter-Black-109.png",
+      "stock": 10
+    }
+  ]
+}

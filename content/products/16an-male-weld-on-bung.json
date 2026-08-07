@@ -1,0 +1,28 @@
+{
+  "id": "16an-male-weld-on-bung",
+  "name": "-16AN Male Weld-on Bung",
+  "title": "-16AN Male Weld-on Bung",
+  "sku": "CF-WBM-16-01E-000-ST",
+  "category": "ANAdapters",
+  "subcategory": "Weld-On Bungs",
+  "anSize": "16AN",
+  "price": 11.99,
+  "description": "The <b>-16AN Male Weld-on Bung</b> is engineered for demanding high-performance automotive fluid systems. This Weld-on Bung is available in the following materials: Aluminum and Steel<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+  "image": "https://colorfittings.com/wp-content/uploads/2022/03/colorfittings-an-fitting-steel_weld_bung.png",
+  "variants": [
+    {
+      "name": "Steel",
+      "sku": "CF-WBM-16-01E-000-ST",
+      "price": 11.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2022/03/colorfittings-an-fitting-steel_weld_bung.png",
+      "stock": 10
+    },
+    {
+      "name": "Aluminum",
+      "sku": "CF-WBM-16-01E-000-AL",
+      "price": 11.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2022/03/colorfittings-an-fitting-aluminum_weld_bung.png",
+      "stock": 10
+    }
+  ]
+}

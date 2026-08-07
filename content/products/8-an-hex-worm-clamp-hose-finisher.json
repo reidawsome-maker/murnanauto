@@ -1,0 +1,63 @@
+{
+  "id": "8-an-hex-worm-clamp-hose-finisher",
+  "name": "-8 AN Hex/Worm-Clamp Hose Finisher",
+  "title": "-8 AN Hex/Worm-Clamp Hose Finisher",
+  "sku": "CF-WCF-08-000-000-GD",
+  "category": "ANFittings",
+  "subcategory": "AN Hose Ends & Fittings",
+  "anSize": "8AN",
+  "price": 6.99,
+  "description": "The <b>-8 AN Hex/Worm-Clamp Hose Finisher</b> is engineered for demanding high-performance automotive fluid systems. ColorFittings Worm Clamp Hose End Finishers are designed to transform ordinary worm gear hose clamps into a clean, show-quality detail for your engine bay. Perfect for coolant, vacuum, intercooler, breather, and other rubber hose applications, these finishers provide a sleek, professional appearance while concealing the industrial look of standard hose clamps.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Origin:</b> Precision CNC-machined in the USA.<br>\u2022 <b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance.",
+  "image": "https://colorfittings.com/wp-content/uploads/2018/06/Gold-WormClamp.png",
+  "variants": [
+    {
+      "name": "Gold",
+      "sku": "CF-WCF-08-000-000-GD",
+      "price": 6.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2018/06/Gold-WormClamp.png",
+      "stock": 10
+    },
+    {
+      "name": "Orange",
+      "sku": "CF-WCF-08-000-000-OR",
+      "price": 6.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2018/06/Orange-WormClamp.png",
+      "stock": 10
+    },
+    {
+      "name": "Green",
+      "sku": "CF-WCF-08-000-000-GR",
+      "price": 6.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2018/06/Green-WormClamp.png",
+      "stock": 10
+    },
+    {
+      "name": "Red",
+      "sku": "CF-WCF-08-000-000-RD",
+      "price": 6.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2018/06/Red-WormClamp.png",
+      "stock": 10
+    },
+    {
+      "name": "Black",
+      "sku": "CF-WCF-08-000-000-BL",
+      "price": 6.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2018/06/Black-WormClamp.png",
+      "stock": 10
+    },
+    {
+      "name": "Teal",
+      "sku": "CF-WCF-08-000-000-TL",
+      "price": 6.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2018/06/Teal-WormClamp.png",
+      "stock": 10
+    },
+    {
+      "name": "Purple",
+      "sku": "CF-WCF-08-000-000-PU",
+      "price": 6.99,
+      "image": "https://colorfittings.com/wp-content/uploads/2018/06/Purple-WormClamp.png",
+      "stock": 10
+    }
+  ]
+}
