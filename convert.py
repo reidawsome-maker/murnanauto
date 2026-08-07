@@ -4,6 +4,7 @@ import os
 import re
 import glob
 
+# Ensure content/products directory exists WITHOUT clearing existing files
 os.makedirs('content/products', exist_ok=True)
 
 def safe_float(val, default=0.0):
@@ -98,16 +99,18 @@ def generate_colorfittings_desc(title, row_desc):
     spec_block = "<br><br><b>Technical Specifications:</b><br>• " + "<br>• ".join(specs)
     return f"{lead}{spec_block}"
 
-# Process all CSV files in root
-csv_files = glob.glob('*.csv')
+# Scan all CSV files in root and subdirectories
+csv_files = glob.glob('**/*.csv', recursive=True)
+print(f"Scanning repository CSV files: {csv_files}")
 
 for csv_path in csv_files:
     try:
         temp_df = pd.read_csv(csv_path)
-        cols = [c.lower() for c in temp_df.columns]
+        cols = [str(c).lower().strip() for c in temp_df.columns]
         
-        # 1. Turbosmart CSV Format
+        # 1. Turbosmart Format Matching
         if 'vendor' in cols and 'map_price' in cols:
+            print(f"--> Building Turbosmart Catalog from: {csv_path}")
             valid_df = temp_df.dropna(subset=['SKU', 'Title'])
             valid_df = valid_df[~valid_df['SKU'].astype(str).str.lower().str.contains('stock')]
             
@@ -160,40 +163,60 @@ for csv_path in csv_files:
                 with open(f'content/products/{slug}.json', 'w') as f:
                     json.dump(product, f, indent=2)
 
-        # 2. ColorFittings CSV Format
-        elif 'variation sku' in cols or 'variation name (color)' in cols:
-            grouped = temp_df.groupby('Title', sort=False)
+        # 2. General Fittings / Fuel Hardware / Custom Vendor CSV Matching
+        elif any(k in cols for k in ['title', 'variation sku', 'variation name (color)', 'price', 'name']):
+            title_col = None
+            for c in ['Title', 'title', 'Name', 'name', 'Product Name']:
+                if c in temp_df.columns:
+                    title_col = c
+                    break
+            if not title_col:
+                title_col = temp_df.columns[0]
+                
+            print(f"--> Building Catalog from: {csv_path}")
+            grouped = temp_df.groupby(title_col, sort=False)
+            
             for title, group in grouped:
                 title_str = str(title).strip()
+                if not title_str or title_str.lower() in ['nan', 'title']:
+                    continue
+                
                 slug = re.sub(r'[^a-z0-9]+', '-', title_str.lower()).strip('-')
                 first = group.iloc[0]
                 
                 variants = []
                 prices = []
                 for _, row in group.iterrows():
-                    p_val = safe_float(row.get('Price'))
+                    p_val = safe_float(row.get('Price', row.get('price', row.get('MSRP', 0))))
                     prices.append(p_val)
-                    c_name = re.sub(r'\s*\[\+\$[0-9\.]+\]', '', str(row.get('Variation name (color)', 'Standard'))).strip()
+                    c_name = str(row.get('Variation name (color)', row.get('color', row.get('Option1 Value', 'Standard'))))
+                    c_name = re.sub(r'\s*\[\+\$[0-9\.]+\]', '', c_name).strip()
+                    sku_val = str(row.get('Variation SKU', row.get('sku', row.get('SKU', '')))).strip()
+                    img_val = str(row.get('Variation Image Link', row.get('image', row.get('Image_URL', '')))).strip()
+                    
                     variants.append({
-                        "name": c_name if c_name else "Standard",
-                        "sku": str(row.get('Variation SKU', '')).strip(),
+                        "name": c_name if c_name and c_name.lower() != 'nan' else "Standard",
+                        "sku": sku_val,
                         "price": round(p_val, 2),
-                        "image": str(row.get('Variation Image Link', '')).strip(),
+                        "image": img_val,
                         "stock": 10
                     })
                 
                 min_price = min(prices) if prices else 0.0
-                desc = generate_colorfittings_desc(title_str, first.get('Description', ''))
+                raw_desc_val = first.get('Description', first.get('description', ''))
+                desc = generate_colorfittings_desc(title_str, raw_desc_val)
+                cat_val = str(first.get('Category', first.get('category', 'AN Fittings')))
+                img_main = str(first.get('Variation Image Link', first.get('image', first.get('Image_URL', '')))).strip()
                 
                 product = {
                     "id": slug,
                     "name": title_str,
                     "title": title_str,
-                    "sku": str(first.get('Variation SKU', '')).strip(),
-                    "category": str(first.get('Category', 'AN Fittings')),
+                    "sku": str(first.get('Variation SKU', first.get('sku', first.get('SKU', '')))).strip(),
+                    "category": cat_val if cat_val and cat_val.lower() != 'nan' else 'AN Fittings',
                     "price": round(min_price, 2),
                     "description": desc,
-                    "image": str(first.get('Variation Image Link', '')).strip(),
+                    "image": img_main,
                     "variants": variants
                 }
                 with open(f'content/products/{slug}.json', 'w') as f:
@@ -202,19 +225,21 @@ for csv_path in csv_files:
     except Exception as e:
         print(f"Error processing {csv_path}: {e}")
 
-# Compile ALL product JSON files currently in content/products/ into inventory.json
+# 3. ABSOLUTE CRITICAL STEP: Build inventory.json by scanning ALL JSON files in content/products/
+# This ensures ANY existing product (Turbosmart, ColorFittings, Maxpeedingrods, Evil Energy, APG, manual JSONs) is retained.
 all_products = []
-for fname in os.listdir('content/products'):
-    if fname.endswith('.json'):
-        filepath = os.path.join('content/products', fname)
-        try:
-            with open(filepath, 'r') as f:
-                data = json.load(f)
-                all_products.append(data)
-        except Exception as e:
-            print(f"Error loading {fname}: {e}")
+if os.path.exists('content/products'):
+    for fname in os.listdir('content/products'):
+        if fname.endswith('.json'):
+            filepath = os.path.join('content/products', fname)
+            try:
+                with open(filepath, 'r') as f:
+                    data = json.load(f)
+                    all_products.append(data)
+            except Exception as e:
+                print(f"Error loading {fname}: {e}")
 
 with open('inventory.json', 'w') as f:
     json.dump(all_products, f, indent=2)
 
-print(f"Successfully compiled inventory.json with {len(all_products)} total products.")
+print(f"Compilation Complete: {len(all_products)} total products saved to inventory.json.")
