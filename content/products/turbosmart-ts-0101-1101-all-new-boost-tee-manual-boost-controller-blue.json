@@ -1,0 +1,23 @@
+{
+  "id": "turbosmart-ts-0101-1101-all-new-boost-tee-manual-boost-controller-blue",
+  "name": "All New Boost Tee Manual Boost Controller Blue",
+  "title": "All New Boost Tee Manual Boost Controller Blue",
+  "sku": "TS-0101-1101",
+  "brand": "Turbosmart",
+  "category": "Boost Controllers",
+  "subcategory": "Manual & Electronic Controllers",
+  "anSize": "Universal",
+  "price": 112.49,
+  "msrp": 124.99,
+  "description": "The <b>All New Boost Tee Manual Boost Controller Blue</b> utilizes Turbosmart's proven gated boost control system to bring boost on faster and prevent premature wastegate opening.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Brand & Engineering:</b> Genuine Turbosmart high-performance motorsport hardware.<br>\u2022 <b>Construction:</b> Precision CNC-machined billet aluminum housing with hard-anodized finish.<br>\u2022 <b>Control Type:</b> Detent adjustment system for precise, leak-free boost adjustments.<br>\u2022 <b>Flow Efficiency:</b> Gated feature minimizes wastegate creep and improves turbo spool response.",
+  "image": "https://830533.app.netsuite.com//core/media/media.nl?id=25084959&c=830533&h=iXuQY-HOIcZC-rwN51tt7-nJ2hnIfBVM0d2cpGhGpk7GTmRU",
+  "variants": [
+    {
+      "name": "Standard",
+      "sku": "TS-0101-1101",
+      "price": 112.49,
+      "image": "https://830533.app.netsuite.com//core/media/media.nl?id=25084959&c=830533&h=iXuQY-HOIcZC-rwN51tt7-nJ2hnIfBVM0d2cpGhGpk7GTmRU",
+      "stock": 10
+    }
+  ]
+}

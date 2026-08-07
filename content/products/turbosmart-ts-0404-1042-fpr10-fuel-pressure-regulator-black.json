@@ -1,0 +1,23 @@
+{
+  "id": "turbosmart-ts-0404-1042-fpr10-fuel-pressure-regulator-black",
+  "name": "FPR10 - Fuel Pressure Regulator - Black",
+  "title": "FPR10 - Fuel Pressure Regulator - Black",
+  "sku": "TS-0404-1042",
+  "brand": "Turbosmart",
+  "category": "Fuel Systems",
+  "subcategory": "Fuel Pressure Regulators",
+  "anSize": "Universal",
+  "price": 267.29,
+  "msrp": 296.99,
+  "description": "The <b>FPR10 - Fuel Pressure Regulator - Black</b> delivers dead-accurate fuel pressure regulation across high-horsepower EFI applications running pump gas, race gas, or E85.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Brand & Engineering:</b> Genuine Turbosmart high-performance motorsport hardware.<br>\u2022 <b>Construction:</b> Precision CNC-machined billet aluminum housing with hard-anodized finish.<br>\u2022 <b>Porting & Fittings:</b> Equipped for -10AN high-flow feed and return lines with integrated gauge port.<br>\u2022 <b>Ratio:</b> 1:1 manifold pressure reference for linear fuel delivery under boost.",
+  "image": "https://830533.app.netsuite.com//core/media/media.nl?id=24164170&c=830533&h=DKXjgKKhsr4txMxlVFlKqR7UYkuoNVy8F6bPyoSPtKTmwK3u",
+  "variants": [
+    {
+      "name": "Standard",
+      "sku": "TS-0404-1042",
+      "price": 267.29,
+      "image": "https://830533.app.netsuite.com//core/media/media.nl?id=24164170&c=830533&h=DKXjgKKhsr4txMxlVFlKqR7UYkuoNVy8F6bPyoSPtKTmwK3u",
+      "stock": 10
+    }
+  ]
+}
