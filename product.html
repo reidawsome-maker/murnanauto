@@ -1,21 +1,176 @@
-// Fetch and render product data
-function renderProductPage(product) {
-  document.getElementById('product-title').innerText = product.title || product.name || '';
-  document.getElementById('product-price').innerText = `$${product.price}`;
-  
-  let desc = product.description || '';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - Murnan Auto</title>
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    .product-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      background: #111827;
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid #1f2937;
+    }
+    @media (max-width: 768px) {
+      .product-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    .product-image img {
+      width: 100%;
+      border-radius: 6px;
+      object-fit: cover;
+      background: #1f2937;
+    }
+    .product-info h1 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+    .price {
+      font-size: 1.5rem;
+      color: #10b981;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+    .meta-tag {
+      display: inline-block;
+      background: #1f2937;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      margin-right: 8px;
+      margin-bottom: 15px;
+      color: #9ca3af;
+    }
+    .description {
+      margin-top: 20px;
+      line-height: 1.6;
+      color: #d1d5db;
+      border-top: 1px solid #1f2937;
+      padding-top: 20px;
+    }
+    .btn-buy {
+      background: #e11d48;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .btn-buy:hover {
+      background: #be123c;
+    }
+  </style>
+</head>
+<body>
 
-  // Fail-safe: Scrub out raw Python source code if present in the data
-  if (desc.includes('import pandas') || desc.includes('def build_part_description') || desc.includes('build_part_description(')) {
-    desc = `<p>The <b>${product.title || 'component'}</b> is engineered for demanding high-performance automotive fluid systems.</p>
-    <br><b>Technical Specifications:</b><br>
-    • <b>Origin:</b> Precision CNC-machined in the USA.<br>
-    • <b>Material & Finish:</b> 6061-T6 Billet Aluminum with a durable anodized finish.`;
-  }
+  <div class="product-container" id="product-wrapper">
+    <div class="product-image">
+      <img id="product-image" src="" alt="Product Image" style="display:none;">
+    </div>
+    <div class="product-info">
+      <span class="meta-tag" id="product-platform">Universal</span>
+      <span class="meta-tag" id="product-category">General</span>
+      <h1 id="product-title">Loading product...</h1>
+      <div class="price" id="product-price"></div>
+      <div id="product-sku" style="color: #6b7280; font-size: 0.9rem;"></div>
+      <button class="btn-buy" id="add-to-cart-btn">ADD TO CART</button>
+      <div class="description" id="product-description"></div>
+    </div>
+  </div>
 
-  // Inject sanitized HTML into description container
-  const descContainer = document.getElementById('product-description') || document.getElementById('description');
-  if (descContainer) {
-    descContainer.innerHTML = desc;
-  }
-}
+  <script>
+    async function loadProductDetails() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id') || urlParams.get('sku') || urlParams.get('slug');
+
+      if (!productId) {
+        document.getElementById('product-title').innerText = "Product Not Found";
+        document.getElementById('product-description').innerText = "No product ID was provided in the URL.";
+        return;
+      }
+
+      try {
+        // Direct fetch from inventory.json
+        const res = await fetch('/inventory.json?t=' + Date.now());
+        if (!res.ok) throw new Error("Could not fetch inventory.json");
+
+        const inventory = await res.json();
+
+        // Find item directly in inventory array
+        const product = inventory.find(item => {
+          const target = productId.toLowerCase();
+          return (
+            (item.id && item.id.toLowerCase() === target) ||
+            (item.sku && item.sku.toLowerCase() === target) ||
+            (item.slug && item.slug.toLowerCase() === target)
+          );
+        });
+
+        if (!product) {
+          document.getElementById('product-title').innerText = "Product Not Found";
+          document.getElementById('product-description').innerText = "This item does not exist in inventory.json.";
+          return;
+        }
+
+        // Render details
+        document.title = `${product.title || product.name} - Murnan Auto`;
+        document.getElementById('product-title').innerText = product.title || product.name || 'Untitled Product';
+        document.getElementById('product-price').innerText = product.price ? `$${parseFloat(product.price).toFixed(2)}` : '';
+        
+        if (product.sku) {
+          document.getElementById('product-sku').innerText = `SKU: ${product.sku}`;
+        }
+        if (product.platform) {
+          document.getElementById('product-platform').innerText = product.platform;
+        }
+        if (product.subcategory || product.category) {
+          document.getElementById('product-category').innerText = product.subcategory || product.category;
+        }
+
+        // Render Image
+        const imgEl = document.getElementById('product-image');
+        if (product.image && product.image.trim() !== '') {
+          imgEl.src = product.image;
+          imgEl.style.display = 'block';
+        }
+
+        // Clean & Sanitize Description (Strip any legacy python text)
+        let desc = product.description || '';
+
+        if (desc.includes('import pandas') || desc.includes('def build_part_description') || desc.includes('build_part_description(')) {
+          desc = `<p>The <b>${product.title || product.name || 'component'}</b> is engineered for demanding high-performance automotive applications.</p>
+          <br><b>Technical Specifications:</b><br>
+          • <b>Origin:</b> Precision CNC-machined in the USA.<br>
+          • <b>Material & Finish:</b> 6061-T6 Billet Aluminum with a durable anodized finish.`;
+        }
+
+        document.getElementById('product-description').innerHTML = desc;
+
+      } catch (err) {
+        console.error("Error loading product details:", err);
+        document.getElementById('product-title').innerText = "Error Loading Product";
+        document.getElementById('product-description').innerText = "Unable to load inventory data.";
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadProductDetails);
+  </script>
+</body>
+</html>
