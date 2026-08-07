@@ -7,9 +7,8 @@ on:
     paths:
       - 'content/products/**'
 
-concurrency:
-  group: compile-inventory
-  cancel-in-progress: true
+permissions:
+  contents: write
 
 jobs:
   build-inventory:
@@ -17,8 +16,6 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -50,8 +47,7 @@ jobs:
           "
 
       - name: Commit Updated inventory.json
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add inventory.json
-          git diff --quiet && git diff --staged --quiet || (git pull --rebase origin main && git commit -m "Auto-compile CMS inventory.json" && git push)
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-compile CMS inventory.json"
+          file_pattern: "inventory.json"
