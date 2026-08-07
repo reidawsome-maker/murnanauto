@@ -2,22 +2,40 @@ import pandas as pd
 import json
 import os
 import re
+import glob
 
-# Read CSV (Ensure this points to your primary catalog CSV file)
-CSV_FILENAME = 'CF-Catalog-Filtered-6-8-10AN-EFI-Tools-Hose.csv'
-df = pd.read_csv(CSV_FILENAME)
 os.makedirs('content/products', exist_ok=True)
 
-# Specific items and keywords to permanently exclude
+# 1. Automatically locate and concatenate ALL CSV files in the project folder
+csv_files = glob.glob('*.csv')
+if not csv_files:
+    print("No CSV files found in directory.")
+    exit(1)
+
+df_list = []
+for f in csv_files:
+    try:
+        temp_df = pd.read_csv(f)
+        df_list.append(temp_df)
+    except Exception as e:
+        print(f"Error loading {f}: {e}")
+
+df = pd.concat(df_list, ignore_index=True)
+
+# Helper function to flexibly fetch values across different vendor CSV column names
+def get_col(row, column_options, default=''):
+    for col in column_options:
+        if col in row and not pd.isna(row[col]):
+            return str(row[col]).strip()
+    return default
+
 EXCLUDE_EXACT_TITLES = [
     "cummins turbo drain tube adapter",
     "3/8\" ptc air fitting to 6 an adapter",
     "3/8\" ptc air fitting to -6 an adapter"
 ]
 
-DELETED_KEYWORDS = [
-    "per foot", "by the foot", "1 foot"
-]
+DELETED_KEYWORDS = ["per foot", "by the foot", "1 foot"]
 
 subcat_mapping = {
     'Adapters and Unions': ('ANAdapters', 'AN Adapters & Specialty'),
@@ -63,22 +81,9 @@ def safe_float(val):
 
 def build_part_description(row, title):
     title_str = str(title).strip()
-    cat_str = str(row.get('Category', '')).strip()
-    
-    # Parse AN size, angle, and connection specs
-    an_match = re.search(r'(-?\d+)\s*AN', title_str, re.IGNORECASE)
-    
-    angle_match = re.search(r'(\d+)\s*(Degree|Deg|\°)', title_str, re.IGNORECASE)
-    angle = f"{angle_match.group(1)}°" if angle_match else None
-    
-    is_ptfe = 'ptfe' in title_str.lower() or 'ptfe' in cat_str.lower()
-    is_orb = 'orb' in title_str.lower() or 'o-ring boss' in title_str.lower()
-    is_npt = 'npt' in title_str.lower()
-    is_efi = 'efi' in title_str.lower() or 'quick connect' in title_str.lower()
+    cat_str = get_col(row, ['Category', 'category', 'Category Name'])
+    raw_desc = get_col(row, ['Description', 'description', 'Overview', 'Body'])
 
-    # Extract raw description
-    raw_desc = str(row.get('Description', '')) if not pd.isna(row.get('Description', '')) else ""
-    
     # Hard-purge if string contains raw python code from prior pastes
     if "import pandas" in raw_desc or "def build_part_description" in raw_desc or "spec_block" in raw_desc:
         raw_desc = ""
@@ -91,7 +96,7 @@ def build_part_description(row, title):
     raw_desc = re.sub(r'Looking to complete your system\?.*', '', raw_desc, flags=re.DOTALL | re.IGNORECASE)
     raw_desc = re.sub(r'Explore our full range.*', '', raw_desc, flags=re.DOTALL | re.IGNORECASE)
 
-    # Neutralize third-person phrasing (removes we / our / us)
+    # Neutralize third-person phrasing
     raw_desc = re.sub(r'\bwe\b', 'Color-Fittings', raw_desc, flags=re.IGNORECASE)
     raw_desc = re.sub(r'\bour\b', 'the', raw_desc, flags=re.IGNORECASE)
     raw_desc = re.sub(r'\bus\b', 'the manufacturer', raw_desc, flags=re.IGNORECASE)
@@ -99,10 +104,18 @@ def build_part_description(row, title):
     clean_paragraphs = [p.strip() for p in raw_desc.split('\n') if p.strip()]
     lead_body = f" {clean_paragraphs[0]}" if clean_paragraphs else ""
 
-    # Technical specs list
+    # Parse specs
+    angle_match = re.search(r'(\d+)\s*(Degree|Deg|\°)', title_str, re.IGNORECASE)
+    angle = f"{angle_match.group(1)}°" if angle_match else None
+    
+    is_ptfe = 'ptfe' in title_str.lower() or 'ptfe' in cat_str.lower()
+    is_orb = 'orb' in title_str.lower() or 'o-ring boss' in title_str.lower()
+    is_npt = 'npt' in title_str.lower()
+    is_efi = 'efi' in title_str.lower() or 'quick connect' in title_str.lower()
+
     specs = [
         "<b>Origin:</b> Precision CNC-machined in the USA.",
-        "<b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance."
+        "<b>Material & Finish:</b> Premium high-grade construction with corrosion-resistant coating."
     ]
     
     if angle:
@@ -128,7 +141,9 @@ def extract_an_size_label(title):
     return "Universal"
 
 def is_keep_item(row):
-    title = str(row['Title']).lower().strip()
+    title = get_col(row, ['Title', 'title', 'Name', 'product_name']).lower()
+    if not title:
+        return False
 
     if any(ex in title for ex in EXCLUDE_EXACT_TITLES):
         return False
@@ -136,7 +151,6 @@ def is_keep_item(row):
     if any(k in title for k in DELETED_KEYWORDS):
         return False
 
-    # Keep all valid items (turbos, mufflers, clamps, fittings, hoses, etc.)
     return True
 
 def determine_category(title, raw_cat):
@@ -166,23 +180,27 @@ def determine_category(title, raw_cat):
 
     return subcat_mapping.get(c, ('ANFittings', 'AN Hose Ends & Fittings'))
 
-# Clear existing json products before building clean catalog
+# Clear existing json products before compiling total catalog
 if os.path.exists('content/products'):
     for f in os.listdir('content/products'):
         if f.endswith('.json'):
             os.remove(os.path.join('content/products', f))
 
+# Normalize titles across compiled CSV data
+df['Title_Clean'] = df.apply(lambda r: get_col(r, ['Title', 'title', 'Name', 'product_name']), axis=1)
 df_filtered = df[df.apply(is_keep_item, axis=1)].copy()
-grouped = df_filtered.groupby('Title', sort=False)
+grouped = df_filtered.groupby('Title_Clean', sort=False)
 
 all_products = []
 
 for title, group in grouped:
+    if not title:
+        continue
     slug = re.sub(r'[^a-z0-9]+', '-', str(title).lower()).strip('-')
     first = group.iloc[0]
     title_str = str(title)
     
-    category, subcategory = determine_category(title_str, first.get('Category', ''))
+    category, subcategory = determine_category(title_str, get_col(first, ['Category', 'category']))
     an_size_label = extract_an_size_label(title_str)
     
     cleaned_desc = build_part_description(first, title_str)
@@ -190,10 +208,11 @@ for title, group in grouped:
     variants = []
     prices = []
     for _, row in group.iterrows():
-        color_name = re.sub(r'\s*\[\+\$[0-9\.]+\]', '', str(row.get('Variation name (color)', 'Standard'))).strip()
-        img_link = str(row.get('Variation Image Link', '')).strip()
-        sku_val = str(row.get('Variation SKU', '')).strip()
-        price_val = safe_float(row.get('Price', 0))
+        color_name = get_col(row, ['Variation name (color)', 'Variation Name', 'Color', 'Option1 Value'], 'Standard')
+        color_name = re.sub(r'\s*\[\+\$[0-9\.]+\]', '', color_name).strip()
+        img_link = get_col(row, ['Variation Image Link', 'Image Link', 'Image Src', 'image'])
+        sku_val = get_col(row, ['Variation SKU', 'SKU', 'sku'])
+        price_val = safe_float(get_col(row, ['Price', 'price', 'Variant Price']))
         prices.append(price_val)
         
         variants.append({
@@ -210,13 +229,13 @@ for title, group in grouped:
         'id': slug,
         'name': title_str,
         'title': title_str,
-        'sku': str(first.get('Variation SKU', '')).strip(),
+        'sku': get_col(first, ['Variation SKU', 'SKU', 'sku']),
         'category': category,
         'subcategory': subcategory,
         'anSize': an_size_label,
         'price': min_price,
         'description': cleaned_desc,
-        'image': str(first.get('Variation Image Link', '')).strip(),
+        'image': get_col(first, ['Variation Image Link', 'Image Link', 'Image Src', 'image']),
         'variants': variants
     }
     
@@ -228,4 +247,4 @@ for title, group in grouped:
 with open('inventory.json', 'w') as f:
     json.dump(all_products, f, indent=2)
 
-print(f"Catalog generated successfully. {len(all_products)} active products.")
+print(f"Catalog compiled successfully. {len(all_products)} active products built across all CSV files.")
