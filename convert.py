@@ -54,7 +54,6 @@ subcat_mapping = {
 }
 
 def safe_float(val):
-    """Safely convert strings or dollar values to float without crashing."""
     try:
         cleaned = re.sub(r'[^0-9.]', '', str(val))
         return float(cleaned) if cleaned else 0.0
@@ -76,8 +75,13 @@ def build_part_description(row, title):
     is_npt = 'npt' in title_str.lower()
     is_efi = 'efi' in title_str.lower() or 'quick connect' in title_str.lower()
 
-    # 2. Extract and scrub raw description text
+    # 2. Extract raw description & SANITIZE CORRUPTED PYTHON CODE TEXT
     raw_desc = str(row.get('Description', '')) if not pd.isna(row.get('Description', '')) else ""
+    
+    # Hard purge if string contains raw python code from earlier pastes
+    if "import pandas" in raw_desc or "def build_part_description" in raw_desc or "spec_block" in raw_desc:
+        raw_desc = ""
+
     raw_desc = raw_desc.replace('\\n', '\n').replace('\r', '')
     
     # Strip out vendor boilerplate and external links
@@ -86,7 +90,7 @@ def build_part_description(row, title):
     raw_desc = re.sub(r'Looking to complete your system\?.*', '', raw_desc, flags=re.DOTALL | re.IGNORECASE)
     raw_desc = re.sub(r'Explore our full range.*', '', raw_desc, flags=re.DOTALL | re.IGNORECASE)
 
-    # 3. Third-person conversion (replaces we/our/us)
+    # 3. Third-person conversion
     raw_desc = re.sub(r'\bwe\b', 'Color-Fittings', raw_desc, flags=re.IGNORECASE)
     raw_desc = re.sub(r'\bour\b', 'the', raw_desc, flags=re.IGNORECASE)
     raw_desc = re.sub(r'\bus\b', 'the manufacturer', raw_desc, flags=re.IGNORECASE)
@@ -94,7 +98,7 @@ def build_part_description(row, title):
     clean_paragraphs = [p.strip() for p in raw_desc.split('\n') if p.strip()]
     lead_body = f" {clean_paragraphs[0]}" if clean_paragraphs else ""
 
-    # 4. Technical specs list
+    # 4. Construct Technical Specs
     specs = [
         "<b>Origin:</b> Precision CNC-machined in the USA.",
         "<b>Material & Finish:</b> 6061-T6 Billet Aluminum with an anodized finish for maximum corrosion resistance."
