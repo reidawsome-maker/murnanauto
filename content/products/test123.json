@@ -8,18 +8,18 @@
   "compare_price": 4.99,
   "weight": 2,
   "stock": 1,
-  "category": "",
-  "subcategory": "",
+  "category": "Turbos",
+  "subcategory": "Turbochargers",
   "parentCategory": "Forced Induction & Nitrous",
   "anSize": "Universal",
   "description": "just a test :) thx!",
-  "image": "",
+  "image": "https://colorfittings.com/wp-content/uploads/2026/04/Flare-To-Metric-Adapter-Black-122.png",
   "variants": [
     {
       "name": "Standard",
       "sku": "test123",
       "price": 2.99,
-      "image": "",
+      "image": "https://colorfittings.com/wp-content/uploads/2026/04/Flare-To-Metric-Adapter-Black-122.png",
       "stock": 1
     }
   ]
