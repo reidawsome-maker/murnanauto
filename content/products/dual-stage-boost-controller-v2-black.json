@@ -1,0 +1,22 @@
+{
+  "id": "dual-stage-boost-controller-v2-black",
+  "name": "Dual Stage Boost Controller V2 - Black",
+  "title": "Dual Stage Boost Controller V2 - Black",
+  "sku": "TS-0105-1102",
+  "brand": "Turbosmart",
+  "category": "Boost Controllers",
+  "subcategory": "Manual & Electronic Controllers",
+  "anSize": "Universal",
+  "price": 283.49,
+  "description": "The <b>Dual Stage Boost Controller V2 - Black</b> is a high-performance component engineered for demanding automotive applications.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Brand & Engineering:</b> Genuine Turbosmart high-performance motorsport hardware.<br>\u2022 <b>Construction:</b> Precision CNC-machined billet aluminum housing with hard-anodized finish.",
+  "image": "https://830533.app.netsuite.com//core/media/media.nl?id=15003951&c=830533&h=RgZLaQDoOIqhRIpRjNblRxDz6ots522WFmreOVY67tj-XuHu",
+  "variants": [
+    {
+      "name": "Standard",
+      "sku": "TS-0105-1102",
+      "price": 283.49,
+      "image": "https://830533.app.netsuite.com//core/media/media.nl?id=15003951&c=830533&h=RgZLaQDoOIqhRIpRjNblRxDz6ots522WFmreOVY67tj-XuHu",
+      "stock": 10
+    }
+  ]
+}

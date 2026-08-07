@@ -1,0 +1,22 @@
+{
+  "id": "genv-wg40-compgate40-7psi-black",
+  "name": "GenV WG40 CompGate40 7psi Black",
+  "title": "GenV WG40 CompGate40 7psi Black",
+  "sku": "TS-0552-1002",
+  "brand": "Turbosmart",
+  "category": "Wastegates",
+  "subcategory": "External Wastegates",
+  "anSize": "Universal",
+  "price": 394.19,
+  "description": "The <b>GenV WG40 CompGate40 7psi Black</b> is a high-performance component engineered for demanding automotive applications.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Brand & Engineering:</b> Genuine Turbosmart high-performance motorsport hardware.<br>\u2022 <b>Construction:</b> Precision CNC-machined billet aluminum housing with hard-anodized finish.<br>\u2022 <b>Thermal Management:</b> Integrated liquid cooling ports and 360-degree actuator cap positioning.",
+  "image": "https://830533.app.netsuite.com//core/media/media.nl?id=23593949&c=830533&h=JdAuuAVg5JS9CRe8xafpEEwdYotc6GK1O4AAEv3yHOc14zW3",
+  "variants": [
+    {
+      "name": "Standard",
+      "sku": "TS-0552-1002",
+      "price": 394.19,
+      "image": "https://830533.app.netsuite.com//core/media/media.nl?id=23593949&c=830533&h=JdAuuAVg5JS9CRe8xafpEEwdYotc6GK1O4AAEv3yHOc14zW3",
+      "stock": 10
+    }
+  ]
+}

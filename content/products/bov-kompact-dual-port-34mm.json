@@ -1,0 +1,22 @@
+{
+  "id": "bov-kompact-dual-port-34mm",
+  "name": "BOV Kompact Dual Port-34mm",
+  "title": "BOV Kompact Dual Port-34mm",
+  "sku": "TS-0203-1023",
+  "brand": "Turbosmart",
+  "category": "Blow Off Valves",
+  "subcategory": "BOV & Diverter Valves",
+  "anSize": "Universal",
+  "price": 228.59,
+  "description": "The <b>BOV Kompact Dual Port-34mm</b> is a high-performance component engineered for demanding automotive applications.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Brand & Engineering:</b> Genuine Turbosmart high-performance motorsport hardware.<br>\u2022 <b>Construction:</b> Precision CNC-machined billet aluminum housing with hard-anodized finish.<br>\u2022 <b>Response:</b> Fast-acting piston mechanism prevents compressor surge under sudden throttle lift.",
+  "image": "https://830533.app.netsuite.com//core/media/media.nl?id=24853222&c=830533&h=mu6cDhZGEbOaNr9CnnEBj2lUo4bZH5reeiiTE6gGLzE3EaC7",
+  "variants": [
+    {
+      "name": "Standard",
+      "sku": "TS-0203-1023",
+      "price": 228.59,
+      "image": "https://830533.app.netsuite.com//core/media/media.nl?id=24853222&c=830533&h=mu6cDhZGEbOaNr9CnnEBj2lUo4bZH5reeiiTE6gGLzE3EaC7",
+      "stock": 10
+    }
+  ]
+}

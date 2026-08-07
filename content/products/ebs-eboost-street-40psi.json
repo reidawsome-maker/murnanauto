@@ -1,0 +1,22 @@
+{
+  "id": "ebs-eboost-street-40psi",
+  "name": "eBS eBoost Street 40psi",
+  "title": "eBS eBoost Street 40psi",
+  "sku": "TS-0302-1002",
+  "brand": "Turbosmart",
+  "category": "Boost Controllers",
+  "subcategory": "Manual & Electronic Controllers",
+  "anSize": "Universal",
+  "price": 458.99,
+  "description": "The <b>eBS eBoost Street 40psi</b> is a high-performance component engineered for demanding automotive applications.<br><br><b>Technical Specifications:</b><br>\u2022 <b>Brand & Engineering:</b> Genuine Turbosmart high-performance motorsport hardware.<br>\u2022 <b>Construction:</b> Precision CNC-machined billet aluminum housing with hard-anodized finish.",
+  "image": "https://830533.app.netsuite.com//core/media/media.nl?id=217&c=830533&h=goMPBaB7qD8St1q_eJ5WF3A630Ky1PUqOBLpKZEZr3xv86TS",
+  "variants": [
+    {
+      "name": "Standard",
+      "sku": "TS-0302-1002",
+      "price": 458.99,
+      "image": "https://830533.app.netsuite.com//core/media/media.nl?id=217&c=830533&h=goMPBaB7qD8St1q_eJ5WF3A630Ky1PUqOBLpKZEZr3xv86TS",
+      "stock": 10
+    }
+  ]
+}
