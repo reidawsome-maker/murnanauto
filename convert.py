@@ -4,7 +4,7 @@ import os
 import re
 
 # Read CSV
-df = pd.read_csv('CF-Catalog-Filtered-6-8-10AN-EFI-Tools-Hose.csv')
+df = pd.read_csv('your-master-catalog.csv')
 os.makedirs('content/products', exist_ok=True)
 
 # Explicit items and keywords to permanently purge
