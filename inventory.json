@@ -9,11 +9,11 @@
     "compare_price": 4.99,
     "weight": 2,
     "stock": 1,
-    "category": "Turbos",
-    "subcategory": "Turbochargers",
+    "category": "",
+    "subcategory": "",
     "parentCategory": "Forced Induction & Nitrous",
     "anSize": "Universal",
-    "description": "just a test :)",
+    "description": "just a test :) thx!",
     "image": "",
     "variants": [
       {
@@ -35,11 +35,11 @@
     "compare_price": 4.99,
     "weight": 2,
     "stock": 2,
-    "category": "Calipers",
-    "subcategory": "Big Brake Kits & Calipers",
+    "category": "",
+    "subcategory": "",
     "parentCategory": "Brakes",
     "anSize": "Universal",
-    "description": "testing",
+    "description": "testing123",
     "image": "",
     "variants": [
       {
