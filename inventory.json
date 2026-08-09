@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": "ts-0101-1101",
+    "name": "Turbosmart Boost Tee Manual Boost Controller Blue",
+    "title": "Turbosmart Boost Tee Manual Boost Controller Blue",
+    "sku": "TS-0101-1101",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 112.49,
+    "compare_price": 124.99,
+    "weight": 1,
+    "stock": 90,
+    "category": "Controllers",
+    "subcategory": "Boost Controllers",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "The TS-0101-1101 Turbosmart Boost Tee is a reliable, budget-friendly manual boost controller designed to increase boost pressure above base wastegate level.\n\nTechnical Specifications:\n\nAdjustment Mechanism: Mechanical detent system with positive index clicks for precise boost adjustment.\n\nGated Design: Integrated detent system prevents boost spikes and speeds up wastegate spool-up by delaying gate crack pressure.\n\nConstruction: CNC-machined anodized billet aluminum body with stainless steel internal components.\n\nConnections: Dual 1/8\" NPT fittings with brass hose barbs for easy inline installation into wastegate pressure lines.\n\nMounting: Includes a heavy-duty mounting bracket for secure engine bay placement.",
+    "image": "https://830533.app.netsuite.com//core/media/media.nl?id=25084959&c=830533&h=iXuQY-HOIcZC-rwN51tt7-nJ2hnIfBVM0d2cpGhGpk7GTmRU",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "TS-0101-1101",
+        "price": 112.49,
+        "image": "https://830533.app.netsuite.com//core/media/media.nl?id=25084959&c=830533&h=iXuQY-HOIcZC-rwN51tt7-nJ2hnIfBVM0d2cpGhGpk7GTmRU",
+        "stock": 90
+      }
+    ]
+  }
+]
