@@ -39,5 +39,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "ts-0101-2023",
+    "name": "Turbosmart Boost Gauge 30psi 52mm",
+    "title": "Turbosmart Boost Gauge 30psi 52mm",
+    "sku": "TS-0101-2023",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 62.99,
+    "compare_price": null,
+    "weight": 3,
+    "stock": 90,
+    "category": "Gauges",
+    "subcategory": "Gauges & Pods",
+    "parentCategory": "Interior & Electronics",
+    "anSize": "Universal",
+    "description": "The TS-0101-2023 is a reliable 52mm mechanical boost gauge engineered for accurate real-time manifold pressure and vacuum monitoring up to 30 PSI.\n\nTechnical Specifications:\n\nScale & Range: Mechanical vacuum to 30 PSI display.\n\nDial & Lighting: High-contrast black face with a sleek silver bezel and bright backlighting for easy viewing day or night.\n\nSize & Fitment: Standard 52mm (2-1/16\") diameter for seamless pod or dash mounting.\n\nOperation: 100% mechanical sweep—requires no electronic sensors for direct manifold pressure reading.\n\nIncludes: Comes complete with panel mounting bracket, vacuum line, and brass T-fitting.",
+    "image": "https://830533.app.netsuite.com//core/media/media.nl?id=15025912&c=830533&h=vco6h81_DZ7WgX3xA2ahjni80a0vrWwIuvafJu04eISLcBao",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "TS-0101-2023",
+        "price": 62.99,
+        "image": "https://830533.app.netsuite.com//core/media/media.nl?id=15025912&c=830533&h=vco6h81_DZ7WgX3xA2ahjni80a0vrWwIuvafJu04eISLcBao",
+        "stock": 90,
+        "weight": 3
+      }
+    ]
   }
 ]
