@@ -24,6 +24,7 @@
         "name": "Blue",
         "option": "Blue",
         "sku": "TS-0101-1101",
+        "image": "https://830533.app.netsuite.com//core/media/media.nl?id=25084959&c=830533&h=iXuQY-HOIcZC-rwN51tt7-nJ2hnIfBVM0d2cpGhGpk7GTmRU",
         "price": 112.49,
         "stock": 90,
         "weight": 1
@@ -32,6 +33,7 @@
         "name": "Black",
         "option": "Black",
         "sku": "TS-0101-1102",
+        "image": "https://830533.app.netsuite.com//core/media/media.nl?id=25085566&c=830533&h=O8apZ1ama_hb3NVqM9Sen-qdguPmNQDv0NCk6Sho-3273j3s",
         "price": 112.49,
         "stock": 90,
         "weight": 1
