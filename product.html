@@ -149,7 +149,7 @@
     }
 
     const prodTitle = product.title || product.name || 'Product';
-    const prodImg = product.image || product.featured_image || (product.images && product.images[0]);
+    const mainProdImg = product.image || product.featured_image || (product.images && product.images[0]) || '';
     const hasVariants = product.variants && product.variants.length > 0;
     let activeItem = hasVariants ? product.variants[0] : product;
 
@@ -182,6 +182,15 @@
       const stockEl = document.getElementById('displayStock');
       const buyBtn = document.getElementById('buyBtn');
       const qtyWrapper = document.getElementById('qtyWrapper');
+      const imgEl = document.getElementById('mainImg');
+
+      // Live Variant Image Swapping
+      if (imgEl) {
+        const variantImg = (activeItem.image && activeItem.image.trim() !== '') ? activeItem.image : mainProdImg;
+        if (variantImg) {
+          imgEl.src = variantImg;
+        }
+      }
 
       if (priceEl) {
         let priceHtml = `<span>$${currentPrice.toFixed(2)}</span>`;
@@ -228,9 +237,11 @@
       cleanDesc = `The <b>${prodTitle}</b> is engineered for demanding high-performance automotive fluid systems.`;
     }
 
+    const initialImg = (activeItem && activeItem.image && activeItem.image.trim() !== '') ? activeItem.image : mainProdImg;
+
     wrap.innerHTML = `
       <div class="product-img">
-        ${prodImg ? `<img src="${prodImg}" alt="${prodTitle}">` : 'IMAGE PENDING'}
+        ${initialImg ? `<img id="mainImg" src="${initialImg}" alt="${prodTitle}">` : 'IMAGE PENDING'}
       </div>
       <div>
         <span class="product-sku" id="displaySku">${activeItem.sku || product.sku || product.id}</span>
