@@ -1,9 +1,9 @@
 [
   {
-    "id": "ts-0101-1101",
-    "name": "Turbosmart Boost Tee Manual Boost Controller Blue",
-    "title": "Turbosmart Boost Tee Manual Boost Controller Blue",
-    "sku": "TS-0101-1101",
+    "id": "ts-0101-",
+    "name": "Turbosmart Boost Tee Manual Boost Controller ",
+    "title": "Turbosmart Boost Tee Manual Boost Controller ",
+    "sku": "TS-0101-",
     "platform": "Universal",
     "platforms": [
       "Universal",
@@ -21,11 +21,20 @@
     "image": "https://830533.app.netsuite.com//core/media/media.nl?id=25084959&c=830533&h=iXuQY-HOIcZC-rwN51tt7-nJ2hnIfBVM0d2cpGhGpk7GTmRU",
     "variants": [
       {
-        "name": "Standard",
+        "name": "Blue",
+        "option": "Blue",
         "sku": "TS-0101-1101",
         "price": 112.49,
-        "image": "https://830533.app.netsuite.com//core/media/media.nl?id=25084959&c=830533&h=iXuQY-HOIcZC-rwN51tt7-nJ2hnIfBVM0d2cpGhGpk7GTmRU",
-        "stock": 90
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Black",
+        "option": "Black",
+        "sku": "TS-0101-1102",
+        "price": 112.49,
+        "stock": 90,
+        "weight": 1
       }
     ]
   }
