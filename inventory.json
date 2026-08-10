@@ -111,5 +111,46 @@
         "weight": 4
       }
     ]
+  },
+  {
+    "id": "ts-0203-",
+    "name": "Turbosmart BOV Kompact Dual Port",
+    "title": "Turbosmart BOV Kompact Dual Port",
+    "sku": "TS-0203-",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 228.59,
+    "compare_price": null,
+    "weight": 5,
+    "stock": 90,
+    "category": "Valves",
+    "subcategory": "Wastegates & BOVs",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "The Turbosmart Kompact Dual Port BOV is a direct-replacement performance blow-off valve designed to upgrade weak, plastic factory bypass valves.\n\nIts hybrid Dual Port design vents both to the atmosphere for a crisp BOV sound and back into the intake to keep ECU air-metering clean and avoid rich running conditions or fault codes.\n\nFeatures\nDual Port Hybrid Venting: Reroutes part of the charge air into the intake and vents the rest to atmosphere for BOV sound without ECU issues.\n\nHolds High Boost: Billet aluminum body and internal brass piston eliminate high-boost leaks common on OEM plastic diaphragms.\n\nSharper Response: Quick-acting piston reduces turbo lag between gear shifts and protects the compressor wheel against surge.\n\nDirect Bolt-On: Engineered to mount using factory manifold locations and vacuum connections.\n\nSpecs\nMaterial: CNC-machined 6061-T6 billet aluminum body.\n\nInternal: Anodized high-flow aluminum/brass piston with high-temp seals.\n\nCompatibility: Universal NPT hose barb models or vehicle-specific direct-fit options available.\n\nIn the Box: Kompact Dual Port BOV, mounting hardware, and vacuum line adapter.",
+    "image": "https://830533.app.netsuite.com//core/media/media.nl?id=24853222&c=830533&h=mu6cDhZGEbOaNr9CnnEBj2lUo4bZH5reeiiTE6gGLzE3EaC7",
+    "variants": [
+      {
+        "name": "25mm",
+        "option": "25mm",
+        "sku": "TS-0203-1022",
+        "image": "https://830533.app.netsuite.com//core/media/media.nl?id=24853216&c=830533&h=xslEqhHw9WOWiVU3dNFPv-592Z59_gQNfM7rHd3JQADv_rG4",
+        "price": 228.59,
+        "stock": 90,
+        "weight": 5
+      },
+      {
+        "name": "34mm",
+        "option": "34mm",
+        "sku": "TS-0203-1023",
+        "image": "https://830533.app.netsuite.com//core/media/media.nl?id=24853222&c=830533&h=mu6cDhZGEbOaNr9CnnEBj2lUo4bZH5reeiiTE6gGLzE3EaC7",
+        "price": 228.59,
+        "stock": 90,
+        "weight": 5
+      }
+    ]
   }
 ]
