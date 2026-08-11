@@ -152,36 +152,5 @@
         "weight": 5
       }
     ]
-  },
-  {
-    "id": "pthe-90-6an",
-    "name": "FLF -6AN 90* PTFE",
-    "title": "FLF -6AN 90* PTFE",
-    "sku": "PTHE-90-6AN",
-    "platform": "Universal",
-    "platforms": [
-      "Universal",
-      "universal"
-    ],
-    "price": 25.09,
-    "compare_price": null,
-    "weight": 1,
-    "stock": 5,
-    "category": "ANFittings",
-    "subcategory": "AN Hose Ends & Fittings",
-    "parentCategory": "Fuel System",
-    "anSize": "Universal",
-    "description": "FLF PTFE 6AN 90* hose end",
-    "image": "",
-    "variants": [
-      {
-        "name": "Standard",
-        "sku": "PTHE-90-6AN",
-        "price": 25.09,
-        "image": "",
-        "stock": 5,
-        "weight": 1
-      }
-    ]
   }
 ]
