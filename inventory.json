@@ -152,5 +152,36 @@
         "weight": 5
       }
     ]
+  },
+  {
+    "id": "ts-0302-1002",
+    "name": "Turbosmart eBS eBoost Street 40psi",
+    "title": "Turbosmart eBS eBoost Street 40psi",
+    "sku": "TS-0302-1002",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 458.99,
+    "compare_price": null,
+    "weight": 4,
+    "stock": 90,
+    "category": "Controllers",
+    "subcategory": "Boost Controllers",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "The Turbosmart eBoost Street is a high-performance 40 PSI electronic boost controller engineered to deliver precise, dual-stage boost control with maximum stability and fast turbo response.\n\nFeatures\nDual Boost Modes: Easily switch between two independent boost settings (e.g., Low / High) on the fly using the front button or external switch input.\n\n40 PSI Max Pressure: Built to handle high-boost applications with precision resolution and zero pressure drop.\n\nFast Spooling Gate Feature: Eliminates premature wastegate creeping to maximize turbine energy and dramatically reduce turbo lag.\n\nOverboost Protection: Programmable safety cutoff automatically reduces boost to protect engine and turbo components from spike damage.\n\nCompact 52mm Gauge Style: Sleek design fits standard 52mm (2-1/16\") gauge pods or dash mounts with an easy-to-read digital display.\n\nSpecs\nMax Pressure: 40 PSI / 2.75 Bar\n\nMounting Size: Standard 52mm (2-1/16\")\n\nInputs/Outputs: External boost mode switch input, auxiliary output (e.g., shift light or water/meth activation)\n\nCompatibility: Internal and external wastegates (single or twin turbo)\n\nIncludes: eBoost Street control unit, 3-port solenoid, wiring harness, vacuum hose, and mounting hardware",
+    "image": "https://830533.app.netsuite.com//core/media/media.nl?id=217&c=830533&h=goMPBaB7qD8St1q_eJ5WF3A630Ky1PUqOBLpKZEZr3xv86TS",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "TS-0302-1002",
+        "price": 458.99,
+        "image": "https://830533.app.netsuite.com//core/media/media.nl?id=217&c=830533&h=goMPBaB7qD8St1q_eJ5WF3A630Ky1PUqOBLpKZEZr3xv86TS",
+        "stock": 90,
+        "weight": 4
+      }
+    ]
   }
 ]
