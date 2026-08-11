@@ -443,5 +443,91 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "cf-fhe-06-045-000-",
+    "name": "-6 AN 45 Degree Female Aluminum Hose End Fitting",
+    "title": "-6 AN 45 Degree Female Aluminum Hose End Fitting",
+    "sku": "CF-FHE-06-045-000-",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 19.69,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 90,
+    "category": "ANFittings",
+    "subcategory": "AN Hose Ends & Fittings",
+    "parentCategory": "Fuel System",
+    "anSize": "6AN",
+    "description": "ColorFittings Standard AN Hose Ends are precision-engineered for high-pressure fuel, oil, coolant, brake, clutch, and power steering applications. Designed for use with nylon or stainless steel braided hose, these AN fittings provide a secure, leak-free 37-degree flare seal for street performance, racing, marine, and motorsport plumbing systems. Each hose end is CNC-machined from aerospace-grade 6061-T6 billet aluminum and finished with ColorFittings' proprietary polishing and anodizing process for superior strength, corrosion resistance, and long-term durability. Compatible with E85, ethanol, race fuel, pump gas, oil, coolant, brake fluid, transmission fluid, and hydraulic systems, these fittings are built to handle high-pressure, high-temperature environments. Looking to complete your setup? Check out our full range of Standard Hose, Hose Separators, and AN Fitting Assembly Tools.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/04/Black-45-Degree-Female-Hose-End.png",
+    "variants": [
+      {
+        "name": "Black",
+        "option": "Black",
+        "sku": "CF-FHE-06-045-000-BL",
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Black-45-Degree-Female-Hose-End.png",
+        "price": 19.69,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Gold",
+        "option": "Gold",
+        "sku": "CF-FHE-06-045-000-GD",
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Gold-45-Degree-Female-Hose-End.png",
+        "price": 19.69,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Lime Green",
+        "option": "Lime Green",
+        "sku": "CF-FHE-06-045-000-GR",
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Green-45-Degree-Female-Hose-End.png",
+        "price": 19.69,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Orange",
+        "option": "Orange",
+        "sku": "CF-FHE-06-045-000-OR",
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Orange-45-Degree-Female-Hose-End.png",
+        "price": 19.69,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Purple",
+        "option": "Purple",
+        "sku": "CF-FHE-06-045-000-PU",
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Purple-45-Degree-Female-Hose-End.png",
+        "price": 19.69,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Red",
+        "option": "Red",
+        "sku": "CF-FHE-06-045-000-RD",
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Red-45-Degree-Female-Hose-End.png",
+        "price": 19.69,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Teal",
+        "option": "Teal",
+        "sku": "CF-FHE-06-045-000-TL",
+        "image": "https://colorfittings.com/wp-content/uploads/2026/04/Teal-45-Degree-Female-Hose-End.png",
+        "price": 19.69,
+        "stock": 90,
+        "weight": 1
+      }
+    ]
   }
 ]
