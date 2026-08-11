@@ -368,7 +368,8 @@
     ]},
     { name: "Fuel System", img: "fuel.jpg", subs: [
       { label: "Complete Fuel Kits", match: "FuelKits" },
-      { label: "AN Hose Ends & Fittings", match: "ANFittings", hasSizes: true },
+      { label: "AN Hose Ends (Rubber)", match: "ANFittings", hasSizes: true },
+      { label: "PTFE Hose Ends", match: "PTFEHoseEnds", hasSizes: true },
       { label: "AN Adapters & Specialty", match: "ANAdapters", hasSizes: true },
       { label: "PTFE Hose & Lines", match: "PTFEHose", hasSizes: true },
       { label: "Nylon Braided Hose", match: "NylonHose", hasSizes: true },
@@ -566,7 +567,9 @@
       let matchesCategory = false;
       if (pCat === targetKey || pSubcat === targetLabel) {
         matchesCategory = true;
-      } else if (targetKey === 'anfittings' && (pCat === 'anfittings' || pSubcat.includes('hose ends'))) {
+      } else if (targetKey === 'anfittings' && (pCat === 'anfittings' || pCat === 'hose fittings' || pSubcat.includes('hose ends')) && !pCat.includes('ptfe') && !pSubcat.includes('ptfe') && !(p.name || p.title || '').toLowerCase().includes('ptfe')) {
+        matchesCategory = true;
+      } else if (targetKey === 'ptfehoseends' && (pCat.includes('ptfe') || pSubcat.includes('ptfe') || (p.name || p.title || '').toLowerCase().includes('ptfe')) && (pCat.includes('fitting') || pCat.includes('hose') || pSubcat.includes('end') || (p.name || p.title || '').toLowerCase().includes('hose end'))) {
         matchesCategory = true;
       } else if (targetKey === 'anadapters' && (pCat === 'anadapters' || pSubcat.includes('adapters'))) {
         matchesCategory = true;
