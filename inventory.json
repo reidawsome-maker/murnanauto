@@ -183,5 +183,36 @@
         "weight": 4
       }
     ]
+  },
+  {
+    "id": "ts-0402-2023",
+    "name": "Turbosmart FPR Gauge 0-100psi",
+    "title": "Turbosmart FPR Gauge 0-100psi",
+    "sku": "TS-0402-2023",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 33.29,
+    "compare_price": null,
+    "weight": 3,
+    "stock": 90,
+    "category": "Gauges",
+    "subcategory": "Gauges & Pods",
+    "parentCategory": "Interior & Electronics",
+    "anSize": "Universal",
+    "description": "The Turbosmart 0–100 PSI Liquid-Filled Fuel Pressure Gauge is engineered for precise fuel system monitoring and tuning. Its liquid-filled body dampens internal engine vibrations and fuel line pressure spikes, giving you an easy-to-read needle display.\n\nFeatures\nLiquid-Filled Dampening: Liquid-filled housing stabilizes the needle against engine vibration and fuel pulses for accurate readings.\n\nHigh-Contrast Face: White face dial with clear markings for rapid monitoring under any lighting.\n\nUniversal 1/8\" NPT Fitment: Threads directly into standard 1/8\" NPT gauge ports on aftermarket FPRs, fuel rails, or distribution blocks.\n\nDirect FPR Compatibility: Fits Turbosmart FPR and OPR series regulators (including FPR800, FPR1200, FPR2000, and FPR3000).\n\nSpecs\nPressure Range: 0 – 100 PSI\n\nThread Port: 1/8\" Male NPT\n\nGauge Diameter: 1.5\" (38mm)\n\nDial Type: White Face / Analog Mechanical\n\nFilling: Liquid Filled",
+    "image": "https://830533.app.netsuite.com//core/media/media.nl?id=274&c=830533&h=ucuxRkCEbr882H6fRZRRJwfuXwElUvAwWqTjYmGXcT09DJzZ",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "TS-0402-2023",
+        "price": 33.29,
+        "image": "https://830533.app.netsuite.com//core/media/media.nl?id=274&c=830533&h=ucuxRkCEbr882H6fRZRRJwfuXwElUvAwWqTjYmGXcT09DJzZ",
+        "stock": 90,
+        "weight": 3
+      }
+    ]
   }
 ]
