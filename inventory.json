@@ -214,5 +214,36 @@
         "weight": 3
       }
     ]
+  },
+  {
+    "id": "ts-0404-1022",
+    "name": "Turbosmart FPR6 - Fuel Pressure Regulator - Black",
+    "title": "Turbosmart FPR6 - Fuel Pressure Regulator - Black",
+    "sku": "TS-0404-1022",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 218.69,
+    "compare_price": null,
+    "weight": 5,
+    "stock": 90,
+    "category": "Regulators",
+    "subcategory": "Fuel Rails & Regulators",
+    "parentCategory": "Fuel System",
+    "anSize": "6AN",
+    "description": "The Turbosmart FPR6 Series Fuel Pressure Regulator (-6AN, Black) provides market-leading fuel control with a true 1:1 manifold pressure reference ratio for high-performance EFI setups up to 1200 HP.\n\nFeatures\n1:1 Manifold Reference: Delivers smooth, linear fuel pressure tracking relative to boost/vacuum changes.\n\nAll-Fuel Compatible: Built with a stainless steel valve seat and Mil-Spec diaphragm to safely handle gas, ethanol (E85), methanol, and race fuel.\n\nPrecision Adjustability: Features a locking collar adjustment mechanism to easily set base fuel pressure.\n\nIntegrated Gauge Port: Includes a dedicated 1/8\" NPT port for mounting a fuel pressure gauge or electronic sensor.\n\nBillet Aluminum Body: CNC-machined aluminum housing with a durable black anodized finish.\n\nSpecs\nPressure Range: Standard EFI (35 – 80 PSI)\n\nPort Configuration: -6AN ORB Inlet, Outlet, and Return Ports\n\nGauge Port: 1/8\" NPT Female\n\nPower Rating: Rated for fuel systems up to 1200 HP\n\nColor: Black",
+    "image": "https://830533.app.netsuite.com//core/media/media.nl?id=24163955&c=830533&h=zt3FJn_ZtC03rosLWgMxMSzbxQCnzpFTIs8_466KsO5ei39j",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "TS-0404-1022",
+        "price": 218.69,
+        "image": "https://830533.app.netsuite.com//core/media/media.nl?id=24163955&c=830533&h=zt3FJn_ZtC03rosLWgMxMSzbxQCnzpFTIs8_466KsO5ei39j",
+        "stock": 90,
+        "weight": 5
+      }
+    ]
   }
 ]
