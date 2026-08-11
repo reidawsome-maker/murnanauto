@@ -276,5 +276,55 @@
         "weight": 5
       }
     ]
+  },
+  {
+    "id": "ts-0552-100",
+    "name": "Turbosmart GenV WG40/45 CompGate40 ",
+    "title": "Turbosmart GenV WG40/45 CompGate40 ",
+    "sku": "TS-0552-100",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 394.19,
+    "compare_price": null,
+    "weight": 6,
+    "stock": 90,
+    "category": "Valves",
+    "subcategory": "Wastegates & BOVs",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "The Turbosmart Gen-V External Wastegate Series is a motorsport-proven line of external wastegates engineered for precise boost control, maximum flow capacity, and extended thermal performance. Featuring a 360-degree rotatable actuator cap, optional liquid-cooling ports, and a modular locking-collar cap system, the Gen-V series is built for demanding high-heat performance environments.\n\nKey Features\nGen-V Modular Architecture: 360-degree clockable actuator housing allows easy reference hose routing in cramped engine bays.\n\nAdvanced Thermal Management: Features a Nitronic 60 valve guide and 347 stainless steel body to eliminate valve sticking under extreme exhaust temperatures.\n\nHigh-Flow Efficiency: CFD-designed body profile provides class-leading flow capacity and minimal backpressure.\n\nOptional Liquid Cooling: Integrated ports allow optional coolant line routing for extreme heat applications.\n\nIncluded Components: Supplied with V-band inlet/outlet flanges, strap clamps, seat, and collar adjustment tool.\n\nVariant Options Included in Series\nWG40 Comp-Gate40 (40mm / 7 PSI) — Black (SKU: TS-0552-1002)\nCompact 40mm body with a pre-installed 7 PSI spring setup for street and mild track builds.\n\nWG40 Comp-Gate40 (40mm / 14 PSI) — Black (SKU: TS-0552-1012)\nCompact 40mm body with a pre-installed 14 PSI spring setup for higher base boost applications.\n\nWG45 Hyper-Gate45 (45mm / 14 PSI) — Black (SKU: TS-0553-1012)\nHigh-capacity 45mm body with a pre-installed 14 PSI spring setup for high-horsepower setups needing massive exhaust bypass flow.",
+    "image": "https://830533.app.netsuite.com//core/media/media.nl?id=23593949&c=830533&h=JdAuuAVg5JS9CRe8xafpEEwdYotc6GK1O4AAEv3yHOc14zW3",
+    "variants": [
+      {
+        "name": "40mm 7psi Black",
+        "option": "40mm 7psi Black",
+        "sku": "TS-0552-1002",
+        "image": "https://830533.app.netsuite.com//core/media/media.nl?id=23593949&c=830533&h=JdAuuAVg5JS9CRe8xafpEEwdYotc6GK1O4AAEv3yHOc14zW3",
+        "price": 394.19,
+        "stock": 90,
+        "weight": 6
+      },
+      {
+        "name": "40mm 14psi Black",
+        "option": "40mm 14psi Black",
+        "sku": "TS-0552-1012",
+        "image": "https://830533.app.netsuite.com//core/media/media.nl?id=23594057&c=830533&h=kS39jkPYb2jYNCGDWV2VG5qyOLQC2iKoUK048R9DdE6ejZCf",
+        "price": 394.19,
+        "stock": 90,
+        "weight": 6
+      },
+      {
+        "name": "45mm 14psi Black",
+        "option": "45mm 14psi Black",
+        "sku": "TS-0553-1012",
+        "image": "https://830533.app.netsuite.com//core/media/media.nl?id=23594672&c=830533&h=r8y-BIr-T_HktgOuMwX97MBcNmr5b_xrH4yQ2iCAPJG_DOxl",
+        "price": 467.09,
+        "stock": 90,
+        "weight": 6
+      }
+    ]
   }
 ]
