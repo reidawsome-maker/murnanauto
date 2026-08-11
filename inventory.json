@@ -245,5 +245,36 @@
         "weight": 5
       }
     ]
+  },
+  {
+    "id": "ts-0404-1032",
+    "name": "Turbosmart FPR8 - Fuel Pressure Regulator - Black",
+    "title": "Turbosmart FPR8 - Fuel Pressure Regulator - Black",
+    "sku": "TS-0404-1032",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 247.49,
+    "compare_price": null,
+    "weight": 5,
+    "stock": 90,
+    "category": "Regulators",
+    "subcategory": "Fuel Rails & Regulators",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "The Turbosmart FPR8 Series Fuel Pressure Regulator (-8AN, Black) is engineered for high-demand, high-horsepower EFI fuel delivery systems. Designed with high bypass capacity to handle fuel systems supporting up to 2000 HP, it delivers smooth and stable 1:1 boost-referenced fuel pressure control.\n\nFeatures\n1:1 Boost-Referenced Ratio: Delivers rapid, linear fuel pressure tracking relative to manifold pressure changes.\n\nHigh Bypass Capacity: Built for -8AN plumbing to support high-flow fuel setups up to 2000 HP.\n\nAll-Fuel Compatible: Features a stainless steel valve seat and Mil-Spec diaphragm to safely run pump gas, E85, ethanol, methanol, and race fuel.\n\nLocking Collar Adjuster: Precision screw and locking collar mechanism allow fast base pressure tuning that stays set.\n\nAuxiliary Sensor Port: Includes a 1/8\" NPT port for a fuel pressure gauge or standalone ECU pressure sensor.\n\nSpecs\nPressure Range: Standard EFI (35 – 80 PSI)\n\nPort Configuration: -8AN ORB Inlet, Outlet, and Return Ports\n\nGauge/Sensor Port: 1/8\" NPT Female\n\nPower Rating: Rated for systems up to 2000 HP\n\nBody Material: CNC-machined 6061-T6 billet aluminum\n\nColor: Black Anodized",
+    "image": "https://830533.app.netsuite.com//core/media/media.nl?id=24164478&c=830533&h=YO0NVd-sU0_6iCqFOVRw7wKPkeY08bAEF0Or43uGGwj8ckUm",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "TS-0404-1032",
+        "price": 247.49,
+        "image": "https://830533.app.netsuite.com//core/media/media.nl?id=24164478&c=830533&h=YO0NVd-sU0_6iCqFOVRw7wKPkeY08bAEF0Or43uGGwj8ckUm",
+        "stock": 90,
+        "weight": 5
+      }
+    ]
   }
 ]
