@@ -581,10 +581,17 @@
       if (!matchesCategory) return false;
 
       if (activeAnSizeFilter !== 'ALL') {
-        const prodSize = (p.anSize || '').toUpperCase().replace('-', '').trim();
-        const targetSize = activeAnSizeFilter.toUpperCase().replace('-', '').trim();
-        const nameHasSize = (p.name || '').toLowerCase().includes(`-${targetSize.toLowerCase()}`) || (p.name || '').toLowerCase().includes(` ${targetSize.toLowerCase()}`);
-        if (prodSize !== targetSize && !nameHasSize) return false;
+        // Normalize both strings: strips all spaces, hyphens, and symbols. "-6 AN" -> "6AN"
+        const normalize = (str) => (str || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+        
+        const targetSize = normalize(activeAnSizeFilter);
+        const prodSize = normalize(p.anSize) || normalize(p.an_size);
+        const prodName = normalize(p.name || p.title);
+
+        // If the CMS anSize property doesn't match AND the title doesn't contain "6AN", hide it
+        if (prodSize !== targetSize && !prodName.includes(targetSize)) {
+          return false;
+        }
       }
 
       return true;
