@@ -1107,5 +1107,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "cf-rfi-06-000-005-al",
+    "name": "-6AN PTFE Hose End Replacement Ferrule/Olive Inserts",
+    "title": "-6AN PTFE Hose End Replacement Ferrule/Olive Inserts",
+    "sku": "CF-RFI-06-000-005-AL",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 12.49,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 90,
+    "category": "PTFEHoseEnds",
+    "subcategory": "PTFE Hose Ends",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "Founded in 2008, ColorFittings is an industry leader in premium automotive, marine, and aviation plumbing products. Whether you’re a professional building a 6-second NHRA bracket car, a perfectionist designing the ultimate engine bay for a SEMA car, or an HPDE enthusiast looking to improve your oil temps, our products are designed for all flavors of motorsports. The anodized finish provides an additional layer of protection to ColorFittings products, but using the wrong tools may damage the finish. It is critical to use the correct tools and follow the proper assembly procedure to ensure that the anodized finish is preserved. For this, we strongly advise the usage of our Plastic Vice Jaws during assembly.",
+    "image": "https://colorfittings.com/wp-content/uploads/2024/01/cf-ptfe-fitting-ferrules.png",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "CF-RFI-06-000-005-AL",
+        "price": 12.49,
+        "image": "https://colorfittings.com/wp-content/uploads/2024/01/cf-ptfe-fitting-ferrules.png",
+        "stock": 90,
+        "weight": 1
+      }
+    ]
   }
 ]
