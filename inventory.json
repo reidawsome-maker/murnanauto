@@ -763,5 +763,91 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "cf-fpe-06-000-000-",
+    "name": "-6 AN Straight Female Aluminum Hose End (PTFE)",
+    "title": "-6 AN Straight Female Aluminum Hose End (PTFE)",
+    "sku": "CF-FPE-06-000-000-",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 15.78,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 90,
+    "category": "PTFEHoseEnds",
+    "subcategory": "PTFE Hose Ends",
+    "parentCategory": "Fuel System",
+    "anSize": "6AN",
+    "description": "ColorFittings Straight PTFE Female Aluminum Hose Ends are precision-engineered for high-pressure fuel, oil, coolant, brake, clutch, power steering, and E85 applications. Designed specifically for PTFE (Teflon-lined) braided hose, these PTFE fittings provide a secure, leak-free 37-degree flare seal for demanding street performance, racing, marine, and motorsport plumbing systems. Each PTFE female hose end is CNC machined from aerospace-grade 6061-T6 billet aluminum and finished with ColorFittings’ proprietary polishing and anodizing process for superior corrosion resistance, strength, and long-term durability. Built to handle high temperature and high-pressure environments, these fittings are fully compatible with E85, ethanol, race fuel, pump gas, brake fluid, transmission fluid, oil, coolant, and hydraulic systems. Looking to complete your system? Explore our full range of PTFE Hose, Hose Separators, and Fitting Assembly Tools.",
+    "image": "https://colorfittings.com/wp-content/uploads/2026/02/black-ptfe-0-degree-swivel-hose-end.png",
+    "variants": [
+      {
+        "name": "Black",
+        "option": "Black",
+        "sku": "CF-FPE-06-000-000-BL",
+        "image": "https://colorfittings.com/wp-content/uploads/2026/02/black-ptfe-0-degree-swivel-hose-end.png",
+        "price": 15.78,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Gold",
+        "option": "Gold",
+        "sku": "CF-FPE-06-000-000-GD",
+        "image": "https://colorfittings.com/wp-content/uploads/2026/02/gold-ptfe-0-degree-swivel-hose-end.png",
+        "price": 15.78,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Lime Green",
+        "option": "Lime Green",
+        "sku": "CF-FPE-06-000-000-GR",
+        "image": "https://colorfittings.com/wp-content/uploads/2026/02/green-ptfe-0-degree-swivel-hose-end.png",
+        "price": 15.78,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Oange",
+        "option": "Oange",
+        "sku": "CF-FPE-06-000-000-OR",
+        "image": "https://colorfittings.com/wp-content/uploads/2026/02/orange-ptfe-0-degree-swivel-hose-end.png",
+        "price": 15.78,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Purple",
+        "option": "Purple",
+        "sku": "CF-FPE-06-000-000-PU",
+        "image": "https://colorfittings.com/wp-content/uploads/2026/02/purple-ptfe-0-degree-swivel-hose-end.png",
+        "price": 15.78,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Red",
+        "option": "Red",
+        "sku": "CF-FPE-06-000-000-RD",
+        "image": "https://colorfittings.com/wp-content/uploads/2026/02/red-ptfe-0-degree-swivel-hose-end.png",
+        "price": 15.78,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Teal",
+        "option": "Teal",
+        "sku": "CF-FPE-06-000-000-TL",
+        "image": "https://colorfittings.com/wp-content/uploads/2026/02/teal-ptfe-0-degree-swivel-hose-end.png",
+        "price": 15.78,
+        "stock": 90,
+        "weight": 1
+      }
+    ]
   }
 ]
