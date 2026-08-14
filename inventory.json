@@ -1417,5 +1417,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "cf-ybu-06-006-006-bl",
+    "name": "-06 AN Fitting Y Block Union",
+    "title": "-06 AN Fitting Y Block Union",
+    "sku": "CF-YBU-06-006-006-BL",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 29.99,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 90,
+    "category": "ANAdapters",
+    "subcategory": "AN Adapters & Specialty",
+    "parentCategory": "Fuel System",
+    "anSize": "6AN",
+    "description": "Engineered for high-flow fluid distribution, the CF-YBU-06-006-006-BL Y-Block Union allows seamless splitting or merging of fluid lines without restriction. Constructed from lightweight, CNC-machined 6061-T6 aluminum and finished in a corrosion-resistant black anodized coating, this block is built for high-pressure fuel, oil, coolant, and power steering applications.",
+    "image": "https://colorfittings.com/wp-content/uploads/2018/06/cf-an-y-block-union-fitting-black-2.png",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "CF-YBU-06-006-006-BL",
+        "price": 29.99,
+        "image": "https://colorfittings.com/wp-content/uploads/2018/06/cf-an-y-block-union-fitting-black-2.png",
+        "stock": 90,
+        "weight": 1
+      }
+    ]
   }
 ]
