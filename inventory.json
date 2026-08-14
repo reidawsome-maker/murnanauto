@@ -1206,5 +1206,73 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "cf-plf-06-090-000-",
+    "name": "-6 AN 90 Degree Female Push-Loc Fitting",
+    "title": "-6 AN 90 Degree Female Push-Loc Fitting",
+    "sku": "CF-PLF-06-090-000-",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 12.99,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 90,
+    "category": "Turbos",
+    "subcategory": "Turbochargers",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "ColorFittings Push-Loc Hose End Fittings are precision CNC-machined for secure, clamp-free connections in low- to medium-pressure fuel, oil, coolant, PCV, vacuum, and air systems. Designed specifically for Push-Loc (barbed) hose, these fittings provide a tight, leak-resistant seal without the need for hose clamps in most applications, making them ideal for clean, efficient engine bay plumbing.\\n\\nManufactured from aerospace-grade 6061-T6 billet aluminum and finished with ColorFittings’ proprietary polishing and anodizing process, our Push-Loc fittings deliver superior strength, corrosion resistance, and long-term durability. The multi-barb design ensures maximum hose retention while maintaining smooth flow characteristics for consistent performance. Compatible with fuel (including E85 and ethanol blends), oil, coolant, and air systems, these Push-Loc hose ends are perfect for street performance, racing, off-road, marine, and custom fabrication projects where flexibility and ease of installation are key. Looking to complete your system? Explore our full range of Push-Loc Fittings, Push-Loc Hose, and Fitting Assembly Tools.",
+    "image": "https://colorfittings.com/wp-content/uploads/2024/08/Hose-Barb-AN-push-lock-fitting-90-black.png",
+    "variants": [
+      {
+        "name": "Black",
+        "option": "Black",
+        "sku": "CF-PLF-06-090-000-BL",
+        "image": "https://colorfittings.com/wp-content/uploads/2024/08/Hose-Barb-AN-push-lock-fitting-90-black.png",
+        "price": 12.99,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Green",
+        "option": "Green",
+        "sku": "CF-PLF-06-090-000-GR",
+        "image": "https://colorfittings.com/wp-content/uploads/2024/08/Hose-Barb-AN-push-lock-fitting-90-green.png",
+        "price": 12.99,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Orange",
+        "option": "Orange",
+        "sku": "CF-PLF-06-090-000-OR",
+        "image": "https://colorfittings.com/wp-content/uploads/2024/08/Hose-Barb-AN-push-lock-fitting-90-orange.png",
+        "price": 12.99,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Purple",
+        "option": "Purple",
+        "sku": "CF-PLF-06-090-000-PU",
+        "image": "https://colorfittings.com/wp-content/uploads/2025/02/Hose-Barb-AN-push-lock-fitting-90-purple-new.png",
+        "price": 12.99,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Teal",
+        "option": "Teal",
+        "sku": "CF-PLF-06-090-000-TL",
+        "image": "https://colorfittings.com/wp-content/uploads/2024/08/Hose-Barb-AN-push-lock-fitting-90-teal.png",
+        "price": 12.99,
+        "stock": 90,
+        "weight": 1
+      }
+    ]
   }
 ]
