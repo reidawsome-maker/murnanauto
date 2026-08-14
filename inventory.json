@@ -1338,10 +1338,10 @@
     ]
   },
   {
-    "id": "cf-bhf-06-000-000-bl",
-    "name": "-6 AN Fitting Bulkhead Straight",
-    "title": "-6 AN Fitting Bulkhead Straight",
-    "sku": "CF-BHF-06-000-000-BL",
+    "id": "cf-bhf-06-000-000-",
+    "name": "-6 AN Fitting Bulkhead ",
+    "title": "-6 AN Fitting Bulkhead ",
+    "sku": "CF-BHF-06-000-000-",
     "platform": "Universal",
     "platforms": [
       "Universal",
@@ -1359,10 +1359,29 @@
     "image": "https://colorfittings.com/wp-content/uploads/2026/02/Bulkhead-Fitting-Straight-Black.png",
     "variants": [
       {
-        "name": "Standard",
+        "name": "Straight",
+        "option": "Straight",
         "sku": "CF-BHF-06-000-000-BL",
-        "price": 8.99,
         "image": "https://colorfittings.com/wp-content/uploads/2026/02/Bulkhead-Fitting-Straight-Black.png",
+        "price": 8.99,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "45*",
+        "option": "45*",
+        "sku": "CF-BHF-06-045-000-BL",
+        "image": "https://colorfittings.com/wp-content/uploads/2026/03/45-Degree-Bulkhead-Black.png",
+        "price": 12.99,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "90*",
+        "option": "90*",
+        "sku": "CF-BHF-06-090-000-BL",
+        "image": "https://colorfittings.com/wp-content/uploads/2026/02/Bulkhead-Fitting-90-Degree-Black.png",
+        "price": 12.99,
         "stock": 90,
         "weight": 1
       }
