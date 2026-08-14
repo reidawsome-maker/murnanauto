@@ -1448,5 +1448,91 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "cf-ahs-06-000-000-",
+    "name": "-6AN Hose Separator",
+    "title": "-6AN Hose Separator",
+    "sku": "CF-AHS-06-000-000-",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 10.99,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 90,
+    "category": "HoseClamps",
+    "subcategory": "Hose Separators & Clamps",
+    "parentCategory": "Fuel System",
+    "anSize": "6AN",
+    "description": "This product is designed for and sized to be used with our Standard Nylon Braided Hose. For use with our PTFE Hose, you must use a hose separator one size smaller than the hose (difference of -2AN).I.e. For a 6AN PTFE Hose, the best fitting hose separator will be 4AN. This Hose Separator is available in the following colors: Purple, Black, Teal, Red, Green, Orange, and Gold",
+    "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Black-Hose-Separator.png",
+    "variants": [
+      {
+        "name": "Black",
+        "option": "Black",
+        "sku": "CF-AHS-06-000-000-BL",
+        "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Black-Hose-Separator.png",
+        "price": 10.99,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Gold",
+        "option": "Gold",
+        "sku": "CF-AHS-06-000-000-GD",
+        "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Gold-Hose-Separator.png",
+        "price": 10.99,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Green",
+        "option": "Green",
+        "sku": "CF-AHS-06-000-000-GR",
+        "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Green-Hose-Separator.png",
+        "price": 10.99,
+        "stock": 190,
+        "weight": 1
+      },
+      {
+        "name": "Orange",
+        "option": "Orange",
+        "sku": "CF-AHS-06-000-000-OR",
+        "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Orange-Hose-Separator.png",
+        "price": 10.99,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Purple",
+        "option": "Purple",
+        "sku": "CF-AHS-06-000-000-PU",
+        "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Purple-Hose-Separator.png",
+        "price": 10.99,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Red",
+        "option": "Red",
+        "sku": "CF-AHS-06-000-000-RD",
+        "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Red-Hose-Separator.png",
+        "price": 10.99,
+        "stock": 90,
+        "weight": 1
+      },
+      {
+        "name": "Teal",
+        "option": "Teal",
+        "sku": "CF-AHS-06-000-000-TL",
+        "image": "https://colorfittings.com/wp-content/uploads/2022/11/AN-Fitting-Teal-Hose-Separator.png",
+        "price": 10.99,
+        "stock": 90,
+        "weight": 1
+      }
+    ]
   }
 ]
