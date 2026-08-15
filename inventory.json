@@ -3518,5 +3518,55 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "afs12347",
+    "name": "AEROMOTIVE 6AN INLINE FUEL FILTER  2IN OD BLACK",
+    "title": "AEROMOTIVE 6AN INLINE FUEL FILTER  2IN OD BLACK",
+    "sku": "AFS12347",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 185.01,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 11,
+    "category": "FuelFilters",
+    "subcategory": "Fuel Filters",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "Fuel Filter, In-Line, 6 AN Male Inlet, 6 AN Male Outlet, Aluminum, Black Anodized, Each\n\n",
+    "image": "https://msimg.blob.core.windows.net/product/large/AFS12347.jpg",
+    "variants": [
+      {
+        "name": "10 MICRON",
+        "option": "10 MICRON",
+        "sku": "AFS12347",
+        "image": "https://msimg.blob.core.windows.net/product/large/AFS12347.jpg",
+        "price": 185.01,
+        "stock": 11,
+        "weight": 1
+      },
+      {
+        "name": "40 MICRON SS",
+        "option": "40 MICRON SS",
+        "sku": "AFS12348",
+        "image": "https://msimg.blob.core.windows.net/product/large/AFS12348.jpg",
+        "price": 231.12,
+        "stock": 11,
+        "weight": 1
+      },
+      {
+        "name": "100 MICRON SS",
+        "option": "100 MICRON SS",
+        "sku": "AFS12349",
+        "image": "https://msimg.blob.core.windows.net/product/large/AFS12349.jpg",
+        "price": 231.12,
+        "stock": 2,
+        "weight": 1
+      }
+    ]
   }
 ]
