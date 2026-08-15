@@ -1999,5 +1999,36 @@
         "weight": 15
       }
     ]
+  },
+  {
+    "id": "tbsts-0502-2001",
+    "name": "Turbosmart GEN4 WG50/60 5PSI SPRING BLK/GRY",
+    "title": "Turbosmart GEN4 WG50/60 5PSI SPRING BLK/GRY",
+    "sku": "TBSTS-0502-2001",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 47.69,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 2,
+    "category": "Valves",
+    "subcategory": "Wastegates & BOVs",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "Turbosmart's Gen4 WG50/60 5PSI Inner Spring-Black/Grey is a must-have for external wastegate setups. This spring provides the ideal boost pressure for any turbocharger, ensuring consistent and reliable performance even under extreme conditions. Turbosmart's design ensures that this spring will last for years, providing maximum performance with minimal maintenance. With Turbosmart's Gen4 WG50/60 5PSI Inner Spring Black/Grey, you can trust that your engine will perform as expected every time you hit the gas pedal. Ensure your setup is up to spec with Turbosmart's best-in-class external wastegate spring.",
+    "image": "https://msimg.blob.core.windows.net/product/large/TBSTS-0502-2001.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "TBSTS-0502-2001",
+        "price": 47.69,
+        "image": "https://msimg.blob.core.windows.net/product/large/TBSTS-0502-2001.jpg",
+        "stock": 2,
+        "weight": 1
+      }
+    ]
   }
 ]
