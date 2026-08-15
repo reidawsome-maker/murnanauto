@@ -4012,5 +4012,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "pwi60508",
+    "name": "PAINLESS 98-02 GM LS1 FUEL INJ. WIRING HARNESS",
+    "title": "PAINLESS 98-02 GM LS1 FUEL INJ. WIRING HARNESS",
+    "sku": "PWI60508",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 569.99,
+    "compare_price": null,
+    "weight": 8,
+    "stock": 5,
+    "category": "Wiring",
+    "subcategory": "Wiring & Harnesses",
+    "parentCategory": "Ignition & Electrical",
+    "anSize": "Universal",
+    "description": "Attributes\nHarness Purpose\t\nFuel Injection\nFuel Injection Type\t\nSFI\nTerminated\t\nYes\nFuse Included\t\nYes\nFuse Style\t\nBlade\nLength\t\n4 ft\nHardware Included\t\nYes\nQuantity\t\nKit\nNote\t\nDesigned for 1998-2002 LS1 mechanical throttle body engines using LS1/LS6 ECM with a 4L60E/4L65E automatic or T56 manual transmission. Does not include emission connections. 8 circuit modular fuse block is included.\n",
+    "image": "https://msimg.blob.core.windows.net/product/large/PWI60508.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "PWI60508",
+        "price": 569.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/PWI60508.jpg",
+        "stock": 5,
+        "weight": 8
+      }
+    ]
   }
 ]
