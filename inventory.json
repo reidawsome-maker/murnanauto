@@ -2867,5 +2867,36 @@
         "weight": 7
       }
     ]
+  },
+  {
+    "id": "vib1140",
+    "name": "VIBRANT ULTRA QUIET RESONATOR 2.25\"",
+    "title": "VIBRANT ULTRA QUIET RESONATOR 2.25\"",
+    "sku": "VIB1140",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 135.99,
+    "compare_price": null,
+    "weight": 6,
+    "stock": 100,
+    "category": "Mufflers",
+    "subcategory": "Mufflers & Resonators",
+    "parentCategory": "Exhaust",
+    "anSize": "Universal",
+    "description": "Vibrant Performance Ultra Quiet Resonators have become the preferred choice of exhaust fabrication professionals looking to effectively reduce exhaust noise and drone from their performance exhaust setup. Each resonator features PREMIUM 304 Stainless Steel construction, polished to a beautiful mirror finish.",
+    "image": "https://msimg.blob.core.windows.net/product/large/VIB1141.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "VIB1140",
+        "price": 135.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/VIB1141.jpg",
+        "stock": 100,
+        "weight": 6
+      }
+    ]
   }
 ]
