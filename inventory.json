@@ -3795,5 +3795,36 @@
         "weight": 6
       }
     ]
+  },
+  {
+    "id": "ngktr5",
+    "name": "NGK V-POWER PLUGS 2238",
+    "title": "NGK V-POWER PLUGS 2238",
+    "sku": "NGKTR5",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 3.99,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 13,
+    "category": "Plugs",
+    "subcategory": "Spark Plugs",
+    "parentCategory": "Ignition & Electrical",
+    "anSize": "Universal",
+    "description": "Spark Plug, NGK V-Power, 14 mm Thread, 0.708 in Reach, Tapered Seat, Stock Number 2238, Resistor, Each\n\nAttributes\nProduct Line\t\nNGK V-Power\nStock Number\t\n2238\nPlug Length\t\nStandard\nCore Type\t\nResistor\nHeat Range\t\n5\nCore Material\t\nCopper\nTip Material\t\nNickel\nInsulator Type\t\nProjected\nThread Size\t\n14 mm\nReach\t\n0.708 in\nSeat Type\t\nTapered\nWrench Size\t\n5/8 in\nGround Strap Quantity\t\n1\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/NGKTR5.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "NGKTR5",
+        "price": 3.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/NGKTR5.jpg",
+        "stock": 13,
+        "weight": 1
+      }
+    ]
   }
 ]
