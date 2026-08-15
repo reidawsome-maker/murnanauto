@@ -2743,5 +2743,36 @@
         "weight": 7
       }
     ]
+  },
+  {
+    "id": "flo42543",
+    "name": "40 SERIES PERFORMANCE MUFFLER 2.5\"",
+    "title": "40 SERIES PERFORMANCE MUFFLER 2.5\"",
+    "sku": "FLO42543",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 101.95,
+    "compare_price": null,
+    "weight": 10,
+    "stock": 61,
+    "category": "Mufflers",
+    "subcategory": "Mufflers & Resonators",
+    "parentCategory": "Exhaust",
+    "anSize": "Universal",
+    "description": "Attributes\nProduct Line\t\nOriginal 40 Series\nInternal Construction\t\nChambered\nBase Construction\t\nWelded\nCase Shape\t\nOval\nCase Length\t\n13 in\nCase Width\t\n9.5 in\nCase Height\t\n4 in\nOverall Length\t\n19.4 in\nInlet Quantity\t\n1\nInlet Diameter\t\n2-1/2 in\nInlet Location\t\nOffset\nOutlet Quantity\t\n1\nOutlet Diameter\t\n2-1/2 in\nOutlet Location\t\nOffset\nUniversal\t\nYes\nAlloy\t\nAluminized\nMaterial\t\nSteel\nColor\t\nBlack\nFinish\t\nPaint\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/FLO42543.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "FLO42543",
+        "price": 101.95,
+        "image": "https://msimg.blob.core.windows.net/product/large/FLO42543.jpg",
+        "stock": 61,
+        "weight": 10
+      }
+    ]
   }
 ]
