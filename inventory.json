@@ -1906,5 +1906,36 @@
         "weight": 30
       }
     ]
+  },
+  {
+    "id": "vib12800",
+    "name": "Vibrant Intercooler 26 x 3.25 x 6.5 in Tall 2-1/2 in Inlet 2-1/2 in Outlet Brackets Included Aluminum ",
+    "title": "Vibrant Intercooler 26 x 3.25 x 6.5 in Tall 2-1/2 in Inlet 2-1/2 in Outlet Brackets Included Aluminum ",
+    "sku": "VIB12800",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 297.99,
+    "compare_price": null,
+    "weight": 13,
+    "stock": 5,
+    "category": "Intercoolers",
+    "subcategory": "Intercoolers & Piping",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "Vibrant Performance Intercoolers feature Bar and Plate construction and a unique louvered fin design on the ambient path that maximizes the cores available surface area, and an offset fin design on the charge path allows for minimal pressure loss. Our Cast Aluminum End Tanks are precision TIG-welded to the core and pressure tested for leak-free performance.\n\nAttributes\nWidth\t\n26 in\nHeight\t\n6.5 in\nCore Width\t\n18 in\nCore Thickness\t\n3.25 in\nInlet Diameter\t\n2-1/2 in\nInlet Offset / Center\t\nOffset\nOutlet Diameter\t\n2-1/2 in\nOutlet Location Offset / Center\t\nOffset\nBrackets Included\t\nYes\nBrackets Material\t\nStainless\nMaterial\t\nAluminum\nColor\t\nNatural\nFinish\t\nNatural\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/VIB12800.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "VIB12800",
+        "price": 297.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/VIB12800.jpg",
+        "stock": 5,
+        "weight": 13
+      }
+    ]
   }
 ]
