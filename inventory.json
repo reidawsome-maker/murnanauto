@@ -3919,5 +3919,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "ngkbr6ef",
+    "name": "NGK V-POWER 3177",
+    "title": "NGK V-POWER 3177",
+    "sku": "NGKBR6EF",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 3.99,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 79,
+    "category": "Plugs",
+    "subcategory": "Spark Plugs",
+    "parentCategory": "Ignition & Electrical",
+    "anSize": "Universal",
+    "description": "Spark Plug, NGK V-Power, 14 mm Thread, 0.708 in Reach, Tapered Seat, Stock Number 3177, Resistor, Each\n\nAttributes\nProduct Line\t\nNGK V-Power\nStock Number\t\n3177\nPlug Length\t\nStandard\nCore Type\t\nResistor\nHeat Range\t\n6\nCore Material\t\nCopper\nTip Material\t\nNickel\nInsulator Type\t\nNon-Projected\nThread Size\t\n14 mm\nReach\t\n0.708 in\nSeat Type\t\nTapered\nWrench Size\t\n5/8 in\nGround Strap Quantity\t\n1\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/NGKBR6EF.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "NGKBR6EF",
+        "price": 3.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/NGKBR6EF.jpg",
+        "stock": 79,
+        "weight": 1
+      }
+    ]
   }
 ]
