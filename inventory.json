@@ -2092,5 +2092,36 @@
         "weight": 54
       }
     ]
+  },
+  {
+    "id": "vib1491c",
+    "name": "3IN SS V-Band Clamp",
+    "title": "3IN SS V-Band Clamp",
+    "sku": "VIB1491C",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 31.5,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 43,
+    "category": "V-Band",
+    "subcategory": "V-Bands & Clamps",
+    "parentCategory": "Exhaust",
+    "anSize": "Universal",
+    "description": "Vibrant Performance v-band clamps are constructed entirely from 300 series stainless steel, features a unique quick release clamping mechanism and upgraded hardware for added durability.\n\nAttributes\nStyle\t\nV-Band\nIntended Pipe Diameter\t\n3 in\nMaterial\t\nStainless\nColor\t\nNatural\nFinish\t\nNatural\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/VIB1491C.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "VIB1491C",
+        "price": 31.5,
+        "image": "https://msimg.blob.core.windows.net/product/large/VIB1491C.jpg",
+        "stock": 43,
+        "weight": 1
+      }
+    ]
   }
 ]
