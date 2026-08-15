@@ -3115,5 +3115,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "afs11106",
+    "name": "AEROMOTIVE EFI ELECTRIC FUEL PUMP - 700HP",
+    "title": "AEROMOTIVE EFI ELECTRIC FUEL PUMP - 700HP",
+    "sku": "AFS11106",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 527.07,
+    "compare_price": null,
+    "weight": 4,
+    "stock": 3,
+    "category": "Pumps",
+    "subcategory": "Fuel Pumps & Components",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "#8AN INLET PORT #6AN OUTLET PORT BODY 2.5X 6.5 OK FOR ALC. USE\n\nAttributes\nProduct Line\t\nA750\nElectric/Mechanical\t\nElectric\nIn-Tank/Inline\t\nInline | In-Tank\nInlet Size\t\n8 AN\nInlet Style\t\nFemale\nInlet O-Ring\t\nYes\nOutlet Size\t\n6 AN\nOutlet Style\t\nFemale\nOutlet O-Ring\t\nYes\nFlow lb/hr A\t\n450 lb/hr\nlb/hr A PSI\t\n45 PSI\nMaximum Pressure\t\n70 PSI\nMounting Bracket Included\t\nYes\nGasoline Compatible\t\nYes\nDiesel Compatible\t\nNo\nMethanol Compatible\t\nNo\nE85 Compatible\t\nYes\nMaterial\t\nAluminum\nColor\t\nRed\nFinish\t\nAnodized\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/AFS11106.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "AFS11106",
+        "price": 527.07,
+        "image": "https://msimg.blob.core.windows.net/product/large/AFS11106.jpg",
+        "stock": 3,
+        "weight": 4
+      }
+    ]
   }
 ]
