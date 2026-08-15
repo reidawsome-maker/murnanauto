@@ -2433,5 +2433,36 @@
         "weight": 32
       }
     ]
+  },
+  {
+    "id": "sch1302ls1",
+    "name": "HEADER LS1 78-99 GM 2WD TRUCK",
+    "title": "HEADER LS1 78-99 GM 2WD TRUCK",
+    "sku": "SCH1302LS1",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 374.99,
+    "compare_price": null,
+    "weight": 33,
+    "stock": 11,
+    "category": "Headers",
+    "subcategory": "Headers & Manifolds",
+    "parentCategory": "Exhaust",
+    "anSize": "Universal",
+    "description": "This product may not be legal for street use on emissions-controlled vehicles but may be legal for use on dedicated competition or pre-pollution-controlled vehicles only.\n\nAttributes\nLength\t\nFull\nStyle\t\nTruck Pulling\nFlange thickness\t\n0.3125 in\nPrimary Diameter\t\n1.75 in\nPrimary Gauge\t\n16-Gauge\nCollector Diameter\t\n3 in\nFasteners Included\t\nYes\nGaskets Included\t\nYes\nMaterial\t\nSteel\nColor\t\nBlack\nFinish\t\nPaint\nQuantity\t\nPair\n",
+    "image": "https://msimg.blob.core.windows.net/product/large/SCH1302LS1.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "SCH1302LS1",
+        "price": 374.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/SCH1302LS1.jpg",
+        "stock": 11,
+        "weight": 33
+      }
+    ]
   }
 ]
