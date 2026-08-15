@@ -3053,5 +3053,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "afs11101",
+    "name": "A1000 ELECTRIC FUEL PUMP",
+    "title": "A1000 ELECTRIC FUEL PUMP",
+    "sku": "AFS11101",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 549.02,
+    "compare_price": null,
+    "weight": 6,
+    "stock": 15,
+    "category": "Pumps",
+    "subcategory": "Fuel Pumps & Components",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "MUST USE WITH BYPASS REGULATOR ON CARB APPLICATIONS #10 INLET PORT #10 OUTLET PORT ROUGH DIMENSIONS: 7.00 LONG 4.50 WIDE 3.50 TALL\n\n\nAttributes\nProduct Line\t\nA1000\nElectric/Mechanical\t\nElectric\nIn-Tank/Inline\t\nInline | In-Tank\nInlet Size\t\n10 AN\nInlet Style\t\nFemale\nInlet O-Ring\t\nYes\nOutlet Size\t\n10 AN\nOutlet Style\t\nFemale\nOutlet O-Ring\t\nYes\nFlow lb/hr A\t\n1200 lb/hr\nlb/hr A PSI\t\n40 PSI\nMaximum Pressure\t\n70 PSI\nMounting Bracket Included\t\nYes\nGasoline Compatible\t\nYes\nDiesel Compatible\t\nNo\nMethanol Compatible\t\nNo\nE85 Compatible\t\nYes\nMarine\t\nNo\nMaterial\t\nAluminum\nColor\t\nRed\nFinish\t\nAnodized\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/AFS11101.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "AFS11101",
+        "price": 549.02,
+        "image": "https://msimg.blob.core.windows.net/product/large/AFS11101.jpg",
+        "stock": 15,
+        "weight": 6
+      }
+    ]
   }
 ]
