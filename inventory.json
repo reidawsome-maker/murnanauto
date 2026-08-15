@@ -2650,5 +2650,36 @@
         "weight": 42
       }
     ]
+  },
+  {
+    "id": "flo71249",
+    "name": "FLOWFX MUFFLER CENTER 3IN IN/OUTLET",
+    "title": "FLOWFX MUFFLER CENTER 3IN IN/OUTLET",
+    "sku": "FLO71249",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 119.95,
+    "compare_price": null,
+    "weight": 16,
+    "stock": 9,
+    "category": "Mufflers",
+    "subcategory": "Mufflers & Resonators",
+    "parentCategory": "Exhaust",
+    "anSize": "Universal",
+    "description": "Attributes\nProduct Line\t\nFlowFX\nInternal Construction\t\nGlasspack\nBase Construction\t\nWelded\nCase Shape\t\nOval\nCase Length\t\n18 in\nCase Width\t\n9 in\nCase Height\t\n4 in\nOverall Length\t\n24 in\nInlet Quantity\t\n1\nInlet Diameter\t\n3 in\nInlet Location\t\nCenter\nOutlet Quantity\t\n1\nOutlet Diameter\t\n3 in\nOutlet Location\t\nCenter\nReversible\t\nYes\nUniversal\t\nYes\nAlloy\t\n409\nMaterial\t\nStainless\nColor\t\nNatural\nFinish\t\nNatural\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/FLO71249.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "FLO71249",
+        "price": 119.95,
+        "image": "https://msimg.blob.core.windows.net/product/large/FLO71249.jpg",
+        "stock": 9,
+        "weight": 16
+      }
+    ]
   }
 ]
