@@ -2340,5 +2340,36 @@
         "weight": 17
       }
     ]
+  },
+  {
+    "id": "bbk15690",
+    "name": "SBF 351W 86-93 MUSTANG \t 1-3/4 SWAP HEADERS",
+    "title": "SBF 351W 86-93 MUSTANG \t 1-3/4 SWAP HEADERS",
+    "sku": "BBK15690",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 869.99,
+    "compare_price": null,
+    "weight": 37,
+    "stock": 4,
+    "category": "Turbos",
+    "subcategory": "Turbochargers",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "This product may not be legal for street use on emissions-controlled vehicles but may be legal for use on dedicated competition or pre-pollution-controlled vehicles only\n\nBBK Performance 1-3/4 full length long tube exhaust headers offer unsurpassed quality and fitment using top quality materials and American craftsmanship. Every long tube exhaust header system is hand built with CNC mandrel bent tubing for unrestrictive exhaust flow and maximum performance, 3/8\" laser cut flanges, patented scavenging collector design and gasket less ball and socket connectors for easy installation. Every exhaust header has been designed specifically for your application to get the most horsepower and torque out of the engine. BBK long tube exhaust headers outperform the competition in quality value and performance. All headers are a direct fit bolt on replacement when used with the correct matching mid-pipes which are available with high flow catalytic converters. Our decades of exhaust design and experience make BBK Performance your number one choice for late model American car and truck performance exhaust. Fit Manual Transmission ONLY\n\nAttributes\nProduct Line\t\n351 Swap\nLength\t\nFull\nFlange thickness\t\n0.375 in\nPrimary Diameter\t\n1.75 in\nPrimary Gauge\t\n16-Gauge\nCollector Attachment Method\t\nStock Flange\nCatalytic Converters Included\t\nNo\nFasteners Included\t\nYes\nGaskets Included\t\nYes\nMaterial\t\nSteel\nColor\t\nSilver\nFinish\t\nCeramic\nQuantity\t\nPair",
+    "image": "https://msimg.blob.core.windows.net/product/large/BBK15690.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "BBK15690",
+        "price": 869.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/BBK15690.jpg",
+        "stock": 4,
+        "weight": 37
+      }
+    ]
   }
 ]
