@@ -2681,5 +2681,36 @@
         "weight": 16
       }
     ]
+  },
+  {
+    "id": "flo71416",
+    "name": "FLOW FX ROUND MUFFLER 2.5IN CENTER IN/OUT",
+    "title": "FLOW FX ROUND MUFFLER 2.5IN CENTER IN/OUT",
+    "sku": "FLO71416",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 84.95,
+    "compare_price": null,
+    "weight": 6,
+    "stock": 41,
+    "category": "Mufflers",
+    "subcategory": "Mufflers & Resonators",
+    "parentCategory": "Exhaust",
+    "anSize": "Universal",
+    "description": "Attributes\nProduct Line\t\nFlowFX\nInternal Construction\t\nGlasspack\nBase Construction\t\nWelded\nCase Shape\t\nRound\nCase Length\t\n14 in\nCase Diameter\t\n4 in\nOverall Length\t\n20 in\nInlet Quantity\t\n1\nInlet Diameter\t\n2-1/2 in\nInlet Location\t\nCenter\nOutlet Quantity\t\n1\nOutlet Diameter\t\n2-1/2 in\nOutlet Location\t\nCenter\nReversible\t\nYes\nUniversal\t\nYes\nAlloy\t\n409\nMaterial\t\nStainless\nColor\t\nNatural\nFinish\t\nNatural\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/FLO71416.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "FLO71416",
+        "price": 84.95,
+        "image": "https://msimg.blob.core.windows.net/product/large/FLO71416.jpg",
+        "stock": 41,
+        "weight": 6
+      }
+    ]
   }
 ]
