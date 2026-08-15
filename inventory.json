@@ -2929,5 +2929,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "wfpf90000295",
+    "name": "WALBRO IN-TANK FUEL PUMP 535LPH GAS & E85",
+    "title": "WALBRO IN-TANK FUEL PUMP 535LPH GAS & E85",
+    "sku": "WFPF90000295",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 162.99,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 51,
+    "category": "Pumps",
+    "subcategory": "Fuel Pumps & Components",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "Attributes\nElectric/Mechanical\t\nElectric\nIn-Tank/Inline\t\nIn-Tank\nInlet Size\t\n11 mm\nInlet Style\t\nHose Barb\nOutlet Size\t\n11 mm\nOutlet Style\t\nHose Barb\ngph A\t\n141 gph\ngph A PSI\t\n40 PSI\nlph A\t\n535 lph\nlph A PSI\t\n40 PSI\nGasoline Compatible\t\nYes\nDiesel Compatible\t\nNo\nMethanol Compatible\t\nNo\nE85 Compatible\t\nYes\nMaterial\t\nSteel\nColor\t\nZinc\nFinish\t\nPlated\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/WFPF90000295.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "WFPF90000295",
+        "price": 162.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/WFPF90000295.jpg",
+        "stock": 51,
+        "weight": 1
+      }
+    ]
   }
 ]
