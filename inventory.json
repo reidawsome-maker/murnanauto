@@ -3084,5 +3084,36 @@
         "weight": 6
       }
     ]
+  },
+  {
+    "id": "afs11540",
+    "name": "AEROMOTIVE 340 STEALTH FUEL PUMP - CENTER INLET",
+    "title": "AEROMOTIVE 340 STEALTH FUEL PUMP - CENTER INLET",
+    "sku": "AFS11540",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 162.5,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 24,
+    "category": "Pumps",
+    "subcategory": "Fuel Pumps & Components",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "Attributes\nProduct Line\t\n340 Stealth\nElectric/Mechanical\t\nElectric\nIn-Tank/Inline\t\nIn-Tank\nCenter Inlet\t\nYes\nOutlet Size\t\n3/8 in\nOutlet Style\t\nHose Barb\nlph A\t\n340 lph\nlph A PSI\t\n40 PSI\nMaximum Pressure\t\n90 PSI\nFuel Pickup Included\t\nYes\nFuel Pickup Style\t\nFilter Sock\nGasoline Compatible\t\nYes\nDiesel Compatible\t\nNo\nMethanol Compatible\t\nNo\nE85 Compatible\t\nYes\nMounting Sleeve\t\nYes\nMaterial\t\nAluminum\nColor\t\nBlack\nFinish\t\nAnodized\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/AFS11540.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "AFS11540",
+        "price": 162.5,
+        "image": "https://msimg.blob.core.windows.net/product/large/AFS11540.jpg",
+        "stock": 24,
+        "weight": 1
+      }
+    ]
   }
 ]
