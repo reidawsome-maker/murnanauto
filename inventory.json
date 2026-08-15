@@ -1720,5 +1720,36 @@
         "weight": 20
       }
     ]
+  },
+  {
+    "id": "-tbsts-2-7170b-vb096e",
+    "name": "Turbosmart TS-2 71mm Turbocharger",
+    "title": "Turbosmart TS-2 71mm Turbocharger",
+    "sku": " TBSTS-2-7170B-VB096E",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 2921.39,
+    "compare_price": null,
+    "weight": 23,
+    "stock": 2,
+    "category": "Turbos",
+    "subcategory": "Turbochargers",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "Smaller, Lighter & Faster - The Turbosmart TS-2 turbocharger series has been developed to leverage modern materials, design and manufacturing techniques to create a Turbocharger range that meets the demands of both motorsport, and performance enthusiasts alike.\nProduct Info\nAlternate Description\nTS-2 TURBOCHARGER WATER COOLED 7170 KOMPACT\nPart Number\nTBSTS-2-7170B-VB096E\nVendor Part Number\nTS-2-7170B-VB096E\nPackage Weight\n22.50 lbs\n10.21 kg\nPackage Length\n12.65 in\n32.13 cm\nPackage Width\n12.45 in\n31.62 cm\nPackage Height\n11.2 in\n28.45 cm\nAttributes\nProduct Line\t\nTS-2\nCompressor Inlet Diameter\t\n4 in\nTurbine Housing Inlet Style\t\nV-Band\nTurbine Housing Inlet Diameter\t\n3 in\nTurbine Housing Outlet Style\t\nV-Band\nTurbine Housing Outlet Diameter\t\n3 in\nTurbine AR\t\n0.96\nInternal Wastegate / External Wastegate\t\nExternal Wastegate\nRotation\t\nStandard\nInducer Diameter (mm)\t\n71 mm\nExducer Diameter (mm)\t\n70 mm\nCompressor Alloy\t\nT14\nCompressor Wheel Material\t\nInconel\nSingle Bearing / Dual Bearing\t\nDual\nBearing Style\t\nCeramic\nCooling Style\t\nWater Cooled\nCompressor Housing Material\t\nAluminum\nCompressor Housing Color\t\nNatural\nCompressor Housing Finish\t\nNatural\nTurbine Housing Alloy\t\nCast\nTurbine Housing Material\t\nStainless\nTurbine Housing Color\t\nNatural\nTurbine Housing Finish\t\nNatural\nWastegate Actuator Included\t\nNo\nClamps Included\t\nYes\nWeld Flanges Included\t\nYes\nGaskets Included\t\nYes\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/TBSTS-2-7170B-VB096E.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": " TBSTS-2-7170B-VB096E",
+        "price": 2921.39,
+        "image": "https://msimg.blob.core.windows.net/product/large/TBSTS-2-7170B-VB096E.jpg",
+        "stock": 2,
+        "weight": 23
+      }
+    ]
   }
 ]
