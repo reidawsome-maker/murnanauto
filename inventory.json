@@ -2228,5 +2228,55 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "dyn33226",
+    "name": "SS Lap Joint Clamp",
+    "title": "SS Lap Joint Clamp",
+    "sku": "DYN33226",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 13.99,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 100,
+    "category": "V-Band",
+    "subcategory": "V-Bands & Clamps",
+    "parentCategory": "Exhaust",
+    "anSize": "Universal",
+    "description": "Attributes\nStyle Band Clamp, Lap Joint, Stainless, Natural Finish, Quantity Each",
+    "image": "https://msimg.blob.core.windows.net/product/large/DYN33226.jpg",
+    "variants": [
+      {
+        "name": "2.25\"",
+        "option": "2.25\"",
+        "sku": "DYN33231",
+        "image": "https://msimg.blob.core.windows.net/product/large/DYN33226.jpg",
+        "price": 14.49,
+        "stock": 4,
+        "weight": 1
+      },
+      {
+        "name": "2.50\"",
+        "option": "2.50\"",
+        "sku": "DYN33226",
+        "image": "https://msimg.blob.core.windows.net/product/large/DYN33226.jpg",
+        "price": 13.99,
+        "stock": 46,
+        "weight": 1
+      },
+      {
+        "name": "3.00\"",
+        "option": "3.00\"",
+        "sku": "DYN33272",
+        "image": "https://msimg.blob.core.windows.net/product/large/DYN33231.jpg",
+        "price": 15.99,
+        "stock": 43,
+        "weight": 1
+      }
+    ]
   }
 ]
