@@ -1689,5 +1689,36 @@
         "weight": 24
       }
     ]
+  },
+  {
+    "id": "tbsts-1-6870b-t4096e",
+    "name": "Turbosmart TS-1 T4 flange universal 68mm Turbocharger",
+    "title": "Turbosmart TS-1 T4 flange universal 68mm Turbocharger",
+    "sku": "TBSTS-1-6870B-T4096E",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 2576.99,
+    "compare_price": null,
+    "weight": 20,
+    "stock": 5,
+    "category": "Turbos",
+    "subcategory": "Turbochargers",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "Smaller, Lighter and Faster - The Turbosmart TS-1 turbocharger series has been developed to leverage modern materials, design and manufacturing techniques to create a Turbocharger range that meets the demands of both Motorsport, and performance enthusiasts alike.\nProduct Info\nAlternate Description\nTS-1 TURBOCHARGER 6870B T4 0.96AR EXTERNALLY WAS\nPart Number\nTBSTS-1-6870B-T4096E\nVendor Part Number\nTS-1-6870B-T4096E\nPackage Weight\n19.47 lbs\n8.83 kg\nPackage Length\n12.3 in\n31.24 cm\nPackage Width\n11.95 in\n30.35 cm\nPackage Height\n10.65 in\n27.05 cm\nAttributes\nProduct Line\t\nTS-1\nCompressor Inlet Diameter\t\n4 in\nTurbine Housing Inlet Style\t\nFlange\nTurbine Housing Inlet Flange\t\nT4\nTurbine Housing Outlet Style\t\nV-Band\nTurbine Housing Outlet Diameter\t\n3 in\nTurbine AR\t\n0.96\nInternal Wastegate / External Wastegate\t\nExternal Wastegate\nRotation\t\nStandard\nInducer Diameter (mm)\t\n68 mm\nExducer Diameter (mm)\t\n70 mm\nCompressor Alloy\t\nT14\nCompressor Wheel Material\t\nInconel\nSingle Bearing / Dual Bearing\t\nDual\nBearing Style\t\nCeramic\nCooling Style\t\nOil Cooled\nCompressor Housing Material\t\nAluminum\nCompressor Housing Color\t\nNatural\nCompressor Housing Finish\t\nNatural\nTurbine Housing Alloy\t\nCast\nTurbine Housing Material\t\nStainless\nTurbine Housing Color\t\nNatural\nTurbine Housing Finish\t\nNatural\nWastegate Actuator Included\t\nNo\nClamps Included\t\nYes\nWeld Flanges Included\t\nYes\nGaskets Included\t\nYes\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/TBSTS-1-6870B-T4096E.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "TBSTS-1-6870B-T4096E",
+        "price": 2576.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/TBSTS-1-6870B-T4096E.jpg",
+        "stock": 5,
+        "weight": 20
+      }
+    ]
   }
 ]
