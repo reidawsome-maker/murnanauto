@@ -3702,5 +3702,36 @@
         "weight": 2
       }
     ]
+  },
+  {
+    "id": "msd8225",
+    "name": "MSD GM HEI COIL",
+    "title": "MSD GM HEI COIL",
+    "sku": "MSD8225",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 129.95,
+    "compare_price": null,
+    "weight": 2,
+    "stock": 100,
+    "category": "Coils",
+    "subcategory": "Ignition Coils",
+    "parentCategory": "Ignition & Electrical",
+    "anSize": "Universal",
+    "description": "Ignition Coil, E-Core, 0.310 ohm, Coil in Cap, 42000V, Black, Each\n\nAttributes\nCoil Location\t\nIn-Cap\nCoil Style\t\nE-Core\nPrimary Resistance\t\n0.31 ohm\nSecondary Resistance\t\n9.2k ohm\nCoil Internal Fill\t\nEpoxy\nMax Voltage\t\n42000V\nTurns Ratio\t\n70:01:00\nCoil Color\t\nBlack\nQuantity\t\nEach\n",
+    "image": "https://msimg.blob.core.windows.net/product/large/MSD8225.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "MSD8225",
+        "price": 129.95,
+        "image": "https://msimg.blob.core.windows.net/product/large/MSD8225.jpg",
+        "stock": 100,
+        "weight": 2
+      }
+    ]
   }
 ]
