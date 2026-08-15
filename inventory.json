@@ -1844,5 +1844,36 @@
         "weight": 20
       }
     ]
+  },
+  {
+    "id": "vib12810",
+    "name": "Vibrant Intercooler 30 x 3.25 x 9 in Tall 2.5 in Inlet / Outlet Brackets Included Aluminum Natural Each",
+    "title": "Vibrant Intercooler 30 x 3.25 x 9 in Tall 2.5 in Inlet / Outlet Brackets Included Aluminum Natural Each",
+    "sku": "VIB12810",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 386.99,
+    "compare_price": null,
+    "weight": 21,
+    "stock": 2,
+    "category": "Turbos",
+    "subcategory": "Turbochargers",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "Vibrant Performance Intercoolers feature Bar and Plate construction and a unique louvered fin design on the ambient path that maximizes the cores available surface area, and an offset fin design on the charge path allows for minimal pressure loss. Our Cast Aluminum End Tanks are precision TIG-welded to the core and pressure tested for leak-free performance.\n\nAttributes\nWidth\t\n30 in\nHeight\t\n9 in\nCore Width\t\n22 in\nCore Thickness\t\n3.25 in\nInlet Diameter\t\n2-1/2 in\nInlet Offset / Center\t\nOffset\nOutlet Diameter\t\n2-1/2 in\nOutlet Location Offset / Center\t\nOffset\nBrackets Included\t\nYes\nBrackets Material\t\nStainless\nMaterial\t\nAluminum\nColor\t\nNatural\nFinish\t\nNatural\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/VIB12810.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "VIB12810",
+        "price": 386.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/VIB12810.jpg",
+        "stock": 2,
+        "weight": 21
+      }
+    ]
   }
 ]
