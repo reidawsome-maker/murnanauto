@@ -2123,5 +2123,73 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "vib1488c",
+    "name": "SS V-Band Clamp (select size)",
+    "title": "SS V-Band Clamp (select size)",
+    "sku": "VIB1488C",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 30.29,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 100,
+    "category": "V-Band",
+    "subcategory": "V-Bands & Clamps",
+    "parentCategory": "Exhaust",
+    "anSize": "Universal",
+    "description": "Vibrant Performance v-band clamps are constructed entirely from 300 series stainless steel, features a unique quick release clamping mechanism and upgraded hardware for added durability.\n\n",
+    "image": "https://msimg.blob.core.windows.net/product/large/VIB1490C.jpg",
+    "variants": [
+      {
+        "name": "2.0\"",
+        "option": "2.0\"",
+        "sku": "VIB1488C",
+        "image": "https://msimg.blob.core.windows.net/product/large/VIB1488C.jpg",
+        "price": 30.29,
+        "stock": 13,
+        "weight": 1
+      },
+      {
+        "name": "2.25\"",
+        "option": "2.25\"",
+        "sku": "VIB1489C",
+        "image": "https://msimg.blob.core.windows.net/product/large/VIB1489C.jpg",
+        "price": 31.5,
+        "stock": 4,
+        "weight": 1
+      },
+      {
+        "name": "2.50\"",
+        "option": "2.50\"",
+        "sku": "VIB1490C",
+        "image": "https://msimg.blob.core.windows.net/product/large/VIB1490C.jpg",
+        "price": 31.5,
+        "stock": 62,
+        "weight": 1
+      },
+      {
+        "name": "3.0\"",
+        "option": "3.0\"",
+        "sku": "VIB1491C",
+        "image": "https://msimg.blob.core.windows.net/product/large/VIB1491C.jpg",
+        "price": 31.5,
+        "stock": 43,
+        "weight": 1
+      },
+      {
+        "name": "3.5\"",
+        "option": "3.5\"",
+        "sku": "VIB1492C",
+        "image": "https://msimg.blob.core.windows.net/product/large/VIB1492C.jpg",
+        "price": 31.99,
+        "stock": 28,
+        "weight": 1
+      }
+    ]
   }
 ]
