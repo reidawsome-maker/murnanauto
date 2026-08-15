@@ -2526,5 +2526,36 @@
         "weight": 21
       }
     ]
+  },
+  {
+    "id": "mag15644",
+    "name": "99-04 MUSTANG 4.6L CAT BACK KIT",
+    "title": "99-04 MUSTANG 4.6L CAT BACK KIT",
+    "sku": "MAG15644",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 963,
+    "compare_price": null,
+    "weight": 55,
+    "stock": 2,
+    "category": "Exhaust",
+    "subcategory": "Cat-Back Systems",
+    "parentCategory": "Exhaust",
+    "anSize": "Universal",
+    "description": "The MagnaFlow 1999-2004 Ford Mustang Street Series Cat-Back Performance Exhaust System brings out the personality of your 4.6L 1999-2004 Ford Mustang with our signature resonant, powerful engine tone and dyno-proven performance. Thanks to its fast-flowing, mandrel bent 2.5in. main piping and 2 Straight-Through mufflers ending in a Dual Split Rear exit with 3.5in. Polished Clamp-On Single Wall Angle Cut Edge tips, this Ford Mustang exhaust kit has the performance chops to match its sporty sound and appearance. Upgrade your ride to the next level with an exhaust that has the pipes to put other Ford Mustang's to shame. With this system your vehicle will be producing Moderate exterior and Mild interior sound levels while leaving other cars and trucks feeling envious at every stoplight. Exhaust kit 15644 features a cat-back layout that replaces your ride's stock exhaust components from near the catalytic converter on back. Extensive 3D scanning during development has resulted in a direct-fit design that you can easily install yourself. 15644 is produced using CNC precision robotic manufacturing techniques and is backed by MagnaFlow's 1-year limited finish warranty and limited lifetime construction warranty.\n\nAttributes\nProduct Line\t\nStreet Series\nStyle\t\nCat Back\nExit Quantity\t\nDual\nExit Location\t\nBack\nExit Side\t\nDriver / Passenger\nIntermediate Pipe Included\t\nYes\nIntermediate Pipe Diameter\t\n2-1/2 in\nIntermediate Pipe A Quantity\t\n2\nTailpipes Included\t\nYes\nTailpipes Diameter\t\n2-1/2 in\nTailpipe A Quantity\t\n2\nMuffler Included\t\nYes\nMuffler Style\t\nTurbo\nMuffler A Shape\t\nOval\nMuffler A Inlet Quantity\t\n1\nMuffler A Inlet Diameter\t\n2-1/2 in\nMuffler A Inlet Location\t\nOffset\nMuffler A Outlet Quantity\t\n1\nMuffler A Outlet Diameter\t\n2-1/2 in\nMuffler A Outlet Location\t\nOffset\nMuffler Quantity\t\n2\nTips Included\t\nYes\nCut Style\t\nAngled\nEdge Style\t\nCut Edge\nTips Exit Quantity\t\n1\nTips Exit Diameter\t\n2-1/2 in\nTip Alloy\t\n304\nTip Material\t\nStainless\nTip Color\t\nPolished\nTip Finish\t\nPolished\nTip Quantity\t\n2\nHangers Included\t\nYes\nClamps Included\t\nYes\nClamps Style\t\nBand Clamp\nHardware Included\t\nYes\nAlloy\t\n409\nMaterial\t\nStainless\nColor\t\nNatural\nFinish\t\nNatural\nQuantity\t\nKit",
+    "image": "https://msimg.blob.core.windows.net/product/large/MAG15644.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "MAG15644",
+        "price": 963,
+        "image": "https://msimg.blob.core.windows.net/product/large/MAG15644.jpg",
+        "stock": 2,
+        "weight": 55
+      }
+    ]
   }
 ]
