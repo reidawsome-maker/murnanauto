@@ -3332,5 +3332,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "frdm9593-m55gt",
+    "name": "FORD 55-LB/HR FUEL INJECTOR SET - 8-PACK",
+    "title": "FORD 55-LB/HR FUEL INJECTOR SET - 8-PACK",
+    "sku": "FRDM9593-M55GT",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 324.99,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 4,
+    "category": "Injectors",
+    "subcategory": "Fuel Injectors",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "This product may not be legal for street use on emissions-controlled vehicles but may be legal for use on dedicated competition or pre-pollution-controlled vehicles only. \n\nFuel Injector, 55 lb/hr, High Impedance, EV14 / USCAR Connector, Ford Mustang GT500 2020, Set of 8\n\nAttributes\nFlow LB/HR\t\n55\nFlow Rated\t\n40 psi\nHigh / Low Impedance\t\nHigh\nConnector Style\t\nUSCAR\nBody Style\t\nEV14\nApplication Specific\t\nYes\nO-Rings Included\t\nYes\nQuantity\t\nSet of 8",
+    "image": "https://msimg.blob.core.windows.net/product/large/FRDM9593-M55GT.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "FRDM9593-M55GT",
+        "price": 324.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/FRDM9593-M55GT.jpg",
+        "stock": 4,
+        "weight": 1
+      }
+    ]
   }
 ]
