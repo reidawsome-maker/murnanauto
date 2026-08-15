@@ -3630,5 +3630,46 @@
         "weight": 4.5
       }
     ]
+  },
+  {
+    "id": "msd8202",
+    "name": "MSD BLASTER 2 COIL",
+    "title": "MSD BLASTER 2 COIL",
+    "sku": "MSD8202",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 55.95,
+    "compare_price": null,
+    "weight": 2,
+    "stock": 100,
+    "category": "Coils",
+    "subcategory": "Ignition Coils",
+    "parentCategory": "Ignition & Electrical",
+    "anSize": "Universal",
+    "description": "Ignition Coil, Blaster 2, Canister, Oil Filled, 0.700 ohm, Female Socket, 45000V, Red, Each\n\nAttributes\nProduct Line\t\nBlaster 2\nCoil Location\t\nRemote\nCoil Style\t\nCanister\nCoil Shape\t\nCylinder\nCoil Wire Attachment\t\nFemale\nPrimary Resistance\t\n0.7 ohm\nSecondary Resistance\t\n4.5k ohm\nCoil Internal Fill\t\nOil\nMax Voltage\t\n45000V\nTurns Ratio\t\n100:01:00\nCoil Color\t\nRed\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/MSD8202.jpg",
+    "variants": [
+      {
+        "name": "RED",
+        "option": "RED",
+        "sku": "MSD8202",
+        "image": "https://msimg.blob.core.windows.net/product/large/MSD8202.jpg",
+        "price": 55.95,
+        "stock": 100,
+        "weight": 2
+      },
+      {
+        "name": "BLACK",
+        "option": "BLACK",
+        "sku": "MSD82023",
+        "image": "https://msimg.blob.core.windows.net/product/large/MSD82023.jpg",
+        "price": 55.95,
+        "stock": 100,
+        "weight": 2
+      }
+    ]
   }
 ]
