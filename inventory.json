@@ -3599,5 +3599,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "msd8252",
+    "name": "MSD BLASTER HVC COIL",
+    "title": "MSD BLASTER HVC COIL",
+    "sku": "MSD8252",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 219.95,
+    "compare_price": null,
+    "weight": 4.5,
+    "stock": 100,
+    "category": "Coils",
+    "subcategory": "Ignition Coils",
+    "parentCategory": "Ignition & Electrical",
+    "anSize": "Universal",
+    "description": "Ignition Coil, Blaster HVC, E-Core, 0.020 ohm, Male HEI, 42000V, Blue, Each\n\nAttributes\nProduct Line\t\nBlaster HVC\nCoil Location\t\nRemote\nCoil Style\t\nE-Core\nCoil Wire Attachment\t\nMale\nPrimary Resistance\t\n0.02 ohm\nSecondary Resistance\t\n1.38k ohm\nCoil Internal Fill\t\nEpoxy\nMax Voltage\t\n42000V\nTurns Ratio\t\n100:01:00\nCoil Color\t\nBlue / Black\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/MSD8252.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "MSD8252",
+        "price": 219.95,
+        "image": "https://msimg.blob.core.windows.net/product/large/MSD8252.jpg",
+        "stock": 100,
+        "weight": 4.5
+      }
+    ]
   }
 ]
