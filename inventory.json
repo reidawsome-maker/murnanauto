@@ -3239,5 +3239,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "hly522-108x",
+    "name": "HOLLEY 100LB/HR FUEL INJECTORS 8PK HIGH IMPEDANCE",
+    "title": "HOLLEY 100LB/HR FUEL INJECTORS 8PK HIGH IMPEDANCE",
+    "sku": "HLY522-108X",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 448.95,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 8,
+    "category": "Injectors",
+    "subcategory": "Fuel Injectors",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "This product may not be legal for street use on emissions-controlled vehicles but may be legal for use on dedicated competition or pre-pollution-controlled vehicles only.\n\nFuel Injector, Terminator X, 100 lb/hr, High Impedance, EV6 / Pico, USCAR Connector, Universal, Set of 8\n\n\nAttributes\nProduct Line\t\nTerminator X\nFlow LB/HR\t\n100\nFlow CC/Min\t\n1050\nFlow Rated\t\n60 psi\nFuel Compatibility\t\nGasoline/E85\nImpedance ( Ohms)\t\n12.2 ohms\nHigh / Low Impedance\t\nHigh\nConnector Style\t\nUSCAR\nBody Style\t\nEV6/Pico\nOutside Diameter\t\n0.65 in\nUniversal\t\nYes\nTotal Height\t\n1.85 in\nSeat to Seat Height\t\n1.421 in\nO-Rings Included\t\nYes\nDrive Circuit\t\n12 volt saturated\nFlow Matched\t\nNo\nQuantity\t\nSet of 8",
+    "image": "https://msimg.blob.core.windows.net/product/large/HLY522-108X.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "HLY522-108X",
+        "price": 448.95,
+        "image": "https://msimg.blob.core.windows.net/product/large/HLY522-108X.jpg",
+        "stock": 8,
+        "weight": 1
+      }
+    ]
   }
 ]
