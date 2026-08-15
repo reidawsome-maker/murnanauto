@@ -3208,5 +3208,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "hly522-428x",
+    "name": "HOLLEY 42LB/HR FUEL INJECTORS 8-PACK",
+    "title": "HOLLEY 42LB/HR FUEL INJECTORS 8-PACK",
+    "sku": "HLY522-428X",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 448.95,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 11,
+    "category": "Injectors",
+    "subcategory": "Fuel Injectors",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "Fuel Injector, Terminator X, 42 lb/hr, High Impedance, EV6 / Pico, Universal, Set of 8\n\nAttributes\nProduct Line\t\nTerminator X\nFlow LB/HR\t\n42\nFuel Compatibility\t\nGasoline/E85\nImpedance ( Ohms)\t\n12.2 ohms\nHigh / Low Impedance\t\nHigh\nConnector Style\t\nUSCAR\nBody Style\t\nEV6/Pico\nOutside Diameter\t\n0.65 in\nUniversal\t\nYes\nTotal Height\t\n1.85 in\nSeat to Seat Height\t\n1.421 in\nO-Rings Included\t\nYes\nDrive Circuit\t\n12 volt saturated\nFlow Matched\t\nNo\nQuantity\t\nSet of 8",
+    "image": "https://msimg.blob.core.windows.net/product/large/HLY522-428X.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "HLY522-428X",
+        "price": 448.95,
+        "image": "https://msimg.blob.core.windows.net/product/large/HLY522-428X.jpg",
+        "stock": 11,
+        "weight": 1
+      }
+    ]
   }
 ]
