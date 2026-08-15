@@ -3301,5 +3301,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "fst303608-",
+    "name": "FAST FUEL INJECTORS - 36LB/HR (8PK)",
+    "title": "FAST FUEL INJECTORS - 36LB/HR (8PK)",
+    "sku": "FST303608 ",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 509.95,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 5,
+    "category": "Injectors",
+    "subcategory": "Fuel Injectors",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "This product may not be legal for street use on emissions-controlled vehicles but may be legal for use on dedicated competition or pre-pollution-controlled vehicles only. \n\nFuel Injector, Precision Flow, 36 lb/hr, High Impedance, EV1 / Minitmer Connector, Universal, Set of 8\n\nAttributes\nProduct Line\t\nPrecision Flow\nFlow LB/HR\t\n36\nFlow CC/Min\t\n378\nHigh / Low Impedance\t\nHigh\nConnector Style\t\nJetronic/Minitimer\nBody Style\t\nEV1\nUniversal\t\nYes\nO-Ring to O-Ring\t\n2.55 in\nO-Rings Included\t\nYes\nDrive Circuit\t\n12 volt saturated\nMaterial\t\nPlastic\nColor\t\nWhite\nFinish\t\nNatural\nQuantity\t\nSet of 8",
+    "image": "https://msimg.blob.core.windows.net/product/large/FST303608.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "FST303608 ",
+        "price": 509.95,
+        "image": "https://msimg.blob.core.windows.net/product/large/FST303608.jpg",
+        "stock": 5,
+        "weight": 1
+      }
+    ]
   }
 ]
