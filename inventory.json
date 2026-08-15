@@ -3487,5 +3487,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "afs12304",
+    "name": "AEROMOTIVE FUEL FILTER W/100-MICRON S/S ELEMENT",
+    "title": "AEROMOTIVE FUEL FILTER W/100-MICRON S/S ELEMENT",
+    "sku": "AFS12304",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 197.63,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 19,
+    "category": "FuelFilters",
+    "subcategory": "Fuel Filters",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "Fuel Filter, In-Line, 100 Micron, Stainless Element, 10 AN Female O-Ring Inlet, 10 AN Female O-Ring Outlet, Aluminum, Red Anodized, Each",
+    "image": "https://msimg.blob.core.windows.net/product/large/AFS12304.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "AFS12304",
+        "price": 197.63,
+        "image": "https://msimg.blob.core.windows.net/product/large/AFS12304.jpg",
+        "stock": 19,
+        "weight": 1
+      }
+    ]
   }
 ]
