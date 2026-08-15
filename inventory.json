@@ -2836,5 +2836,36 @@
         "weight": 7
       }
     ]
+  },
+  {
+    "id": "flo843015",
+    "name": "SUPER 10 SERIES MUFFLER 3.00IN IN (C) / OUT (C)",
+    "title": "SUPER 10 SERIES MUFFLER 3.00IN IN (C) / OUT (C)",
+    "sku": "FLO843015",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 101.95,
+    "compare_price": null,
+    "weight": 7,
+    "stock": 8,
+    "category": "Turbos",
+    "subcategory": "Turbochargers",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "Attributes\nProduct Line\t\nSuper 10 Series\nInternal Construction\t\nChambered\nBase Construction\t\nWelded\nCase Shape\t\nOval\nCase Length\t\n6.5 in\nCase Width\t\n9.5 in\nCase Height\t\n4 in\nOverall Length\t\n12.5 in\nInlet Quantity\t\n1\nInlet Diameter\t\n3 in\nInlet Location\t\nCenter\nOutlet Quantity\t\n1\nOutlet Diameter\t\n3 in\nOutlet Location\t\nCenter\nUniversal\t\nYes\nAlloy\t\n409\nMaterial\t\nStainless\nColor\t\nBlack\nFinish\t\nPaint\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/FLO843015.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "FLO843015",
+        "price": 101.95,
+        "image": "https://msimg.blob.core.windows.net/product/large/FLO843015.jpg",
+        "stock": 8,
+        "weight": 7
+      }
+    ]
   }
 ]
