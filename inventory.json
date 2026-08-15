@@ -2712,5 +2712,36 @@
         "weight": 6
       }
     ]
+  },
+  {
+    "id": "flo71419",
+    "name": "FX FLOW MUFFLER 3IN CENTER IN/OUT",
+    "title": "FX FLOW MUFFLER 3IN CENTER IN/OUT",
+    "sku": "FLO71419",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 99.95,
+    "compare_price": null,
+    "weight": 7,
+    "stock": 17,
+    "category": "Mufflers",
+    "subcategory": "Mufflers & Resonators",
+    "parentCategory": "Exhaust",
+    "anSize": "Universal",
+    "description": "Attributes\nProduct Line\t\nFlowFX\nInternal Construction\t\nGlasspack\nBase Construction\t\nWelded\nCase Shape\t\nRound\nCase Length\t\n14 in\nCase Diameter\t\n4 in\nOverall Length\t\n20 in\nInlet Quantity\t\n1\nInlet Diameter\t\n3 in\nInlet Location\t\nCenter\nOutlet Quantity\t\n1\nOutlet Diameter\t\n3 in\nOutlet Location\t\nCenter\nReversible\t\nYes\nUniversal\t\nYes\nAlloy\t\n409\nMaterial\t\nStainless\nColor\t\nNatural\nFinish\t\nNatural\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/FLO71419.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "FLO71419",
+        "price": 99.95,
+        "image": "https://msimg.blob.core.windows.net/product/large/FLO71419.jpg",
+        "stock": 17,
+        "weight": 7
+      }
+    ]
   }
 ]
