@@ -3981,5 +3981,36 @@
         "weight": 12
       }
     ]
+  },
+  {
+    "id": "hly558-321",
+    "name": "HOLLEY GM LS COIL SUB HARNESSES",
+    "title": "HOLLEY GM LS COIL SUB HARNESSES",
+    "sku": "HLY558-321",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 186.95,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 25,
+    "category": "Wiring",
+    "subcategory": "Wiring & Harnesses",
+    "parentCategory": "Ignition & Electrical",
+    "anSize": "Universal",
+    "description": "Ignition Wiring Harness, Factory Replacement, Injector Sub Harness, GM LS-Series, Pair\n\n\nAttributes\nHarness End 1\t\nStock Harness\nHarness End 2\t\nStock Coil Harness\nHarness Purpose\t\nFactory Coil Harness\nLoom / Sleeve Included\t\nYes\nQuantity\t\nPair\n",
+    "image": "https://msimg.blob.core.windows.net/product/large/HLY558-321.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "HLY558-321",
+        "price": 186.95,
+        "image": "https://msimg.blob.core.windows.net/product/large/HLY558-321.jpg",
+        "stock": 25,
+        "weight": 1
+      }
+    ]
   }
 ]
