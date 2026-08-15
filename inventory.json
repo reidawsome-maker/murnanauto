@@ -2030,5 +2030,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "vor4gp218-050l",
+    "name": "Vortech SBC Carb Supercharger Kit",
+    "title": "Vortech SBC Carb Supercharger Kit",
+    "sku": "VOR4GP218-050L",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 3364.99,
+    "compare_price": null,
+    "weight": 70,
+    "stock": 1,
+    "category": "Superchargers",
+    "subcategory": "Superchargers",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "Attributes\nStyle\t\nCentrifugal\nTensioner Included\t\nYes\nIdler Included\t\nYes\nIdler Pulley Included\t\nYes\nCrankshaft Pulley Included\t\nYes\nCrankshaft Pulley Grooves/Rib\t\n6 Rib\nCrankshaft Pulley Diameter\t\n6 in\nSupercharger Pulley Included\t\nYes\nSupercharger Pulley Grooves/Rib\t\n6 Rib\nSupercharger Pulley Diameter\t\n3.33 in\nBelt Included\t\nYes\nBelt Style\t\nSerpentine\nBelt Length\t\n58 in\nAir Filter Included\t\nYes\nHardware Included\t\nYes\nMaterial\t\nAluminum\nGloss\t\nSatin\nColor\t\nNatural\nFinish\t\nNatural\nQuantity\t\nKit",
+    "image": "https://msimg.blob.core.windows.net/product/large/VOR4GP218-050L.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "VOR4GP218-050L",
+        "price": 3364.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/VOR4GP218-050L.jpg",
+        "stock": 1,
+        "weight": 70
+      }
+    ]
   }
 ]
