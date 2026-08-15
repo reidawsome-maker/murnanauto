@@ -2960,5 +2960,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "wfpgcl611",
+    "name": "WALBRO FUEL PUMP KIT - 255LPH GAS - INLINE - UNIVERSAL",
+    "title": "WALBRO FUEL PUMP KIT - 255LPH GAS - INLINE - UNIVERSAL",
+    "sku": "WFPGCL611",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 139.99,
+    "compare_price": null,
+    "weight": 1.5,
+    "stock": 8,
+    "category": "Pumps",
+    "subcategory": "Fuel Pumps & Components",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "Attributes\nProduct Line\t\nCGL\nElectric/Mechanical\t\nElectric\nIn-Tank/Inline\t\nIn-Tank\nInlet Size\t\n10 mm x 1.0\nInlet Style\t\nFemale\nOutlet Size\t\n10 mm x 1.0\nOutlet Style\t\nFemale\nlph A\t\n255 lph\nMounting Bracket Included\t\nYes\nFittings Included\t\nYes\nNumber of Fittings\t\n2\nFitting A End 1 Size\t\n10 mm x 1\nFitting A End 1 Style\t\nMale\nFitting A End 1 Angle\t\nStraight\nFitting A End 2 Size\t\n5/16 in\nFitting A End 2 Style\t\nHose Barb\nFitting A End 2 Angle\t\nStraight\nFitting A Material\t\nSteel\nFitting A Color\t\nZinc\nFitting A Finish\t\nOxide\nFitting B End 1 Size\t\n10 mm x 1\nFitting B End 1 Style\t\nMale\nFitting B End 1 Angle\t\nStraight\nFitting B End 2 Size\t\n5/16 in\nFitting B End 2 Style\t\nHose Barb\nFitting B End 2 Angle\t\nStraight\nFitting B Material\t\nSteel\nFitting B Color\t\nZinc\nFitting B Finish\t\nOxide\nGasoline Compatible\t\nYes\nDiesel Compatible\t\nNo\nMethanol Compatible\t\nNo\nE85 Compatible\t\nNo\nMounting Sleeve\t\nYes\nMaterial\t\nSteel\nColor\t\nZinc\nFinish\t\nPlated\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/WFPGCL611.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "WFPGCL611",
+        "price": 139.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/WFPGCL611.jpg",
+        "stock": 8,
+        "weight": 1.5
+      }
+    ]
   }
 ]
