@@ -2991,5 +2991,36 @@
         "weight": 1.5
       }
     ]
+  },
+  {
+    "id": "wfpgss340g3",
+    "name": "WALBRO FUEL PUMP - 255LPH - GAS IN-TANK - UNIVERSAL",
+    "title": "WALBRO FUEL PUMP - 255LPH - GAS IN-TANK - UNIVERSAL",
+    "sku": "WFPGSS340G3",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 81.99,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 6,
+    "category": "Pumps",
+    "subcategory": "Fuel Pumps & Components",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "Attributes\nProduct Line\t\nGSSG3\nElectric/Mechanical\t\nElectric\nIn-Tank/Inline\t\nIn-Tank\nOutlet Size\t\n5/16 in\nOutlet Style\t\nHose Barb\nlph A\t\n255 lph\nGasoline Compatible\t\nYes\nDiesel Compatible\t\nNo\nMethanol Compatible\t\nNo\nE85 Compatible\t\nNo\nMaterial\t\nSteel\nColor\t\nZinc\nFinish\t\nPlated\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/WFPGSS340G3.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "WFPGSS340G3",
+        "price": 81.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/WFPGSS340G3.jpg",
+        "stock": 6,
+        "weight": 1
+      }
+    ]
   }
 ]
