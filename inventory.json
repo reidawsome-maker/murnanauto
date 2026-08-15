@@ -1968,5 +1968,36 @@
         "weight": 15
       }
     ]
+  },
+  {
+    "id": "3002033012",
+    "name": "2.50-Inch Aluminum Intercooler Piping Kit",
+    "title": "2.50-Inch Aluminum Intercooler Piping Kit",
+    "sku": "3002033012",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 174.99,
+    "compare_price": null,
+    "weight": 15,
+    "stock": 20,
+    "category": "Intercoolers",
+    "subcategory": "Intercoolers & Piping",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "2.50-Inch Aluminum Intercooler Piping Kit\nHigh-Quality 6061 Lightweight Aluminum Piping\nPolished Surface with Cosmetic Protection\nRolled and Beaded Ends to Prevent Hose Slippage\nPremium Quality Braided Reinforced Silicone Hoses\nExtremely Resistant to High Boost Pressures\nDesigned for All Motors, All Years, All Vehicle Architectures\nEasy Installation\nUniversal Fitment; Some Adaptation May Be Required",
+    "image": "https://www.mxrwholesale.com/media/catalog/product/cache/f33aae32572bec0e37b80afa24cad00a/p/p/pp-25-181_digcahx71ppi5lzv.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "3002033012",
+        "price": 174.99,
+        "image": "https://www.mxrwholesale.com/media/catalog/product/cache/f33aae32572bec0e37b80afa24cad00a/p/p/pp-25-181_digcahx71ppi5lzv.jpg",
+        "stock": 20,
+        "weight": 15
+      }
+    ]
   }
 ]
