@@ -2464,5 +2464,36 @@
         "weight": 33
       }
     ]
+  },
+  {
+    "id": "flt11575",
+    "name": "EXHAUST HEADER SET - GM LS ENGINE SWAP 1-5/8",
+    "title": "EXHAUST HEADER SET - GM LS ENGINE SWAP 1-5/8",
+    "sku": "FLT11575",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 311.95,
+    "compare_price": null,
+    "weight": 18.5,
+    "stock": 5,
+    "category": "Headers",
+    "subcategory": "Headers & Manifolds",
+    "parentCategory": "Exhaust",
+    "anSize": "Universal",
+    "description": "This product may not be legal for street use on emissions-controlled vehicles but may be legal for use on dedicated competition or pre-pollution-controlled vehicles only.\n\nAttributes\nLength\t\nShort\nStyle\t\nShorty\nFlange thickness\t\n0.375 in\nPrimary Diameter\t\n1.625 in\nCollector Diameter\t\n2.5 in\nCollector Attachment Method\t\n3-Bolt Flange\nOxygen Sensor Bung\t\nYes\nFasteners Included\t\nYes\nGaskets Included\t\nYes\nReducers Included\t\nYes\nReducer Outlet Size\t\n2.5 in\nMaterial\t\nStainless Steel\nColor\t\nNatural\nFinish\t\nNatural\nQuantity\t\nPair",
+    "image": "https://msimg.blob.core.windows.net/product/large/FLT11575.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "FLT11575",
+        "price": 311.95,
+        "image": "https://msimg.blob.core.windows.net/product/large/FLT11575.jpg",
+        "stock": 5,
+        "weight": 18.5
+      }
+    ]
   }
 ]
