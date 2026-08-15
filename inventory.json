@@ -3950,5 +3950,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "pwi10102",
+    "name": "PAINLESS 21 CIRCUIT NON-GM COLUMN",
+    "title": "PAINLESS 21 CIRCUIT NON-GM COLUMN",
+    "sku": "PWI10102",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 282.99,
+    "compare_price": null,
+    "weight": 12,
+    "stock": 33,
+    "category": "Wiring",
+    "subcategory": "Wiring & Harnesses",
+    "parentCategory": "Ignition & Electrical",
+    "anSize": "Universal",
+    "description": "Car Wiring Harness, Classic Customizable, Complete, 21 Circuit, Complete, Universal, Kit\n\nAttributes\nApplication Specific\t\nNo\nCircuit Quantity\t\n21\nLabeled Wires\t\nYes\nFuse Panel Included\t\nYes\nFuse Panel Fuse Style\t\nATC\nMega Fuse Included\t\nYes\nA/C / Heat Circuit\t\nYes\nAccessory Circuit\t\nYes\nBackup Light Circuit\t\nYes\nBrake Light Circuit\t\nYes\nCharging Circuit\t\nYes\nCigarette Lighter Circuit\t\nYes\nDome / Courtesy Light Circuit\t\nYes\nElectric Choke Circuit\t\nYes\nEmergency Flasher Circuit\t\nYes\nFused Power Circuit\t\nYes\nHeadlight Circuit\t\nYes\nHorn Relay Circuit\t\nYes\nIgnition Coil Circuit\t\nYes\nInstrument Panel Circuit\t\nYes\nPark / Marker Light Circuit\t\nYes\nRadio / Clock Circuit\t\nYes\nRelay Activation Circuit\t\nYes\nStarting Circuit\t\nYes\nTail Light / License Plate Circuit\t\nYes\nThird Brake Light Circuit\t\nYes\nTurn Signal Circuit\t\nYes\nWiper / Washer Circuit\t\nYes\nVoltmeter Wiring Included\t\nYes\nTemperature Gauge Wiring Included\t\nYes\nTachometer Wiring Included\t\nYes\nOil Pressure Gauge Wiring Included\t\nYes\nFuel Gauge Wiring Included\t\nYes\nQuantity\t\nKit",
+    "image": "https://msimg.blob.core.windows.net/product/large/PWI10102.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "PWI10102",
+        "price": 282.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/PWI10102.jpg",
+        "stock": 33,
+        "weight": 12
+      }
+    ]
   }
 ]
