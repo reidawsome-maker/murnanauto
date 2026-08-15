@@ -3764,5 +3764,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "msd826583",
+    "name": "MSD GM LS COILS 8-PK 99-08 TRUCKS - BLACK",
+    "title": "MSD GM LS COILS 8-PK 99-08 TRUCKS - BLACK",
+    "sku": "MSD826583",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 579.95,
+    "compare_price": null,
+    "weight": 6,
+    "stock": 19,
+    "category": "Coils",
+    "subcategory": "Ignition Coils",
+    "parentCategory": "Ignition & Electrical",
+    "anSize": "Universal",
+    "description": "Ignition Coil Pack, Blaster, Coil-On-Plug, Black, GM LS-Series, Set of 8\n\n\nAttributes\nCoil Location\t\nRemote\nCoil Style\t\nCoil Pack\nCoil Shape\t\nSquare\nCoil Wire Attachment\t\nFemale\nCoil Internal Fill\t\nEpoxy\nCoil Color\t\nBlack\nQuantity\t\nSet of 8",
+    "image": "https://msimg.blob.core.windows.net/product/large/MSD826583.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "MSD826583",
+        "price": 579.95,
+        "image": "https://msimg.blob.core.windows.net/product/large/MSD826583.jpg",
+        "stock": 19,
+        "weight": 6
+      }
+    ]
   }
 ]
