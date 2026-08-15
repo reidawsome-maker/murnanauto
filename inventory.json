@@ -2402,5 +2402,36 @@
         "weight": 23
       }
     ]
+  },
+  {
+    "id": "hed69050",
+    "name": "82-04 GM S10 P/U HEADERS W/LS ENGINE",
+    "title": "82-04 GM S10 P/U HEADERS W/LS ENGINE",
+    "sku": "HED69050",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 463.99,
+    "compare_price": null,
+    "weight": 32,
+    "stock": 7,
+    "category": "Headers",
+    "subcategory": "Headers & Manifolds",
+    "parentCategory": "Exhaust",
+    "anSize": "Universal",
+    "description": "This product may not be legal for street use on emissions-controlled vehicles but may be legal for use on dedicated competition or pre-pollution-controlled vehicles only.\n\nAttributes\nProduct Line\t\nLS Swap\nLength\t\nFull\nFlange thickness\t\n0.375 in\nPrimary Diameter\t\n1.5 in\nPrimary Gauge\t\n16-Gauge\nCollector Diameter\t\n2.5 in\nCollector Attachment Method\t\nBall/Socket\nCatalytic Converters Included\t\nNo\nFasteners Included\t\nYes\nGaskets Included\t\nYes\nReducers Included\t\nYes\nReducer Outlet Size\t\n2.5 in\nMaterial\t\nSteel\nColor\t\nBlack\nFinish\t\nPaint\nQuantity\t\nPair",
+    "image": "https://msimg.blob.core.windows.net/product/large/HED69050.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "HED69050",
+        "price": 463.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/HED69050.jpg",
+        "stock": 7,
+        "weight": 32
+      }
+    ]
   }
 ]
