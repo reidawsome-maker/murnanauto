@@ -1937,5 +1937,36 @@
         "weight": 13
       }
     ]
+  },
+  {
+    "id": "3002919788",
+    "name": "Maxpeeding Universal 3\" Aluminum Intercooler Pipe Tube Kit w/ Blue Hose Clamps",
+    "title": "Maxpeeding Universal 3\" Aluminum Intercooler Pipe Tube Kit w/ Blue Hose Clamps",
+    "sku": "3002919788",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 200,
+    "compare_price": null,
+    "weight": 15,
+    "stock": 20,
+    "category": "Intercoolers",
+    "subcategory": "Intercoolers & Piping",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "Maxpeeding 3\" intercooler piping kit\n\ncomes with T-clamps, silicone couplers, and polished aluminum tubing ",
+    "image": "https://www.mxrwholesale.com/media/catalog/product/cache/f33aae32572bec0e37b80afa24cad00a/p/p/pp-30-20_281_29.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "3002919788",
+        "price": 200,
+        "image": "https://www.mxrwholesale.com/media/catalog/product/cache/f33aae32572bec0e37b80afa24cad00a/p/p/pp-30-20_281_29.jpg",
+        "stock": 20,
+        "weight": 15
+      }
+    ]
   }
 ]
