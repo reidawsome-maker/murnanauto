@@ -2371,5 +2371,36 @@
         "weight": 37
       }
     ]
+  },
+  {
+    "id": "-flt11537",
+    "name": " LS 409SS TURBO HEADERS UP & FORWARD STYLE",
+    "title": " LS 409SS TURBO HEADERS UP & FORWARD STYLE",
+    "sku": " FLT11537",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 311.95,
+    "compare_price": null,
+    "weight": 23,
+    "stock": 14,
+    "category": "Headers",
+    "subcategory": "Headers & Manifolds",
+    "parentCategory": "Exhaust",
+    "anSize": "Universal",
+    "description": "Attributes\nLength\t\nFull\nStyle\t\nTurbo\nFlange thickness\t\n0.4375 in\nPrimary Diameter\t\n1.875 in\nPrimary Gauge\t\n16-Gauge\nCollector Diameter\t\n3 in\nCollector Attachment Method\t\nV-band Clamp\nCatalytic Converters Included\t\nNo\nFasteners Included\t\nno\nGaskets Included\t\nYes\nMaterial\t\nStainless Steel\nColor\t\nNatural\nFinish\t\nNatural\nQuantity\t\nPair",
+    "image": "https://msimg.blob.core.windows.net/product/large/FLT11537.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": " FLT11537",
+        "price": 311.95,
+        "image": "https://msimg.blob.core.windows.net/product/large/FLT11537.jpg",
+        "stock": 14,
+        "weight": 23
+      }
+    ]
   }
 ]
