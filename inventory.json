@@ -3394,5 +3394,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "afs13136",
+    "name": "AEROMOTIVE FUEL REGULATOR EFI 2 X 6AN INLET/6AN RETURN",
+    "title": "AEROMOTIVE FUEL REGULATOR EFI 2 X 6AN INLET/6AN RETURN",
+    "sku": "AFS13136",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 208.6,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 59,
+    "category": "Regulators",
+    "subcategory": "Fuel Rails & Regulators",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "Fuel Pressure Regulator, Compact EFI, 40 to 75 psi, In-Line, 6 AN Female O-Ring Inlet, 6 AN Female O-Ring Outlet, 6 AN O-Ring Return, 1/8 in NPT Port, Black / Clear Anodized, E85 / Gas / Diesel, Each\n\nAttributes\nBoost Referenced\t\nYes\nBypass\t\nYes\nAdjustable\t\nYes\nAdjustment Range Low\t\n40 PSI\nAdjustment Range High\t\n75 PSI\nMounting Style\t\nIn-Line\nInlet Quantity\t\n1\nInlet Size\t\n6 AN\nInlet Style\t\nFemale\nInlet O-Ring\t\nYes\nOutlet Quantity\t\n1\nOutlet Size\t\n6 AN\nOutlet Style\t\nFemale\nOutlet O-Ring\t\nYes\nReturn Port Size\t\n6 AN\nReturn Port Style\t\nFemale\nReturn Port O-Ring\t\nYes\nGauge Port\t\nYes\nGauge Port Size\t\n1/8 in NPT\nGauge Port Style\t\nFemale\nBracket Included\t\nYes\nMaterial\t\nAluminum\nColor\t\nBlack\nFinish\t\nAnodized\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/AFS13136.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "AFS13136",
+        "price": 208.6,
+        "image": "https://msimg.blob.core.windows.net/product/large/AFS13136.jpg",
+        "stock": 59,
+        "weight": 1
+      }
+    ]
   }
 ]
