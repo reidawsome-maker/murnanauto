@@ -2805,5 +2805,36 @@
         "weight": 10
       }
     ]
+  },
+  {
+    "id": "flo843016",
+    "name": "SUPER 10 MUFFLER 3IN OFF SET IN 3IN CENTER OUT",
+    "title": "SUPER 10 MUFFLER 3IN OFF SET IN 3IN CENTER OUT",
+    "sku": "FLO843016",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 101.95,
+    "compare_price": null,
+    "weight": 7,
+    "stock": 13,
+    "category": "Mufflers",
+    "subcategory": "Mufflers & Resonators",
+    "parentCategory": "Exhaust",
+    "anSize": "Universal",
+    "description": "Attributes\nProduct Line\t\nSuper 10 Series\nInternal Construction\t\nChambered\nBase Construction\t\nWelded\nCase Shape\t\nOval\nCase Length\t\n6.5 in\nCase Width\t\n9.5 in\nCase Height\t\n4 in\nOverall Length\t\n12.5 in\nInlet Quantity\t\n1\nInlet Diameter\t\n3 in\nInlet Location\t\nOffset\nOutlet Quantity\t\n1\nOutlet Diameter\t\n3 in\nOutlet Location\t\nCenter\nUniversal\t\nYes\nAlloy\t\n409\nMaterial\t\nStainless\nColor\t\nBlack\nFinish\t\nPaint\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/FLO843016.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "FLO843016",
+        "price": 101.95,
+        "image": "https://msimg.blob.core.windows.net/product/large/FLO843016.jpg",
+        "stock": 13,
+        "weight": 7
+      }
+    ]
   }
 ]
