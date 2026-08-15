@@ -3568,5 +3568,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "afs12701",
+    "name": "AEROMOTIVE BRACKET - FUEL FILTER MOUNTING 2IN DIA.",
+    "title": "AEROMOTIVE BRACKET - FUEL FILTER MOUNTING 2IN DIA.",
+    "sku": "AFS12701",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 34.57,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 20,
+    "category": "FuelFilters",
+    "subcategory": "Fuel Filters",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "Fuel Filter Bracket, Clip-In, 2 in Diameter, Steel, Black Rubber Coat, Aeromotive Fuel Filters, Each\n\nAttributes\nIntended Mount\t\nFuel Filter\nInside Diameter\t\n2 in\nBracket Clamp Style\t\nClip-On\nBolt-On / Clamp-On / Weld-On Bracket Mount\t\nBolt-On\nLength\t\n3 in\nHeight\t\n2 in\nThickness\t\n0.063 in\nMaterial\t\nSteel\nColor\t\nBlack\nFinish\t\nRubber\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/AFS12701.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "AFS12701",
+        "price": 34.57,
+        "image": "https://msimg.blob.core.windows.net/product/large/AFS12701.jpg",
+        "stock": 20,
+        "weight": 1
+      }
+    ]
   }
 ]
