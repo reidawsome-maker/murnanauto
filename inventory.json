@@ -2495,5 +2495,36 @@
         "weight": 18.5
       }
     ]
+  },
+  {
+    "id": "flt11576flt",
+    "name": "EXHAUST HEADER SET LS SWAP POLISHED 304 SS",
+    "title": "EXHAUST HEADER SET LS SWAP POLISHED 304 SS",
+    "sku": "FLT11576FLT",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 328.95,
+    "compare_price": null,
+    "weight": 21,
+    "stock": 4,
+    "category": "Headers",
+    "subcategory": "Headers & Manifolds",
+    "parentCategory": "Exhaust",
+    "anSize": "Universal",
+    "description": "This product may not be legal for street use on emissions-controlled vehicles but may be legal for use on dedicated competition or pre-pollution-controlled vehicles only.\n\nAttributes\nLength\t\nShort\nStyle\t\nshorty\nFlange thickness\t\n0.375 in\nPrimary Diameter\t\n1.625 in\nCollector Diameter\t\n2.5 in\nCollector Attachment Method\t\n3-Bolt Flange\nCatalytic Converters Included\t\nNo\nOxygen Sensor Bung\t\nYes\nFasteners Included\t\nYes\nGaskets Included\t\nYes\nReducers Included\t\nYes\nReducer Outlet Size\t\n2.5 in\nMaterial\t\nStainless Steel\nColor\t\nPolished\nFinish\t\nPolished\nQuantity\t\nPair",
+    "image": "https://msimg.blob.core.windows.net/product/large/FLT11576FLT.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "FLT11576FLT",
+        "price": 328.95,
+        "image": "https://msimg.blob.core.windows.net/product/large/FLT11576FLT.jpg",
+        "stock": 4,
+        "weight": 21
+      }
+    ]
   }
 ]
