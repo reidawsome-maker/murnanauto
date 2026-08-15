@@ -3022,5 +3022,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "wfp400-1168",
+    "name": "WALBRO INSTALLATION KIT - FUEL PUMP",
+    "title": "WALBRO INSTALLATION KIT - FUEL PUMP",
+    "sku": "WFP400-1168",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 36.99,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 59,
+    "category": "Pumps",
+    "subcategory": "Fuel Pumps & Components",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "Attributes\nComponent Type\t\nFuel Pump Installation Kit\nElectric / Mechanical Fuel Pump\t\nElectric\nWiring Harness Included\t\nYes\nFilter Included\t\nYes\nFilter Quantity\t\n1\nFilter Type\t\nFilter Sock\nConnector Pins Included\t\nYes\nWire Connectors Included\t\nYes\nHose Included\t\nYes\nHose Clamps Included\t\nYes\nQuantity\t\nKit",
+    "image": "https://msimg.blob.core.windows.net/product/large/WFP400-1168.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "WFP400-1168",
+        "price": 36.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/WFP400-1168.jpg",
+        "stock": 59,
+        "weight": 1
+      }
+    ]
   }
 ]
