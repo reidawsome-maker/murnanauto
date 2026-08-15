@@ -1596,5 +1596,36 @@
         "weight": 21
       }
     ]
+  },
+  {
+    "id": "nxs30040-10",
+    "name": "Nitrous Express stage 6 Wet Single Stage 50-300 HP 10 lb Bottle White Square Bore Kit",
+    "title": "Nitrous Express stage 6 Wet Single Stage 50-300 HP 10 lb Bottle White Square Bore Kit",
+    "sku": "NXS30040-10",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 874.83,
+    "compare_price": null,
+    "weight": 23,
+    "stock": 2,
+    "category": "Nitrous",
+    "subcategory": "Nitrous Kits & Bottles",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "The conventional Stage 6 is the perfect entry level nitrous system for the budget minded sportsman racer. These systems feature the most advanced technology using the conventional spraybarless design. The Phase 3 series plates are the Next Generation in nitrous performance and reliability. This new innovation in nitrous plate technology provides superior distribution and outstanding atomization. With no spray bars to sag, split, block airflow, or damage this is truly the Next Generation in nitrous plate technology. Systems come complete and include limited lifetime guaranteed Lightning solenoids, heavy duty 40 amp relay, 10lb bottle, stainless bottle brackets, and extra long supply line.\nProduct Info\nAlternate Description\nSTAGE SIX NITROUS SYSTEM - 4150 HOLLEY\nPart Number\nNXS30040-10\nVendor Part Number\n30040-10\nUPC Code\n653374302852\nPackage Weight\n22.18 lbs\n10.06 kg\nPackage Length\n28.2 in\n71.63 cm\nPackage Width\n11.1 in\n28.19 cm\nPackage Height\n10.15 in\n25.78 cm\nAttributes\nProduct Line\t\nStage 6\nWet / Dry Kit\t\nWet\nPlate / Fogger\t\nPlate\nSingle / Dual Stage\t\nSingle\nPlate Style\t\nStandard\nSingle / Dual Inlet Plate\t\nSingle\nCarburetor Flange\t\nSquare Bore\nAdjustable\t\nYes\nMaximum Advertised Horsepower\t\n300 hp\nIncluded Horsepower Jetting 1\t\n50 hp\nIncluded Horsepower Jetting 2\t\n100 hp\nIncluded Horsepower Jetting 3\t\n150 hp\nIncluded Horsepower Jetting 4\t\n200 hp\nIncluded Horsepower Jetting 5\t\n250 hp\nIntended Fuel\t\nGas\nNitrous Solenoid Material\t\nAluminum\nNitrous Solenoid Color\t\nCarbon Fiber\nNitrous Solenoid Finish\t\nNatural\nFeed Line Included\t\nYes\nFeed Line Size\t\n4 AN\nRelay Included\t\nYes\nRelay Quantity\t\n1\nSolenoid To plate lines included\t\nYes\nSolenoid To plate lines Size\t\n3 AN\nSolenoid To plate line Style\t\nTube\nFull Throttle Switch Included\t\nYes\nArming Switch Included\t\nYes\nBottle Included\t\nYes\nBottle Size\t\n10 lb\nBottle Color\t\nWhite\nBottle Valve Style\t\nLightning\nBottle Brackets Included\t\nYes\nBottle Bracket Material\t\nStainless\nBottle Bracket Color\t\nNatural\nBottle Bracket Finish\t\nNatural\nFittings Included\t\nYes\nCarburetor Studs Included\t\nYes\nGaskets Included\t\nYes\nHardware Included\t\nYes\nQuantity\t\nKit",
+    "image": "https://msimg.blob.core.windows.net/product/large/NXS30040-10.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "NXS30040-10",
+        "price": 874.83,
+        "image": "https://msimg.blob.core.windows.net/product/large/NXS30040-10.jpg",
+        "stock": 2,
+        "weight": 23
+      }
+    ]
   }
 ]
