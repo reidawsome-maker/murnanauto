@@ -3146,5 +3146,36 @@
         "weight": 4
       }
     ]
+  },
+  {
+    "id": "fit10080",
+    "name": "FiTECH 80 LB FUEL INJECTOR 1PK",
+    "title": "FiTECH 80 LB FUEL INJECTOR 1PK",
+    "sku": "FIT10080",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 47,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 6,
+    "category": "Injectors",
+    "subcategory": "Fuel Injectors",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "This product may not be legal for street use on emissions-controlled vehicles but may be legal for use on dedicated competition or pre-pollution-controlled vehicles only.\n\nFuel Injector, 80 lb/hr, FiTech Throttle Body EFI Systems, Each\n\nAttributes\nFlow LB/HR\t\n80\nUniversal\t\nYes\nO-Rings Included\t\nYes\nMaterial\t\nPlastic\nColor\t\nBlack\nFinish\t\nNatural\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/FIT10080.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "FIT10080",
+        "price": 47,
+        "image": "https://msimg.blob.core.windows.net/product/large/FIT10080.jpg",
+        "stock": 6,
+        "weight": 1
+      }
+    ]
   }
 ]
