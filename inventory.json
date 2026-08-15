@@ -1658,5 +1658,36 @@
         "weight": 23
       }
     ]
+  },
+  {
+    "id": "-nxs20933-10",
+    "name": "Nitrous Express LS 102 mm Plate System Wet Single Stage 50-400 HP 10 lb Bottle White GM LS-Series Kit",
+    "title": "Nitrous Express LS 102 mm Plate System Wet Single Stage 50-400 HP 10 lb Bottle White GM LS-Series Kit",
+    "sku": " NXS20933-10",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 945.66,
+    "compare_price": null,
+    "weight": 24,
+    "stock": 2,
+    "category": "Nitrous",
+    "subcategory": "Nitrous Kits & Bottles",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "The Nitrous Express LS 102mm Plate System features a billet plate that fits all FAST 102 intakes. This 102mm plate bolts between the throttle body and intake making installation quick, easy and attractive. The system comes as a single stage system and includes jetting for 50, 100, 150, 200, 250, 300, 350 and 400 horsepower. The plate is pre-machined with a second set of nitrous and fuel passages so you can easily upgrade to a dual stage system by adding part # NX933D. This system includes ProPower Lightning series solenoids, 6AN feedline, braided stainless solenoid to plate lines, stainless bottle brackets, master arming switch, WOT switch as well as every nut, bolt and electrical connector needed to complete the installation. This system includes the latest technology and the best components available. NX Lightning solenoids feature an improved flow path that eliminates sharp turns and expansion areas in the nitrous flow path. This keeps the nitrous in dense liquid form which makes more power utilizing less nitrous. Lightning nitrous solenoids feature an integrated purge port which allows you to connect a purge valve directly to the body of the nitrous solenoid for clean looks and less plumbing. Lightning Series solenoids feature CNC aluminum bodies topped with Carbon Fiber cans for the ultimate in weight savings.\nProduct Info\nAlternate Description\nEFI PLATE NITROUS KIT - GM LS 4-BOLT PLATE 102MM\nPart Number\nNXS20933-10\nVendor Part Number\n20933-10\nUPC Code\n653374307895\nPackage Weight\n23.41 lbs\n10.62 kg\nPackage Length\n28.5 in\n72.39 cm\nPackage Width\n11 in\n27.94 cm\nPackage Height\n10 in\n25.40 cm\nAttributes\nApplication Specific\t\nYes\nWet / Dry Kit\t\nWet\nPlate / Fogger\t\nPlate\nSingle / Dual Stage\t\nSingle\nPlate Style\t\nPerimeter\nSingle / Dual Inlet Plate\t\nSingle\nThrottle Body Plate Diameter\t\n102 mm\nAdjustable\t\nYes\nMaximum Advertised Horsepower\t\n400 hp\nIncluded Horsepower Jetting 1\t\n50 hp\nIncluded Horsepower Jetting 2\t\n100 hp\nIncluded Horsepower Jetting 3\t\n150 hp\nIncluded Horsepower Jetting 4\t\n200 hp\nIncluded Horsepower Jetting 5\t\n250 hp\nIncluded Horsepower Jetting 6\t\n300 hp\nIncluded Horsepower Jetting 7\t\n350 hp\nIntended Fuel\t\nGas\nNitrous Solenoid Material\t\nAluminum\nNitrous Solenoid Color\t\nCarbon Fiber\nNitrous Solenoid Finish\t\nNatural\nSolenoid Brackets Included\t\nYes\nSolenoid Bracket Material\t\nSteel\nSolenoid Bracket Color\t\nZinc\nSolenoid Bracket Finish\t\nPlated\nFeed Line Included\t\nYes\nFeed Line Size\t\n6 AN\nRelay Included\t\nYes\nRelay Quantity\t\n1\nSolenoid To plate lines included\t\nYes\nSolenoid To plate lines Size\t\n6 AN\nSolenoid To plate line Style\t\nHose\nFull Throttle Switch Included\t\nYes\nArming Switch Included\t\nYes\nBottle Included\t\nYes\nBottle Size\t\n10 lb\nBottle Color\t\nWhite\nBottle Valve Style\t\nLightning 500\nBottle Brackets Included\t\nYes\nBottle Bracket Material\t\nStainless\nBottle Bracket Color\t\nNatural\nBottle Bracket Finish\t\nNatural\nFittings Included\t\nYes\nHardware Included\t\nYes\nQuantity\t\nKit",
+    "image": "https://msimg.blob.core.windows.net/product/large/NXS20933-10.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": " NXS20933-10",
+        "price": 945.66,
+        "image": "https://msimg.blob.core.windows.net/product/large/NXS20933-10.jpg",
+        "stock": 2,
+        "weight": 24
+      }
+    ]
   }
 ]
