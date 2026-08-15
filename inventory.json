@@ -1565,5 +1565,36 @@
         "weight": 18
       }
     ]
+  },
+  {
+    "id": "nxs20422-10",
+    "name": "Nitrous Express Proton Plus Fly By Wire Wet Single Stage 35-150 HP 10 lb Bottle White Kit",
+    "title": "Nitrous Express Proton Plus Fly By Wire Wet Single Stage 35-150 HP 10 lb Bottle White Kit",
+    "sku": "NXS20422-10",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 769.14,
+    "compare_price": null,
+    "weight": 21,
+    "stock": 1,
+    "category": "Nitrous",
+    "subcategory": "Nitrous Kits & Bottles",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "Proton Series nitrous systems combine performance, durability and value in a compact and easy to mount module. Proton systems contain high quality, made in the USA, solenoids that are capable of producing 150 horsepower to the wheels. The black anodized aluminum housing not only looks great, it pulls heat away from the solenoids for extreme durability. This Proton fly by wire system includes jetting for 35HP, 50HP, 75HP, 100HP, 125HP and 150HP. This system comes complete with a 10lb nitrous bottle with an aluminum high flow Lightning 45 bottle valve, stainless bottle brackets, a single Shark nozzle, nozzle adapter, stainless braided nozzle lines, extra long braided stainless feed line, stainless fuel line, master arming switch, 40 amp relay, relay harness as well as every nut, bolt and electrical connector needed to complete the installation. This system includes a TPS Autolearn wide open throttle module for use with all electronic fuel injected vehicles, including those with fly by wire electronic driven throttle bodies.\nProduct Info\nAlternate Description\nPROTON FLY BY WIRE NO2 SYSTEM - 35 TO 150HP\nPart Number\nNXS20422-10\nVendor Part Number\n20422-10\nUPC Code\n653374307451\nPackage Weight\n21.00 lbs\n9.53 kg\nPackage Length\n28.25 in\n71.76 cm\nPackage Width\n10.75 in\n27.31 cm\nPackage Height\n9.75 in\n24.77 cm\nAttributes\nProduct Line\t\nProton Plus Fly By Wire\nWet / Dry Kit\t\nWet\nPlate / Fogger\t\nFogger\nSingle / Dual Stage\t\nSingle\nFogger Nozzle Style\t\nShark\nAdjustable\t\nYes\nMaximum Advertised Horsepower\t\n150 hp\nIncluded Horsepower Jetting 1\t\n35 hp\nIncluded Horsepower Jetting 2\t\n50 hp\nIncluded Horsepower Jetting 3\t\n75 hp\nIncluded Horsepower Jetting 4\t\n100 hp\nIncluded Horsepower Jetting 5\t\n125 hp\nIntended Fuel\t\nGas\nFeed Line Included\t\nYes\nFeed Line Size\t\n4 AN\nRelay Included\t\nYes\nRelay Quantity\t\n1\nSolenoid To plate lines included\t\nYes\nSolenoid To plate lines Size\t\n3 AN\nSolenoid To plate line Style\t\nHose\nFull Throttle Switch Included\t\nYes\nArming Switch Included\t\nYes\nBottle Included\t\nYes\nBottle Size\t\n10 lb\nBottle Color\t\nWhite\nBottle Valve Style\t\nHigh Flow Lightning 45\nBottle Brackets Included\t\nYes\nBottle Bracket Material\t\nStainless\nBottle Bracket Color\t\nNatural\nBottle Bracket Finish\t\nNatural\nFittings Included\t\nYes\nHardware Included\t\nYes\nQuantity\t\nKit",
+    "image": "https://msimg.blob.core.windows.net/product/large/NXS20422-10.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "NXS20422-10",
+        "price": 769.14,
+        "image": "https://msimg.blob.core.windows.net/product/large/NXS20422-10.jpg",
+        "stock": 1,
+        "weight": 21
+      }
+    ]
   }
 ]
