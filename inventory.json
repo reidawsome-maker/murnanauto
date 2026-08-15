@@ -2898,5 +2898,36 @@
         "weight": 6
       }
     ]
+  },
+  {
+    "id": "wfpf90000267",
+    "name": "WALBRO FUEL PUMP - 450LPH - E85 IN-TANK - UNIVERSAL",
+    "title": "WALBRO FUEL PUMP - 450LPH - E85 IN-TANK - UNIVERSAL",
+    "sku": "WFPF90000267",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 121.99,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 300,
+    "category": "Pumps",
+    "subcategory": "Fuel Pumps & Components",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "Attributes\nElectric/Mechanical\t\nElectric\nIn-Tank/Inline\t\nIn-Tank\nOutlet Size\t\n5/16 in\nOutlet Style\t\nHose Barb\nlph A\t\n450 lph\nGasoline Compatible\t\nYes\nDiesel Compatible\t\nNo\nMethanol Compatible\t\nNo\nE85 Compatible\t\nNo\nMaterial\t\nSteel\nColor\t\nZinc\nFinish\t\nPlated\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/WFPF90000267.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "WFPF90000267",
+        "price": 121.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/WFPF90000267.jpg",
+        "stock": 300,
+        "weight": 1
+      }
+    ]
   }
 ]
