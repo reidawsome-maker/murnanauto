@@ -3458,33 +3458,33 @@
     ]
   },
   {
-    "id": "afs13132",
-    "name": "AEROMOTIVE EFI FUEL PRESSURE REG. EXTREME FLOW 30-120PSI",
-    "title": "AEROMOTIVE EFI FUEL PRESSURE REG. EXTREME FLOW 30-120PSI",
-    "sku": "AFS13132",
+    "id": "afs12375",
+    "name": "AEROMOTIVE 8AN INLINE FUEL FILTER 10 MICRON 2IN OD BLACK",
+    "title": "AEROMOTIVE 8AN INLINE FUEL FILTER 10 MICRON 2IN OD BLACK",
+    "sku": "AFS12375",
     "platform": "Universal",
     "platforms": [
       "Universal",
       "universal"
     ],
-    "price": 323.9,
+    "price": 231.12,
     "compare_price": null,
-    "weight": 2,
-    "stock": 30,
-    "category": "Regulators",
-    "subcategory": "Fuel Rails & Regulators",
+    "weight": 1,
+    "stock": 24,
+    "category": "FuelFilters",
+    "subcategory": "Fuel Filters",
     "parentCategory": "Fuel System",
     "anSize": "Universal",
-    "description": "BOOST REFERENCED .500 HIGH FLOW VALVE/SEAT 7-26GPM BLACK ANODIZED\n\nFuel Pressure Regulator, Extreme Flow EFI, 30 to 120 psi, In-Line, 10 AN Female O-Ring Inlet, 10 AN Female O-Ring Outlet, 10 AN Female O-Ring Return, 1/8 in NPT Port, Black Anodized, E85 / Gas / Diesel, Each\n\nAttributes\nProduct Line\t\nExtreme Flow EFI\nBoost Referenced\t\nYes\nBypass\t\nYes\nAdjustable\t\nYes\nAdjustment Range Low\t\n30 PSI\nAdjustment Range High\t\n120 PSI\nMounting Style\t\nIn-Line\nInlet Quantity\t\n1\nInlet Size\t\n10 AN\nInlet Style\t\nFemale\nInlet O-Ring\t\nYes\nOutlet Quantity\t\n1\nOutlet Size\t\n10 AN\nOutlet Style\t\nFemale\nOutlet O-Ring\t\nYes\nReturn Port Size\t\n10 AN\nReturn Port Style\t\nFemale\nReturn Port O-Ring\t\nYes\nGauge Port\t\nYes\nGauge Port Size\t\n1/8 in NPT\nGauge Port Style\t\nFemale\nBracket Included\t\nYes\nFittings Included\t\nYes\nFitting 1 Quantity\t\n1\nFitting 1 Side A Size\t\n4 AN\nFitting 1 Side A Style\t\nMale\nFitting 1 Side A O-Ring\t\nYes\nFitting 1 Side B Size\t\n1/8 in NPT\nFitting 1 Side B Style\t\nMale\nMaterial\t\nAluminum\nColor\t\nBlack\nFinish\t\nAnodized\nQuantity\t\nEach\n\n",
-    "image": "https://msimg.blob.core.windows.net/product/large/AFS13132.jpg",
+    "description": "Fuel Filter, In-Line, 10 Micron, Microglass Element, 8 AN Male Inlet, 8 AN Male Outlet, Aluminum, Black Anodized, Each\n\nAttributes\nMicron\t\n10 Micron\nElement Material\t\nMicroglass\nInlet Size\t\n8 AN\nInlet Style\t\nMale\nOutlet Size\t\n8 AN\nOutlet Style\t\nMale\nFilter 1 Style\t\nIn-Line\nFilter 1 Housing Style\t\nSmooth\nBracket Included\t\nNo\nMaterial\t\nAluminum\nColor\t\nBlack\nFinish\t\nAnodized\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/AFS12375.jpg",
     "variants": [
       {
         "name": "Standard",
-        "sku": "AFS13132",
-        "price": 323.9,
-        "image": "https://msimg.blob.core.windows.net/product/large/AFS13132.jpg",
-        "stock": 30,
-        "weight": 2
+        "sku": "AFS12375",
+        "price": 231.12,
+        "image": "https://msimg.blob.core.windows.net/product/large/AFS12375.jpg",
+        "stock": 24,
+        "weight": 1
       }
     ]
   }
