@@ -3177,5 +3177,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "dwk16u-00-0065-8",
+    "name": "DEATSCHWERKS FUEL INJECTORS MATCHED SET 700CC (65LB)",
+    "title": "DEATSCHWERKS FUEL INJECTORS MATCHED SET 700CC (65LB)",
+    "sku": "DWK16U-00-0065-8",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 519,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 3,
+    "category": "Injectors",
+    "subcategory": "Fuel Injectors",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "This product may not be legal for street use on emissions-controlled vehicles but may be legal for use on dedicated competition or pre-pollution-controlled vehicles only\n\n2010-15 Camaro SS 6.2L LS3/L99, 2008-13 Corvette 6.2L LS3, 2006-13 Corvette 7.0L LS7, 2009-13 Corvette ZR-1 6.2L LS9 - 65 lb./hr. Taking an application specific approach, Deatschwerks has delivered upon the need for quality, high performance fuel injectors, each engineered to provide a direct fit when using the OEM harness, fuel rail and manifold. Fuel injectors are engineered to deliver higher flow rates, faster response time and compatibility with race fuels. Set of 8 unless noted.\n\nAttributes\nFlow LB/HR\t\n65\nFlow CC/Min\t\n700\nImpedance ( Ohms)\t\n12.4 ohms\nHigh / Low Impedance\t\nHigh\nConnector Style\t\nUSCAR\nBody Style\t\nEV14\nUniversal\t\nYes\nO-Rings Included\t\nYes\nQuantity\t\nSet of 8",
+    "image": "https://msimg.blob.core.windows.net/product/large/DWK16U-00-0065-8.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "DWK16U-00-0065-8",
+        "price": 519,
+        "image": "https://msimg.blob.core.windows.net/product/large/DWK16U-00-0065-8.jpg",
+        "stock": 3,
+        "weight": 1
+      }
+    ]
   }
 ]
