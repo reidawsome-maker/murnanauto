@@ -3733,5 +3733,36 @@
         "weight": 2
       }
     ]
+  },
+  {
+    "id": "acl140043",
+    "name": "ACCEL SUPER COIL GM LS2/LS3/ LS7",
+    "title": "ACCEL SUPER COIL GM LS2/LS3/ LS7",
+    "sku": "ACL140043",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 52.46,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 100,
+    "category": "Coils",
+    "subcategory": "Ignition Coils",
+    "parentCategory": "Ignition & Electrical",
+    "anSize": "Universal",
+    "description": "Ignition Coil Pack, Super Coil, Female Socket, 38700V, Yellow, GM LS-Series, Each\n\n\n",
+    "image": "https://msimg.blob.core.windows.net/product/large/ACL140043.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "ACL140043",
+        "price": 52.46,
+        "image": "https://msimg.blob.core.windows.net/product/large/ACL140043.jpg",
+        "stock": 100,
+        "weight": 1
+      }
+    ]
   }
 ]
