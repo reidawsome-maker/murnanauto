@@ -2061,5 +2061,36 @@
         "weight": 70
       }
     ]
+  },
+  {
+    "id": "vor4gx218-150l",
+    "name": "Vortech GM LS-Series Supercharger Kit RH Mount",
+    "title": "Vortech GM LS-Series Supercharger Kit RH Mount",
+    "sku": "VOR4GX218-150L",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 4033.99,
+    "compare_price": null,
+    "weight": 54,
+    "stock": 2,
+    "category": "Superchargers",
+    "subcategory": "Superchargers",
+    "parentCategory": "Forced Induction & Nitrous",
+    "anSize": "Universal",
+    "description": "Attributes\nStyle\t\nCentrifugal\nTensioner Included\t\nYes\nIdler Included\t\nYes\nIdler Pulley Included\t\nYes\nSupercharger Pulley Included\t\nYes\nSupercharger Pulley Grooves/Rib\t\n6 Rib\nSupercharger Pulley Diameter\t\n3.6 in\nBelt Included\t\nYes\nBelt Style\t\nSerpentine\nBelt Length\t\n115 in\nAir Filter Included\t\nYes\nHardware Included\t\nYes\nMaterial\t\nAluminum\nGloss\t\nSatin\nColor\t\nNatural\nFinish\t\nNatural\nQuantity\t\nKit",
+    "image": "https://msimg.blob.core.windows.net/product/large/VOR4GX218-150L.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "VOR4GX218-150L",
+        "price": 4033.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/VOR4GX218-150L.jpg",
+        "stock": 2,
+        "weight": 54
+      }
+    ]
   }
 ]
