@@ -2619,5 +2619,36 @@
         "weight": 49
       }
     ]
+  },
+  {
+    "id": "flo17367",
+    "name": "99-04 FORD LIGHTNING AMERICAN THUNDER CAT-BACK ",
+    "title": "99-04 FORD LIGHTNING AMERICAN THUNDER CAT-BACK ",
+    "sku": "FLO17367",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 749.95,
+    "compare_price": null,
+    "weight": 42,
+    "stock": 3,
+    "category": "Exhaust",
+    "subcategory": "Cat-Back Systems",
+    "parentCategory": "Exhaust",
+    "anSize": "Universal",
+    "description": "Attributes\nProduct Line\t\nAmerican Thunder\nStyle\t\nCat Back\nExit Quantity\t\nDual\nExit Location\t\nBack\nExit Side\t\nPassenger\nTailpipes Included\t\nYes\nTailpipes Diameter\t\n2-1/2 in\nTailpipe A Quantity\t\n2\nMuffler Included\t\nYes\nMuffler Style\t\nChambered\nMuffler A Shape\t\nOval\nMuffler Product Line\t\n50 Series HD\nMuffler A Inlet Quantity\t\n2\nMuffler A Inlet Diameter\t\n2-1/2 in\nMuffler A Inlet Location\t\nLeft / Right\nMuffler A Outlet Quantity\t\n2\nMuffler A Outlet Diameter\t\n2-1/2 in\nMuffler A Outlet Location\t\nLeft / Right\nMuffler A Material\t\nStainless\nMuffler A Color\t\nBlack\nMuffler A Finish\t\nCeramic-Metallic\nMuffler Quantity\t\n1\nTips Included\t\nYes\nCut Style\t\nAngled\nEdge Style\t\nRolled Edge\nTips Exit Quantity\t\n1\nTips Exit Diameter\t\n4 in\nTip Logo\t\nFlowmaster\nTip Alloy\t\n304\nTip Material\t\nStainless\nTip Color\t\nPolished\nTip Finish\t\nPolished\nTip Quantity\t\n2\nHangers Included\t\nYes\nClamps Included\t\nYes\nClamps Style\t\nBand Clamp\nHardware Included\t\nYes\nMaterial\t\nSteel\nColor\t\nNatural\nFinish\t\nAluminized\nQuantity\t\nKit",
+    "image": "https://msimg.blob.core.windows.net/product/large/FLO17367.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "FLO17367",
+        "price": 749.95,
+        "image": "https://msimg.blob.core.windows.net/product/large/FLO17367.jpg",
+        "stock": 3,
+        "weight": 42
+      }
+    ]
   }
 ]
