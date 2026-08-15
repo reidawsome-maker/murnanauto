@@ -3270,5 +3270,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "frdm9593-lu24a",
+    "name": "FORD HI-FLOW EFI FUEL INJ KIT 24LBS/HR (8PK)",
+    "title": "FORD HI-FLOW EFI FUEL INJ KIT 24LBS/HR (8PK)",
+    "sku": "FRDM9593-LU24A",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 243.99,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 2,
+    "category": "Injectors",
+    "subcategory": "Fuel Injectors",
+    "parentCategory": "Fuel System",
+    "anSize": "Universal",
+    "description": "This product may not be legal for street use on emissions-controlled vehicles but may be legal for use on dedicated competition or pre-pollution-controlled vehicles only.\n\nFuel Injector, 24 lb/hr, High Impedance, USCAR Connector, Universal, Set of 8\n\nAttributes\nFlow LB/HR\t\n24\nImpedance ( Ohms) Low\t\n11 ohms\nImpedance ( Ohms) High\t\n18 ohms\nHigh / Low Impedance\t\nHigh\nConnector Style\t\nUSCAR\nUniversal\t\nYes\nO-Rings Included\t\nYes\nMaterial\t\nPlastic\nColor\t\nBlue\nFinish\t\nNatural\nQuantity\t\nSet of 8",
+    "image": "https://msimg.blob.core.windows.net/product/large/FRDM9593-LU24A.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "FRDM9593-LU24A",
+        "price": 243.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/FRDM9593-LU24A.jpg",
+        "stock": 2,
+        "weight": 1
+      }
+    ]
   }
 ]
