@@ -3671,5 +3671,36 @@
         "weight": 2
       }
     ]
+  },
+  {
+    "id": "msd8222",
+    "name": "MSD BLASTER HIGH VIBRATION COIL",
+    "title": "MSD BLASTER HIGH VIBRATION COIL",
+    "sku": "MSD8222",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 69.95,
+    "compare_price": null,
+    "weight": 2,
+    "stock": 100,
+    "category": "Coils",
+    "subcategory": "Ignition Coils",
+    "parentCategory": "Ignition & Electrical",
+    "anSize": "Universal",
+    "description": "Ignition Coil, Blaster High Vibration, Canister, Epoxy Filled, 0.700 ohm, Female Socket, 45000V, Black, Each\n\nAttributes\nProduct Line\t\nBlaster High Vibration\nCoil Location\t\nRemote\nCoil Style\t\nCanister\nCoil Shape\t\nCylinder\nCoil Wire Attachment\t\nFemale\nPrimary Resistance\t\n0.7 ohm\nSecondary Resistance\t\n4.5k ohm\nCoil Internal Fill\t\nEpoxy\nMax Voltage\t\n45000V\nTurns Ratio\t\n100:01:00\nCoil Color\t\nBlack\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/MSD8222.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "MSD8222",
+        "price": 69.95,
+        "image": "https://msimg.blob.core.windows.net/product/large/MSD8222.jpg",
+        "stock": 100,
+        "weight": 2
+      }
+    ]
   }
 ]
