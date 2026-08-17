@@ -4043,5 +4043,36 @@
         "weight": 8
       }
     ]
+  },
+  {
+    "id": "red80204",
+    "name": "REDLINE WATER WETTER 12OZ",
+    "title": "REDLINE WATER WETTER 12OZ",
+    "sku": "RED80204",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 15.99,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 100,
+    "category": "Coolants",
+    "subcategory": "Coolants & Additives",
+    "parentCategory": "Fluids & Chemicals",
+    "anSize": "Universal",
+    "description": "Antifreeze / Coolant Additive, WaterWetter, 12 oz Bottle, Each\n\nUnique agent for cooling systems that doubles the wetting ability of water\nRust and corrosion protection allows for use of straight water in racing or reduced antifreeze levels in warm climates\nImproves heat transfer and reduces cylinder head temperature\nUse one bottle for most passenger cars and light trucks, treats 3 to 5 gallons or 13.2 to 15.9 liters, vehicles with larger cooling systems should use two bottles, small cooling systems should use 1oz (3 to 4 capfuls) per quart\nCompatible with new or used antifreeze (including DEX-COOL® and long-life versions) to improve the heat transfer of ethylene and propylene glycol systems\nSatisfies ASTM D2570 and ASTM D1384 corrosion tests for glycol-based antifreezes\nContains no ethylene glycol\n",
+    "image": "https://msimg.blob.core.windows.net/product/large/RED80204.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "RED80204",
+        "price": 15.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/RED80204.jpg",
+        "stock": 100,
+        "weight": 1
+      }
+    ]
   }
 ]
