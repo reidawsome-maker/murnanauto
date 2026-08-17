@@ -4291,5 +4291,36 @@
         "weight": 13
       }
     ]
+  },
+  {
+    "id": "mob103008",
+    "name": "MOBIL1 5W20 SYNTHETIC OIL 6X1 QT DEXOS",
+    "title": "MOBIL1 5W20 SYNTHETIC OIL 6X1 QT DEXOS",
+    "sku": "MOB103008",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 60.99,
+    "compare_price": null,
+    "weight": 12,
+    "stock": 23,
+    "category": "EngineOils",
+    "subcategory": "Motor & Engine Oils",
+    "parentCategory": "Fluids & Chemicals",
+    "anSize": "Universal",
+    "description": "Attributes\nOil Type\t\nSynthetic\nWeight\t\n5W20\nVolume\t\n1 qt\nQuantity\t\nSet of 6",
+    "image": "https://msimg.blob.core.windows.net/product/large/MOB103008.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "MOB103008",
+        "price": 60.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/MOB103008.jpg",
+        "stock": 23,
+        "weight": 12
+      }
+    ]
   }
 ]
