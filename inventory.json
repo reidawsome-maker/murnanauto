@@ -4074,5 +4074,36 @@
         "weight": 1
       }
     ]
+  },
+  {
+    "id": "vpf23071",
+    "name": "VP COOLANT HI-PERF STAY FROSTY 1 GAL",
+    "title": "VP COOLANT HI-PERF STAY FROSTY 1 GAL",
+    "sku": "VPF23071",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 53.99,
+    "compare_price": null,
+    "weight": 9,
+    "stock": 100,
+    "category": "Coolants",
+    "subcategory": "Coolants & Additives",
+    "parentCategory": "Fluids & Chemicals",
+    "anSize": "Universal",
+    "description": "We formulate Stay Frosty Hi-Performance engine coolant for high-performance engines, which require additional protection from overheating and minimal freeze protection. To illustrate, our product contains both a specialized blend of heat transfer agents and propylene glycol. For that reason, it improves the coolant s ability to transfer heat away from high-temperature cylinder heads. Furthermore, tests show Stay Frosty Hi-Performance engine coolant lowers operating temperatures of engines by up to 14 degrees Fahrenheit compared to the conventional glycol-based coolant. This both increases the density of the air/fuel mix and allows ignition timing to be safely advanced without the threat of detonation.\n\nAttributes\nProduct Line\t\nStay Frosty Hi-Performance\nCoolant\t\nYes\nPremixed / Concentrate\t\nPremixed\nCoolant Percentage\t\n50 percent\nMinimum Protection Temperature (Fahrenheit)\t\n0 Degrees\nVolume\t\n1 gal\nContainer\t\nJug\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/VPF23071.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "VPF23071",
+        "price": 53.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/VPF23071.jpg",
+        "stock": 100,
+        "weight": 9
+      }
+    ]
   }
 ]
