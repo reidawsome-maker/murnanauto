@@ -4136,5 +4136,36 @@
         "weight": 2
       }
     ]
+  },
+  {
+    "id": "luc10063",
+    "name": "BREAK-IN OIL ADDITIVE W/ ZINC",
+    "title": "BREAK-IN OIL ADDITIVE W/ ZINC",
+    "sku": "LUC10063",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 13.99,
+    "compare_price": null,
+    "weight": 1,
+    "stock": 100,
+    "category": "EngineOils",
+    "subcategory": "Motor & Engine Oils",
+    "parentCategory": "Fluids & Chemicals",
+    "anSize": "Universal",
+    "description": "Motor Oil Additive, Engine Break-In Additive, High Zinc, 16 oz Squeeze Bottle, Each\n\nAttributes\nProduct Line\t\nTB Zinc-Plus\nBreak In\t\nYes\nZinc Additive\t\nYes\nReduced Wear on Vital Engine Parts\t\nYes\nVolume\t\n16 oz\nQuantity\t\nEach\n\nITEM NOT RETURNABLE",
+    "image": "https://msimg.blob.core.windows.net/product/large/LUC10063.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "LUC10063",
+        "price": 13.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/LUC10063.jpg",
+        "stock": 100,
+        "weight": 1
+      }
+    ]
   }
 ]
