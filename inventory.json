@@ -4105,5 +4105,36 @@
         "weight": 9
       }
     ]
+  },
+  {
+    "id": "can80-200",
+    "name": "COOLANT EXPANSION TANK - 1-1/4QT.",
+    "title": "COOLANT EXPANSION TANK - 1-1/4QT.",
+    "sku": "CAN80-200",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 145,
+    "compare_price": null,
+    "weight": 2,
+    "stock": 11,
+    "category": "Radiators",
+    "subcategory": "Radiators",
+    "parentCategory": "Cooling",
+    "anSize": "Universal",
+    "description": "This Coolant Expansion Fill Tank is 1.25 Quart. Size: 5-3/4\" Tall, 4-5/8\" Wide, 3-1/8\" Deep. Side Port: 3/8\" N.P.T. Bottom Port: 1/2\" N.P.T. This Canton expansion tank is built with .100\" thick aluminum and has a billet aluminum neck with a barbed overflow fitting and accepts standard radiator caps.\n\nAttributes\nPurpose\t\nCoolant Recovery\nCapacity\t\n1.25 qt\nLength\t\n3 in\nWidth\t\n4.5 in\nHeight\t\n5.5 in\nInlet Size\t\n3/8 in NPT\nInlet Style\t\nFemale\nOutlet Size\t\n1/2 in NPT\nOutlet Style\t\nFemale\nCap Included\t\nNo\nCap Style\t\nRadiator Cap\nMounting Bracket Included\t\nYes\nMaterial\t\nAluminum\nColor\t\nNatural\nFinish\t\nNatural\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/CAN80-200_2.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "CAN80-200",
+        "price": 145,
+        "image": "https://msimg.blob.core.windows.net/product/large/CAN80-200_2.jpg",
+        "stock": 11,
+        "weight": 2
+      }
+    ]
   }
 ]
