@@ -4229,5 +4229,36 @@
         "weight": 10
       }
     ]
+  },
+  {
+    "id": "val904566-c",
+    "name": "5W30 MOTOR OIL RESTORE & PROTECT 5 QUART BOTTLE",
+    "title": "5W30 MOTOR OIL RESTORE & PROTECT 5 QUART BOTTLE",
+    "sku": "VAL904566-C",
+    "platform": "Universal",
+    "platforms": [
+      "Universal",
+      "universal"
+    ],
+    "price": 43.99,
+    "compare_price": null,
+    "weight": 10,
+    "stock": 50,
+    "category": "EngineOils",
+    "subcategory": "Motor & Engine Oils",
+    "parentCategory": "Fluids & Chemicals",
+    "anSize": "Universal",
+    "description": "Attributes\nProduct Line\t\nRestore and Protect\nOil Type\t\nSynthetic\nWeight\t\n5W30\nVolume\t\n5 qt\nQuantity\t\nEach",
+    "image": "https://msimg.blob.core.windows.net/product/large/VAL904566-C.jpg",
+    "variants": [
+      {
+        "name": "Standard",
+        "sku": "VAL904566-C",
+        "price": 43.99,
+        "image": "https://msimg.blob.core.windows.net/product/large/VAL904566-C.jpg",
+        "stock": 50,
+        "weight": 10
+      }
+    ]
   }
 ]
